@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "research_id": "jiuheng.research.liuyao.weather.exclusions.2026-10-02",
+  "status": "single_reader_partial_transcription_non_executable",
+  "source_inventory": "data/research/liuyao-weather-naj-facsimile.json",
+  "source_title": "增刪卜易，清乾隆學耕堂刊本，第三冊，天時章第三十五",
+  "holding_institution": "国立公文書館（日本）",
+  "shelfmark": "子０５９－０００８",
+  "excerpts": [
+    {
+      "excerpt_id": "WEATHER-EXCERPT-38-L-01",
+      "canvas": 38,
+      "side": "left",
+      "image_sha256": "aad9169e97238f4f5c774997a0e4bdf8581b68ebac6c67ef68124c94e994df35",
+      "text": "黃金策以財動者六方咸仰晴光非也",
+      "reading_status": "single_reader_checked_against_image",
+      "context_note": "該處隨後還談子孫動、財為子孫元神及子孫休囚空破等限制；本摘錄不是整段校勘。"
+    },
+    {
+      "excerpt_id": "WEATHER-EXCERPT-43-L-01",
+      "canvas": 43,
+      "side": "left",
+      "image_sha256": "416d7fa26e9c965fd654cd3798f332f805840a4eed0db15237573c6e7b0473b3",
+      "text": "舊註父母臨月建而動者雨必不止",
+      "reading_status": "single_reader_checked_against_image",
+      "context_note": "緊接著的野鶴按語含『試不驗』；按語全句尚需第二讀者逐字核對，不能把舊註當成本書採納的結論。"
+    }
+  ],
+  "excluded_shortcuts": [
+    {
+      "shortcut": "財爻一動就必晴",
+      "basis_excerpt_id": "WEATHER-EXCERPT-38-L-01",
+      "reason": "原頁明確以『非也』否定該無條件說法；不可寫成可執行斷法。",
+      "release_status": "excluded"
+    },
+    {
+      "shortcut": "父母爻臨月建而動就必久雨不止",
+      "basis_excerpt_id": "WEATHER-EXCERPT-43-L-01",
+      "reason": "原頁將此列為舊註且隨後記實占不驗；不可直接推為現代起占的應期。",
+      "release_status": "excluded"
+    }
+  ],
+  "remaining_before_any_formal_rule": [
+    "全章逐字校勘與印刷葉碼定位",
+    "第二位讀者獨立核對摘錄及異文",
+    "早期權威文獻和另一可靠版本對照",
+    "六親旺衰、動變、月日、空破等完整條件與反例",
+    "明確時段和應期的可程式化邊界",
+    "書目、轉錄、邏輯、實作四類復核及正反例測試"
+  ],
+  "formal_rule_ids": [],
+  "may_generate_prediction": false
+}

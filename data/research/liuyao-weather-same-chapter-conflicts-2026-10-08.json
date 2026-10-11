@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "research_id": "jiuheng.research.liuyao.weather.same_chapter_conflicts.2026-10-08",
+  "status": "single_reader_conflict_inventory_non_executable",
+  "source": {
+    "title": "增刪卜易",
+    "edition": "清乾隆學耕堂刊本",
+    "holding_institution": "国立公文書館（日本）",
+    "volume": 3,
+    "chapter": "天時章第三十五",
+    "catalog_url": "https://www.digital.archives.go.jp/file/1079274"
+  },
+  "image_anchors": [
+    {"canvas": 44, "path": "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-44.jpg", "sha256": "e283a9fbaad6931a885abb914a4c33717d5c43ac20774e885339e13d63c98d13"},
+    {"canvas": 45, "path": "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-45.jpg", "sha256": "d7b0534996173e5f56c097d367da800a98782d0d92302197384e3b00cecaf31e"},
+    {"canvas": 46, "path": "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-46.jpg", "sha256": "54d484e3655639bf524c4eb75de987eb8238166f4906f8a0da4b8b589e07d69b"},
+    {"canvas": 47, "path": "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-47.jpg", "sha256": "ab478cd1fabf24c5e14eb6d47c3b456daec5e666fe8aba49d034235f46d55464"},
+    {"canvas": 48, "path": "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-48.jpg", "sha256": "c04dc38ed506dc0be3fc91105dc53496cf74a5cacc56b1e1d29032b56b729b79"},
+    {"canvas": 49, "path": "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-49.jpg", "sha256": "71830bd69ae8d262e16c4297787d7eda3147040ef283e210bea9022e5559176d"}
+  ],
+  "conflicts_and_timing": [
+    {
+      "id": "W-44-L-WEALTH-DARK",
+      "canvas": 44,
+      "side": "left",
+      "single_reader_excerpt": "占雨倘父爻不動而妻財暗動者還主晴明",
+      "effect_on_candidate": "父母不明動本身不足以判濃雲無雨；其他暗動可導向晴明。研究檢查排除所有可見爻受日辰沖，但未裁定伏神及其他效力。"
+    },
+    {
+      "id": "W-45-L-CHANGED-PARENT",
+      "canvas": 45,
+      "side": "left",
+      "single_reader_excerpt_status": "semantic_excerpt_with_uncertain_character_omitted",
+      "single_reader_excerpt": "爻中變出父母者……皆主有雨",
+      "effect_on_candidate": "目標句緊接的例外；研究檢查排除變出父母，仍缺異文與優先序複核。"
+    },
+    {
+      "id": "W-45-L-VOID-CLASH",
+      "canvas": 45,
+      "side": "left",
+      "single_reader_excerpt": "父母官鬼靜而逢空日建冲之主雨",
+      "effect_on_candidate": "靜爻是否有雨涉及旬中未配支和日沖。研究檢查排除所有可見爻受日辰沖及旬中未配支；未把任一原始標記當成已生效斷法。"
+    },
+    {
+      "id": "W-46-R-CHANGED-CONTROL-TIMING",
+      "canvas": 46,
+      "side": "right",
+      "single_reader_excerpt": "子孫爻動而化回頭之剋或被動爻之剋須待沖去剋神之日則晴",
+      "effect_on_candidate": "同章將動變、制剋與具體日期連用；候選的單一官鬼明動限制避開部分交叉動爻，卻未建立通用應期。"
+    },
+    {
+      "id": "W-47-R-CLOUD-EXAMPLE",
+      "canvas": 47,
+      "side": "right",
+      "single_reader_excerpt": "戌臨日月破如何有雨陰雲而已果于次日常見陰雲",
+      "effect_on_candidate": "實例把陰雲與有雨分開，且依賴日月破判斷；不能由主句直接推出任意現代時段必無雨。"
+    },
+    {
+      "id": "W-48-R-DATE-EXAMPLE",
+      "canvas": 48,
+      "side": "right",
+      "single_reader_excerpt": "卯木父動當應在卯戌日而雨卻應長生亥日",
+      "effect_on_candidate": "實例的實際應日與初步推日不同；指定一小時、三小時或任意日期的現代結論仍無已審映射。"
+    },
+    {
+      "id": "W-49-L-PARENT-COMBINATION-GHOST-OPENS",
+      "canvas": 49,
+      "side": "left",
+      "single_reader_excerpt_status": "single_reader_checked_against_qing_image_and_1925_print_pages_205_to_206",
+      "single_reader_excerpt": "父母合住本主不雨若遇鬼動沖開必待雷震而後有雨",
+      "later_edition_comparison": "國圖1925年本PDF第205頁末至第206頁首（印刷六三至六四）同方向，仍非獨立讀者校勘",
+      "effect_on_candidate": "同章另列父母合住、官鬼動沖開後有雨的條件；現有研究檢查未判合住、沖開的效力或應期。故即使窄範圍可見爻條件成立，也不能泛化為無雨。"
+    }
+  ],
+  "current_research_filter": {
+    "function": "liuyao_weather_rain_candidate_audit",
+    "status": "visible_line_raw_prerequisites_only",
+    "conservative_exclusions": ["任何可見爻受日辰沖", "任何可見爻與月建對支", "任何可見爻屬旬中未配支", "父母爻與其他可見爻、月建或日辰有原始六合配對", "父母明動", "多條明動爻", "無官鬼明動", "變出父母"],
+    "not_decided": ["上述原始標記的實際效力", "父母合住與官鬼動沖開的效力和應期", "已現六親仍察伏神的流派分歧", "同章相反斷語的優先關係", "指定時段和應期", "早期傳本異文和獨立複核"],
+    "formal_rule_id": null,
+    "may_generate_prediction": false
+  }
+}

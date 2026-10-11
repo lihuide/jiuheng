@@ -1,0 +1,59 @@
+{
+  "inspection_id": "KINQIMEN-READ-ONLY-SOURCE-INSPECTION-2026-09-27-v1",
+  "recorded_on": "2026-09-27",
+  "project_id": "kinqimen",
+  "repository": "kentang2017/kinqimen",
+  "commit_sha": "e6680ac4ca0b0da5ce3fe637e05f9fc32066ec5a",
+  "tree_sha": "16ed0421977662333931599cb990606aaf2fc9d9",
+  "status": "selected_source_files_inspected_license_and_ancient_evidence_incomplete_no_execution",
+  "selected_source_bytes_verified": true,
+  "full_archive_identity_closed": false,
+  "third_party_code_executed": false,
+  "source_code_vendored": false,
+  "direct_code_copy_allowed": false,
+  "crosscheck_execution_allowed": false,
+  "runtime_ingestion_allowed": false,
+  "rule_evidence_allowed": false,
+  "hourly_movement_implementation_allowed": false,
+  "selected_files": [
+    {"path": "README.md", "bytes": 7134, "sha256": "b9aaacb9ddd63d08b88eedbe4da9d516bd05c6b990d6581a56091dd7c675bb23"},
+    {"path": "config.py", "bytes": 50062, "sha256": "088a2ef95b890addf9dff13c303ec45d4d70462abc236f39ada5af046419e0d3"},
+    {"path": "kinqimen.py", "bytes": 31269, "sha256": "d804df7b3d30a6f92470330d6adfd0c5ce320e36b1635a33c537065ee3d04682"}
+  ],
+  "tree_observation": {
+    "url": "https://api.github.com/repos/kentang2017/kinqimen/git/trees/16ed0421977662333931599cb990606aaf2fc9d9?recursive=1",
+    "bytes": 4387,
+    "sha256": "6fbfdc27c0c49d00ee21c14efeef0d9448c107e03ed0f6c60b8280affac50d68",
+    "truncated": false,
+    "observed_paths": [".gitignore", ".streamlit", ".streamlit/config.toml", "README.md", "angan.py", "app.py", "assets", "assets/banner.png", "assets/icon.jpg", "cerebras_client.py", "config.py", "data", "data/system_prompts.json", "docs", "docs/guji.md", "docs/log.md", "jieqi.py", "kinqimen.py", "requirements.txt"]
+  },
+  "license_audit": {
+    "declared_expression": "MIT",
+    "declaration_path": "README.md",
+    "linked_license_path": "LICENSE",
+    "linked_license_http_status": 404,
+    "license_file_present_in_observed_tree": false,
+    "license_closed": false,
+    "redistribution_allowed_by_project_gate": false,
+    "status": "readme_declares_mit_but_actual_license_notice_is_missing_at_pinned_commit"
+  },
+  "inspection_findings": [
+    {"id": "QM-REF-01", "path": "kinqimen.py", "lines": [80, 97], "finding": "时家地盘入口要求拆补或置闰选项；不能把参考入口默认选择当作九衡的古法依据"},
+    {"id": "QM-REF-02", "path": "config.py", "lines": [504, 590], "finding": "门、星、神的阴遁分支使用一个命名环序；天盘阴遁分支另用顺时环反序，环序差异需独立课例验证"},
+    {"id": "QM-REF-03", "path": "kinqimen.py", "lines": [122, 203], "finding": "天盘存在中宫、天禽与坤宫的分支，不能仅用一个旋转公式覆盖全部情况；此记录不是正确性判定"},
+    {"id": "QM-REF-04", "path": "config.py", "lines": [538, 556], "finding": "九星输出采用八位环并将天芮身份替换为天禽，须单独核定与九衡本旬固定身份层的语义差异"},
+    {"id": "QM-REF-05", "path": "config.py", "lines": [606, 626], "finding": "符使计算依赖干支与局序函数，不能绕开历法、日界和时制直接作完整日期对拍"},
+    {"id": "QM-REF-06", "path": "cerebras_client.py", "lines": [], "finding": "仓库目录含AI客户端；本轮没有下载或运行客户端，也不把整仓作为离线产品依赖"}
+  ],
+  "facsimile_attempt": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/SSID-12387913_%E9%81%81%E7%94%B2%E7%AC%A6%E6%87%89%E7%B6%93.pdf",
+    "web_fetch_status": "rejected_content_length_11147795_exceeds_tool_limit",
+    "local_fetch_status": "UND_ERR_CONNECT_TIMEOUT",
+    "file_bytes_obtained": false,
+    "page_visually_reviewed": false,
+    "source_sha256": null
+  },
+  "trusted_expected_outputs": [],
+  "rule_ids": [],
+  "decision": "inspection_only_no_reference_execution_no_hourly_chart_no_formal_rules"
+}

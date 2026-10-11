@@ -1,0 +1,1228 @@
+{
+  "code_comments_removed": true,
+  "files": {
+    ".cargo/config.toml": {
+      "bytes": 301,
+      "original_sha256": "48b41c2e4b49f4f345582089d1fe430c26153717a9d8151d1bd72ec82d2f3a0f",
+      "sha256": "343448c6886d538b98416a36b45fb2f50031f5eb4860b61d2107021828e3af55"
+    },
+    ".gitignore": {
+      "bytes": 118,
+      "original_sha256": "7da1a39bbd53614f790174058344ac601f661ee905154b3c2057e6f60166ee72",
+      "sha256": "7da1a39bbd53614f790174058344ac601f661ee905154b3c2057e6f60166ee72"
+    },
+    "Cargo.lock": {
+      "bytes": 79908,
+      "original_sha256": "de9289b60ca88928e130d00ff8cf76383fa690cc08eabf63d543beba078e48c7",
+      "sha256": "0c472f5e2b2b0145df0285fb28580b05c9bbd947901b02515c68eeaeee243a45"
+    },
+    "Cargo.toml": {
+      "bytes": 914,
+      "original_sha256": "5795a9c8ede3d8afd2262bbfc074ef3c7f045aa5d9c88b076a96901fcb7cc167",
+      "sha256": "5795a9c8ede3d8afd2262bbfc074ef3c7f045aa5d9c88b076a96901fcb7cc167"
+    },
+    "LICENSE.md": {
+      "bytes": 351,
+      "original_sha256": "d98c8b62829cdf54a107936a7060baacaf5019d0c9b2e70ab3669ff125305f05",
+      "sha256": "d98c8b62829cdf54a107936a7060baacaf5019d0c9b2e70ab3669ff125305f05"
+    },
+    "README.md": {
+      "bytes": 34270,
+      "original_sha256": "c506fb7e38f5ca713204e68694d0d3a8c6e91e988316c0296d67b76351a77d68",
+      "sha256": "c506fb7e38f5ca713204e68694d0d3a8c6e91e988316c0296d67b76351a77d68"
+    },
+    "apps/desktop/Cargo.toml": {
+      "bytes": 509,
+      "original_sha256": "72ec5cd0c8a3593ed2e881bcba048f05f66e041d4a8a2705409e090c7afec10e",
+      "sha256": "72ec5cd0c8a3593ed2e881bcba048f05f66e041d4a8a2705409e090c7afec10e"
+    },
+    "apps/desktop/src/main.rs": {
+      "bytes": 317084,
+      "original_sha256": "f0df2f7c8ea8647d7d99f5ae8c04f2ec611f2a2dfeeeae059c684baf42e73168",
+      "sha256": "fba6fac558c184d8b1701d33b4e187b9f51227ef68e685d98459064f04d2ad20"
+    },
+    "crates/divination-core/Cargo.toml": {
+      "bytes": 387,
+      "original_sha256": "97bca39b8f8c2b3a359e9214f5ae3f2a0248a2dbbce7e401bbfee1dc88149a9c",
+      "sha256": "97bca39b8f8c2b3a359e9214f5ae3f2a0248a2dbbce7e401bbfee1dc88149a9c"
+    },
+    "crates/divination-core/examples/taiyi_reference_audit.rs": {
+      "bytes": 492,
+      "original_sha256": "02c9f8828df3e066a152b4f7c3c04a4aa8ad6aea9626d29139325009413ed78d",
+      "sha256": "137470d5d36275130a8c16ed857ae4b5ef0e4a205b3d9512ca5160242d7291c9"
+    },
+    "crates/divination-core/examples/taiyi_year_epoch_audit.rs": {
+      "bytes": 770,
+      "original_sha256": "7a4a113bc30ca2f033b297a96e00011bb8d867e113627a36b11bf5e2c3afedd4",
+      "sha256": "9deed15bb0a8b34644f9e66f9c9ad48b2be44e8c966f9b9b88e01b99f5d41f04"
+    },
+    "crates/divination-core/src/astronomy.rs": {
+      "bytes": 25954,
+      "original_sha256": "bacf4f0a924e4e3d4c26939130a2aecfe73600ddcd07432d87914e26cdf0ab35",
+      "sha256": "42916ce95d4976d2a5c7c902c506d56249874f1295513317064620bca7ecae2b"
+    },
+    "crates/divination-core/src/astronomy_spa.rs": {
+      "bytes": 18478,
+      "original_sha256": "657e36b62ee60fe98acbbe38decd0c626eb32987bb2b08b0c1a3718f4ac64ed8",
+      "sha256": "414eca4a5d01a343bf7451dc50be5e1cc7a560da90fc500f29a8737321820ed0"
+    },
+    "crates/divination-core/src/calendar.rs": {
+      "bytes": 25999,
+      "original_sha256": "1c217c5d8239b69a2951c01c7b903110f3f59454aea6004e32aa7e4fb2e2ead8",
+      "sha256": "6e93a852f31d4b0d26ece7ce9e1755868a82b513ff901de32627de6ee4148b5e"
+    },
+    "crates/divination-core/src/casting.rs": {
+      "bytes": 30576,
+      "original_sha256": "af8224e10480bd0094d73d9796e921d685df64c1ec3698505aa03fb69bd05efa",
+      "sha256": "3b0bd2bc0aba376a1fa07adcff5952a78fe9025337246e0b9039bd817360ca33"
+    },
+    "crates/divination-core/src/chinese_astrology.rs": {
+      "bytes": 17753,
+      "original_sha256": "099dbcc35607e787ea2086e923f355d6028736f04e48381a5b6df929c29545af",
+      "sha256": "d8e41400028c906658a77d0b4ad7f54f95f4269a5fd036204e1cc3cf44ea6507"
+    },
+    "crates/divination-core/src/classification.rs": {
+      "bytes": 12334,
+      "original_sha256": "e19beda0bdfb4a3907fb386d7f0c6caf6c3178c61274120d3aa1ebd414a8eff1",
+      "sha256": "09e99b8af460b085f283690365b2c71605d72b3d650c19347bb7ff826bd3561f"
+    },
+    "crates/divination-core/src/domain.rs": {
+      "bytes": 20707,
+      "original_sha256": "b4ae0ab5cfd8064209bd8c97cab3f51635741e8ee845d8fb4037adeb6cf75be1",
+      "sha256": "f23763d1bc74b6cb9afba0afc84b7951075fd743573e6298812c9c84dbcdf236"
+    },
+    "crates/divination-core/src/engines.rs": {
+      "bytes": 18848,
+      "original_sha256": "5a2cfda1133e297efc9d6813e54316661c9044ca6e67a504b7fbb3e655bd9d26",
+      "sha256": "5a2cfda1133e297efc9d6813e54316661c9044ca6e67a504b7fbb3e655bd9d26"
+    },
+    "crates/divination-core/src/fingerprint.rs": {
+      "bytes": 19354,
+      "original_sha256": "2af3e73e1edff2ac5ac5973624be096b3bc6e6d01eceb709943fc0a260cdbf42",
+      "sha256": "428b35dedadb0bbc107426a065ef7ec6186cb88f9428eee1b53fa3884c0392be"
+    },
+    "crates/divination-core/src/four_pillars.rs": {
+      "bytes": 25064,
+      "original_sha256": "8d19bdc5cbdeddda86b4b25c53b731efb16ec572c9967ca863a537d7d9701920",
+      "sha256": "e257daa7e106d17127f688ce47964e4ef5a97e589b8da177cb4b2e1d5bbf65ab"
+    },
+    "crates/divination-core/src/fusion.rs": {
+      "bytes": 42105,
+      "original_sha256": "461d8a820fd27a9bee8f21c147554d81601e8164c6b6cd525f4eb5d6afd15de9",
+      "sha256": "3a4c2546249d33600ddc425c96f6bcba6d0a20323d561263bd35876c21ac3c38"
+    },
+    "crates/divination-core/src/hexagram.rs": {
+      "bytes": 11304,
+      "original_sha256": "c6c5a77eba84846f6b1f3abf45843dc1c1b8e65f8ea9f8be54c4adbd0a90d826",
+      "sha256": "26c99ef6b819182aeab37783b3650e66d80d16ceccd39ddf3b6d2784f0053407"
+    },
+    "crates/divination-core/src/lib.rs": {
+      "bytes": 1210,
+      "original_sha256": "a5c50354d7a8704467a3f310226a9d9204eff7b4093c8b81f053a5be6278760a",
+      "sha256": "a5c50354d7a8704467a3f310226a9d9204eff7b4093c8b81f053a5be6278760a"
+    },
+    "crates/divination-core/src/liuyao.rs": {
+      "bytes": 147343,
+      "original_sha256": "218fcabbceae9423ef0497e2bba791f788434d492566465b918afe2bcd8108c3",
+      "sha256": "917720d9a6eb0e68c17e09ceaaff07943cac58423b7b0cac6d41daf011b04ccc"
+    },
+    "crates/divination-core/src/lunar_phase.rs": {
+      "bytes": 13543,
+      "original_sha256": "1af2f3843b5d3695d48dc770779c274adace49c9ed052f0f3e7ff742c2194e75",
+      "sha256": "27fadb938b53e529262652b3bc66431847cf744cbeb46574772af0245aa91bc1"
+    },
+    "crates/divination-core/src/lunisolar.rs": {
+      "bytes": 26452,
+      "original_sha256": "529789b2565336e55997e37dea437e055dcd07697392e8deab45e46b5ed2bea8",
+      "sha256": "1c01ec91af0331a6e157cec806edceb813ead4aa8c948c2eb142de55b159f22b"
+    },
+    "crates/divination-core/src/meihua.rs": {
+      "bytes": 20366,
+      "original_sha256": "ff358702f22e242a25a4ff4fba8bbf3e7ec233dcd1d86bae2eb06d588f9aecfd",
+      "sha256": "a179df7f581d79a4aa0937e5728a13f93ce825521b72ade56dc7e6e9f611cf6b"
+    },
+    "crates/divination-core/src/nayin.rs": {
+      "bytes": 4520,
+      "original_sha256": "e52e034a7c84f925f34bf399a8fc2a0788f2e5294be12ff8f55d27161105f31b",
+      "sha256": "1b06df2bf4a3da9f542498576a51c8b8eb7a994181818cf62b13f939e3994350"
+    },
+    "crates/divination-core/src/planetary_jpl_approx.rs": {
+      "bytes": 21222,
+      "original_sha256": "ed436ec4febf37622ce8b0e0a877cbe026e44657146b93acb6d32c0fd3f81c6b",
+      "sha256": "7a70a2d6e33d622133b11709af88656b3bfafdd920488ac19bf3c699d4ffcfe3"
+    },
+    "crates/divination-core/src/qimen.rs": {
+      "bytes": 49695,
+      "original_sha256": "7b6fe47a616aabc81c8d817558bea510abc9110eaa0e759b367a2953d9f40194",
+      "sha256": "30ef1048f3869992848d58abe311bd931fab548f6baf93391224d7ee1f7d9757"
+    },
+    "crates/divination-core/src/qizheng_siyu.rs": {
+      "bytes": 6779,
+      "original_sha256": "023ab0caf6f99b39052c09361ca163f7b3857dc036e077b89b29c47ade47e330",
+      "sha256": "8521ef001e96deeda781be832563ec9c97667e20104f7861548824dbfdfa5148"
+    },
+    "crates/divination-core/src/rule_program.rs": {
+      "bytes": 28747,
+      "original_sha256": "22cd38cac34c36af13845ae00da8ea1d315f06f0035ba0e7ebdb9c528e23c648",
+      "sha256": "14c7e3d7d27fb37b3524ecfa3a1b25a3e722c590827235c9c9dacfc5f5f23f38"
+    },
+    "crates/divination-core/src/rule_runtime.rs": {
+      "bytes": 18633,
+      "original_sha256": "81246b3448b4993990bfa1e7ecca9b4eb6d12e3094c9dd2119396ece675adbb0",
+      "sha256": "7daf935eea7a8aa3d55d91534b551d990ec306650a58ebeb8c1a8f4d0639d99f"
+    },
+    "crates/divination-core/src/sexagenary.rs": {
+      "bytes": 24838,
+      "original_sha256": "64429e7d8413e11fc5a94b805ba5b80e35bcd4c801e60e966c69f4b101553246",
+      "sha256": "cedb9b606f8c997ed743e3cae48070761f7fded23bf2a0c983e7c4cc953f7579"
+    },
+    "crates/divination-core/src/taiyi.rs": {
+      "bytes": 118499,
+      "original_sha256": "ba1f346851ab051239a3c6a168b769efddf492ebc6db7b8bb8f24aa36f0a5a18",
+      "sha256": "3e36f99e9eec8f866bc032cb630cf521bed2af2ab1fe5af26d97398862ff9e77"
+    },
+    "crates/divination-core/src/taiyi_epoch.rs": {
+      "bytes": 8624,
+      "original_sha256": "017b159ffafb568fc75060f23435dd36735c4726d122991ef2b414e784f35d9c",
+      "sha256": "a1e792774fb2e9d16c2cc0eabaf4d193b957effb09388db85daf3b4a83808011"
+    },
+    "crates/divination-core/src/validation.rs": {
+      "bytes": 9567,
+      "original_sha256": "09ce6bb3101f51f2bf69bd9a7bc6d8df904805643b343abf899a1da0b9c6c3e8",
+      "sha256": "09ce6bb3101f51f2bf69bd9a7bc6d8df904805643b343abf899a1da0b9c6c3e8"
+    },
+    "crates/divination-core/src/weather_scope.rs": {
+      "bytes": 14190,
+      "original_sha256": "61f7dc3936c45bbf9b3ee51635ea319dc124c348ab5cf0faceb8b4f530c51819",
+      "sha256": "8127fd78151327d8c69e4f4fa7507669c6186e8a0e902ddd98e8e83335aa5499"
+    },
+    "crates/divination-core/src/ziwei.rs": {
+      "bytes": 56509,
+      "original_sha256": "393c2b96a9979e9d0f68925958cd842591613369103f58293cc433194b0d883d",
+      "sha256": "7f451464a97c290519e9daa2481053dd515333cb1d5921d9bc5e1369c95b986f"
+    },
+    "crates/divination-core/tests/kinqimen_inspection.rs": {
+      "bytes": 3232,
+      "original_sha256": "a6b5d38d4828f7b3a2190bf08b5a33868d4217fc4b8e04b17fde97084c22037b",
+      "sha256": "a6b5d38d4828f7b3a2190bf08b5a33868d4217fc4b8e04b17fde97084c22037b"
+    },
+    "crates/divination-core/tests/support/taiyi_reference.rs": {
+      "bytes": 3196,
+      "original_sha256": "60512bca7584def664138d7b194f889e9b960c18e54279721b93c58a6cc3dd68",
+      "sha256": "7b910526456c0245c4a4e4a5f608d63b07d105bfa8a53ee3b23db17aa1c7e2c8"
+    },
+    "crates/divination-core/tests/taiyi_reference.rs": {
+      "bytes": 4339,
+      "original_sha256": "4c78281074871035909b49c0907a9a3f0e8edf135c20762cd45d5ffede152476",
+      "sha256": "4c78281074871035909b49c0907a9a3f0e8edf135c20762cd45d5ffede152476"
+    },
+    "crates/divination-core/tests/taiyi_year_epoch.rs": {
+      "bytes": 2661,
+      "original_sha256": "7d62c725bd8cbae847f0dbcb4945e03732da0dd0b5f16b8d69010de76fbb462f",
+      "sha256": "7d62c725bd8cbae847f0dbcb4945e03732da0dd0b5f16b8d69010de76fbb462f"
+    },
+    "crates/divination-storage/Cargo.toml": {
+      "bytes": 416,
+      "original_sha256": "ea9dd617691383331e3e626161b31297ca80cdb78f06a8a306726e2404018108",
+      "sha256": "ea9dd617691383331e3e626161b31297ca80cdb78f06a8a306726e2404018108"
+    },
+    "crates/divination-storage/migrations/0001_initial.sql": {
+      "bytes": 4790,
+      "original_sha256": "8bff115f1aead35b0ea0cbcb760e48a84a8fe6799a988a429cc48871d280a359",
+      "sha256": "8bff115f1aead35b0ea0cbcb760e48a84a8fe6799a988a429cc48871d280a359"
+    },
+    "crates/divination-storage/migrations/0002_rule_evidence_gate.sql": {
+      "bytes": 11800,
+      "original_sha256": "2b72a7e5e554a643a84cc437c04508edee166e130ecf3eb0622ae73f3089cb66",
+      "sha256": "2b72a7e5e554a643a84cc437c04508edee166e130ecf3eb0622ae73f3089cb66"
+    },
+    "crates/divination-storage/migrations/0003_runtime_rule_gate.sql": {
+      "bytes": 838,
+      "original_sha256": "dd22d41001ea644d4877fa3967383faa08bc84c600290e37489a41aa831a0a97",
+      "sha256": "dd22d41001ea644d4877fa3967383faa08bc84c600290e37489a41aa831a0a97"
+    },
+    "crates/divination-storage/migrations/0004_astronomy_snapshots.sql": {
+      "bytes": 588,
+      "original_sha256": "6a5929728b3ed430d27f9d1cbb303fb221edcdc412b2a7ae9a8015f09a4df8ca",
+      "sha256": "6a5929728b3ed430d27f9d1cbb303fb221edcdc412b2a7ae9a8015f09a4df8ca"
+    },
+    "crates/divination-storage/migrations/0005_location_provenance.sql": {
+      "bytes": 486,
+      "original_sha256": "78a897e0703c998b9f851b9ffd975b732bbccab605ceea9ab29a466c3bfae25c",
+      "sha256": "78a897e0703c998b9f851b9ffd975b732bbccab605ceea9ab29a466c3bfae25c"
+    },
+    "crates/divination-storage/migrations/0006_event_match_audit.sql": {
+      "bytes": 954,
+      "original_sha256": "d27bd34504df6f726a04c9f75e7df6e719d20ad6a79040b3cbbb281a8898ab61",
+      "sha256": "d27bd34504df6f726a04c9f75e7df6e719d20ad6a79040b3cbbb281a8898ab61"
+    },
+    "crates/divination-storage/migrations/0007_fusion_decisions.sql": {
+      "bytes": 609,
+      "original_sha256": "55ff4aeee16e9e62696e0e648abf2406e03c74f8ea6c2dbdd59c7fc3d3cf778c",
+      "sha256": "55ff4aeee16e9e62696e0e648abf2406e03c74f8ea6c2dbdd59c7fc3d3cf778c"
+    },
+    "crates/divination-storage/migrations/0008_action_advice.sql": {
+      "bytes": 4918,
+      "original_sha256": "09b5de61c1779a4d65b12207b7681b5d9315b43ac56102120f055045435fe9b4",
+      "sha256": "09b5de61c1779a4d65b12207b7681b5d9315b43ac56102120f055045435fe9b4"
+    },
+    "crates/divination-storage/migrations/0009_rule_program_v1.sql": {
+      "bytes": 5761,
+      "original_sha256": "bfb64fefc1af1d8f34b42096f624444cd6e3bd00b8f3eda97b9aac76945a0165",
+      "sha256": "bfb64fefc1af1d8f34b42096f624444cd6e3bd00b8f3eda97b9aac76945a0165"
+    },
+    "crates/divination-storage/migrations/0010_rule_runtime_integrity.sql": {
+      "bytes": 3634,
+      "original_sha256": "70b881392a9049b753b0ee8c13e86cc3ae0d4eba98b13fbd49babe378c4d8f24",
+      "sha256": "70b881392a9049b753b0ee8c13e86cc3ae0d4eba98b13fbd49babe378c4d8f24"
+    },
+    "crates/divination-storage/migrations/0011_source_checksum_gate.sql": {
+      "bytes": 6120,
+      "original_sha256": "c3ddd7a627c8dbd1937420b2058b60763e3873586c7ac059407198febc679435",
+      "sha256": "c3ddd7a627c8dbd1937420b2058b60763e3873586c7ac059407198febc679435"
+    },
+    "crates/divination-storage/migrations/0012_facsimile_byte_verification.sql": {
+      "bytes": 8524,
+      "original_sha256": "47387d7eae58ed20d1e7e5ee2cbca7a99e39454eecf1336f68825637a314ba4c",
+      "sha256": "47387d7eae58ed20d1e7e5ee2cbca7a99e39454eecf1336f68825637a314ba4c"
+    },
+    "crates/divination-storage/src/lib.rs": {
+      "bytes": 375956,
+      "original_sha256": "e53dd5a73ccc494a71995b127d9777769575ce597ea407ae7e2f87c50597e581",
+      "sha256": "29db125ae5f9667dfee9945cc2093b548f922655e502323cdb58799b5ad34f2e"
+    },
+    "crates/divination-storage/src/sha256.rs": {
+      "bytes": 7001,
+      "original_sha256": "df8aaf091a249e86d0911865024767d1b767c655e005f791323d46472a20612d",
+      "sha256": "df8aaf091a249e86d0911865024767d1b767c655e005f791323d46472a20612d"
+    },
+    "crates/divination-storage/tests/research_gate.rs": {
+      "bytes": 146712,
+      "original_sha256": "8cc3896298fbaec3752b6f6ffcbfa03feef4df488c7581ee470af307aa52cccb",
+      "sha256": "8cc3896298fbaec3752b6f6ffcbfa03feef4df488c7581ee470af307aa52cccb"
+    },
+    "data/locations.seed.json": {
+      "bytes": 1782084,
+      "original_sha256": "daf969babe5123db49bb5aec4c0c8005c9e812f30fe74ca8857b82e0bcca24b2",
+      "sha256": "daf969babe5123db49bb5aec4c0c8005c9e812f30fe74ca8857b82e0bcca24b2"
+    },
+    "data/progress.checklist.json": {
+      "bytes": 6098,
+      "original_sha256": "0b82ee42169f4695febfe08b9dae7dfefed591f6f6bf554e5c536c34bde05785",
+      "sha256": "0b82ee42169f4695febfe08b9dae7dfefed591f6f6bf554e5c536c34bde05785"
+    },
+    "data/research/chinese-astrology-three-enclosures-seven-luminaries-catalog.json": {
+      "bytes": 6336,
+      "original_sha256": "457ae0caa7530b4860b904b39315c2701fc9830e1c31a7eeb823b7372e962ca9",
+      "sha256": "457ae0caa7530b4860b904b39315c2701fc9830e1c31a7eeb823b7372e962ca9"
+    },
+    "data/research/chinese-astrology-twenty-eight-mansions-catalog.json": {
+      "bytes": 5938,
+      "original_sha256": "d09ec4d71f2be277769a53155547851598dcc90cb2acd387f2a84c8e7c3d2f24",
+      "sha256": "d09ec4d71f2be277769a53155547851598dcc90cb2acd387f2a84c8e7c3d2f24"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol1/canvas-43.jpg": {
+      "bytes": 892272,
+      "original_sha256": "bba100cf519a431aafd0065bf3ebb8f7354d340f940e0360726e37796655d022",
+      "sha256": "bba100cf519a431aafd0065bf3ebb8f7354d340f940e0360726e37796655d022"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol1/canvas-48.jpg": {
+      "bytes": 907782,
+      "original_sha256": "9d39ff2d8fd3462ce7b1f84ee67c968689a593ef3e5fa7fada6aff5582d7f932",
+      "sha256": "9d39ff2d8fd3462ce7b1f84ee67c968689a593ef3e5fa7fada6aff5582d7f932"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol1/canvas-49.jpg": {
+      "bytes": 900438,
+      "original_sha256": "28c51635587870b765046973c328585382bddef2f795cfb6d243f18441fa3d15",
+      "sha256": "28c51635587870b765046973c328585382bddef2f795cfb6d243f18441fa3d15"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol2/canvas-14.jpg": {
+      "bytes": 892743,
+      "original_sha256": "4ed3a1e3eb43c60a226bc53c075e2ff0e5348adb1040f684e20824df7973e46a",
+      "sha256": "4ed3a1e3eb43c60a226bc53c075e2ff0e5348adb1040f684e20824df7973e46a"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol2/canvas-15.jpg": {
+      "bytes": 901928,
+      "original_sha256": "85c1b4fe199bbf2e1fc785e2256a1deaf178244850c01ba463c5992b08565e5a",
+      "sha256": "85c1b4fe199bbf2e1fc785e2256a1deaf178244850c01ba463c5992b08565e5a"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol2/canvas-16.jpg": {
+      "bytes": 888373,
+      "original_sha256": "ffd2e382babb675c7caa1741d9f05c66fc4ff80fe9eb9865854016b7401b6736",
+      "sha256": "ffd2e382babb675c7caa1741d9f05c66fc4ff80fe9eb9865854016b7401b6736"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol2/canvas-17.jpg": {
+      "bytes": 885453,
+      "original_sha256": "7b4413d0f9253b7eb04a35b47f3c81a4dd083915f37a9370a248cb2f2ef6b003",
+      "sha256": "7b4413d0f9253b7eb04a35b47f3c81a4dd083915f37a9370a248cb2f2ef6b003"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-38.jpg": {
+      "bytes": 914697,
+      "original_sha256": "aad9169e97238f4f5c774997a0e4bdf8581b68ebac6c67ef68124c94e994df35",
+      "sha256": "aad9169e97238f4f5c774997a0e4bdf8581b68ebac6c67ef68124c94e994df35"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-39.jpg": {
+      "bytes": 883581,
+      "original_sha256": "a3ade8290670ab29fdb58b67dc0ef28659eb5350c9d64b4fffe23ba2c2a800ac",
+      "sha256": "a3ade8290670ab29fdb58b67dc0ef28659eb5350c9d64b4fffe23ba2c2a800ac"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-40.jpg": {
+      "bytes": 893828,
+      "original_sha256": "ccd692dbca5825e49e1ed2cc98b8bd2b5ecfa52b6c7498cff194783320b8cb65",
+      "sha256": "ccd692dbca5825e49e1ed2cc98b8bd2b5ecfa52b6c7498cff194783320b8cb65"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-41.jpg": {
+      "bytes": 896164,
+      "original_sha256": "85608e8296e0b649e00d51c56ce2c3ff17f974a3f2aa1f577c5aa7b25dcee6c5",
+      "sha256": "85608e8296e0b649e00d51c56ce2c3ff17f974a3f2aa1f577c5aa7b25dcee6c5"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-42.jpg": {
+      "bytes": 891704,
+      "original_sha256": "39263694a6168144de3aa72341653ea059266770f2a3737bda67d636aea82aa2",
+      "sha256": "39263694a6168144de3aa72341653ea059266770f2a3737bda67d636aea82aa2"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-43.jpg": {
+      "bytes": 890829,
+      "original_sha256": "416d7fa26e9c965fd654cd3798f332f805840a4eed0db15237573c6e7b0473b3",
+      "sha256": "416d7fa26e9c965fd654cd3798f332f805840a4eed0db15237573c6e7b0473b3"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-44.jpg": {
+      "bytes": 891135,
+      "original_sha256": "e283a9fbaad6931a885abb914a4c33717d5c43ac20774e885339e13d63c98d13",
+      "sha256": "e283a9fbaad6931a885abb914a4c33717d5c43ac20774e885339e13d63c98d13"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-45.jpg": {
+      "bytes": 888005,
+      "original_sha256": "d7b0534996173e5f56c097d367da800a98782d0d92302197384e3b00cecaf31e",
+      "sha256": "d7b0534996173e5f56c097d367da800a98782d0d92302197384e3b00cecaf31e"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-46.jpg": {
+      "bytes": 883613,
+      "original_sha256": "54d484e3655639bf524c4eb75de987eb8238166f4906f8a0da4b8b589e07d69b",
+      "sha256": "54d484e3655639bf524c4eb75de987eb8238166f4906f8a0da4b8b589e07d69b"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-47.jpg": {
+      "bytes": 891495,
+      "original_sha256": "ab478cd1fabf24c5e14eb6d47c3b456daec5e666fe8aba49d034235f46d55464",
+      "sha256": "ab478cd1fabf24c5e14eb6d47c3b456daec5e666fe8aba49d034235f46d55464"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-48.jpg": {
+      "bytes": 886098,
+      "original_sha256": "c04dc38ed506dc0be3fc91105dc53496cf74a5cacc56b1e1d29032b56b729b79",
+      "sha256": "c04dc38ed506dc0be3fc91105dc53496cf74a5cacc56b1e1d29032b56b729b79"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-49.jpg": {
+      "bytes": 885740,
+      "original_sha256": "71830bd69ae8d262e16c4297787d7eda3147040ef283e210bea9022e5559176d",
+      "sha256": "71830bd69ae8d262e16c4297787d7eda3147040ef283e210bea9022e5559176d"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-50.jpg": {
+      "bytes": 884418,
+      "original_sha256": "94a94e6faf81d0d997bb3f4df01d5aea52e75d491c54c104d075774026bde8d9",
+      "sha256": "94a94e6faf81d0d997bb3f4df01d5aea52e75d491c54c104d075774026bde8d9"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-51.jpg": {
+      "bytes": 897152,
+      "original_sha256": "638d7ee5849d4ed4c0d908248b11e3f5b60358387205493cab54def0e059a7d8",
+      "sha256": "638d7ee5849d4ed4c0d908248b11e3f5b60358387205493cab54def0e059a7d8"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-52.jpg": {
+      "bytes": 899786,
+      "original_sha256": "3dbb7f9dbbdf3a77b9c0eae79d21ee51dc8546df9693face0f284a6e7294f54f",
+      "sha256": "3dbb7f9dbbdf3a77b9c0eae79d21ee51dc8546df9693face0f284a6e7294f54f"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-53.jpg": {
+      "bytes": 901455,
+      "original_sha256": "62db4e1e2771bcdd514b041d696bdf5b99ab145438bd377385c05663babbd9ee",
+      "sha256": "62db4e1e2771bcdd514b041d696bdf5b99ab145438bd377385c05663babbd9ee"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-54.jpg": {
+      "bytes": 900138,
+      "original_sha256": "138338b30fb99cfc3525a77a7ea1c6f001650cd6f90187a8fcb5e1abaf7a256b",
+      "sha256": "138338b30fb99cfc3525a77a7ea1c6f001650cd6f90187a8fcb5e1abaf7a256b"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-55.jpg": {
+      "bytes": 887376,
+      "original_sha256": "6d45f1a30aacb916583bd680e35f4862725acd69933a36b8f0126107aba9129f",
+      "sha256": "6d45f1a30aacb916583bd680e35f4862725acd69933a36b8f0126107aba9129f"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-56.jpg": {
+      "bytes": 890343,
+      "original_sha256": "6147d67dd3d03b4443cc8fafcc3e509bdd388fdab189bf59cbf4a86785ca8aca",
+      "sha256": "6147d67dd3d03b4443cc8fafcc3e509bdd388fdab189bf59cbf4a86785ca8aca"
+    },
+    "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-57.jpg": {
+      "bytes": 809450,
+      "original_sha256": "d3b0783f01024a1440dc6d6de77e0e40e81898816d3ba041592574e4ae59f5da",
+      "sha256": "d3b0783f01024a1440dc6d6de77e0e40e81898816d3ba041592574e4ae59f5da"
+    },
+    "data/research/facsimiles/zengshan-buyi-nlc-1925/full.pdf": {
+      "bytes": 11089308,
+      "original_sha256": "caac111bc5c5b1c08fd27b3828e7cf6b5430503800f2427d8f2b28809022abaa",
+      "sha256": "caac111bc5c5b1c08fd27b3828e7cf6b5430503800f2427d8f2b28809022abaa"
+    },
+    "data/research/four-pillars-visible-stem-ten-gods-candidates.json": {
+      "bytes": 5335,
+      "original_sha256": "0eee488231d9ffe8373d1c1b384025d85e2a8444da8a49eb42352eb4663bb961",
+      "sha256": "0eee488231d9ffe8373d1c1b384025d85e2a8444da8a49eb42352eb4663bb961"
+    },
+    "data/research/kinqimen-source-inspection.json": {
+      "bytes": 3895,
+      "original_sha256": "12bc1ad307dc3aedc945a30ae677f866bf72af0c22e45c0d18c0a0141a1cc410",
+      "sha256": "12bc1ad307dc3aedc945a30ae677f866bf72af0c22e45c0d18c0a0141a1cc410"
+    },
+    "data/research/kintaiyi-counts-static-reference.json": {
+      "bytes": 3959,
+      "original_sha256": "9443c10390a70243627d1dea3b658bc59420bfebe866a328d1223aa3d1daf48f",
+      "sha256": "9443c10390a70243627d1dea3b658bc59420bfebe866a328d1223aa3d1daf48f"
+    },
+    "data/research/liuyao-calendar-moving-candidates.json": {
+      "bytes": 4117,
+      "original_sha256": "6da0e6732d15b4b824afa9bbecd0ab6749a66634626b9dc87cd1fdd320c06632",
+      "sha256": "6da0e6732d15b4b824afa9bbecd0ab6749a66634626b9dc87cd1fdd320c06632"
+    },
+    "data/research/liuyao-eight-palace-host-response-candidates.json": {
+      "bytes": 4643,
+      "original_sha256": "70ed9b1df8676a9f88665b078d9238ccd181382a34255d0c71fdafd6e777b37f",
+      "sha256": "70ed9b1df8676a9f88665b078d9238ccd181382a34255d0c71fdafd6e777b37f"
+    },
+    "data/research/liuyao-fanyin-fuyin-candidates.json": {
+      "bytes": 5908,
+      "original_sha256": "e8480af37d2ed6539bcbf42091568f980e2830ab49ffd575eb78e0e13d60e07e",
+      "sha256": "e8480af37d2ed6539bcbf42091568f980e2830ab49ffd575eb78e0e13d60e07e"
+    },
+    "data/research/liuyao-hidden-spirits-candidates.json": {
+      "bytes": 4460,
+      "original_sha256": "ec076d7135fc64d7304d70af05ffd767472e9b48a027a8f590be632fed40f97a",
+      "sha256": "ec076d7135fc64d7304d70af05ffd767472e9b48a027a8f590be632fed40f97a"
+    },
+    "data/research/liuyao-najia-stem-branch-candidates.json": {
+      "bytes": 4898,
+      "original_sha256": "a51f59929266b5efbadfabc21a509b0cbe946810eb89b286edc01de7fa8edffb",
+      "sha256": "a51f59929266b5efbadfabc21a509b0cbe946810eb89b286edc01de7fa8edffb"
+    },
+    "data/research/liuyao-progress-retreat-candidates.json": {
+      "bytes": 5866,
+      "original_sha256": "d45d54041290bc3c39dbecf57aa5c055034957ec5ed29d9bff9b8cb1fbe9d589",
+      "sha256": "d45d54041290bc3c39dbecf57aa5c055034957ec5ed29d9bff9b8cb1fbe9d589"
+    },
+    "data/research/liuyao-sanhe-candidates.json": {
+      "bytes": 5116,
+      "original_sha256": "f89f6c856382c0684a4ddda060f981457c036af8e56a20244032c9195f28a3d4",
+      "sha256": "f89f6c856382c0684a4ddda060f981457c036af8e56a20244032c9195f28a3d4"
+    },
+    "data/research/liuyao-six-combination-opposition-pair-candidates.json": {
+      "bytes": 4809,
+      "original_sha256": "28f52c0204839c8ed8270961c8ee2f0b69551375823ff45c0684661c13eebb4b",
+      "sha256": "28f52c0204839c8ed8270961c8ee2f0b69551375823ff45c0684661c13eebb4b"
+    },
+    "data/research/liuyao-six-relatives-candidates.json": {
+      "bytes": 4636,
+      "original_sha256": "4510a9ff602af04be1a28d3c005fdcb333b203bf429e47a0646680aefc8e6262",
+      "sha256": "4510a9ff602af04be1a28d3c005fdcb333b203bf429e47a0646680aefc8e6262"
+    },
+    "data/research/liuyao-six-spirits-candidates.json": {
+      "bytes": 4128,
+      "original_sha256": "c490b9bffa465b2eac6585855f5f506cc3de5bffddc4085e536d5a2ba6bea11f",
+      "sha256": "c490b9bffa465b2eac6585855f5f506cc3de5bffddc4085e536d5a2ba6bea11f"
+    },
+    "data/research/liuyao-weather-exclusions-2026-10-02.json": {
+      "bytes": 2393,
+      "original_sha256": "ba753739d667dc7cdc7dbdaa30e1545e153ec1d2789a9a5b3f406f9668afb3e0",
+      "sha256": "ba753739d667dc7cdc7dbdaa30e1545e153ec1d2789a9a5b3f406f9668afb3e0"
+    },
+    "data/research/liuyao-weather-first-rule-candidate-2026-10-02.json": {
+      "bytes": 6815,
+      "original_sha256": "ce56571b84a651bcb8952d379d21f26afa1b3e835a6c9eb20f611a6d3c2c21b9",
+      "sha256": "ce56571b84a651bcb8952d379d21f26afa1b3e835a6c9eb20f611a6d3c2c21b9"
+    },
+    "data/research/liuyao-weather-first-workflow.json": {
+      "bytes": 7559,
+      "original_sha256": "582896649be9e0227a4651d3cbeebb6c8724f2b9492749072e87b414ad0431c0",
+      "sha256": "582896649be9e0227a4651d3cbeebb6c8724f2b9492749072e87b414ad0431c0"
+    },
+    "data/research/liuyao-weather-foundation-naj-facsimile-2026-10-02.json": {
+      "bytes": 3929,
+      "original_sha256": "fbce732e6715cc1c8e5f39aa39c76c03d8aea61832d82a90ff64db2cdbb864c4",
+      "sha256": "fbce732e6715cc1c8e5f39aa39c76c03d8aea61832d82a90ff64db2cdbb864c4"
+    },
+    "data/research/liuyao-weather-naj-facsimile.json": {
+      "bytes": 6540,
+      "original_sha256": "63a50f2a6b83fea0267f6d39375b24d606e7b22f278fa2852851cc28b7f835ea",
+      "sha256": "63a50f2a6b83fea0267f6d39375b24d606e7b22f278fa2852851cc28b7f835ea"
+    },
+    "data/research/liuyao-weather-nlc-1925-comparison-2026-10-02.json": {
+      "bytes": 2968,
+      "original_sha256": "640989dbaef99f099a15be7ce0aa42a6bcc85f7608743ca56a548318b9f942bc",
+      "sha256": "640989dbaef99f099a15be7ce0aa42a6bcc85f7608743ca56a548318b9f942bc"
+    },
+    "data/research/liuyao-weather-same-chapter-conflicts-2026-10-08.json": {
+      "bytes": 5134,
+      "original_sha256": "411799b197b7e2315118723511fed5d06d30421807ccc4be18543b815c716cbc",
+      "sha256": "411799b197b7e2315118723511fed5d06d30421807ccc4be18543b815c716cbc"
+    },
+    "data/research/liuyao-xun-void-calendar-relations-candidates.json": {
+      "bytes": 5967,
+      "original_sha256": "1aefa06d8d7ab7c3ed4d6c9e1f7303cfc1aecb36b9876569d981a08a3e937f65",
+      "sha256": "1aefa06d8d7ab7c3ed4d6c9e1f7303cfc1aecb36b9876569d981a08a3e937f65"
+    },
+    "data/research/meihua-mutual-raw-candidates.json": {
+      "bytes": 2936,
+      "original_sha256": "ece28053555d7c67600b68ad3b493e4bc890693686ec91318ed925e00970bfb8",
+      "sha256": "ece28053555d7c67600b68ad3b493e4bc890693686ec91318ed925e00970bfb8"
+    },
+    "data/research/meihua-time-casting-candidates.json": {
+      "bytes": 3066,
+      "original_sha256": "3127c0978d36e121180d618749029e379a5286ad2a5e52707adda867aa3b6729",
+      "sha256": "3127c0978d36e121180d618749029e379a5286ad2a5e52707adda867aa3b6729"
+    },
+    "data/research/open-source-reference-implementations.json": {
+      "bytes": 18631,
+      "original_sha256": "c560dc085bd858c199499fe0b641b11e22bdadffecc08ae42cf39f0dcbf2335d",
+      "sha256": "c560dc085bd858c199499fe0b641b11e22bdadffecc08ae42cf39f0dcbf2335d"
+    },
+    "data/research/qimen-duty-identity-candidates.json": {
+      "bytes": 6271,
+      "original_sha256": "6c88e6d4e722ddac7fce40b57ddc281471fc44d064f951ad87c8453f4452d06e",
+      "sha256": "6c88e6d4e722ddac7fce40b57ddc281471fc44d064f951ad87c8453f4452d06e"
+    },
+    "data/research/qimen-earth-plate-candidates.json": {
+      "bytes": 6176,
+      "original_sha256": "398ba302c814d66a3371cfadba37b27d4c4018d8b4be2879cab8dd22dee9fb87",
+      "sha256": "398ba302c814d66a3371cfadba37b27d4c4018d8b4be2879cab8dd22dee9fb87"
+    },
+    "data/research/qimen-hour-xun-head-candidates.json": {
+      "bytes": 5265,
+      "original_sha256": "c46c78210bfe34fbcdbdab60fef798de80a6388d842d1cb3cab635831e2b7ea1",
+      "sha256": "c46c78210bfe34fbcdbdab60fef798de80a6388d842d1cb3cab635831e2b7ea1"
+    },
+    "data/research/qimen-hourly-duty-movement-candidates.json": {
+      "bytes": 4804,
+      "original_sha256": "298341b15fd06fcb506a3317da97df1a67b206e257cf01142070095986d21216",
+      "sha256": "298341b15fd06fcb506a3317da97df1a67b206e257cf01142070095986d21216"
+    },
+    "data/research/qimen-solar-term-three-yuan-ju-candidates.json": {
+      "bytes": 6226,
+      "original_sha256": "0d723c68e9c5b9c5e1f2de22d8116979d438ada6d86d1e014d93c19339b9b170",
+      "sha256": "0d723c68e9c5b9c5e1f2de22d8116979d438ada6d86d1e014d93c19339b9b170"
+    },
+    "data/research/qizheng-five-planets-jpl-approx.json": {
+      "bytes": 2193,
+      "original_sha256": "0c91a48e29a214b0c3f57d1248824e87f7f85d00751ecc922a886c5aba33acc5",
+      "sha256": "0c91a48e29a214b0c3f57d1248824e87f7f85d00751ecc922a886c5aba33acc5"
+    },
+    "data/research/qizheng-five-planets-jpl-fit-overlap.json": {
+      "bytes": 1802,
+      "original_sha256": "654b2b86861808c883eeb042b2103501ee9257447fd28cc51d8584938f80257e",
+      "sha256": "654b2b86861808c883eeb042b2103501ee9257447fd28cc51d8584938f80257e"
+    },
+    "data/research/qizheng-siyu-identity-candidates.json": {
+      "bytes": 4368,
+      "original_sha256": "f217abbcc66303151cabf6a0b6c5ae5d664b6d5ab6a7ad07311e4c797e01875a",
+      "sha256": "f217abbcc66303151cabf6a0b6c5ae5d664b6d5ab6a7ad07311e4c797e01875a"
+    },
+    "data/research/reference-crosscheck-fixtures.json": {
+      "bytes": 5730,
+      "original_sha256": "3ff2fd229c43da6ed12bf1978786a1919c1200e535481c3d25d7fe2fa7123b02",
+      "sha256": "3ff2fd229c43da6ed12bf1978786a1919c1200e535481c3d25d7fe2fa7123b02"
+    },
+    "data/research/reference-source-manifest.json": {
+      "bytes": 9047,
+      "original_sha256": "3e7951946aba8c81c22613fffa0e01e11a353d18e25593bb8fd7e8c83c46628a",
+      "sha256": "3e7951946aba8c81c22613fffa0e01e11a353d18e25593bb8fd7e8c83c46628a"
+    },
+    "data/research/taiyi-annual-frame-candidates.json": {
+      "bytes": 8845,
+      "original_sha256": "7752c16e4abf9934038922a2315e6b3fb4282da1a624a4d1fc3a3daba452865d",
+      "sha256": "7752c16e4abf9934038922a2315e6b3fb4282da1a624a4d1fc3a3daba452865d"
+    },
+    "data/research/taiyi-annual-gate-boards-candidates.json": {
+      "bytes": 8153,
+      "original_sha256": "87ebf9d1e409bf2d042a202ae924650ae60a2762263bb0b643789a90521122a7",
+      "sha256": "87ebf9d1e409bf2d042a202ae924650ae60a2762263bb0b643789a90521122a7"
+    },
+    "data/research/taiyi-barrier-raw-observations-candidates.json": {
+      "bytes": 7193,
+      "original_sha256": "25a374af1c0eff6a5db3f1ad3b902ad5ec7dd4fd7b47b137789067473be83e8b",
+      "sha256": "25a374af1c0eff6a5db3f1ad3b902ad5ec7dd4fd7b47b137789067473be83e8b"
+    },
+    "data/research/taiyi-eight-gate-duty-candidates.json": {
+      "bytes": 7849,
+      "original_sha256": "dd5ef4431e8f4529b3f19531595216177dc76ec23a5644f7f72925877fd9f010",
+      "sha256": "dd5ef4431e8f4529b3f19531595216177dc76ec23a5644f7f72925877fd9f010"
+    },
+    "data/research/taiyi-eyes-counts-candidates.json": {
+      "bytes": 8996,
+      "original_sha256": "148bfd71e11e9b598fdaf3bd6bdb7b978cd2ea1749f564b5a10baff94cb8dbb8",
+      "sha256": "148bfd71e11e9b598fdaf3bd6bdb7b978cd2ea1749f564b5a10baff94cb8dbb8"
+    },
+    "data/research/taiyi-generals-candidates.json": {
+      "bytes": 7106,
+      "original_sha256": "6640fb58f8f8e17d29931c04f97b4f6a57d0054b7c7d49b70a887aa041ad3c44",
+      "sha256": "6640fb58f8f8e17d29931c04f97b4f6a57d0054b7c7d49b70a887aa041ad3c44"
+    },
+    "data/research/taiyi-mechanical-relations-candidates.json": {
+      "bytes": 8010,
+      "original_sha256": "7a8227ce77fd06144b9a3a14d171a1fa57a79485c3fe5c091667745d845a615f",
+      "sha256": "7a8227ce77fd06144b9a3a14d171a1fa57a79485c3fe5c091667745d845a615f"
+    },
+    "data/research/taiyi-near-ring-opposition-candidates.json": {
+      "bytes": 7829,
+      "original_sha256": "f94ae67367b7a4b56e82557950f9619c1565d185c1331320d0b3091518d97524",
+      "sha256": "f94ae67367b7a4b56e82557950f9619c1565d185c1331320d0b3091518d97524"
+    },
+    "data/research/taiyi-seventy-two-board-candidates.json": {
+      "bytes": 10900,
+      "original_sha256": "e34c8374b2bdd75b7d2d2abef2cdd1a541723887cfd5c9dc05277104c7b34e7b",
+      "sha256": "e34c8374b2bdd75b7d2d2abef2cdd1a541723887cfd5c9dc05277104c7b34e7b"
+    },
+    "data/research/taiyi-strike-pressure-candidates.json": {
+      "bytes": 9036,
+      "original_sha256": "21fc18b1b678343aa993d1480ce236e8036d16a6d72301a359f1d610bc9ec841",
+      "sha256": "21fc18b1b678343aa993d1480ce236e8036d16a6d72301a359f1d610bc9ec841"
+    },
+    "data/research/taiyi-traditional-year-epoch-candidates.json": {
+      "bytes": 4824,
+      "original_sha256": "c57751db67c9360c54dce595da86b29fa987cc7a1d353100f3c078486687c8aa",
+      "sha256": "c57751db67c9360c54dce595da86b29fa987cc7a1d353100f3c078486687c8aa"
+    },
+    "data/research/taiyi-year-position-candidates.json": {
+      "bytes": 7836,
+      "original_sha256": "162d38e4194b0cd6cf1db929500a537be18d39e5dda08195856e842e2604cc2e",
+      "sha256": "162d38e4194b0cd6cf1db929500a537be18d39e5dda08195856e842e2604cc2e"
+    },
+    "data/research/yarrow-casting-candidates.json": {
+      "bytes": 11960,
+      "original_sha256": "82e15cca3556140ad4852d0243938fa6741cf90839f3c9c1158c944ee009a749",
+      "sha256": "82e15cca3556140ad4852d0243938fa6741cf90839f3c9c1158c944ee009a749"
+    },
+    "data/research/zhouyi-hexagram-structure-catalog.json": {
+      "bytes": 3232,
+      "original_sha256": "4f6f649a1aad2073753178b93cc5ae8cbdbc5108398e34ce5b42d3db9e9f9f80",
+      "sha256": "4f6f649a1aad2073753178b93cc5ae8cbdbc5108398e34ce5b42d3db9e9f9f80"
+    },
+    "data/research/ziwei-four-auxiliary-stars-candidates.json": {
+      "bytes": 1740,
+      "original_sha256": "db8c315bfe6bf1916541f5192eff85a3eecf87afd00f9d74ef7c45e8237a9ba5",
+      "sha256": "db8c315bfe6bf1916541f5192eff85a3eecf87afd00f9d74ef7c45e8237a9ba5"
+    },
+    "data/research/ziwei-fourteen-main-stars-candidates.json": {
+      "bytes": 2844,
+      "original_sha256": "db87c9d6fd05b9cd2a3701011188533e5c1919db5aae551a9238cb53124a8f6e",
+      "sha256": "db87c9d6fd05b9cd2a3701011188533e5c1919db5aae551a9238cb53124a8f6e"
+    },
+    "data/research/ziwei-life-body-palace-candidates.json": {
+      "bytes": 5427,
+      "original_sha256": "b58b35e6aa87faf811a80a2f8baaca0fa2ed9df0609096e12f679df819606241",
+      "sha256": "b58b35e6aa87faf811a80a2f8baaca0fa2ed9df0609096e12f679df819606241"
+    },
+    "data/research/ziwei-palace-stems-bureau-candidates.json": {
+      "bytes": 6525,
+      "original_sha256": "aebb39ee1c0773459aa5853d851bedf560966ec9fe529df32c574739a7ae9d48",
+      "sha256": "aebb39ee1c0773459aa5853d851bedf560966ec9fe529df32c574739a7ae9d48"
+    },
+    "data/research/ziwei-star-anchor-candidates.json": {
+      "bytes": 2339,
+      "original_sha256": "4871bc90e2d3ce955701c0f8266efe01a939e7dfb317ec08f6a26c9c11df1fd0",
+      "sha256": "4871bc90e2d3ce955701c0f8266efe01a939e7dfb317ec08f6a26c9c11df1fd0"
+    },
+    "data/rules.seed.json": {
+      "bytes": 234,
+      "original_sha256": "a3aae53b370cd77ab4ee8557ef105c597a59240ab849afbca2bed2a746c52c77",
+      "sha256": "a3aae53b370cd77ab4ee8557ef105c597a59240ab849afbca2bed2a746c52c77"
+    },
+    "data/streets.seed.json": {
+      "bytes": 6942362,
+      "original_sha256": "a0d2c33e471a71f295c6342081e4cee9e20541782cca45353bce8ff505f4e6a3",
+      "sha256": "a0d2c33e471a71f295c6342081e4cee9e20541782cca45353bce8ff505f4e6a3"
+    },
+    "docs/ACTION_ADVICE_AUDIT.md": {
+      "bytes": 3565,
+      "original_sha256": "9d33e11074a0af36d8aec9fe02faebfac99485ef07c3c1e42bd3584dbdcec78c",
+      "sha256": "9d33e11074a0af36d8aec9fe02faebfac99485ef07c3c1e42bd3584dbdcec78c"
+    },
+    "docs/BIRTH_PARAMETERS_AUDIT.md": {
+      "bytes": 5022,
+      "original_sha256": "7d9ccba7220d478910251a70f357392073f61ef6a4e20533b5d5a35ad99133ba",
+      "sha256": "7d9ccba7220d478910251a70f357392073f61ef6a4e20533b5d5a35ad99133ba"
+    },
+    "docs/CHINESE_ASTROLOGY_MANSION_CATALOG_AUDIT.md": {
+      "bytes": 4881,
+      "original_sha256": "f9f4989e297eee3dd206dc943a5ad08affb24ed15faa24ab55ab3e7565531983",
+      "sha256": "f9f4989e297eee3dd206dc943a5ad08affb24ed15faa24ab55ab3e7565531983"
+    },
+    "docs/CIVIL_CALENDAR_AUDIT.md": {
+      "bytes": 1767,
+      "original_sha256": "a6daee65b13b8aefb8427b6337e146d8eb22b6297116065a071c24b67360fa30",
+      "sha256": "a6daee65b13b8aefb8427b6337e146d8eb22b6297116065a071c24b67360fa30"
+    },
+    "docs/CONTINUATION_2026_09_27_CLASSIFIER_QIMEN.md": {
+      "bytes": 5238,
+      "original_sha256": "9e8ede54ec3107ff368be3812817ffbe2b08c874bbb15cb2a3dff1d126128a1d",
+      "sha256": "9e8ede54ec3107ff368be3812817ffbe2b08c874bbb15cb2a3dff1d126128a1d"
+    },
+    "docs/CURRENT_PROGRESS.md": {
+      "bytes": 22384,
+      "original_sha256": "33b12bf1001c448906bf7e5963fef1d016e081c79b3b5cc7918f38f1e5b38f25",
+      "sha256": "33b12bf1001c448906bf7e5963fef1d016e081c79b3b5cc7918f38f1e5b38f25"
+    },
+    "docs/DELIVERY_STATUS_2026_09_27.md": {
+      "bytes": 10172,
+      "original_sha256": "837600aeb83224c9f0a98923575d859ec76056a18b70d2d112b3c48dd9085640",
+      "sha256": "837600aeb83224c9f0a98923575d859ec76056a18b70d2d112b3c48dd9085640"
+    },
+    "docs/EVENT_FINGERPRINT_AUDIT.md": {
+      "bytes": 4262,
+      "original_sha256": "a1ba9cfee2c8a2d91e8569f48f881908671688e2bffd5050a6d35dd40291f0f8",
+      "sha256": "a1ba9cfee2c8a2d91e8569f48f881908671688e2bffd5050a6d35dd40291f0f8"
+    },
+    "docs/FIRST_WEATHER_WORKFLOW_2026_09_27.md": {
+      "bytes": 6793,
+      "original_sha256": "3f2155b4f811060915906b6ac69d2156cbbae7e1cbfcc47f7615f10ce37c6b4a",
+      "sha256": "3f2155b4f811060915906b6ac69d2156cbbae7e1cbfcc47f7615f10ce37c6b4a"
+    },
+    "docs/FOUR_PILLARS_CHART_AUDIT.md": {
+      "bytes": 5051,
+      "original_sha256": "9fc2001ce79f5b11515687a7b5a8192d6036ae207dc0e56a000a876bd5fffe58",
+      "sha256": "9fc2001ce79f5b11515687a7b5a8192d6036ae207dc0e56a000a876bd5fffe58"
+    },
+    "docs/FOUR_PILLARS_VISIBLE_STEM_TEN_GODS_AUDIT.md": {
+      "bytes": 3047,
+      "original_sha256": "fe88b09a3fdcbe56a852511b7f7e065bc1d8d6655d1cc162eaad6d70d206ddf5",
+      "sha256": "fe88b09a3fdcbe56a852511b7f7e065bc1d8d6655d1cc162eaad6d70d206ddf5"
+    },
+    "docs/FUSION_AUDIT.md": {
+      "bytes": 4017,
+      "original_sha256": "86a3293d55024e5d2fad12df6d359c8a576f14f61de53d6e478c196edb08dddf",
+      "sha256": "86a3293d55024e5d2fad12df6d359c8a576f14f61de53d6e478c196edb08dddf"
+    },
+    "docs/HEXAGRAM_STRUCTURE_CATALOG_AUDIT.md": {
+      "bytes": 3373,
+      "original_sha256": "559bacb73de183e320bcb4c60bd81afdf4dba3af62b51bb5a673f7305074e78f",
+      "sha256": "559bacb73de183e320bcb4c60bd81afdf4dba3af62b51bb5a673f7305074e78f"
+    },
+    "docs/IMPLEMENTATION_STATUS.md": {
+      "bytes": 142065,
+      "original_sha256": "5f3c3c43f79d4b2e50f5fcf9457563985f6dfdc26555c1373d64353b132c4bd8",
+      "sha256": "5f3c3c43f79d4b2e50f5fcf9457563985f6dfdc26555c1373d64353b132c4bd8"
+    },
+    "docs/LIUYAO_BRANCH_PAIR_RELATIONS_AUDIT.md": {
+      "bytes": 3464,
+      "original_sha256": "e9a2d95b3dec77af86c22373fa1fac3ec98c59f70e0585f223ace1976bb57e54",
+      "sha256": "e9a2d95b3dec77af86c22373fa1fac3ec98c59f70e0585f223ace1976bb57e54"
+    },
+    "docs/LIUYAO_CALENDAR_MOVING_AUDIT.md": {
+      "bytes": 2955,
+      "original_sha256": "c38de4045f1170dca1ada4146c6c15b2234687f39bb2c894cae3fbdb7971b79c",
+      "sha256": "c38de4045f1170dca1ada4146c6c15b2234687f39bb2c894cae3fbdb7971b79c"
+    },
+    "docs/LIUYAO_EIGHT_PALACE_AUDIT.md": {
+      "bytes": 2725,
+      "original_sha256": "88a3286621c7fc12a41711ce3dd45eb2dbe36393ad647c6f870389f7e2c7da6b",
+      "sha256": "88a3286621c7fc12a41711ce3dd45eb2dbe36393ad647c6f870389f7e2c7da6b"
+    },
+    "docs/LIUYAO_FANYIN_FUYIN_AUDIT.md": {
+      "bytes": 4076,
+      "original_sha256": "79fcae0b487232231903f2c6913d50b1365b7f79c9e38c24c13dc8a6bd0e9dc1",
+      "sha256": "79fcae0b487232231903f2c6913d50b1365b7f79c9e38c24c13dc8a6bd0e9dc1"
+    },
+    "docs/LIUYAO_HIDDEN_SPIRITS_AUDIT.md": {
+      "bytes": 2328,
+      "original_sha256": "94276a74d3957bf729393c41fb90fc7f88e67e152e2a64dd751909fccec1b130",
+      "sha256": "94276a74d3957bf729393c41fb90fc7f88e67e152e2a64dd751909fccec1b130"
+    },
+    "docs/LIUYAO_NAJIA_AUDIT.md": {
+      "bytes": 2905,
+      "original_sha256": "998c78fadb8add392b04d7ae2a76347c65e7680874013f9cf0b5ef80d5aecac2",
+      "sha256": "998c78fadb8add392b04d7ae2a76347c65e7680874013f9cf0b5ef80d5aecac2"
+    },
+    "docs/LIUYAO_PROGRESS_RETREAT_AUDIT.md": {
+      "bytes": 3582,
+      "original_sha256": "9059a8b80691616cfda093eb9d3087dc0665424c622c233cf005749e673d110c",
+      "sha256": "9059a8b80691616cfda093eb9d3087dc0665424c622c233cf005749e673d110c"
+    },
+    "docs/LIUYAO_SANHE_AUDIT.md": {
+      "bytes": 3795,
+      "original_sha256": "0953f7f7b0ca30cb9e7a14fe3f0d320b27ac6953d4a37579ee603eb736b4c95e",
+      "sha256": "0953f7f7b0ca30cb9e7a14fe3f0d320b27ac6953d4a37579ee603eb736b4c95e"
+    },
+    "docs/LIUYAO_SIX_RELATIVES_AUDIT.md": {
+      "bytes": 2799,
+      "original_sha256": "33bcdb865f05a0f8b35214f0118f3c95f8d4300cdea1e08e0a3ac50b50f17113",
+      "sha256": "33bcdb865f05a0f8b35214f0118f3c95f8d4300cdea1e08e0a3ac50b50f17113"
+    },
+    "docs/LIUYAO_SIX_SPIRITS_AUDIT.md": {
+      "bytes": 2510,
+      "original_sha256": "75230986a11ea43d95317417896d54280aef1e3c4b60be106080ec3a1522828d",
+      "sha256": "75230986a11ea43d95317417896d54280aef1e3c4b60be106080ec3a1522828d"
+    },
+    "docs/LIUYAO_WEATHER_EXCLUSIONS_2026_10_02.md": {
+      "bytes": 1340,
+      "original_sha256": "527ad006d5f08626ea53a33db9a652178d801e55b04a78b3453c111fe67feb9b",
+      "sha256": "527ad006d5f08626ea53a33db9a652178d801e55b04a78b3453c111fe67feb9b"
+    },
+    "docs/LIUYAO_WEATHER_FACSIMILE_2026_09_29.md": {
+      "bytes": 3845,
+      "original_sha256": "4db83f82d9f9705eba3e59fecbcb0d9a1020c28972fc0bb03214c24399d25bfa",
+      "sha256": "4db83f82d9f9705eba3e59fecbcb0d9a1020c28972fc0bb03214c24399d25bfa"
+    },
+    "docs/LIUYAO_WEATHER_FIRST_RULE_CANDIDATE_2026_10_02.md": {
+      "bytes": 8139,
+      "original_sha256": "b319ae681c7d98c716c00dd1690f648728ecc3003ea3fa5493c90d32a21248be",
+      "sha256": "b319ae681c7d98c716c00dd1690f648728ecc3003ea3fa5493c90d32a21248be"
+    },
+    "docs/LIUYAO_XUN_VOID_CALENDAR_RELATIONS_AUDIT.md": {
+      "bytes": 3878,
+      "original_sha256": "302fa294518ebfba80dc49f3bad333e1f0421d5f4531bf6201788ea07d1d32e9",
+      "sha256": "302fa294518ebfba80dc49f3bad333e1f0421d5f4531bf6201788ea07d1d32e9"
+    },
+    "docs/LOCATION_STREET_CATALOG_AUDIT.md": {
+      "bytes": 2650,
+      "original_sha256": "a77c74fdf518f94ac45d1c53b1ba56f4fb74827cd7ca8d895d59194c26d06e99",
+      "sha256": "a77c74fdf518f94ac45d1c53b1ba56f4fb74827cd7ca8d895d59194c26d06e99"
+    },
+    "docs/LUNAR_PHASE_AUDIT.md": {
+      "bytes": 3900,
+      "original_sha256": "9bd6e164d017acad39bf09e2b230602f762cd0bffdc62b74e5852b20035fe00d",
+      "sha256": "9bd6e164d017acad39bf09e2b230602f762cd0bffdc62b74e5852b20035fe00d"
+    },
+    "docs/LUNISOLAR_DATE_AUDIT.md": {
+      "bytes": 4122,
+      "original_sha256": "0ce4c83ff666a2c207b1cecfcc72c75397652ab5c8804706bb9bfdf25403182f",
+      "sha256": "0ce4c83ff666a2c207b1cecfcc72c75397652ab5c8804706bb9bfdf25403182f"
+    },
+    "docs/LUNISOLAR_MONTH_STRUCTURE_AUDIT.md": {
+      "bytes": 4511,
+      "original_sha256": "a10267a66a6d993a474ebc050fdbdb4eed60f99d1bf9ccc5d9634d46944b8551",
+      "sha256": "a10267a66a6d993a474ebc050fdbdb4eed60f99d1bf9ccc5d9634d46944b8551"
+    },
+    "docs/MEIHUA_MUTUAL_RAW_AUDIT.md": {
+      "bytes": 2234,
+      "original_sha256": "8acc87a66946338bbb2edab16d4ed22cbeb95cb5f178cb655d913c350817736b",
+      "sha256": "8acc87a66946338bbb2edab16d4ed22cbeb95cb5f178cb655d913c350817736b"
+    },
+    "docs/MEIHUA_TIME_CAST_AUDIT.md": {
+      "bytes": 3774,
+      "original_sha256": "2a154008fda12e5fbeaab9456ae017db88163c1c1b098bbfe3ed7eb9cd416981",
+      "sha256": "2a154008fda12e5fbeaab9456ae017db88163c1c1b098bbfe3ed7eb9cd416981"
+    },
+    "docs/OPEN_SOURCE_REFERENCE_AUDIT.md": {
+      "bytes": 8582,
+      "original_sha256": "dd9c4fdf49d73056f2e11946ae089721f597dcad558d4f77083663ece5c313ad",
+      "sha256": "dd9c4fdf49d73056f2e11946ae089721f597dcad558d4f77083663ece5c313ad"
+    },
+    "docs/OTHER_CLASSIFICATION_SAFETY_AUDIT.md": {
+      "bytes": 3133,
+      "original_sha256": "bd9c1ee81acdc735c3d6c40cf5e80b1aaa92e8717ea21680babaa2ea0746890f",
+      "sha256": "bd9c1ee81acdc735c3d6c40cf5e80b1aaa92e8717ea21680babaa2ea0746890f"
+    },
+    "docs/PILLAR_CANDIDATES_AUDIT.md": {
+      "bytes": 3054,
+      "original_sha256": "958d2fa595ea6cd7097f82ddfb3afc47eb8f22d49974135b75d5d72b9b288d27",
+      "sha256": "958d2fa595ea6cd7097f82ddfb3afc47eb8f22d49974135b75d5d72b9b288d27"
+    },
+    "docs/PROJECT_ACCEPTANCE_CHECKLIST.md": {
+      "bytes": 2534,
+      "original_sha256": "c1e33aeebddf36f2b69c686142f90b12a74b6f4a8349a4f8310fa365c934b1bd",
+      "sha256": "c1e33aeebddf36f2b69c686142f90b12a74b6f4a8349a4f8310fa365c934b1bd"
+    },
+    "docs/PROJECT_CLASSICS_AND_CHANGELOG.md": {
+      "bytes": 33703,
+      "original_sha256": "4404f95b33f2b1442e2542b2cc37c591569c006b965d1659b34805aef0159a93",
+      "sha256": "4404f95b33f2b1442e2542b2cc37c591569c006b965d1659b34805aef0159a93"
+    },
+    "docs/QIMEN_DUTY_IDENTITY_AUDIT.md": {
+      "bytes": 5755,
+      "original_sha256": "846d139f0b3a6a9d8b36cac18c631d3df97f8f81946754ca8a73c9825ed1ed6c",
+      "sha256": "846d139f0b3a6a9d8b36cac18c631d3df97f8f81946754ca8a73c9825ed1ed6c"
+    },
+    "docs/QIMEN_EARTH_PLATE_AUDIT.md": {
+      "bytes": 4680,
+      "original_sha256": "1c5e1091b289f0ec65ee0bea39d8220a9b0a14342ea896bb705efba763af426a",
+      "sha256": "1c5e1091b289f0ec65ee0bea39d8220a9b0a14342ea896bb705efba763af426a"
+    },
+    "docs/QIMEN_HOUR_XUN_HEAD_AUDIT.md": {
+      "bytes": 4666,
+      "original_sha256": "9bfa72adaf71109b93576e6cce91a4b95a2d235436e1834244866e74633f136f",
+      "sha256": "9bfa72adaf71109b93576e6cce91a4b95a2d235436e1834244866e74633f136f"
+    },
+    "docs/QIMEN_JU_CANDIDATE_AUDIT.md": {
+      "bytes": 4971,
+      "original_sha256": "21a180ec5e33c78a87a63a20ebfe68625fc9fad8d47cfc086740a3e5f30e70a5",
+      "sha256": "21a180ec5e33c78a87a63a20ebfe68625fc9fad8d47cfc086740a3e5f30e70a5"
+    },
+    "docs/QIZHENG_FIVE_PLANETS_RESEARCH.md": {
+      "bytes": 2791,
+      "original_sha256": "3fb6fa9c9033b87dfe105e0b3110ebd3bfb34d6d43206e868e4008f7fbfc691c",
+      "sha256": "3fb6fa9c9033b87dfe105e0b3110ebd3bfb34d6d43206e868e4008f7fbfc691c"
+    },
+    "docs/QIZHENG_SIYU_IDENTITY_AUDIT.md": {
+      "bytes": 2726,
+      "original_sha256": "66a1289588fc89c5ed7dae56d12a3b24f5764ea54a125eaa7861e1c8a65ab77f",
+      "sha256": "66a1289588fc89c5ed7dae56d12a3b24f5764ea54a125eaa7861e1c8a65ab77f"
+    },
+    "docs/RULE_EVIDENCE_DOSSIER_AUDIT.md": {
+      "bytes": 2707,
+      "original_sha256": "be1a2d371503d344f7962335e89673296f45532a504126e24d39288240c46f74",
+      "sha256": "be1a2d371503d344f7962335e89673296f45532a504126e24d39288240c46f74"
+    },
+    "docs/RULE_GATE_DIAGNOSTICS_AUDIT.md": {
+      "bytes": 2203,
+      "original_sha256": "c1f41600bb8b38b736de6b068f433d3273dcbbbd0b7fa017076f5c4b560d0988",
+      "sha256": "c1f41600bb8b38b736de6b068f433d3273dcbbbd0b7fa017076f5c4b560d0988"
+    },
+    "docs/RULE_PROGRAM_AUDIT.md": {
+      "bytes": 4102,
+      "original_sha256": "74cab779bb023ec9d3350be098b18de618454dbb2c8ac9b34359361739e0d3c5",
+      "sha256": "74cab779bb023ec9d3350be098b18de618454dbb2c8ac9b34359361739e0d3c5"
+    },
+    "docs/RULE_RESEARCH_WORKFLOW.md": {
+      "bytes": 2639,
+      "original_sha256": "16f29e064289761b7c8f7dde96f846cee05d16fae20a960865835d0bfb5fa9b8",
+      "sha256": "16f29e064289761b7c8f7dde96f846cee05d16fae20a960865835d0bfb5fa9b8"
+    },
+    "docs/RULE_RUNTIME_INTEGRITY_AUDIT.md": {
+      "bytes": 4392,
+      "original_sha256": "d973335447e8d0c61c64561c09bfc64f7c295a5631eb55c3eff89f6fe1b2cb7d",
+      "sha256": "d973335447e8d0c61c64561c09bfc64f7c295a5631eb55c3eff89f6fe1b2cb7d"
+    },
+    "docs/SEXAGENARY_CALENDAR_AUDIT.md": {
+      "bytes": 2818,
+      "original_sha256": "fabbff79c8eb1bef7afb1270435f0eb5fd3c59e36880820ee6db9d971d704401",
+      "sha256": "fabbff79c8eb1bef7afb1270435f0eb5fd3c59e36880820ee6db9d971d704401"
+    },
+    "docs/SOLAR_TERM_INTERVAL_AUDIT.md": {
+      "bytes": 3354,
+      "original_sha256": "71ebf03b5df99ba39c1cf08b1ddf3b2184f5d5e0efccae11b79ac7eb504c211c",
+      "sha256": "71ebf03b5df99ba39c1cf08b1ddf3b2184f5d5e0efccae11b79ac7eb504c211c"
+    },
+    "docs/SOURCE_EVIDENCE_GATE_AUDIT.md": {
+      "bytes": 6134,
+      "original_sha256": "46b935467d6bc7758e658b1e36bf4dd28b13b4155fa6f16ec5c8e29006690012",
+      "sha256": "46b935467d6bc7758e658b1e36bf4dd28b13b4155fa6f16ec5c8e29006690012"
+    },
+    "docs/STEM_BRANCH_METADATA_AUDIT.md": {
+      "bytes": 2274,
+      "original_sha256": "0476cbf289194f618974e53b42d5a3d76f07794d29f5081d91ebb45bf4c35e9b",
+      "sha256": "0476cbf289194f618974e53b42d5a3d76f07794d29f5081d91ebb45bf4c35e9b"
+    },
+    "docs/TAIYI_ANNUAL_FRAME_AUDIT.md": {
+      "bytes": 3994,
+      "original_sha256": "8eb4754eed3fd52fc4c88837e61a5aecc5d5b4805b8d1fb680e871ec6ba0780d",
+      "sha256": "8eb4754eed3fd52fc4c88837e61a5aecc5d5b4805b8d1fb680e871ec6ba0780d"
+    },
+    "docs/TAIYI_ANNUAL_GATE_BOARDS_AUDIT.md": {
+      "bytes": 4496,
+      "original_sha256": "86d1a27597d2edfceb7f238cd5ade215d359371a910b4c4fa778e952e697eb20",
+      "sha256": "86d1a27597d2edfceb7f238cd5ade215d359371a910b4c4fa778e952e697eb20"
+    },
+    "docs/TAIYI_BARRIER_RAW_OBSERVATIONS_AUDIT.md": {
+      "bytes": 4162,
+      "original_sha256": "91654f9ea2cc26d2ed0e5132be42f02ff27d2bccdc9b2e175541ddb3414e9664",
+      "sha256": "91654f9ea2cc26d2ed0e5132be42f02ff27d2bccdc9b2e175541ddb3414e9664"
+    },
+    "docs/TAIYI_DUN_BOARD_AUDIT.md": {
+      "bytes": 5497,
+      "original_sha256": "5f870c6c341ec76e0a8a0fd0a38ad589a524338a71b13ada32e7dbd4cbf98068",
+      "sha256": "5f870c6c341ec76e0a8a0fd0a38ad589a524338a71b13ada32e7dbd4cbf98068"
+    },
+    "docs/TAIYI_EIGHT_GATE_DUTY_AUDIT.md": {
+      "bytes": 5027,
+      "original_sha256": "2c0576409d24b171a74ff19863660513f9d6acf8be92df6f1cc44f0ed997c02c",
+      "sha256": "2c0576409d24b171a74ff19863660513f9d6acf8be92df6f1cc44f0ed997c02c"
+    },
+    "docs/TAIYI_EYES_COUNTS_AUDIT.md": {
+      "bytes": 5184,
+      "original_sha256": "49e55770a9d00e6648147de6cf3fe1d85ed72af255fef427a5bb17659c5cdfd1",
+      "sha256": "49e55770a9d00e6648147de6cf3fe1d85ed72af255fef427a5bb17659c5cdfd1"
+    },
+    "docs/TAIYI_GENERALS_AUDIT.md": {
+      "bytes": 4006,
+      "original_sha256": "5b8ddb34f69758af555cdbd0de3fa785e36b78bb48825e8dd39199fdde0b39fe",
+      "sha256": "5b8ddb34f69758af555cdbd0de3fa785e36b78bb48825e8dd39199fdde0b39fe"
+    },
+    "docs/TAIYI_MECHANICAL_RELATIONS_AUDIT.md": {
+      "bytes": 4899,
+      "original_sha256": "b3253f6501aed028e19771790d3372c4971facee08ad23c071aa9ccbe6bcfc93",
+      "sha256": "b3253f6501aed028e19771790d3372c4971facee08ad23c071aa9ccbe6bcfc93"
+    },
+    "docs/TAIYI_NEAR_RING_OPPOSITION_AUDIT.md": {
+      "bytes": 5102,
+      "original_sha256": "d684993297a6a5f93f82a0f70489927c976494a4cbdcf8ccb0b61c7c20a57b42",
+      "sha256": "d684993297a6a5f93f82a0f70489927c976494a4cbdcf8ccb0b61c7c20a57b42"
+    },
+    "docs/TAIYI_OPEN_SOURCE_COUNTS_CROSSCHECK.md": {
+      "bytes": 5160,
+      "original_sha256": "e2e8a8292f0f8e318d3c474c35d5e1d02ef80493bed44cd552643706cb2ff22d",
+      "sha256": "e2e8a8292f0f8e318d3c474c35d5e1d02ef80493bed44cd552643706cb2ff22d"
+    },
+    "docs/TAIYI_STRIKE_PRESSURE_AUDIT.md": {
+      "bytes": 5449,
+      "original_sha256": "288701c363d2c0a1b4295306b1238d786df6f5c5f604a02aaf304818c11bb396",
+      "sha256": "288701c363d2c0a1b4295306b1238d786df6f5c5f604a02aaf304818c11bb396"
+    },
+    "docs/TAIYI_TRADITIONAL_YEAR_EPOCH_AUDIT.md": {
+      "bytes": 4600,
+      "original_sha256": "5fc61d275b51a5ef8a2208f9fab26c1b9d57631be5da779998790af6108e6d50",
+      "sha256": "5fc61d275b51a5ef8a2208f9fab26c1b9d57631be5da779998790af6108e6d50"
+    },
+    "docs/TAIYI_YEAR_POSITION_AUDIT.md": {
+      "bytes": 3045,
+      "original_sha256": "eb568af642cdf6d3f53944e1e5ea66dd89573b74940303dc7cfffe05e1c1711e",
+      "sha256": "eb568af642cdf6d3f53944e1e5ea66dd89573b74940303dc7cfffe05e1c1711e"
+    },
+    "docs/THIRD_PARTY_NOTICES.md": {
+      "bytes": 6698,
+      "original_sha256": "31593f3ccb45196c502439c16f51bccc13f68060ecaae2bcffd6d7d2681ca38b",
+      "sha256": "31593f3ccb45196c502439c16f51bccc13f68060ecaae2bcffd6d7d2681ca38b"
+    },
+    "docs/V0_76_WEATHER_SCOPE_RELEASE.md": {
+      "bytes": 3583,
+      "original_sha256": "93de2c73183b956206a693091bcfa92e5c53c4ae18add9c63f9bb5b66645a7f3",
+      "sha256": "93de2c73183b956206a693091bcfa92e5c53c4ae18add9c63f9bb5b66645a7f3"
+    },
+    "docs/V0_77_D_DRIVE_RELEASE.md": {
+      "bytes": 1596,
+      "original_sha256": "be8562b281ffdef1ee614b913b33d12f155ee603e770391743afe8e42f5db9fd",
+      "sha256": "be8562b281ffdef1ee614b913b33d12f155ee603e770391743afe8e42f5db9fd"
+    },
+    "docs/V0_78_WINDOWS_DELIVERY.md": {
+      "bytes": 1579,
+      "original_sha256": "f0709edb887ca9a4954ae0744b3dd7e728171bbda2bd9f13e3ec8fc9a693b883",
+      "sha256": "f0709edb887ca9a4954ae0744b3dd7e728171bbda2bd9f13e3ec8fc9a693b883"
+    },
+    "docs/V0_79_WINDOWS_DELIVERY.md": {
+      "bytes": 1826,
+      "original_sha256": "bffe60e233e18b6b7dc39f18713d02e9cd6e774d36b2f35f7f2d288cbbefb85c",
+      "sha256": "bffe60e233e18b6b7dc39f18713d02e9cd6e774d36b2f35f7f2d288cbbefb85c"
+    },
+    "docs/YARROW_PROCEDURE_AUDIT.md": {
+      "bytes": 5403,
+      "original_sha256": "c65611482c52052a5d6f802af3db88a2fd79827de6073df2fd6bd6253d1f6ea0",
+      "sha256": "c65611482c52052a5d6f802af3db88a2fd79827de6073df2fd6bd6253d1f6ea0"
+    },
+    "docs/ZIWEI_BUREAU_AUDIT.md": {
+      "bytes": 3915,
+      "original_sha256": "5d732159f82a34143f4f6b98d5fb7173d8e94c79dbc6fed569d5e631e4343617",
+      "sha256": "5d732159f82a34143f4f6b98d5fb7173d8e94c79dbc6fed569d5e631e4343617"
+    },
+    "docs/ZIWEI_FOURTEEN_STARS_AUDIT.md": {
+      "bytes": 2351,
+      "original_sha256": "4be0d98dc8572ccccf4e62471fbf752a657cc3bbeac86474dc7de883c672d4ae",
+      "sha256": "4be0d98dc8572ccccf4e62471fbf752a657cc3bbeac86474dc7de883c672d4ae"
+    },
+    "docs/ZIWEI_FOUR_AUXILIARY_STARS_AUDIT.md": {
+      "bytes": 1817,
+      "original_sha256": "380db0d10b75a2354d8cc18760fb76aceee1fe83184f1e91e68517b4540c7fc3",
+      "sha256": "380db0d10b75a2354d8cc18760fb76aceee1fe83184f1e91e68517b4540c7fc3"
+    },
+    "docs/ZIWEI_LIFE_BODY_AUDIT.md": {
+      "bytes": 4010,
+      "original_sha256": "8759bd060e65b83d2f420bc74427da7354395e30cba87ca9833676546cc5be6d",
+      "sha256": "8759bd060e65b83d2f420bc74427da7354395e30cba87ca9833676546cc5be6d"
+    },
+    "docs/ZIWEI_STAR_ANCHOR_AUDIT.md": {
+      "bytes": 2477,
+      "original_sha256": "3c0206579390b8082f7a964a6beb9f0306ae6db930bd8299fe857e8b58ff4ff6",
+      "sha256": "3c0206579390b8082f7a964a6beb9f0306ae6db930bd8299fe857e8b58ff4ff6"
+    },
+    "docs/licenses/kintaiyi-MIT.txt": {
+      "bytes": 1073,
+      "original_sha256": "098b60569fd0fa7dd7b320ec29c62d778ffe6f0d76107de061056e6f4475de24",
+      "sha256": "098b60569fd0fa7dd7b320ec29c62d778ffe6f0d76107de061056e6f4475de24"
+    },
+    "packaging/ChineseSimplified.isl": {
+      "bytes": 21099,
+      "original_sha256": "bf0751fa176569c6faa2f6e17ed2734617bef325d5cc06eae030fdd0258ee778",
+      "sha256": "bf0751fa176569c6faa2f6e17ed2734617bef325d5cc06eae030fdd0258ee778"
+    },
+    "packaging/jiuheng.iss": {
+      "bytes": 1450,
+      "original_sha256": "d92b60fff7aa2961589b3b250a4d6f4e8e7268481d8d80501845f2bfbb6afa10",
+      "sha256": "d92b60fff7aa2961589b3b250a4d6f4e8e7268481d8d80501845f2bfbb6afa10"
+    },
+    "rust-toolchain.toml": {
+      "bytes": 123,
+      "original_sha256": "637138f8759bf52f8328b64a074e8435fd056ccea54d3a3aaf674efafc1a9eb8",
+      "sha256": "637138f8759bf52f8328b64a074e8435fd056ccea54d3a3aaf674efafc1a9eb8"
+    },
+    "scripts/Invoke-CargoMsvc.ps1": {
+      "bytes": 1577,
+      "original_sha256": "f09d3d5ec47d351fcc19871363de5d1d2caf4683c830d9913e32d22eccd7d776",
+      "sha256": "f09d3d5ec47d351fcc19871363de5d1d2caf4683c830d9913e32d22eccd7d776"
+    },
+    "scripts/build-location-seed.py": {
+      "bytes": 6186,
+      "original_sha256": "d01f731320592dd45a525df3640647f1921b933c2bf59458dc224dbf6408518e",
+      "sha256": "56da4ad74a914e28304d084ffdc55ca5abf8bdde9e1b22ce96a658b59b07f196"
+    },
+    "scripts/build-street-seed.py": {
+      "bytes": 4405,
+      "original_sha256": "329cfcfaeaa7bf25791ffcc62e92bf9c680be17016868dfc01ad9b040e2858e4",
+      "sha256": "e08abbe44ecdc00822b5b29da836bd75bc92d44b38adfe01f03d9b52e5fe0ed4"
+    },
+    "scripts/build-windows.ps1": {
+      "bytes": 2674,
+      "original_sha256": "20e6915bdf0067e7acfb7e46cd3b7856b8cda31d0b602ee3b8cfbe023957d34e",
+      "sha256": "20e6915bdf0067e7acfb7e46cd3b7856b8cda31d0b602ee3b8cfbe023957d34e"
+    },
+    "scripts/check-kintaiyi-static-reference.py": {
+      "bytes": 4199,
+      "original_sha256": "fb83076ba442a0b1a36fa5140fcd5e8293c433b82ae1cf8141c1ee98e333eef4",
+      "sha256": "b5857ab8305d9db4ff0b1c039518bfaa7c34277d38570783b6b277f05b696ff9"
+    },
+    "scripts/package-release.ps1": {
+      "bytes": 4190,
+      "original_sha256": "0a002cc945aedc4c744c5f8d34c2cee2fa8b7018b1932ef0becd70d0eec57bae",
+      "sha256": "0a002cc945aedc4c744c5f8d34c2cee2fa8b7018b1932ef0becd70d0eec57bae"
+    },
+    "scripts/package-source.py": {
+      "bytes": 12155,
+      "original_sha256": "15ee86548066be0ce5e786f23900d873c744b10810592801023dfaa24716baac",
+      "sha256": "8bceb76eb1146fda2b1b1fbbd01b562c113d2d8fe7ada8a4b9183a4fc25214ea"
+    },
+    "scripts/package-windows-no-comments.ps1": {
+      "bytes": 2424,
+      "original_sha256": "7927c0803858dc3d27266dec72b0c2070ff886214d9f26674cb4088581494f42",
+      "sha256": "7927c0803858dc3d27266dec72b0c2070ff886214d9f26674cb4088581494f42"
+    },
+    "scripts/smoke-windows.ps1": {
+      "bytes": 2784,
+      "original_sha256": "01af99f28149c402bbad60dc0400055ee69c9ca565edb94880322e29a16fe878",
+      "sha256": "01af99f28149c402bbad60dc0400055ee69c9ca565edb94880322e29a16fe878"
+    },
+    "scripts/tests/test_kintaiyi_static_reference.py": {
+      "bytes": 2163,
+      "original_sha256": "a2269b152863a4a451b350ccd5a4495e74be8fc2e851ce0d5561085933701a77",
+      "sha256": "a2269b152863a4a451b350ccd5a4495e74be8fc2e851ce0d5561085933701a77"
+    },
+    "scripts/tests/test_source_package.py": {
+      "bytes": 8082,
+      "original_sha256": "62b0625d2a2eb9c28b7c89c31017e129ed46211ae22457563e476012bf8f8a07",
+      "sha256": "c457cdbdceaed5d6460e22944f2b1b22e709404751b5920a217747190acae1c7"
+    },
+    "scripts/tests/test_weather_exclusions.py": {
+      "bytes": 1616,
+      "original_sha256": "ea2418fcdf6d2649946554f7a560d538bf524faab4037025eddd3e4d01cc3605",
+      "sha256": "4fdbae335fe623d3c83f29e15b94c8dfd354c17a07c9c1fe73423a26d8e80e8f"
+    },
+    "scripts/verify-reference-sources.ps1": {
+      "bytes": 4531,
+      "original_sha256": "70a76724ef37751918d4ed135637ff3436cc5731cd58686175a060b2872a3879",
+      "sha256": "70a76724ef37751918d4ed135637ff3436cc5731cd58686175a060b2872a3879"
+    },
+    "scripts/verify-source-facsimile.ps1": {
+      "bytes": 1127,
+      "original_sha256": "2209f30df8c87b7275397d5951772b664f706e4b98ee5925406f20a3f78f123a",
+      "sha256": "2209f30df8c87b7275397d5951772b664f706e4b98ee5925406f20a3f78f123a"
+    },
+    "scripts/verify_weather_facsimile.py": {
+      "bytes": 4210,
+      "original_sha256": "80590a23078738bc1aac11c4cfad1452b930de052666219f8030955c3f436325",
+      "sha256": "9c930c57c11fcf828ebb3f2dca865f06a81a3f0ee23cff75978e0f6a4a458e61"
+    }
+  },
+  "kind": "source_snapshot_code_comments_removed_not_a_windows_build",
+  "product_version": "0.79.0",
+  "schema_version": 1
+}

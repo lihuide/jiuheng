@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "research_id": "jiuheng.research.liuyao.received_palace_five_element_six_relatives.2026-09-15",
+  "method": "liuyao",
+  "review_date": "2026-09-15",
+  "status": "mechanical_received_six_relatives_blocked_from_runtime_rules",
+  "purpose": "以八宫所属五行为我，把已装纳甲各爻地支五行机械映射为父母、兄弟、子孙、妻财、官鬼；不选用神，不定旺衰或占断。",
+  "evidence_scope": {
+    "sources": [
+      {
+        "source_id": "zengshan_buyi_six_relatives_wikisource",
+        "title": "《增删卜易》六亲歌章第五",
+        "historical_period": "清代传本",
+        "public_url": "https://zh.wikisource.org/zh-hans/%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93/5",
+        "supports": ["乾兑金、坎水、坤艮土、离火、震巽木五类完整六亲五行表", "以宫五行为我、生我为父母、我生为子孙、克我为官鬼、我克为妻财、比和为兄弟"],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "yiyin_preface_ctext",
+        "title": "《易隐·序》",
+        "historical_period": "明清传本",
+        "public_url": "https://ctext.org/wiki.pl?chapter=436217&if=en&remap=gb",
+        "supports": ["八宫所属与六亲生克定义", "八宫卦序、纳甲与世应表的同页交叉结构"],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "bushi_quanshu_qimeng_jieyao_ctext",
+        "title": "《卜筮全书》卷一启蒙节要",
+        "historical_period": "明代传本",
+        "public_url": "https://ctext.org/wiki.pl?chapter=581378&if=gb&remap=gb",
+        "supports": ["五行相生相克次序", "六亲以生我、我生、克我、我克、比和定义的交叉核验"],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      }
+    ],
+    "source_limitations": [
+      "三种材料均为公共电子转录，尚未把对应影印页固定为本地字节并计算 SHA-256",
+      "六亲术语和表格的版本层次、异文与早期传承尚未完成逐页校勘",
+      "本轮只固定由宫五行与爻支五行决定的身份，不采用用神、旺衰或吉凶语句"
+    ]
+  },
+  "candidate": {
+    "algorithm_version": "jiuheng.liuyao.received_palace_five_element_six_relatives.v1",
+    "palace_element_is_self": true,
+    "relationship_definition": {
+      "same_as_self": "兄弟",
+      "generates_self": "父母",
+      "generated_by_self": "子孙",
+      "overcomes_self": "官鬼",
+      "overcome_by_self": "妻财"
+    },
+    "palace_element_relatives": {
+      "金": {"木": "妻财", "火": "官鬼", "土": "父母", "金": "兄弟", "水": "子孙"},
+      "水": {"木": "子孙", "火": "妻财", "土": "官鬼", "金": "父母", "水": "兄弟"},
+      "土": {"木": "官鬼", "火": "父母", "土": "兄弟", "金": "子孙", "水": "妻财"},
+      "火": {"木": "父母", "火": "兄弟", "土": "子孙", "金": "妻财", "水": "官鬼"},
+      "木": {"木": "兄弟", "火": "子孙", "土": "妻财", "金": "官鬼", "水": "父母"}
+    },
+    "storage_order": "first_line_to_sixth_line",
+    "all_sixty_four_hexagrams_covered": true,
+    "all_three_hundred_eighty_four_lines_covered": true,
+    "six_relatives_assigned": true,
+    "six_spirits_assigned": false,
+    "hidden_spirits_assigned": false,
+    "useful_god_selected": false,
+    "strength_assessed": false,
+    "interpretation_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false
+  },
+  "forbidden_uses": [
+    "不得把父母、兄弟、子孙、妻财、官鬼的名称直接解释为现实人物、事物或吉凶",
+    "不得按问题类别自动选择用神",
+    "不得补造六神、伏神、月建日辰、旬空、旺衰、动变或应期",
+    "不得用电子转录或开源实现输出替代影印底本与异文复核",
+    "不得生成中间信号、结论、应期、行动建议或正式 Rule ID"
+  ],
+  "unresolved": [
+    "三种底本影印页逐条定位、字节哈希与异文校勘",
+    "六亲表的早期传承谱系与术语版本边界",
+    "六神、伏神、用神、月建日辰、旺衰、动变和应期规则"
+  ],
+  "review_state": {
+    "decision": "chart_only_received_six_relative_identity_no_useful_god_strength_interpretation_signals_or_rules",
+    "runtime_release": "blocked",
+    "formal_rule_count": 0
+  }
+}

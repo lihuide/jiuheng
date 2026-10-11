@@ -1,0 +1,102 @@
+{
+  "schema_version": 2,
+  "research_id": "jiuheng.research.four_pillars.visible_stem_ten_gods.2026-09-23",
+  "method": "four_pillars",
+  "review_date": "2026-09-23",
+  "status": "mechanical_visible_stem_ten_god_identities_blocked_from_runtime_rules",
+  "purpose": "以四柱明确命名的日界候选日干为基准，为年干、月干、时干标注十神身份，日干自身显示为日主；晚子时分别保存零点换日与子初换日两套身份，均不选定为最终口径。不引入地支藏干，不计算数量、旺衰、格局、用神、大运、流年、吉凶或应期。",
+  "evidence_scope": {
+    "sources": [
+      {
+        "source_id": "sanming_tonghui_juan7_ctext",
+        "title": "《三命通会》卷七公共电子转录",
+        "historical_period": "明代传本",
+        "public_url": "https://ctext.org/wiki.pl?chapter=617731&if=gb&remap=gb",
+        "supports": ["以日干关系说明正印、偏财等十神实例", "生我、我克、克我、比和等方向名义"],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "mingli_tanyuan_juan2_ctext",
+        "title": "《命理探源》卷二起例公共电子转录",
+        "historical_period": "民国整理本",
+        "public_url": "https://ctext.org/wiki.pl?chapter=419625&if=gb&remap=gb",
+        "supports": ["以日干为我，与年干、月干、时干及藏干比较", "同类、生我、我生、克我、我克与十神名称", "阳见阴、阴见阳为正的阴阳区分"],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "wuxing_dayi_juan2_public_transcription",
+        "title": "隋萧吉《五行大义》卷二公共电子转录",
+        "historical_period": "隋代",
+        "public_url": "https://zh.wikisource.org/zh-hans/%E4%BA%94%E8%A1%8C%E5%A4%A7%E7%BE%A9/2",
+        "supports": ["十干五行", "十干阴阳", "五行相生相克结构交叉核对"],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      }
+    ],
+    "source_limitations": [
+      "当前均为公共电子转录，尚未固定对应影印页、文件字节、SHA-256、版本谱系和异文",
+      "《命理探源》仅作晚近显式表述的结构交叉核对，不提高到早期核心经典等级",
+      "本轮只为三个非日主的表面天干分配身份；地支藏干表及其主气余气权重完全未选择",
+      "十神名称不自动具有吉凶、强弱、职业、亲属、疾病或事件解释"
+    ]
+  },
+  "candidate": {
+    "algorithm_version": "jiuheng.four_pillars.visible_stem_ten_gods.day_master_relation.v1",
+    "reference_stem": "day_stem_of_explicitly_named_day_boundary_candidate",
+    "late_zi_parallel_day_boundaries_saved": true,
+    "late_zi_selected_convention": null,
+    "observed_positions": ["year_stem", "month_stem", "day_stem_as_day_master", "hour_stem"],
+    "same_element": {"same_polarity": "比肩", "opposite_polarity": "劫财"},
+    "day_master_generates_other": {"same_polarity": "食神", "opposite_polarity": "伤官"},
+    "day_master_overcomes_other": {"same_polarity": "偏财", "opposite_polarity": "正财"},
+    "other_overcomes_day_master": {"same_polarity": "七杀", "opposite_polarity": "正官"},
+    "other_generates_day_master": {"same_polarity": "偏印", "opposite_polarity": "正印"},
+    "jia_day_visible_stem_sequence": {
+      "甲": "比肩",
+      "乙": "劫财",
+      "丙": "食神",
+      "丁": "伤官",
+      "戊": "偏财",
+      "己": "正财",
+      "庚": "七杀",
+      "辛": "正官",
+      "壬": "偏印",
+      "癸": "正印"
+    },
+    "all_day_stem_by_other_stem_pairs_checked": 100,
+    "each_ten_god_identity_occurrences_in_complete_table": 10,
+    "visible_stem_identities_assigned": true,
+    "hidden_stems_included": false,
+    "hidden_stem_identities_assigned": false,
+    "strength_assessed": false,
+    "pattern_selected": false,
+    "useful_god_selected": false,
+    "luck_cycles_calculated": false,
+    "interpretation_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false
+  },
+  "forbidden_uses": [
+    "不得把十神名称直接解释为吉凶、性格、亲属、事业、财富、婚姻、健康或现实概率",
+    "不得把三个明干当作完整八字十神分布，不得补造地支藏干",
+    "不得统计十神数量后推导旺衰、格局、用神、喜忌、大运、流年或应期",
+    "不得把晚子时未决候选合并成一个确定命盘",
+    "不得生成中间信号、最终结论、行动建议或正式 Rule ID"
+  ],
+  "unresolved": [
+    "明清底本影印页、文件哈希、逐字转录、异文和版本谱系",
+    "地支藏干表、主气中气余气层次及流派差异",
+    "日界、月界、年界口径的正式古籍门禁",
+    "旺衰、格局、用神、大运流年、应期与断法的逐条证据链"
+  ],
+  "review_state": {
+    "decision": "chart_only_visible_stem_ten_god_identities_no_hidden_stems_strength_pattern_interpretation_signals_or_rules",
+    "runtime_release": "blocked",
+    "formal_rule_count": 0
+  }
+}

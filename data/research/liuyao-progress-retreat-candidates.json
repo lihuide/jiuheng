@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "research_id": "jiuheng.research.liuyao.progress_retreat_explicit_pairs.2026-09-16",
+  "method": "liuyao",
+  "review_date": "2026-09-16",
+  "status": "mechanical_received_progress_retreat_identity_blocked_from_runtime_rules",
+  "purpose": "仅为实际动爻的本支到同位变支标注传本公开电子转录明确列出的进神、退神原始身份；不补齐有异文风险的土支循环，不判断进退效力。",
+  "evidence_scope": {
+    "sources": [
+      {
+        "source_id": "zengshan_buyi_volume_2_chapter_29_ctext",
+        "title": "《增删卜易》卷二进神退神章第二十九电子转录",
+        "public_url": "https://ctext.org/wiki.pl?chapter=157683&if=gb",
+        "supports": [
+          "进神限于爻动而化的语境",
+          "明确列出亥化子、寅化卯、巳化午、申化酉、丑化辰、辰化未、未化戌七组",
+          "明确列出子化亥、卯化寅、午化巳、酉化申、辰化丑、未化辰、戌化未七组"
+        ],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "yiyin_progress_retreat_ctext",
+        "title": "《易隐》进神退神条电子转录",
+        "public_url": "https://ctext.org/wiki.pl?chapter=436217&if=gb",
+        "supports": [
+          "另见亥化子、丑化辰、寅化卯、巳化午、未化戌、申化酉六进候选",
+          "另见子变亥、辰变丑、卯变寅、午变巳、戌变未、酉变申六退候选",
+          "与七组转录并不完全相同，必须保留版本复核门禁"
+        ],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "bushi_zhengzong_progress_retreat_examples_ctext",
+        "title": "《卜筮正宗》进退例电子转录",
+        "public_url": "https://ctext.org/wiki.pl?chapter=801184&if=gb&remap=gb",
+        "supports": [
+          "申化酉为进神、酉化申为退神的例证",
+          "效力须结合另外条件，不可由身份直接推出"
+        ],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "bushi_quanshu_progress_retreat_examples_ctext",
+        "title": "《卜筮全书》进退例电子转录",
+        "public_url": "https://ctext.org/wiki.pl?chapter=730456&if=gb",
+        "supports": [
+          "寅动化卯、巳动化午为进神示例",
+          "酉动化申、子动化亥为退神示例"
+        ],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "yimao_volume_2_progress_retreat_ctext",
+        "title": "《易冒》卷二进退章第十六电子转录",
+        "public_url": "https://ctext.org/wiki.pl?chapter=215845&if=gb&remap=gb",
+        "supports": [
+          "亥变子为进、未变辰为退的方向例证",
+          "同类身份仍不能替代旺衰和效力条件"
+        ],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      }
+    ],
+    "source_limitations": [
+      "尚未把采用段落绑定到本地影印页字节、准确卷页和 SHA-256",
+      "《增删卜易》当前电子转录未列戌化丑和丑化戌，《易隐》转录又少于七组，不能无证补齐",
+      "后世传本身份表不能自动上推为汉代京房原法",
+      "身份目录不能证明进而有功、退而无力，也不能直接生成吉凶和应期"
+    ]
+  },
+  "candidate": {
+    "algorithm_version": "jiuheng.liuyao.received_seven_explicit_progress_retreat_pairs.v1",
+    "progress_pairs": [
+      ["亥", "子"],
+      ["寅", "卯"],
+      ["巳", "午"],
+      ["申", "酉"],
+      ["丑", "辰"],
+      ["辰", "未"],
+      ["未", "戌"]
+    ],
+    "retreat_pairs": [
+      ["子", "亥"],
+      ["卯", "寅"],
+      ["午", "巳"],
+      ["酉", "申"],
+      ["辰", "丑"],
+      ["未", "辰"],
+      ["戌", "未"]
+    ],
+    "deliberately_unclassified_pairs": [
+      ["戌", "丑"],
+      ["丑", "戌"]
+    ],
+    "comparison_scope": "each_actual_moving_line_primary_branch_to_same_position_transformed_branch",
+    "all_primary_line_type_combinations_verified": 4096,
+    "moving_transformation_observations_verified": 12288,
+    "explicit_directed_pair_count": 14,
+    "raw_identity_assigned": true,
+    "progression_or_retreat_effect_assessed": false,
+    "useful_god_selected": false,
+    "strength_assessed": false,
+    "timing_assessed": false,
+    "interpretation_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false
+  },
+  "forbidden_uses": [
+    "不得把未列入当前核对转录的戌化丑或丑化戌自动补成进神、退神",
+    "不得把进神身份直接解释为前进、成功、增强或吉",
+    "不得把退神身份直接解释为后退、失败、减弱或凶",
+    "不得从身份推断用神、旺衰、应期、总分、结论或行动建议",
+    "不得把公共电子转录或开源实现输出替代影印底本、异文和四类复核"
+  ],
+  "unresolved": [
+    "底本影印页定位、字节哈希、异文和版本谱系",
+    "戌化丑、丑化戌在不同版本和传承中的收录情况",
+    "七组表与六组表之间的版本关系",
+    "进退得失、旺衰、月破日辰、空墓合冲条件和例外",
+    "可执行 Rule ID、边界测试、应期、信号和行动建议"
+  ],
+  "review_state": {
+    "decision": "seven_explicit_progress_and_seven_inverse_retreat_pairs_only",
+    "runtime_release": "blocked",
+    "formal_rule_count": 0
+  }
+}

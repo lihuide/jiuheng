@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "research_id": "jiuheng.research.liuyao.locked_jie_month_day_moving_transformation.2026-09-15",
+  "method": "liuyao",
+  "review_date": "2026-09-15",
+  "status": "mechanical_locked_month_day_and_moving_transformation_blocked_from_runtime_rules",
+  "purpose": "把锁定占问天文快照中的节令月建候选和北京时间午夜换日日辰候选绑定到六爻起法，并逐一重建六、七、八、九爻值中的动爻阴阳翻转及其变后纳甲六亲身份；不判断旺衰、生克、冲合、空破、用神、应期或吉凶。",
+  "evidence_scope": {
+    "sources": [
+      {
+        "source_id": "bushi_quanshu_moving_change_ctext",
+        "title": "《卜筮全书·黄金策》动变段电子转录",
+        "historical_period": "明代传本",
+        "public_url": "https://ctext.org/wiki.pl?chapter=428169&if=gb&remap=gb",
+        "supports": ["交重为动", "动则阴变阳、阳变阴", "动爻与变爻属于不同结构阶段"],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "zengshan_buyi_month_general_ctext",
+        "title": "《增删卜易·月将章第十六》电子转录",
+        "historical_period": "清代传本",
+        "public_url": "https://ctext.org/wiki.pl?chapter=950329&if=gb",
+        "supports": ["月将即月建、月令的名义", "月建、日辰、动爻、变爻为不同排盘要素"],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      }
+    ],
+    "source_limitations": [
+      "来源仍为公共电子转录，对应影印页尚未固定为本地字节并计算 SHA-256",
+      "节令月建采用锁定 TT 时刻、精确节区间和立春年干的既有可审计候选；靠近节界时明确标为不安全",
+      "日辰暂采用北京时间午夜换日候选；子初换日与真太阳日界仍并列为未决边界",
+      "本轮只识别动爻、阴阳翻转和变后纳甲；不采用来源中的旺衰与吉凶断语"
+    ]
+  },
+  "candidate": {
+    "algorithm_version": "jiuheng.liuyao.locked_jie_month_day_moving_transformation.v1",
+    "month_convention": "locked_tt_solar_jie_span_with_lichun_year_stem",
+    "day_convention": "beijing_civil_midnight",
+    "line_values": {
+      "6": {"name": "老阴", "moving": true, "primary": "阴", "changed": "阳"},
+      "7": {"name": "少阳", "moving": false, "primary": "阳", "changed": "阳"},
+      "8": {"name": "少阴", "moving": false, "primary": "阴", "changed": "阴"},
+      "9": {"name": "老阳", "moving": true, "primary": "阳", "changed": "阴"}
+    },
+    "moving_line_transformed_najia": true,
+    "transformed_relative_uses_primary_palace_element": true,
+    "all_four_to_the_six_line_type_combinations_checked": true,
+    "checked_combination_count": 4096,
+    "month_day_line_interactions_assessed": false,
+    "useful_god_selected": false,
+    "strength_assessed": false,
+    "interpretation_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false
+  },
+  "forbidden_uses": [
+    "不得由月建、日辰与爻支的生克冲合直接生成旺衰或吉凶",
+    "不得把靠近节界的月建候选用于正式规则",
+    "不得静默选择子初或真太阳日界替代存档的北京时间午夜候选",
+    "不得从动爻数量、爻位、变后六亲或变卦名称生成占断",
+    "不得生成中间信号、结论、应期、行动建议或正式 Rule ID"
+  ],
+  "unresolved": [
+    "底本影印页定位、字节哈希、异文和版本谱系",
+    "六爻月建的历法边界在各传本中的明确适用口径",
+    "六爻日辰的午夜、子初和真太阳日界口径",
+    "月建日辰与爻支的生克、冲合、月破、旬空、旺衰、进退反伏吟及应期规则"
+  ],
+  "review_state": {
+    "decision": "chart_only_locked_month_day_and_moving_transformed_line_candidates_no_interpretation_signals_or_rules",
+    "runtime_release": "blocked",
+    "formal_rule_count": 0
+  }
+}

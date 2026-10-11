@@ -1,0 +1,163 @@
+{
+  "archive_id": "TAIYI-STRIKE-PRESSURE-CANDIDATE-2026-09-09-v1",
+  "schema_version": 1,
+  "recorded_on": "2026-09-09",
+  "method": "taiyi",
+  "status": "directional_strike_and_pressure_position_marks_only",
+  "purpose": "以卷三击迫正文定义和五将立成表方向锚点，把既有十六位环邻位机械值转换为始击四类击、文昌与主客四将四类迫；不采用相邻吉凶文字，不推关或复合格局",
+  "runtime_ingestion_allowed": false,
+  "civil_date_input_allowed": false,
+  "epoch_selection_allowed": false,
+  "yin_yang_dun_selection_allowed": false,
+  "strike_position_classification_allowed": true,
+  "pressure_position_classification_allowed": true,
+  "barrier_classification_allowed": false,
+  "compound_pattern_classification_allowed": false,
+  "complete_board_generation_allowed": false,
+  "interpretation_allowed": false,
+  "signal_generation_allowed": false,
+  "timing_generation_allowed": false,
+  "advice_generation_allowed": false,
+  "rule_id_generation_allowed": false,
+  "source_identity": {
+    "parent_archive": "TAIYI-NEAR-RING-OPPOSITION-CANDIDATE-2026-09-09-v1",
+    "depends_on_archive": "TAIYI-SEVENTY-TWO-BOARD-CANDIDATE-2026-09-09-v1",
+    "title": "太乙金镜式经",
+    "attributed_author": "唐·王希明",
+    "received_edition": "钦定四库全书本",
+    "kanripo_id": "KR3g0047",
+    "kanripo_repository": "kanripo/KR3g0047",
+    "kanripo_commit": "e3264da2c9f556225e056abe7eade01903b4543e",
+    "raw_file_hashes": {
+      "KR3g0047_001.txt": "6b13ff06e980439d7a3611f1f10c9efb318513e23f7a9e4c16ed4e8896f162d4",
+      "KR3g0047_002.txt": "44949571367607d1719aa51b5ce174d73078d0c84fe0a81e23b192449c8f5cfd",
+      "KR3g0047_003.txt": "fab52159527f90bf0c74af5f655ae3215e0e7d2efb6a5be5506f12c1671b8257"
+    },
+    "raw_hashes_rechecked_on": "2026-09-09",
+    "facsimile_verified": false,
+    "transcription_verified_against_facsimile": false,
+    "independent_transcription_urls": [
+      "https://ctext.org/wiki.pl?chapter=456008&if=gb",
+      "https://zh.wikisource.org/zh-hans/太乙金鏡式經_(四庫全書本)/卷03"
+    ]
+  },
+  "received_fragments": [
+    {
+      "fragment_id": "TY-JJSJ-WYG-J3-STRIKE-DIRECTION-CANDIDATE",
+      "volume": "卷三",
+      "page_markers": ["KR3g0047_WYG_003-2a"],
+      "heading": "推击法",
+      "transcription": "太乙所在宫，客目在太乙前一辰为前击，在太乙后一辰为后击，在太乙前一宫为外宫击，在太乙后一宫为内宫击。",
+      "implemented_fields": ["shiji_strike", "strike_classified"],
+      "interpretive_tail_implemented": false
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J3-PRESSURE-SUBJECTS-CANDIDATE",
+      "volume": "卷三",
+      "page_markers": ["KR3g0047_WYG_003-2a", "KR3g0047_WYG_003-2b"],
+      "heading": "推迫法",
+      "transcription": "前为外迫，后为内迫；上下二目、主客大小四将在太乙左右为迫。王希明曰上目无迫，若下目在太乙前后一辰宫，分外内辰迫、外内宫迫。",
+      "implemented_fields": [
+        "tianmu_pressure",
+        "main_great_general_pressure",
+        "main_assistant_general_pressure",
+        "guest_great_general_pressure",
+        "guest_assistant_general_pressure",
+        "pressure_classified"
+      ],
+      "scope_note": "卷三推对法又明称下目文昌；程序只给文昌机械对象天目和四将生成迫，不给始击生成迫",
+      "interpretive_tail_implemented": false
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J3-FIVE-GENERAL-DIRECTION-ANCHORS-CANDIDATE",
+      "volume": "卷三",
+      "page_markers": [
+        "KR3g0047_WYG_003-5a",
+        "KR3g0047_WYG_003-5b",
+        "KR3g0047_WYG_003-7a"
+      ],
+      "heading": "太乙三门五将立成胜败钤",
+      "transcription": "武德对太乙六宫列天目内迫、对七宫列天目外迫；和德对四宫列天目内迫、对八宫列天目外迫；阳德对二宫列大将外迫。",
+      "implemented_fields": ["received_ring_direction", "general_pressure_direction"],
+      "mechanical_anchors": [
+        "武德环位11、太乙六宫环位12：位移-1辰→内迫",
+        "武德环位11、太乙七宫环位10：位移+1辰→外迫",
+        "和德环位2、太乙四宫环位4：位移-2宫→内迫",
+        "和德环位2、太乙八宫环位0：位移+2宫→外迫",
+        "阳德为主目、太乙二宫时主算17、主大将七宫：位移+2宫→大将外迫"
+      ],
+      "outcome_cells_implemented": false
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J3-BARRIER-STILL-BLOCKED-CANDIDATE",
+      "volume": "卷三",
+      "page_markers": ["KR3g0047_WYG_003-3a"],
+      "heading": "推关法",
+      "transcription": "客主大小将目相宫齐为关；主客大小将同宫数齐皆为关日。",
+      "implemented_fields": [],
+      "blocked_reason": "‘将目相宫齐’及‘同宫数齐’不能从本句唯一确定逐项配对关系；立成表又出现大将关囚、大小将关、天目大将关等复合简写，尚不能安全还原为通用布尔条件"
+    }
+  ],
+  "candidate": {
+    "algorithm_version": "jiuheng.taiyi.tang_strike_pressure_and_position_marks_candidate.v3",
+    "annual_frame_algorithm_version": "jiuheng.taiyi.tang_supplied_accumulated_year_frame_candidate.v8",
+    "seventy_two_board_algorithm_version": "jiuheng.taiyi.tang_explicit_dun_seventy_two_board_candidate.v3",
+    "input_contract": "already_computed_taiyi_tianmu_shiji_and_main_guest_general_positions",
+    "direction_map": {
+      "plus_one_interstitial": {"strike": "front_chen", "pressure": "outer_chen"},
+      "minus_one_interstitial": {"strike": "rear_chen", "pressure": "inner_chen"},
+      "plus_two_principal_palace": {"strike": "outer_palace", "pressure": "outer_palace"},
+      "minus_two_principal_palace": {"strike": "inner_palace", "pressure": "inner_palace"}
+    },
+    "pressure_subjects": ["tianmu", "main_great_general", "main_assistant_general", "guest_great_general", "guest_assistant_general"],
+    "shiji_pressure_generated": false,
+    "strike_classified": true,
+    "pressure_classified": true,
+    "barrier_classified": false,
+    "opposition_classified": true,
+    "interpretation_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false,
+    "forbidden_outputs": [
+      "击迫相邻吉凶解释",
+      "灾缓急、君臣、胜败或先起后起结论",
+      "关、四郭固、四郭杜、执提、提挟",
+      "完整三门五将结论",
+      "中间信号、应期、行动建议或综合裁决",
+      "正式 Rule ID"
+    ]
+  },
+  "annual_eye_test_anchors": [
+    {"count": 2, "shiji_strike": "rear_chen", "tianmu_pressure": "inner_palace"},
+    {"count": 3, "shiji_strike": "front_chen", "tianmu_pressure": "inner_chen"},
+    {"count": 12, "shiji_strike": "rear_chen", "tianmu_pressure": "outer_chen"},
+    {"count": 15, "shiji_strike": "inner_palace", "tianmu_pressure": null},
+    {"count": 16, "shiji_strike": "outer_palace", "tianmu_pressure": "inner_chen"},
+    {"count": 25, "shiji_strike": "front_chen", "tianmu_pressure": "outer_palace"}
+  ],
+  "annual_general_test_anchors": [
+    {"count": 14, "field": "main_great_general_pressure", "expected": "outer_palace"},
+    {"count": 2, "field": "main_great_general_pressure", "expected": "inner_palace"},
+    {"count": 2, "field": "main_assistant_general_pressure", "expected": "outer_palace"},
+    {"count": 10, "field": "main_assistant_general_pressure", "expected": "inner_palace"},
+    {"count": 4, "field": "guest_great_general_pressure", "expected": "outer_palace"},
+    {"count": 15, "field": "guest_great_general_pressure", "expected": "inner_palace"},
+    {"count": 15, "field": "guest_assistant_general_pressure", "expected": "outer_palace"},
+    {"count": 12, "field": "guest_assistant_general_pressure", "expected": "inner_palace"}
+  ],
+  "variants_and_blockers": [
+    "方向映射不是由代码数组命名自证，而由卷三立成表四个天目内外迫单元独立锚定；正位移为前/外，负位移为后/内。",
+    "始击只按推击法生成击；迫法王氏说明上目无迫，故程序不为始击生成迫。",
+    "四将只能位于数字宫，故只会生成外宫迫或内宫迫，不会生成辰迫；中五宫没有十六位环外宫映射，不生成迫。",
+    "立成胜败钤只用于方向和一个大将外迫机械锚点；表中门具将发、胜败、灾急缓等解释没有进入实现。",
+    "关法和所有复合格局继续关闭；电子转录尚未以对应四库影印图像逐字定本，机械字段仍不能进入正式 Rule ID。"
+  ],
+  "review_state": {
+    "bibliographic_review": "candidate_only",
+    "transcription_review": "blocked_without_facsimile_bytes",
+    "logic_review": "strike_pressure_subjects_and_direction_map_closed_barrier_pairing_unresolved",
+    "implementation_review": "automated_tests_required",
+    "runtime_release": "blocked",
+    "decision": "chart_only_directional_strike_and_pressure_marks_no_barrier_interpretation_signals_or_rules"
+  }
+}

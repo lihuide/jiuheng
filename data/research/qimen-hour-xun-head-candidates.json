@@ -1,0 +1,83 @@
+{
+  "research_id": "QIMEN-HOUR-XUN-HEAD-HIDDEN-INSTRUMENT-PALACE-2026-09-02",
+  "method": "qimen_dunjia",
+  "researched_on": "2026-09-02",
+  "scope": "仅从已明确日界口径的时干支机械回溯六十时旬首，将六甲旬首映射至所隐六仪，再反查该仪在同口径地盘所落九宫；北京时间与真太阳时并列，不选择时制，不取值符值使，不排天盘星门神，不录入占断",
+  "status": "mechanical_received_hour_xun_head_hidden_instrument_palace_blocked_from_runtime_rules",
+  "runtime_rule_seed_allowed": false,
+  "sources": [
+    {
+      "source_id": "QIMEN-TONGZONG-WIKISOURCE-VOL2-HOUR-XUN-HEAD-2026-09-02",
+      "title": "《奇门遁甲统宗》卷二（维基文库电子转录）",
+      "source_type": "electronic_transcription_not_facsimile",
+      "url": "https://zh.wikisource.org/zh-hans/%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E7%B5%B1%E5%AE%97",
+      "supports": [
+        "旬首从用时干支回溯到本旬甲首",
+        "乙丑至癸酉以甲子为旬首、乙亥至癸未以甲戌为旬首的例",
+        "地盘旬首所临宫是后续值符值使步骤的机械前提"
+      ],
+      "evidence_limit": "公共转录不能替代影印校勘；本轮只采用十时一旬的六十甲子循环分组，不采用同段后续值符、值使、九星、八门或吉凶内容"
+    },
+    {
+      "source_id": "QIMEN-TONGZONG-WIKISOURCE-VOL2-HIDDEN-JIA-2026-09-02",
+      "title": "《奇门遁甲统宗》卷二六甲隐六仪段（维基文库电子转录）",
+      "source_type": "electronic_transcription_not_facsimile",
+      "url": "https://zh.wikisource.org/zh-hans/%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E7%B5%B1%E5%AE%97",
+      "supports": "甲子甲戌甲申甲午甲辰甲寅分别隐于戊己庚辛壬癸",
+      "evidence_limit": "与既有地盘研究档案共用同一公共转录，只能支撑机械映射候选"
+    },
+    {
+      "source_id": "NLC-QIMEN-TONGZONG-FACSIMILE-416-12JH003951-48665-HOUR-XUN",
+      "title": "国家图书馆藏《奇门遁甲统宗》扫描件",
+      "source_type": "institutional_facsimile_pdf_not_yet_page_bound",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/NLC416-12jh003951-48665_%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E7%B5%B1%E5%AE%97.pdf",
+      "supports": "传本影像复核入口",
+      "evidence_limit": "尚未把旬首段绑定到准确册页、逐字转录和文件哈希"
+    }
+  ],
+  "implemented_candidate": {
+    "algorithm_version": "jiuheng.qimen.hour_xun_head_hidden_instrument_earth_palace.v1",
+    "ten_hour_xun_groups": [
+      {"cycle_indexes": "0-9", "xun_head": "甲子", "hidden_instrument": "戊"},
+      {"cycle_indexes": "10-19", "xun_head": "甲戌", "hidden_instrument": "己"},
+      {"cycle_indexes": "20-29", "xun_head": "甲申", "hidden_instrument": "庚"},
+      {"cycle_indexes": "30-39", "xun_head": "甲午", "hidden_instrument": "辛"},
+      {"cycle_indexes": "40-49", "xun_head": "甲辰", "hidden_instrument": "壬"},
+      {"cycle_indexes": "50-59", "xun_head": "甲寅", "hidden_instrument": "癸"}
+    ],
+    "palace_lookup": "在同一日界/时制候选的地盘中查找旬首所隐六仪，并返回该仪所在九宫",
+    "parallel_time_conventions": [
+      "beijing_civil_clock_and_midnight.v1",
+      "true_solar_clock_and_civil_midnight.v1"
+    ],
+    "selected_hour_convention": null,
+    "hour_boundary_margin_minutes": 5,
+    "permitted_use": "不可变时旬首机械候选、六甲隐仪与地盘落宫审计、历史快照、开发者显示和重算校验",
+    "forbidden_use": "Rule ID、时制选择、值符、值使、天盘、九星、八门、八神、格局、吉凶、应期、中间信号或综合裁决",
+    "duty_chief_calculated": false,
+    "duty_envoy_calculated": false,
+    "heaven_plate_calculated": false,
+    "interpretation_eligible": false,
+    "rule_eligible": false
+  },
+  "verification_anchors": [
+    "六十个时干支必须恰分为六组连续十时，每组旬首干恒为甲",
+    "六旬首必须逐一映射戊己庚辛壬癸且不得映射三奇",
+    "阳一局六旬首落宫必须依次为一至六，阴九局必须依次为九至四",
+    "北京时间与真太阳时的日、时、时辰边界必须并列保存且不得自动选择",
+    "处暑局数停用时仍可保存时干支、旬首和隐仪，但旬首地盘落宫必须为空且机械安全为假",
+    "任何值符值使、天盘、星门神、解释或运行时规则标志都必须保持关闭"
+  ],
+  "unresolved_blockers": [
+    "尚未把旬首和地盘旬首所临宫段绑定到权威影印底本具体卷页、逐字校勘与文件哈希",
+    "北京时间与真太阳时的时制、日界及子初换日等传承口径尚未选择",
+    "处暑局数异文以及超神、接气、置闰、拆补仍未闭合",
+    "值符、值使、中五寄宫、天盘、九星、八门、八神尚未分别完成证据门禁",
+    "格局、用神、吉凶和应期规则尚未进入逐条来源审查"
+  ],
+  "evidence_gate_summary": {
+    "decision": "blocked",
+    "runtime_rule_count": 0,
+    "reason": "六十时旬首、六甲隐仪与既有地盘可形成无解释机械候选，但影印页绑定、时制选择和后续盘局占断均未闭合"
+  }
+}

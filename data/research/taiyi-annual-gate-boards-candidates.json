@@ -1,0 +1,143 @@
+{
+  "archive_id": "TAIYI-ANNUAL-GATE-BOARDS-CANDIDATE-2026-09-09-v1",
+  "schema_version": 1,
+  "recorded_on": "2026-09-09",
+  "method": "taiyi",
+  "status": "annual_open_anchored_gate_rotations_with_center_five_failure_only",
+  "purpose": "严格限定在岁计段，把开门分别加在太乙、主大将、客大将所在的非中宫八方位置，并依传本八门环序生成三个互相独立的机械子盘；中五宫无八方位置时停止该子盘，不借用时计直门，不生成三门吉凶或断法",
+  "runtime_ingestion_allowed": false,
+  "civil_date_input_allowed": false,
+  "epoch_selection_allowed": false,
+  "annual_open_anchored_mechanical_rotation_allowed": true,
+  "time_method_duty_gate_rotation_allowed": false,
+  "center_five_projection_allowed": false,
+  "fixed_count_general_board_generation_allowed": false,
+  "three_auspicious_gates_classification_allowed": false,
+  "complete_board_generation_allowed": false,
+  "interpretation_allowed": false,
+  "signal_generation_allowed": false,
+  "timing_generation_allowed": false,
+  "advice_generation_allowed": false,
+  "rule_id_generation_allowed": false,
+  "source_identity": {
+    "parent_archive": "TAIYI-SEVENTY-TWO-BOARD-CANDIDATE-2026-09-09-v1",
+    "depends_on_archive": "TAIYI-EIGHT-GATE-DUTY-CANDIDATE-2026-09-08-v1",
+    "title": "太乙金镜式经",
+    "attributed_author": "唐·王希明",
+    "received_edition": "钦定四库全书本",
+    "kanripo_id": "KR3g0047",
+    "kanripo_repository": "kanripo/KR3g0047",
+    "kanripo_commit": "e3264da2c9f556225e056abe7eade01903b4543e",
+    "raw_file_hashes": {
+      "KR3g0047_001.txt": "6b13ff06e980439d7a3611f1f10c9efb318513e23f7a9e4c16ed4e8896f162d4",
+      "KR3g0047_002.txt": "44949571367607d1719aa51b5ce174d73078d0c84fe0a81e23b192449c8f5cfd",
+      "KR3g0047_003.txt": "fab52159527f90bf0c74af5f655ae3215e0e7d2efb6a5be5506f12c1671b8257"
+    },
+    "raw_hashes_rechecked_on": "2026-09-09",
+    "facsimile_verified": false,
+    "transcription_verified_against_facsimile": false,
+    "independent_transcription_urls": [
+      "https://zh.wikisource.org/zh-hant/太乙金鏡式經_(四庫全書本)/卷01",
+      "https://ctext.org/wiki.pl?chapter=582866&if=gb"
+    ]
+  },
+  "received_fragments": [
+    {
+      "fragment_id": "TY-JJSJ-WYG-J1-ANNUAL-OPEN-ANCHORS-CANDIDATE",
+      "volume": "卷一",
+      "page_markers": ["KR3g0047_WYG_001-23a", "KR3g0047_WYG_001-23b"],
+      "heading": "推八门占岁计法",
+      "transcription": "李淳风云，常以开门加太乙，即太乙之八门也；又以开门加主大将，即主大将之八门也；又以开门加客大将，即客大将之八门也；又以开门加定计大将，即定计大将八门也。",
+      "implemented_fields": ["taiyi_board", "main_great_general_board", "guest_great_general_board"],
+      "excluded_tail": "定计大将尚无已实现的独立机械字段，故其第四子盘不生成"
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J1-TIME-DUTY-ANCHOR-SCOPE-CANDIDATE",
+      "volume": "卷一",
+      "page_markers": ["KR3g0047_WYG_001-22a", "KR3g0047_WYG_001-22b"],
+      "heading": "推八门用法",
+      "transcription": "常以直门加太乙及主客大将，随数而行，太乙三时一移，大将一时一移也。",
+      "implemented_fields": [],
+      "scope_decision": "此句属于冬夏至時計用门段，不移入岁计开门锚定函数"
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J2-EIGHT-DIRECTION-GATE-RING-CANDIDATE",
+      "volume": "卷二",
+      "page_markers": ["KR3g0047_WYG_002-4b", "KR3g0047_WYG_002-5a"],
+      "heading": "推八门所主法",
+      "transcription": "开门直乾位在西北，休直坎位正北，生门直艮位东北，伤门直震位正东，杜门直巽位东南，景门直离正位南，死门直坤位在西南，惊门直兑位正西。",
+      "implemented_fields": ["received_gate_ring", "rotated_gate_placements"],
+      "interpretive_tail_implemented": false
+    }
+  ],
+  "candidate": {
+    "algorithm_version": "jiuheng.taiyi.tang_annual_open_anchored_gate_boards_candidate.v1",
+    "parent_annual_frame_version": "jiuheng.taiyi.tang_supplied_accumulated_year_frame_candidate.v6",
+    "input_contract": "already_computed_annual_taiyi_and_main_guest_great_general_palaces_only",
+    "anchor_gate": "开门",
+    "received_gate_order": ["开门", "休门", "生门", "伤门", "杜门", "景门", "死门", "惊门"],
+    "received_palace_ring": [1, 8, 3, 4, 9, 2, 7, 6],
+    "rotation_rule": "令开门位于锚点宫；其余门与宫均按相同八方环序逐位左行",
+    "center_five_rule": "主大将或客大将为五宫时，该子盘返回缺失及明确原因；不投影到坤二、艮八或其他外宫",
+    "outputs": ["taiyi_board", "main_great_general_board_if_noncentral", "guest_great_general_board_if_noncentral", "center_five_block_reasons", "all_three_boards_generated"],
+    "fixed_count_general_board_generated": false,
+    "time_method_duty_gate_rotation_generated": false,
+    "three_auspicious_gates_classified": false,
+    "interpretation_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false,
+    "forbidden_outputs": ["civil_date_to_accumulated_year", "time_method_gate_board", "center_five_projection", "fixed_count_general_board", "three_gate_completeness", "general_release_state", "judgment", "timing", "advice", "formal_rule_id"]
+  },
+  "machine_test_anchors": {
+    "open_at_palace_one": [
+      {"gate": "开门", "palace": 1},
+      {"gate": "休门", "palace": 8},
+      {"gate": "生门", "palace": 3},
+      {"gate": "伤门", "palace": 4},
+      {"gate": "杜门", "palace": 9},
+      {"gate": "景门", "palace": 2},
+      {"gate": "死门", "palace": 7},
+      {"gate": "惊门", "palace": 6}
+    ],
+    "open_at_palace_seven": [
+      {"gate": "开门", "palace": 7},
+      {"gate": "休门", "palace": 6},
+      {"gate": "生门", "palace": 1},
+      {"gate": "伤门", "palace": 8},
+      {"gate": "杜门", "palace": 3},
+      {"gate": "景门", "palace": 4},
+      {"gate": "死门", "palace": 9},
+      {"gate": "惊门", "palace": 2}
+    ],
+    "open_at_palace_three": [
+      {"gate": "开门", "palace": 3},
+      {"gate": "休门", "palace": 4},
+      {"gate": "生门", "palace": 9},
+      {"gate": "伤门", "palace": 2},
+      {"gate": "杜门", "palace": 7},
+      {"gate": "景门", "palace": 6},
+      {"gate": "死门", "palace": 1},
+      {"gate": "惊门", "palace": 8}
+    ],
+    "annual_frames": [
+      {"count": 1, "taiyi": 1, "main_great": 7, "guest_great": 3, "all_three_boards_generated": true},
+      {"count": 4, "taiyi": 2, "main_great": 5, "guest_great": 7, "all_three_boards_generated": false, "blocked_board": "main_great_general"},
+      {"count": 7, "taiyi": 3, "main_great": 8, "guest_great": 5, "all_three_boards_generated": false, "blocked_board": "guest_great_general"}
+    ]
+  },
+  "variants_and_blockers": [
+    "時計段以当时直门为锚并按时移动；岁计段明确以开门为锚。本候选只实现岁计，不把两个输入域合并。",
+    "八门原文只列乾、坎、艮、震、巽、离、坤、兑八方，主客大将算法却允许中五宫；没有中五起门原文前，五宫子盘必须失败关闭。",
+    "岁计段还列定计大将八门，但九衡尚未建立定计大将机械字段，因此不能把三套已知子盘冒充为该段全部完成。",
+    "相邻文字提及开休生三门相合与闭塞，但那是解释层；本候选不判断相合、门具将发、八门杜或胜负。",
+    "四库电子转录尚未以对应影印图像逐字定本，所有机械字段仍是研究候选，不能进入正式 Rule ID。"
+  ],
+  "review_state": {
+    "bibliographic_review": "candidate_only",
+    "transcription_review": "blocked_without_facsimile_bytes",
+    "logic_review": "annual_and_time_scope_separated_center_five_fails_closed",
+    "implementation_review": "automated_exhaustive_rotation_and_center_boundary_tests_required",
+    "runtime_release": "blocked",
+    "decision": "chart_only_annual_open_anchored_gate_rotations_no_time_method_no_center_projection_no_interpretation_no_rules"
+  }
+}

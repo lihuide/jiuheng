@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "status": "single_reader_facsimile_comparison_not_formal_review",
+  "source": {
+    "title": "增刪卜易",
+    "edition": "民國十四年（1925）文明書局本，秦慎安校勘",
+    "holding_institution": "中國國家圖書館",
+    "public_catalog_and_file_page": "https://commons.wikimedia.org/wiki/File:NLC416-12jh005345-45344_%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93.pdf",
+    "local_pdf_path": "data/research/facsimiles/zengshan-buyi-nlc-1925/full.pdf",
+    "pdf_bytes": 11089308,
+    "pdf_sha256": "caac111bc5c5b1c08fd27b3828e7cf6b5430503800f2427d8f2b28809022abaa",
+    "pdf_total_pages": 394
+  },
+  "witness_pages": [
+    {
+      "pdf_page_one_based": 84,
+      "printed_page": "二四",
+      "chapter": "暗動章第二十二",
+      "single_reader_excerpt": "靜爻旺相日辰沖之為暗動靜爻休囚日辰沖之為日破",
+      "comparison_to_qing": "與日本國立公文書館清刊第二冊第15幅右頁的暗動與日破區分同義"
+    },
+    {
+      "pdf_page_one_based": 198,
+      "printed_page": "五六",
+      "chapter": "天時章第三十五",
+      "single_reader_conflict_excerpt": "占雨倘父爻不動而妻財暗動者還主晴明",
+      "comparison_to_qing": "清刊第三冊第44幅左頁有同方向的妻財暗動晴明條件；其與第45幅官鬼明動句的優先關係未核定"
+    },
+    {
+      "pdf_page_one_based": 199,
+      "printed_page": "五七",
+      "chapter": "天時章第三十五",
+      "single_reader_primary_excerpt": "占雨以父爻為主若父爻不動又不暗動而官鬼動者必主濃雲厚霧而無雨也",
+      "single_reader_exception_excerpt": "倘爻中變出父母者不拘旺衰皆主有雨",
+      "comparison_to_qing": "清刊第三冊第45幅左頁的主句與變出父母例外在判斷方向上一致；清刊例外中的『拘／俱』字形仍待另一讀者逐字複核"
+    },
+    {
+      "pdf_page_one_based": 205,
+      "printed_page": "六三",
+      "chapter": "天時章第三十五",
+      "single_reader_excerpt": "父母合住本主不雨若遇鬼動沖開",
+      "continued_on_pdf_page_one_based": 206,
+      "comparison_to_qing": "與清刊第三冊第49幅左頁相應；句子跨印本兩頁，必須連讀第206頁"
+    },
+    {
+      "pdf_page_one_based": 206,
+      "printed_page": "六四",
+      "chapter": "天時章第三十五",
+      "single_reader_excerpt": "必待雷震而後有雨",
+      "continued_from_pdf_page_one_based": 205,
+      "comparison_to_qing": "與清刊第三冊第49幅左頁的鬼動沖開後有雨方向一致；仍需獨立逐字複核合沖條件與應期"
+    }
+  ],
+  "interpretive_limits": [
+    "此為較晚印本，不能自行充當清刊本的獨立早期傳本",
+    "比對不解決同章相鄰斷語的衝突優先序或指定時段適用性",
+    "單人核頁不是書目、轉錄、邏輯、實作四類獨立復核"
+  ],
+  "formal_rule_id": null,
+  "may_generate_prediction": false
+}

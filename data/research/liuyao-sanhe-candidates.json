@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "research_id": "jiuheng.research.liuyao.sanhe_raw_member_occurrences.2026-09-16",
+  "method": "liuyao",
+  "review_date": "2026-09-16",
+  "status": "mechanical_four_sanhe_member_catalogs_and_source_occurrences_blocked_from_runtime_rules",
+  "purpose": "固定申子辰、亥卯未、寅午戌、巳酉丑四组生旺墓成员，并分开清点本卦明爻、实际动爻变支、锁定月建和锁定日辰中的出现事实；不把跨来源并集三支齐全直接解释为三合成局。",
+  "evidence_scope": {
+    "sources": [
+      {
+        "source_id": "bushi_zhengzong_harvard_scan_volume_1",
+        "title": "《卜筮正宗全书》卷一、卷二哈佛燕京藏本影印",
+        "public_url": "https://commons.wikimedia.org/wiki/File:Harvard_drs_53238001_%E5%8D%9C%E7%AD%AE%E6%AD%A3%E5%AE%97%E5%85%A8%E6%9B%B8_v.1%E5%8F%99%E3%80%81%E7%9B%AE%E9%8C%84%E3%80%81%E5%8D%B7%E4%B9%8B%E4%B8%80%E3%80%81%E5%8D%B7%E4%B9%8B%E4%BA%8C.pdf",
+        "supports": [
+          "卷一目录包含三合会局歌和长生掌诀",
+          "可作为四组三合生旺墓目录的影印追索底本"
+        ],
+        "facsimile_available": true,
+        "local_page_bytes_bound": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "bushi_zhengzong_ctext_transcription",
+        "title": "《卜筮正宗》中国哲学书电子化计划转录",
+        "public_url": "https://ctext.org/wiki.pl?chapter=889452&if=gb",
+        "supports": [
+          "目录明确列有三合会局歌",
+          "卷十三、十四问答另有三合八卦成局的案例目录，可证明成局条件不是单一支表即可替代"
+        ],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "yilin_buyi_volume_1_sanhe_wikisource",
+        "title": "《易林补遗》卷一三合段电子转录",
+        "public_url": "https://zh.wikisource.org/zh-hant/%E6%98%93%E6%9E%97%E8%A3%9C%E9%81%BA/1",
+        "supports": [
+          "以申子辰为水局并明确生、旺、墓次序",
+          "以亥卯未为木局并把中间旺支是否出现与两端支出现区分",
+          "明言三字全、缺生、缺墓、缺旺的称谓和效力不同，提示不能仅凭并集三支齐全发布统一断法"
+        ],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      }
+    ],
+    "source_limitations": [
+      "哈佛藏本卷一尚未下载并绑定准确图页、字节和 SHA-256",
+      "公开 OCR 与电子转录存在错字、现代标点和编校层差异",
+      "明爻、静爻、动爻、变爻、月建、日辰参与成局的条件尚未完成跨版本校勘",
+      "全局、半局、真假、化局、生克、空破、用神和应期等效力未进入本层"
+    ]
+  },
+  "candidate": {
+    "algorithm_version": "jiuheng.liuyao.received_four_sanhe_member_occurrences.v1",
+    "groups_birth_prosperity_tomb": [
+      { "element": "水", "branches": ["申", "子", "辰"] },
+      { "element": "木", "branches": ["亥", "卯", "未"] },
+      { "element": "火", "branches": ["寅", "午", "戌"] },
+      { "element": "金", "branches": ["巳", "酉", "丑"] }
+    ],
+    "occurrence_layers": [
+      "primary_visible",
+      "moving_transformed",
+      "locked_month",
+      "locked_day"
+    ],
+    "all_primary_line_type_combinations_verified": 4096,
+    "moving_line_occurrences_verified": 12288,
+    "total_source_occurrences_verified": 45056,
+    "raw_union_presence_is_audit_only": true,
+    "raw_occurrence_inventory_built": true,
+    "source_scope_activation_requirements_classified": false,
+    "any_sanhe_formation_classified": false,
+    "combination_effects_assessed": false,
+    "useful_god_selected": false,
+    "strength_assessed": false,
+    "timing_assessed": false,
+    "interpretation_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false
+  },
+  "forbidden_uses": [
+    "不得把四组成员目录本身当成某次卦已经成局",
+    "不得把本卦明爻、实际变爻、月建和日辰不加条件地混成一个有效三合局",
+    "不得把跨来源并集三支齐全称为全局、真局、化局或有效局",
+    "不得从成员出现数量推断吉凶、成败、旺衰、应期、总分或行动建议",
+    "不得把公共 OCR、电子转录或现代讲解替代影印底本、异文和四类复核"
+  ],
+  "unresolved": [
+    "影印页精确定位、本地字节哈希、逐字转录和异文",
+    "明爻、静爻、动爻、变爻、月建和日辰的成局激活范围",
+    "三支全、缺生、缺墓、缺旺及半局的跨版本术语和必要条件",
+    "空破、冲合、旺衰、用神及化局五行的效力与例外",
+    "可执行 Rule ID、应期、中间信号、结论和行动建议"
+  ],
+  "review_state": {
+    "decision": "four_member_catalogs_and_separated_source_occurrences_only",
+    "runtime_release": "blocked",
+    "formal_rule_count": 0
+  }
+}

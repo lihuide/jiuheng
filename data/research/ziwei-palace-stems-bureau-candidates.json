@@ -1,0 +1,105 @@
+{
+  "research_id": "ZIWEI-PALACE-STEMS-BUREAU-RESEARCH-2026-09-01",
+  "method": "ziwei_doushu",
+  "researched_on": "2026-09-01",
+  "scope": "仅审计以生年干起寅宫天干、顺布十二地支宫干、以命宫干支查六十甲子纳音并映射水二/木三/金四/土五/火六局；不安紫微星、十四主星或任何解释规则",
+  "status": "mechanical_received_bureau_candidate_blocked_from_runtime_rules",
+  "runtime_rule_seed_allowed": false,
+  "sources": [
+    {
+      "source_id": "ZIWEI-QUANSHU-WIKISOURCE-VOL2-BUREAU-2026-09-01",
+      "title": "紫微斗數全書卷二（维基文库转录页）",
+      "source_type": "electronic_transcription_not_facsimile",
+      "url": "https://zh.wikisource.org/zh-hant/%E7%B4%AB%E5%BE%AE%E6%96%97%E6%95%B8%E5%85%A8%E6%9B%B8/%E5%8D%B7%E4%BA%8C",
+      "supports": [
+        "甲己年丙寅、乙庚年戊寅、丙辛年庚寅、丁壬年壬寅、戊癸年甲寅的起五行寅例",
+        "甲年命在寅时以丙寅丁卯炉中火定火局的算例",
+        "六十花甲子三十组纳音名称及五行"
+      ],
+      "evidence_limit": "电子转录可检索但尚未绑定明确版次影印页；转录中甲戌、己亥等字存在明显异文或讹字，需要逐页复核"
+    },
+    {
+      "source_id": "ZIWEI-JIELAN-TRANSCRIPTION-BUREAU-2026-09-01",
+      "title": "新刻纂集紫微斗数捷览卷一·定五局例（天机转录页）",
+      "source_type": "electronic_transcription_claiming_verbatim_not_facsimile",
+      "url": "https://tianjihq.com/en/learn/books/ziwei-jielan/18",
+      "supports": [
+        "从寅宫起遁甲纳音，顺数至命宫定五行局",
+        "甲己年命在寅或卯为炉中火、火六局",
+        "甲己年命在辰或巳为大林木、木三局",
+        "乙庚年命在子或丑为霹雳火、火六局"
+      ],
+      "evidence_limit": "网页不是原刻本影像，不能单独满足主版本门禁"
+    },
+    {
+      "source_id": "CHINESE-RARE-BOOKS-CATALOG-ZIWEI-JIELAN",
+      "title": "《中国古籍善本书目·子部三》",
+      "source_type": "institutional_bibliography_facsimile",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/db/SSID-13990657_%E4%B8%AD%E5%9C%8B%E5%8F%A4%E7%B1%8D%E5%96%84%E6%9C%AC%E6%9B%B8%E7%9B%AE_%E5%AD%90%E9%83%A8_3.pdf",
+      "supports": "目录著录《新刻纂集紫微斗数捷览》四卷，用于确认书目线索",
+      "evidence_limit": "书目著录不提供本次算法正文"
+    },
+    {
+      "source_id": "KOREA-NDL-ZIWEI-FANGSHU-FACSIMILE-LEAD",
+      "title": "紫微斗數方書二卷一册笔写本",
+      "source_type": "institutional_facsimile_lead_not_page_bound",
+      "url": "https://commons.wikimedia.org/wiki/File:CNTS-00047996572_%E7%B4%AB%E5%BE%AE%E6%96%97%E6%95%B8%E6%96%B9%E6%9B%B8.pdf",
+      "catalog_facts": "韩国国立中央图书馆数字资源，编号 CNTS-00047996572 / KOL200100663，二卷一册，153 页；Commons 文件 SHA-1 为 0ecf0cdc7ae9a2e0d427501bb0fdef901a851a0a",
+      "supports": "另一本紫微斗数笔写本的机构影像线索，二手转录声称含同一月建与五局公式",
+      "evidence_limit": "尚未独立固定公式所在 PDF 页、图像校验值和逐字转录，当前只作待核线索"
+    },
+    {
+      "source_id": "YU-YUE-YOUYI-LU-CTEXT-FIVE-BUREAUS",
+      "title": "俞樾《游艺录》紫微斗数条（中国哲学书电子化计划 OCR 页）",
+      "source_type": "ocr_transcription_with_facsimile_collection_lead",
+      "url": "https://ctext.org/wiki.pl?chapter=299125&if=gb",
+      "supports": "记载以遁甲纳音定五局，作为方法链的独立晚清交叉线索",
+      "evidence_limit": "OCR 不能替代影像逐字复核，且该段未在检索结果中展开完整五局表"
+    }
+  ],
+  "implemented_candidate": {
+    "palace_stem_algorithm_version": "jiuheng.ziwei.received_yin_stem_nayin_five_element_bureau.v1",
+    "nayin_catalog_algorithm_version": "jiuheng.nayin.received_sixty_designations.v1",
+    "input": "命宫地支、出生年干候选及各自边界安全状态",
+    "year_stem_candidates": [
+      "现代官方农历日期候选的名义农历年干",
+      "天文立春换年候选的年干"
+    ],
+    "hour_candidates": [
+      "北京时间时支形成的命宫",
+      "真太阳时时支形成的命宫"
+    ],
+    "formula": "按生年干分组确定寅宫天干，随地支顺排十二宫；取命宫干支的六十甲子纳音五行，映射为水二、木三、金四、土五、火六局",
+    "output": "最多四套宫干、命宫干支、纳音名称和五行局候选；结果相同仍保留口径来源",
+    "permitted_use": "不可变机械排盘审计、开发者显示和重算校验",
+    "forbidden_use": "Rule ID、安紫微星、十四主星、辅煞星、四化、限运、吉凶、应期、中间信号或综合裁决",
+    "interpretation_eligible": false,
+    "selected_year_stem_convention": null,
+    "selected_hour_convention": null
+  },
+  "verification_anchors": [
+    "甲/己年寅宫起丙寅",
+    "乙/庚年寅宫起戊寅",
+    "丙/辛年寅宫起庚寅",
+    "丁/壬年寅宫起壬寅",
+    "戊/癸年寅宫起甲寅",
+    "甲己年命寅：丙寅炉中火，火六局",
+    "甲己年命辰：戊辰大林木，木三局",
+    "乙庚年命子或丑：戊子/己丑霹雳火，火六局",
+    "六十干支必须两两共用三十个纳音条目，五种元素各六组"
+  ],
+  "unresolved_blockers": [
+    "《紫微斗数捷览》和《紫微斗数全书》的正文尚未逐字绑定可公开复核的主版本影像页与校验值",
+    "六十甲子纳音转录存在讹字和异体字，当前名称采用规范化显示但尚未完成异文表",
+    "传本文字称生年或本生年，但没有解决现代程序应按农历换年还是立春换年，程序并列保存两套候选且不选择",
+    "命宫仍同时保留北京时间和真太阳时两套时辰口径，最多形成四套候选",
+    "现代官方农历日期候选不代表历代历法统一反推，边界不安全时关闭机械安全状态",
+    "五行局数字只作传本排盘标签；不得解释为现实属性、概率、旺衰或吉凶",
+    "紫微星、十四主星和全部解释规则尚未实现或通过正式证据门禁"
+  ],
+  "evidence_gate_summary": {
+    "decision": "blocked",
+    "runtime_rule_count": 0,
+    "reason": "公式与算例在多个传本线索中一致，但主版本影像绑定、纳音异文、出生年界和时辰口径尚未闭合"
+  }
+}

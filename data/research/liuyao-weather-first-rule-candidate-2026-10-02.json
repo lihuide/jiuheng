@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "candidate_id": "WEATHER-RAIN-CANDIDATE-001",
+  "status": "research_candidate_non_executable",
+  "formal_rule_id": null,
+  "source": {
+    "title": "增刪卜易",
+    "edition": "清乾隆學耕堂刊本",
+    "holding_institution": "国立公文書館（日本）",
+    "shelfmark": "子０５９－０００８",
+    "volume": 3,
+    "chapter": "天時章第三十五",
+    "catalog_url": "https://www.digital.archives.go.jp/file/1079274",
+    "canvas": 45,
+    "side": "left",
+    "image_path": "data/research/facsimiles/zengshan-buyi-naj-vol3/canvas-45.jpg",
+    "image_sha256": "d7b0534996173e5f56c097d367da800a98782d0d92302197384e3b00cecaf31e"
+  },
+  "single_reader_excerpt": "占雨以父爻為主若父爻不動又不暗動而官鬼動者必主濃雲厚霧而無雨也",
+  "excerpt_status": "single_reader_checked_against_image_punctuation_omitted",
+  "hypothesis": "占雨时，父母爻既无明动也无暗动，官鬼爻明动，且不存在爻中变出父母及其他相反条件，可能出现浓云厚雾而无雨。此句不能自行推出某个指定时段必不下雨。",
+  "required_facts": [
+    {"fact": "question_is_rain", "current_state": "available_in_weather_scope"},
+    {"fact": "primary_parents_moving", "current_state": "available_in_liuyao_calendar_moving_audit"},
+    {"fact": "primary_officer_ghost_moving", "current_state": "available_in_liuyao_calendar_moving_audit"},
+    {"fact": "parents_dark_moving", "current_state": "base_chapter_original_pages_acquired_but_strength_and_effective_judgment_not_implemented"},
+    {"fact": "transformed_parents_from_moving_line", "current_state": "available_in_liuyao_calendar_moving_audit"},
+    {"fact": "target_period_applies_to_judgment", "current_state": "not_established_by_source_or_program"},
+    {"fact": "other_conflicting_conditions_and_priority", "current_state": "not_reviewed"}
+  ],
+  "known_exception": "清刊第三冊第45幅左頁及國圖1925年本PDF第199頁均緊接說爻中變出父母時有雨；清刊『拘／俱』字形、獨立校勘和其他條件優先關係未完成。",
+  "base_chapter_source_inventory": "data/research/liuyao-weather-foundation-naj-facsimile-2026-10-02.json",
+  "later_edition_comparison_inventory": "data/research/liuyao-weather-nlc-1925-comparison-2026-10-02.json",
+  "same_chapter_conflict_inventory": "data/research/liuyao-weather-same-chapter-conflicts-2026-10-08.json",
+  "research_audit": {
+    "function": "liuyao_weather_rain_candidate_audit",
+    "source_file": "crates/divination-core/src/liuyao.rs",
+    "status": "visible_line_prerequisites_v3_in_developer_audit_not_integrated_as_weather_judgment",
+    "formal_rule_id": null,
+    "may_generate_prediction": false
+  },
+  "conservative_subset_inference": {
+    "status": "research_inference_not_released",
+    "premise": "同刊暗動章將暗動限定為靜爻受日辰沖且旺相；若所有本卦可見爻都不受日辰沖，則在該章定義下這些可見靜爻不會構成暗動，無須先選旺相口徑；此舉同時避開相鄰的妻財暗動晴明條件。",
+    "proposed_extra_restrictions": [
+      "本卦至少有一條可見父母爻",
+      "所有可見父母爻均非明動且均不受日辰沖",
+      "所有本卦可見爻均不受日辰沖，以排除相鄰妻財暗動等可見爻衝突",
+      "所有本卦可見爻均不與月建對支，以避開未審月破效力",
+      "所有本卦可見爻均不屬旬中未配支，以避開未審空破效力",
+      "父母爻不與其他本卦可見爻、月建或日辰有原始六合配對，以避開未審合住條件",
+      "僅有一條明動爻且其本卦六親為官鬼",
+      "任何明動爻均未變出父母",
+      "曆法日界與月界無歧義"
+    ],
+    "available_program_facts": ["primary visible six relatives", "moving line identities", "transformed relative identities", "day and month branch opposition for all visible lines", "xun-void raw markers for all visible lines", "parent raw six-combination pairs with visible lines, month, and day", "research-only narrow visible-line audit"],
+    "does_not_establish": ["指定時段必無雨", "父母合住與官鬼動沖開的效力及應期", "其他靜爻或伏神的效力", "同章相反條件優先序", "正式 Rule ID"]
+  },
+  "same_edition_interpretive_tension": "天時章同刊第三冊第44幅右頁有『余試天時旺衰不論』，但第二冊暗動章以旺相、休囚區分暗動和日破；尚需核定前者是否只否定以旺衰推雨量與久暫，而不取消暗動的定義。",
+  "adjacent_conflict": "清刊第三冊第44幅左頁與國圖1925年本PDF第198頁另說父爻不動、妻財暗動可主晴明。研究檢查已更保守地排除任何本卦可見爻受日辰沖、與月建對支或屬旬中未配支，但這仍不解決伏神、其他條件和斷語優先序。",
+  "same_chapter_combination_conflict": "清刊第三冊第49幅左頁及國圖1925年本PDF第205–206頁另說父母合住本主不雨，若遇鬼動沖開，待雷震後有雨。兩印本同方向但仍為單人核頁，未定合沖生效及應期；研究檢查尚未評估父母合住、官鬼動沖開，不能由候選結構推出無雨。",
+  "hidden_parent_scope": "按目前僅在某六親全部不現時取伏神的機械約定，候選要求至少一條明爻父母，故不會另列伏父母；用爻已現仍察伏神的傳本分歧及伏神效力尚未審定。",
+  "unverified_comparison_leads": [
+    {
+      "url": "https://www.shidianguji.com/book/XYXZSBY/chapter/1lzxsnhvbt0re",
+      "note": "暗動章電子轉錄提示靜爻受日辰沖時需分旺相與休囚；非已核原頁。"
+    },
+    {
+      "url": "https://www.86027.cn/gudian/yijing/97570.html",
+      "note": "現代改寫出現雲濃而雨少的表述；未找到該表述的底本原頁，不能當作異文結論。"
+    }
+  ],
+  "release_blockers": [
+    "獨立讀者核對原頁及印刷葉碼，確定緊接例外的逐字文字",
+    "已核國圖1925年印本PDF第84及199頁；仍需相關早期材料與獨立讀者逐字對照，處理異文與不同轉錄",
+    "暗動章原頁已取得；旺相、休囚及空破等完整生效條件、時間和與父爻明動的關係尚未核定及實作",
+    "天時章『旺衰不論』與暗動章旺相休囚區分的適用層級尚未審定",
+    "同章相鄰及相反條件已建單人初核清單；衝突優先序、指定時段適用性尚未核定",
+    "第49幅左頁及國圖1925年本PDF第205–206頁的父母合住、鬼動沖開後有雨條件尚未逐字獨立校勘，也未定合沖生效及優先序",
+    "研究條件檢查已有正反邊界測試；書目、轉錄、邏輯、實作四類正式復核及完整裁決測試未完成"
+  ],
+  "may_generate_prediction": false
+}

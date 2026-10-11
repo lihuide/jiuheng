@@ -1,0 +1,126 @@
+{
+  "archive_id": "TAIYI-EIGHT-GATE-DUTY-CANDIDATE-2026-09-08-v1",
+  "schema_version": 1,
+  "recorded_on": "2026-09-08",
+  "method": "taiyi",
+  "status": "mechanical_eight_gate_catalog_and_annual_duty_gate_from_supplied_accumulated_year_only",
+  "purpose": "固定太乙八门的传本次序与方位，并只由调用方已给定的积年计算三十年一门、二百四十年一周的岁计直门；不生成太乙、主大将、客大将三套旋转门盘或任何吉凶",
+  "runtime_ingestion_allowed": false,
+  "civil_date_input_allowed": false,
+  "epoch_selection_allowed": false,
+  "yin_yang_dun_selection_allowed": false,
+  "rotated_gate_boards_generation_allowed": false,
+  "three_auspicious_gates_classification_allowed": false,
+  "complete_board_generation_allowed": false,
+  "interpretation_allowed": false,
+  "signal_generation_allowed": false,
+  "timing_generation_allowed": false,
+  "advice_generation_allowed": false,
+  "rule_id_generation_allowed": false,
+  "source_identity": {
+    "parent_archive": "TAIYI-GENERALS-CANDIDATE-2026-09-08-v1",
+    "title": "太乙金镜式经",
+    "attributed_author": "唐·王希明",
+    "received_edition": "钦定四库全书本",
+    "kanripo_id": "KR3g0047",
+    "kanripo_repository": "kanripo/KR3g0047",
+    "kanripo_commit": "e3264da2c9f556225e056abe7eade01903b4543e",
+    "raw_file_hashes": {
+      "KR3g0047_001.txt": "6b13ff06e980439d7a3611f1f10c9efb318513e23f7a9e4c16ed4e8896f162d4",
+      "KR3g0047_002.txt": "44949571367607d1719aa51b5ce174d73078d0c84fe0a81e23b192449c8f5cfd",
+      "KR3g0047_003.txt": "fab52159527f90bf0c74af5f655ae3215e0e7d2efb6a5be5506f12c1671b8257"
+    },
+    "raw_hashes_rechecked_on": "2026-09-08",
+    "facsimile_verified": false,
+    "transcription_verified_against_facsimile": false,
+    "independent_transcription_urls": [
+      "https://ctext.org/wiki.pl?chapter=582866&if=gb",
+      "https://zh.wikisource.org/zh-hans/太乙金鏡式經_(四庫全書本)/全覽"
+    ]
+  },
+  "received_fragments": [
+    {
+      "fragment_id": "TY-JJSJ-WYG-J1-ANNUAL-DUTY-GATE-CYCLE-CANDIDATE",
+      "volume": "卷一",
+      "page_markers": ["KR3g0047_WYG_001-23a", "KR3g0047_WYG_001-23b", "KR3g0047_WYG_001-24a"],
+      "heading": "推八门占岁计法",
+      "transcription": "置上元甲子以来距所求积年，求岁计八门，以大游纪法七百二十去之；不尽，以三分纪法二百四十除之；余以三十约之为直门数，不尽即直门所入年。命起开门，以次休、生门，左行八门，周而复始。",
+      "implemented_fields": ["eight_gate_position_in_720", "eight_gate_position_in_240", "duty_gate_step", "annual_duty_gate", "year_within_duty_gate"]
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J1-ANNUAL-DUTY-GATE-EXAMPLE-CANDIDATE",
+      "volume": "卷一",
+      "page_markers": ["KR3g0047_WYG_001-24a"],
+      "heading": "推八门占岁计法算例",
+      "transcription": "假令今开元十二年甲子即开门为直使，至三十一年甲午岁即休门为直使，他皆仿此。",
+      "implemented_fields": ["thirty_year_group_boundary"],
+      "mechanical_anchors": ["1至30→开门", "31至60→休门"]
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J2-EIGHT-GATE-FIXED-CATALOG-CANDIDATE",
+      "volume": "卷二",
+      "page_markers": ["KR3g0047_WYG_002-4b", "KR3g0047_WYG_002-5a"],
+      "heading": "推八门所主法",
+      "transcription": "开门直乾位在西北，休直坎位正北，生门直艮位东北，伤门直震位正东，杜门直巽位东南，景门直离正位南，死门直坤位在西南，惊门直兑位正西。",
+      "implemented_fields": ["gate_names", "received_leftward_order", "fixed_taiyi_palaces"],
+      "interpretive_tail_implemented": false
+    }
+  ],
+  "candidate": {
+    "algorithm_version": "jiuheng.taiyi.tang_supplied_accumulated_year_frame_candidate.v4",
+    "input_contract": "caller_supplied_one_based_positive_accumulated_year_only",
+    "cycle_steps": [
+      "保留七百二十年一基位置，整周不化零",
+      "再保留二百四十年八门位置，整周不化零",
+      "每三十年为一门，零基门序为(position_in_240-1)/30",
+      "门内年为(position_in_240-1)%30+1"
+    ],
+    "gate_order": ["开门", "休门", "生门", "伤门", "杜门", "景门", "死门", "惊门"],
+    "fixed_taiyi_palaces": [1, 8, 3, 4, 9, 2, 7, 6],
+    "outputs": ["eight_gate_position_in_720", "eight_gate_position_in_240", "duty_gate_step", "annual_duty_gate", "year_within_duty_gate"],
+    "rotated_gate_boards_generated": false,
+    "interpretation_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false,
+    "forbidden_outputs": ["civil_date_to_accumulated_year", "yin_yang_dun", "taiyi_gate_rotation", "main_general_gate_rotation", "guest_general_gate_rotation", "three_gate_completeness", "general_release_state", "judgment", "timing", "advice", "formal_rule_id"]
+  },
+  "machine_test_anchors": {
+    "catalog": [
+      {"index": 0, "gate": "开门", "taiyi_palace": 1},
+      {"index": 1, "gate": "休门", "taiyi_palace": 8},
+      {"index": 2, "gate": "生门", "taiyi_palace": 3},
+      {"index": 3, "gate": "伤门", "taiyi_palace": 4},
+      {"index": 4, "gate": "杜门", "taiyi_palace": 9},
+      {"index": 5, "gate": "景门", "taiyi_palace": 2},
+      {"index": 6, "gate": "死门", "taiyi_palace": 7},
+      {"index": 7, "gate": "惊门", "taiyi_palace": 6}
+    ],
+    "cycle_boundaries": [
+      {"count": 1, "position_in_720": 1, "position_in_240": 1, "gate": "开门", "year_within_gate": 1},
+      {"count": 30, "position_in_720": 30, "position_in_240": 30, "gate": "开门", "year_within_gate": 30},
+      {"count": 31, "position_in_720": 31, "position_in_240": 31, "gate": "休门", "year_within_gate": 1},
+      {"count": 60, "position_in_720": 60, "position_in_240": 60, "gate": "休门", "year_within_gate": 30},
+      {"count": 61, "position_in_720": 61, "position_in_240": 61, "gate": "生门", "year_within_gate": 1},
+      {"count": 211, "position_in_720": 211, "position_in_240": 211, "gate": "惊门", "year_within_gate": 1},
+      {"count": 240, "position_in_720": 240, "position_in_240": 240, "gate": "惊门", "year_within_gate": 30},
+      {"count": 241, "position_in_720": 241, "position_in_240": 1, "gate": "开门", "year_within_gate": 1},
+      {"count": 720, "position_in_720": 720, "position_in_240": 240, "gate": "惊门", "year_within_gate": 30},
+      {"count": 721, "position_in_720": 1, "position_in_240": 1, "gate": "开门", "year_within_gate": 1}
+    ]
+  },
+  "variants_and_blockers": [
+    "Kanripo 固定文本作‘直门数、不尽即直门所入年’，中国哲学书电子化计划当前页面出现‘直门致、宣门’等疑似转录字；本候选保留差异，不把网络页面自动覆盖固定文本。",
+    "先以七百二十再以二百四十约减在纯整数上与直接二百四十约减同余，但程序仍保存两个一基位置，以忠实记录传本步骤和整周边界。",
+    "卷一相邻段分别出现‘常以直门加太乙及主客大将’与岁计段‘常以开门加太乙’，完整旋转门盘口径尚未闭合，因此三套门盘全部禁用。",
+    "卷二同段包含八门所主和吉凶，但本候选只采用名称、方位和次序，不采用任何吉凶文字。",
+    "岁计直门依赖外部给定积年；两套积年历元和现代日期换算未解决，UI 不得从当前年份擅自生成输入。"
+  ],
+  "review_state": {
+    "bibliographic_review": "candidate_only",
+    "transcription_review": "blocked_without_facsimile_bytes",
+    "logic_review": "candidate_formula_and_boundary_example_recorded",
+    "implementation_review": "automated_tests_required",
+    "runtime_release": "blocked",
+    "decision": "chart_only_duty_gate_no_date_no_rotated_boards_no_interpretation_no_rules"
+  }
+}

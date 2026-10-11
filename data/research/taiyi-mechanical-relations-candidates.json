@@ -1,0 +1,192 @@
+{
+  "archive_id": "TAIYI-MECHANICAL-RELATIONS-CANDIDATE-2026-09-08-v1",
+  "schema_version": 1,
+  "recorded_on": "2026-09-08",
+  "method": "taiyi",
+  "status": "mechanical_cover_imprisonment_and_ge_position_marks_only",
+  "purpose": "只依据卷三的直接位置定义，把既有太乙、天目、始击及主客大小将标记为掩、囚、格；不采用相邻吉凶文字，不生成击、迫、关、对、四郭或三门五将结论",
+  "runtime_ingestion_allowed": false,
+  "civil_date_input_allowed": false,
+  "epoch_selection_allowed": false,
+  "yin_yang_dun_selection_allowed": false,
+  "position_label_generation_allowed": true,
+  "strike_classification_allowed": false,
+  "pressure_classification_allowed": false,
+  "barrier_classification_allowed": false,
+  "opposition_classification_allowed": false,
+  "compound_pattern_classification_allowed": false,
+  "complete_board_generation_allowed": false,
+  "interpretation_allowed": false,
+  "signal_generation_allowed": false,
+  "timing_generation_allowed": false,
+  "advice_generation_allowed": false,
+  "rule_id_generation_allowed": false,
+  "source_identity": {
+    "parent_archive": "TAIYI-EIGHT-GATE-DUTY-CANDIDATE-2026-09-08-v1",
+    "title": "太乙金镜式经",
+    "attributed_author": "唐·王希明",
+    "received_edition": "钦定四库全书本",
+    "kanripo_id": "KR3g0047",
+    "kanripo_repository": "kanripo/KR3g0047",
+    "kanripo_commit": "e3264da2c9f556225e056abe7eade01903b4543e",
+    "raw_file_hashes": {
+      "KR3g0047_001.txt": "6b13ff06e980439d7a3611f1f10c9efb318513e23f7a9e4c16ed4e8896f162d4",
+      "KR3g0047_002.txt": "44949571367607d1719aa51b5ce174d73078d0c84fe0a81e23b192449c8f5cfd",
+      "KR3g0047_003.txt": "fab52159527f90bf0c74af5f655ae3215e0e7d2efb6a5be5506f12c1671b8257"
+    },
+    "raw_hashes_rechecked_on": "2026-09-08",
+    "facsimile_verified": false,
+    "transcription_verified_against_facsimile": false,
+    "independent_transcription_urls": [
+      "https://ctext.org/wiki.pl?chapter=456008&if=gb",
+      "https://zh.wikisource.org/zh-hans/太乙金鏡式經_(四庫全書本)/全覽"
+    ]
+  },
+  "received_fragments": [
+    {
+      "fragment_id": "TY-JJSJ-WYG-J3-COVER-DEFINITION-CANDIDATE",
+      "volume": "卷三",
+      "page_markers": ["KR3g0047_WYG_003-1b", "KR3g0047_WYG_003-2a"],
+      "heading": "推掩法",
+      "transcription": "经曰始击将临太乙宫谓之掩。",
+      "implemented_fields": ["shiji_covers_taiyi"],
+      "mechanical_definition": "始击与太乙同一正宫",
+      "interpretive_tail_implemented": false
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J3-IMPRISONMENT-DEFINITION-CANDIDATE",
+      "volume": "卷三",
+      "page_markers": ["KR3g0047_WYG_003-2b", "KR3g0047_WYG_003-3a"],
+      "heading": "推囚法",
+      "transcription": "经曰囚者篡戮之义也，若文昌将并主客大小四将俱与太乙同宫，总名曰囚。",
+      "implemented_fields": [
+        "tianmu_imprisoned_with_taiyi",
+        "main_great_general_imprisoned_with_taiyi",
+        "main_assistant_general_imprisoned_with_taiyi",
+        "guest_great_general_imprisoned_with_taiyi",
+        "guest_assistant_general_imprisoned_with_taiyi"
+      ],
+      "mechanical_definition": "文昌或主客四将之一与太乙同一正宫",
+      "interpretive_tail_implemented": false
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J3-GE-DEFINITION-CANDIDATE",
+      "volume": "卷三",
+      "page_markers": ["KR3g0047_WYG_003-3a", "KR3g0047_WYG_003-3b"],
+      "heading": "推格法",
+      "transcription": "经曰客目大小将与太乙对宫为格。",
+      "implemented_fields": [
+        "shiji_forms_ge_against_taiyi",
+        "guest_great_general_forms_ge_against_taiyi",
+        "guest_assistant_general_forms_ge_against_taiyi"
+      ],
+      "mechanical_definition": "始击或客方大小将位于太乙正宫相隔八位的对宫",
+      "interpretive_tail_implemented": false
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J3-FIRST-FIVE-GENERAL-TABLE-ANCHOR-CANDIDATE",
+      "volume": "卷三",
+      "page_markers": ["KR3g0047_WYG_003-5a", "KR3g0047_WYG_003-5b"],
+      "heading": "太乙三门五将立成胜败钤",
+      "transcription": "天目武德、太乙一宫：参将囚。",
+      "implemented_fields": ["main_assistant_general_imprisoned_with_taiyi"],
+      "mechanical_anchors": ["阳局第一算主参将一宫、太乙一宫→主参将囚"],
+      "outcome_cells_implemented": false
+    }
+  ],
+  "candidate": {
+    "algorithm_version": "jiuheng.taiyi.tang_cover_imprisonment_ge_position_marks_candidate.v1",
+    "annual_frame_algorithm_version": "jiuheng.taiyi.tang_supplied_accumulated_year_frame_candidate.v5",
+    "input_contract": "already_computed_taiyi_tianmu_shiji_and_main_guest_general_palaces",
+    "taiyi_opposite_palaces": {
+      "1": 9,
+      "2": 8,
+      "3": 7,
+      "4": 6,
+      "6": 4,
+      "7": 3,
+      "8": 2,
+      "9": 1
+    },
+    "outputs": [
+      "shiji_covers_taiyi",
+      "tianmu_imprisoned_with_taiyi",
+      "main_great_general_imprisoned_with_taiyi",
+      "main_assistant_general_imprisoned_with_taiyi",
+      "guest_great_general_imprisoned_with_taiyi",
+      "guest_assistant_general_imprisoned_with_taiyi",
+      "shiji_forms_ge_against_taiyi",
+      "guest_great_general_forms_ge_against_taiyi",
+      "guest_assistant_general_forms_ge_against_taiyi"
+    ],
+    "strike_classified": false,
+    "pressure_classified": false,
+    "barrier_classified": false,
+    "opposition_classified": false,
+    "interpretation_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false,
+    "forbidden_outputs": [
+      "civil_date_to_accumulated_year",
+      "yin_yang_dun",
+      "strike_or_pressure_direction",
+      "barrier_or_opposition",
+      "four_enclosure_patterns",
+      "three_gate_five_general_judgment",
+      "auspicious_inauspicious_judgment",
+      "timing",
+      "advice",
+      "formal_rule_id"
+    ]
+  },
+  "machine_test_anchors": [
+    {
+      "count": 1,
+      "expected_true": [
+        "main_assistant_general_imprisoned_with_taiyi",
+        "guest_assistant_general_forms_ge_against_taiyi"
+      ],
+      "compact_marks_zh": "主参将囚、客参将格太乙"
+    },
+    {
+      "count": 2,
+      "expected_true": ["guest_great_general_imprisoned_with_taiyi"]
+    },
+    {
+      "count": 3,
+      "expected_true": ["main_great_general_imprisoned_with_taiyi"]
+    },
+    {
+      "count": 8,
+      "expected_true": ["shiji_forms_ge_against_taiyi"]
+    },
+    {
+      "count": 9,
+      "expected_true": ["tianmu_imprisoned_with_taiyi"]
+    },
+    {
+      "count": 16,
+      "expected_true": ["guest_great_general_forms_ge_against_taiyi"]
+    },
+    {
+      "count": 33,
+      "expected_true": ["shiji_covers_taiyi"]
+    }
+  ],
+  "variants_and_blockers": [
+    "‘临太乙宫’与‘同宫’在本候选中只按已经建立的十六位环和正宫数作位置相等，不继承相邻断语。",
+    "‘客目大小将’按客目、客大将、客参将解析；不把主方大小将擅自纳入格。",
+    "卷三另列击、迫、关、对及四郭固、四郭杜、执提、提挟，涉及前后辰宫、主客相宫齐和复合条件，本版不顺手类推。",
+    "立成胜败钤只用首行‘参将囚’交叉核验位置标签；表内胜败结论没有录入运行规则。",
+    "固定文本虽有页码标识和字节哈希，但尚未取得相应四库影印图像逐字复核，因此只能作为排盘机械候选。",
+    "两套积年历元、现代日期换算和阴阳遁仍未解决，UI 不提供公历日期直接生成太乙局的入口。"
+  ],
+  "review_state": {
+    "bibliographic_review": "candidate_only",
+    "transcription_review": "blocked_without_facsimile_bytes",
+    "logic_review": "three_direct_position_definitions_and_one_table_anchor_recorded",
+    "implementation_review": "automated_tests_required",
+    "runtime_release": "blocked",
+    "decision": "chart_only_position_marks_no_interpretation_no_rules_no_signals"
+  }
+}

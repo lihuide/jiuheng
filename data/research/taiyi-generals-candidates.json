@@ -1,0 +1,130 @@
+{
+  "archive_id": "TAIYI-GENERALS-CANDIDATE-2026-09-08-v1",
+  "schema_version": 1,
+  "recorded_on": "2026-09-08",
+  "method": "taiyi",
+  "status": "mechanical_main_guest_great_and_assistant_general_palaces_from_existing_counts_only",
+  "purpose": "只从上一层已经取得的主算、客算安主客大将与参将宫位，并用跨卷算例核验十位整除、个位保留和三因再约减；不据此生成任何格局或断语",
+  "runtime_ingestion_allowed": false,
+  "civil_date_input_allowed": false,
+  "epoch_selection_allowed": false,
+  "yin_yang_dun_selection_allowed": false,
+  "complete_board_generation_allowed": false,
+  "general_relationship_classification_allowed": false,
+  "interpretation_allowed": false,
+  "signal_generation_allowed": false,
+  "timing_generation_allowed": false,
+  "advice_generation_allowed": false,
+  "rule_id_generation_allowed": false,
+  "source_identity": {
+    "parent_archive": "TAIYI-EYES-COUNTS-CANDIDATE-2026-09-08-v1",
+    "title": "太乙金镜式经",
+    "attributed_author": "唐·王希明",
+    "received_edition": "钦定四库全书本",
+    "kanripo_id": "KR3g0047",
+    "kanripo_repository": "kanripo/KR3g0047",
+    "kanripo_commit": "e3264da2c9f556225e056abe7eade01903b4543e",
+    "raw_file_hashes": {
+      "KR3g0047_001.txt": "6b13ff06e980439d7a3611f1f10c9efb318513e23f7a9e4c16ed4e8896f162d4",
+      "KR3g0047_002.txt": "44949571367607d1719aa51b5ce174d73078d0c84fe0a81e23b192449c8f5cfd",
+      "KR3g0047_003.txt": "fab52159527f90bf0c74af5f655ae3215e0e7d2efb6a5be5506f12c1671b8257"
+    },
+    "raw_hashes_rechecked_on": "2026-09-08",
+    "facsimile_verified": false,
+    "transcription_verified_against_facsimile": false,
+    "independent_transcription_url": "https://ctext.org/wiki.pl?chapter=275091&if=gb"
+  },
+  "received_fragments": [
+    {
+      "fragment_id": "TY-JJSJ-WYG-J2-GENERAL-PROCEDURE-CANDIDATE",
+      "volume": "卷二",
+      "page_markers": ["KR3g0047_WYG_002-7b", "KR3g0047_WYG_002-8a"],
+      "heading": "推太乙运式法第七、第八",
+      "transcription": "第七详置算之数以定主客大将之宫。第八论主客置算，若得十，置一；若得二十四，弃二十，置四，余皆以例而推之。",
+      "implemented_fields": ["main_great_general_palace", "guest_great_general_palace"],
+      "mechanical_anchors": ["10→1", "24→4"]
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J1-TIME-CASE-GENERALS-CANDIDATE",
+      "volume": "卷一",
+      "page_markers": ["KR3g0047_WYG_001-20b", "KR3g0047_WYG_001-21a"],
+      "heading": "时计算例",
+      "transcription": "主算得二十九，主大将在九宫，主参将在七宫；客算得单四，客大将在四宫，参将在二宫。",
+      "implemented_fields": ["great_general_reduction", "assistant_general_tripling_and_reduction"],
+      "mechanical_anchors": ["29→9→7", "4→4→2"]
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J3-FIRST-YANG-ROW-GENERALS-CANDIDATE",
+      "volume": "卷三",
+      "page_markers": ["KR3g0047_WYG_003-9b"],
+      "heading": "太乙阳遁七十二局第一局",
+      "transcription": "主算七，主大将七宫坤，主参将一宫乾；客算十三，客大将三宫艮，客参将九宫巽。",
+      "implemented_fields": ["main_great_general_palace", "main_assistant_general_palace", "guest_great_general_palace", "guest_assistant_general_palace"],
+      "mechanical_anchors": ["7→7→1", "13→3→9"]
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J3-FIRST-YIN-ROW-GENERALS-CANDIDATE",
+      "volume": "卷三",
+      "page_markers": ["KR3g0047_WYG_003-14a", "KR3g0047_WYG_003-14b"],
+      "heading": "太乙阴遁七十二局第一局",
+      "transcription": "主算五，主大将五宫，主参将五宫；客算二十九，客大将九宫巽，客参将七宫坤。",
+      "implemented_fields": ["great_general_reduction", "assistant_general_tripling_and_reduction"],
+      "mechanical_anchors": ["5→5→5", "29→9→7"],
+      "scope_note": "只用于验证算数约减；当前 API 不选择或生成阴遁局。"
+    }
+  ],
+  "candidate": {
+    "algorithm_version": "jiuheng.taiyi.tang_supplied_accumulated_year_frame_candidate.v3",
+    "input_contract": "existing_main_or_guest_count_in_1_through_40",
+    "great_general_reduction": "若个位非零则取个位；若为整十则取十位，故十置一、二十置二、三十置三、四十置四",
+    "assistant_general_reduction": "以大将宫数乘三，再用同一约减法定参将宫",
+    "outputs": ["main_great_general_palace", "main_assistant_general_palace", "guest_great_general_palace", "guest_assistant_general_palace"],
+    "great_general_palace_includes_central_five": true,
+    "interpretation_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false,
+    "forbidden_outputs": ["yin_yang_dun", "general_relations", "eight_gates", "formations", "judgment", "timing", "advice", "formal_rule_id"]
+  },
+  "machine_test_anchors": {
+    "great_general_palaces_for_counts_1_through_40": [
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 1,
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 2,
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 3,
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 4
+    ],
+    "cross_volume_cases": [
+      {"case": "volume_two_exact_ten", "count": 10, "great": 1, "assistant": 3},
+      {"case": "volume_two_twenty_four", "count": 24, "great": 4, "assistant": 2},
+      {"case": "volume_one_main", "count": 29, "great": 9, "assistant": 7},
+      {"case": "volume_one_guest", "count": 4, "great": 4, "assistant": 2},
+      {"case": "volume_three_yang_main", "count": 7, "great": 7, "assistant": 1},
+      {"case": "volume_three_yang_guest", "count": 13, "great": 3, "assistant": 9},
+      {"case": "volume_three_yin_main", "count": 5, "great": 5, "assistant": 5},
+      {"case": "volume_three_yin_guest", "count": 29, "great": 9, "assistant": 7}
+    ],
+    "annual_frame_first_yang_row": {
+      "accumulated_year_count": 1,
+      "main_count": 7,
+      "main_great": 7,
+      "main_assistant": 1,
+      "guest_count": 13,
+      "guest_great": 3,
+      "guest_assistant": 9
+    }
+  },
+  "variants_and_blockers": [
+    "当前取得的是固定提交电子转录，不是四库影印图像字节；转录复核不得标为完成。",
+    "卷二明确给出大将依置算定宫及十、二十四的约减例；参将三因公式由卷一、卷三跨卷结果闭合，但仍需影印与第二位复核者确认原文链。",
+    "卷三大量后续局省略可机械推得的大小将栏，不能声称七十二局大小将逐行均有明文。",
+    "阴遁首行仅核验算数约减，不允许借此开启阴遁选择或完整阴局。",
+    "大小将宫位不能自动推出囚、格、掩、迫、击、关或任何吉凶。"
+  ],
+  "review_state": {
+    "bibliographic_review": "candidate_only",
+    "transcription_review": "blocked_without_facsimile_bytes",
+    "logic_review": "candidate_cross_volume_anchors_recorded",
+    "implementation_review": "automated_tests_required",
+    "runtime_release": "blocked",
+    "decision": "chart_only_general_palaces_no_date_no_relations_no_interpretation_no_rules"
+  }
+}

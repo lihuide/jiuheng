@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "research_id": "jiuheng.research.meihua.inner_trigram_observations.2026-09-16",
+  "method": "meihua_yishu",
+  "status": "raw_inner_trigram_observations_blocked_from_runtime_rules",
+  "runtime_rule_seed_allowed": false,
+  "purpose": "只从本卦和单爻变后的六爻位图分别读取二三四爻与三四五爻的经卦身份，不选互卦基准、不取六十四卦名、不解释吉凶。",
+  "sources": [
+    {
+      "source_id": "MEIHUA-CTEXT-VOL1-MUTUAL-TRANSCRIPTION",
+      "title": "《梅花易數》卷一《互卦起例》电子转录",
+      "url": "https://ctext.org/wiki.pl?chapter=867487&if=gb",
+      "source_type": "electronic_transcription_not_facsimile",
+      "supports": [
+        "互卦只用八卦而不必取六十四卦名",
+        "除初爻与第六爻，取中间四爻分成两卦",
+        "另记乾坤无互、互其变卦的例外句"
+      ]
+    },
+    {
+      "source_id": "MEIHUA-WIKISOURCE-VOL1-MUTUAL-TRANSCRIPTION",
+      "title": "《梅花易數》卷一《互卦起例》电子转录",
+      "url": "https://zh.wikisource.org/zh-hans/%E6%A2%85%E8%8A%B1%E6%98%93%E6%95%B8/%E5%8D%B7%E4%B8%80",
+      "source_type": "electronic_transcription_not_facsimile",
+      "supports": [
+        "卷一中间四爻和乾坤例外句段定位",
+        "只作电子转录交叉定位，不替代清刻本逐页影印"
+      ]
+    }
+  ],
+  "candidate": {
+    "algorithm_version": "jiuheng.meihua.received_text.inner_trigram_observations.v1",
+    "input": "已保存的本卦和恰一爻变后的六位结构，最低位为初爻",
+    "primary_lower": "原本卦二三四爻，按由下至上三位读取",
+    "primary_upper": "原本卦三四五爻，按由下至上三位读取",
+    "changed_lower": "变后卦二三四爻的原始经卦身份",
+    "changed_upper": "变后卦三四五爻的原始经卦身份",
+    "all_primary_structures_and_moving_lines_verified": 384,
+    "pure_qian_kun_exception_flagged": true,
+    "selected_received_basis": null,
+    "hexagram_name_assigned": false,
+    "interpretation_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false
+  },
+  "source_limitations": [
+    "目前只有公开电子转录，未取得并绑定所用清刻本的准确影印页及字节 SHA-256",
+    "二三四和三四五的重叠拆法是对中间四爻分两卦的机械解释，仍待影印和版本复核",
+    "乾坤无互、互其变卦的句段在当前证据下不升格为解释或自动择一规则",
+    "时间起卦的闰月、北京时间与真太阳时口径仍未定"
+  ],
+  "forbidden_uses": [
+    "不得把两组原始经卦说成已经选定的互卦解释口径",
+    "不得给中间四爻组合套用六十四卦名或卦辞",
+    "不得派生体用、生克、吉凶、应期、建议、中间信号或正式 Rule ID"
+  ],
+  "review_state": {
+    "runtime_release": "blocked",
+    "formal_rule_count": 0
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "archive_id": "TAIYI-YEAR-POSITION-CANDIDATE-2026-09-08-v1",
+  "schema_version": 1,
+  "recorded_on": "2026-09-08",
+  "method": "taiyi",
+  "status": "mechanical_candidate_from_supplied_accumulated_year_only",
+  "purpose": "固定《太乙金镜式经》积年定位机械候选的传本文字、页码、独立立成表锚点、代码映射和失败关闭边界",
+  "runtime_ingestion_allowed": false,
+  "calendar_date_derivation_allowed": false,
+  "complete_board_generation_allowed": false,
+  "interpretation_allowed": false,
+  "signal_generation_allowed": false,
+  "timing_generation_allowed": false,
+  "advice_generation_allowed": false,
+  "rule_id_generation_allowed": false,
+  "source_identity": {
+    "title": "太乙金镜式经",
+    "attributed_author": "唐·王希明",
+    "received_edition": "钦定四库全书本",
+    "kanripo_id": "KR3g0047",
+    "kanripo_repository": "kanripo/KR3g0047",
+    "kanripo_commit": "e3264da2c9f556225e056abe7eade01903b4543e",
+    "commit_url": "https://github.com/kanripo/KR3g0047/commit/e3264da2c9f556225e056abe7eade01903b4543e",
+    "raw_files": [
+      {
+        "path": "KR3g0047_001.txt",
+        "bytes": 22044,
+        "sha256": "6b13ff06e980439d7a3611f1f10c9efb318513e23f7a9e4c16ed4e8896f162d4"
+      },
+      {
+        "path": "KR3g0047_002.txt",
+        "bytes": 10732,
+        "sha256": "44949571367607d1719aa51b5ce174d73078d0c84fe0a81e23b192449c8f5cfd"
+      },
+      {
+        "path": "KR3g0047_003.txt",
+        "bytes": 20486,
+        "sha256": "fab52159527f90bf0c74af5f655ae3215e0e7d2efb6a5be5506f12c1671b8257"
+      }
+    ],
+    "facsimile_status": "received_page_markers_located_but_facsimile_image_bytes_not_retrieved_or_hashed",
+    "facsimile_verified": false,
+    "transcription_verified_against_facsimile": false,
+    "independent_public_transcriptions": [
+      {
+        "provider": "Chinese Text Project",
+        "url": "https://ctext.org/wiki.pl?chapter=582866&if=gb",
+        "use": "independent_transcription_comparison_only",
+        "content_hash_recorded": false
+      },
+      {
+        "provider": "Wikisource",
+        "url": "https://zh.wikisource.org/wiki/太乙金鏡式經_(四庫全書本)/卷01",
+        "use": "independent_transcription_comparison_only",
+        "content_hash_recorded": false
+      }
+    ]
+  },
+  "received_fragments": [
+    {
+      "fragment_id": "TY-JJSJ-WYG-J1-ACCUMULATED-EPOCHS-CANDIDATE",
+      "volume": "卷一",
+      "page_markers": ["KR3g0047_WYG_001-3a", "KR3g0047_WYG_001-3b"],
+      "heading": "推上元积年",
+      "transcription": "今从上元甲子到唐开元十五年甲子岁通前计四万八百一算……自上元混沌甲子之岁至今大唐开元十二年甲子岁积得一百九十三万七千二百八十一算。上考往古每年减一算，下检将来每年加一算。",
+      "role": "records_competing_accumulated_year_epochs_not_selected"
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J1-ANNUAL-PALACE-FORMULA-CANDIDATE",
+      "volume": "卷一",
+      "page_markers": ["KR3g0047_WYG_001-4a"],
+      "heading": "积太乙所在法",
+      "transcription": "推上元积年以周纪法三百六十去之，不尽以元法七十二去之，又不尽以太乙小周法二十四除之，又不尽以三约之为宫数，不满为入宫以来年数。其宫数命起一宫，顺行八宫，不游中五，算外，即得太乙所在及入宫以来年数也。",
+      "role": "implemented_mechanical_reduction_from_caller_supplied_count"
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J2-THREE-YEARS-PER-PALACE-CANDIDATE",
+      "volume": "卷二",
+      "page_markers": ["KR3g0047_WYG_002-1b", "KR3g0047_WYG_002-2a"],
+      "heading": "推太乙所在法",
+      "transcription": "常考之，顺行八宫，不游中五，三年徙一宫。第一年治天……第二年治地……第三年治民。",
+      "role": "supports_three_year_grouping_but_interpretive_sentences_are_not_implemented"
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J3-YANG-TABLE-ANCHORS-CANDIDATE",
+      "volume": "卷三",
+      "page_markers": [
+        "KR3g0047_WYG_003-9b",
+        "KR3g0047_WYG_003-10a",
+        "KR3g0047_WYG_003-10b",
+        "KR3g0047_WYG_003-11a",
+        "KR3g0047_WYG_003-11b",
+        "KR3g0047_WYG_003-12a",
+        "KR3g0047_WYG_003-12b",
+        "KR3g0047_WYG_003-13a",
+        "KR3g0047_WYG_003-13b",
+        "KR3g0047_WYG_003-14a"
+      ],
+      "heading": "阳局天目地目计神主客大小将立成",
+      "transcription_summary": "局一至三太乙在一宫，四至六在二宫，七至九在三宫，十至十二在四宫，十三至十五在六宫，十六至十八在七宫，十九至二十一在八宫，二十二至二十四在九宫；二十五局起重复。",
+      "role": "independent_same_work_table_anchors_palace_order_off_by_one_and_24_to_25_boundary"
+    }
+  ],
+  "candidate": {
+    "algorithm_version": "jiuheng.taiyi.tang_accumulated_year_palace_candidate.v1",
+    "rust_api": "taiyi_year_position_from_accumulated_count(u64)",
+    "input_contract": "positive_one_based_accumulated_year_count_supplied_by_caller",
+    "one_based_cycle_formula": "((count - 1) mod modulus) + 1",
+    "reduction_moduli": [360, 72, 24],
+    "years_per_palace": 3,
+    "forward_palace_order": [1, 2, 3, 4, 6, 7, 8, 9],
+    "center_five_visited": false,
+    "calendar_epoch_selected": false,
+    "civil_calendar_converter_present": false,
+    "outputs": [
+      "position_in_360",
+      "position_in_72",
+      "position_in_24",
+      "palace_step",
+      "palace",
+      "year_within_palace"
+    ],
+    "forbidden_outputs": [
+      "full_taiyi_board",
+      "yin_yang_dun_selection",
+      "wenchang_or_shiji",
+      "home_away_or_fixed_counts",
+      "omens_or_judgments",
+      "timing",
+      "action_advice",
+      "intermediate_signals"
+    ]
+  },
+  "machine_test_anchors": [
+    {"count": 1, "palace": 1, "year_within_palace": 1},
+    {"count": 3, "palace": 1, "year_within_palace": 3},
+    {"count": 4, "palace": 2, "year_within_palace": 1},
+    {"count": 12, "palace": 4, "year_within_palace": 3},
+    {"count": 13, "palace": 6, "year_within_palace": 1},
+    {"count": 24, "palace": 9, "year_within_palace": 3},
+    {"count": 25, "palace": 1, "year_within_palace": 1},
+    {"count": 48, "palace": 9, "year_within_palace": 3},
+    {"count": 49, "palace": 1, "year_within_palace": 1},
+    {"count": 72, "palace": 9, "year_within_palace": 3}
+  ],
+  "variants_and_blockers": [
+    "同一卷先列四万八百一算，随即批评旧置元并另列一百九十三万七千二百八十一算；九衡不自动择一",
+    "Kanripo/Wikisource 转录作‘开元十五年甲子’，Chinese Text Project 页面作‘开元十二年甲子’，且纪年与干支组合本身需要历谱复核",
+    "四库提要及电子整理说明指出书内存在宋代增补迹象，必须逐条判断章节层次，不能把全书一概视作唐代原文",
+    "Kanripo 页码标识已经定位，但尚未取得并哈希对应影像字节，转录复核门保持关闭",
+    "公历、儒略历、改革历与历史年号如何换算为该积年尚未完成历元、岁首和零年口径复核",
+    "本候选只闭合顺行年计位置；月计、日计、阳遁時計和阴遁時計不可据此类推开放",
+    "卷二第一年治天、第二年治地、第三年治民及其他占辞属于解释层，本版不实现"
+  ],
+  "review_state": {
+    "bibliography_review": "candidate_source_identity_pinned",
+    "transcription_review": "blocked_until_facsimile_image_bytes_and_manual_collation",
+    "logic_review": "candidate_formula_and_same_work_table_anchors_agree",
+    "implementation_review": "mechanical_candidate_with_exhaustive_cycle_tests",
+    "runtime_release": "blocked",
+    "decision": "chart_only_candidate_no_date_derivation_no_rules_no_signals"
+  }
+}

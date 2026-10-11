@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "research_id": "jiuheng.research.qizheng_siyu.jpl_table_fit_overlap.2026-09-17",
+  "method": "qizheng_siyu",
+  "status": "same_source_approximation_consistency_check_only",
+  "source": {
+    "publisher": "NASA Jet Propulsion Laboratory Solar System Dynamics",
+    "title": "Approximate Positions of the Planets",
+    "url": "https://ssd.jpl.nasa.gov/planets/approx_pos.html",
+    "tables": "Table 1 versus Table 2a/2b",
+    "access_date": "2026-09-17"
+  },
+  "comparison": {
+    "coordinate_frame": "J2000 mean ecliptic/equinox; planet minus Earth-Moon barycenter; geometric",
+    "time_scale": "JD(TT) used as a close approximation to JDTDB",
+    "sample_count": 20,
+    "epochs": [
+      {"jd_tt": 2378496.5, "largest_disagreement_body": "saturn", "largest_angular_disagreement_deg": 0.2729316399221891},
+      {"jd_tt": 2451545.0, "largest_disagreement_body": "saturn", "largest_angular_disagreement_deg": 0.189275691918542},
+      {"jd_tt": 2460000.5, "largest_disagreement_body": "saturn", "largest_angular_disagreement_deg": 0.0872829427414049},
+      {"jd_tt": 2469806.5, "largest_disagreement_body": "saturn", "largest_angular_disagreement_deg": 0.06549533939114509}
+    ],
+    "meaning": "These are differences between two approximate fits from the same source, not absolute errors or independent validation.",
+    "independent_ephemeris_validation": false,
+    "historical_mansion_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false
+  },
+  "external_validation_attempt": {
+    "target": "JPL Horizons VECTORS with matched EMB center and J2000 ecliptic frame",
+    "outcome": "unavailable_due_to_current_environment_connection_timeout",
+    "reference_vectors_recorded": 0
+  },
+  "runtime_rule_seed_allowed": false,
+  "formal_rule_count": 0
+}

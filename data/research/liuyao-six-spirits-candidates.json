@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "research_id": "jiuheng.research.liuyao.received_day_stem_six_spirits.2026-09-15",
+  "method": "liuyao",
+  "review_date": "2026-09-15",
+  "status": "mechanical_received_six_spirits_blocked_from_runtime_rules",
+  "purpose": "按明确命名的北京时间午夜换日干支日候选，以日干确定初爻六神，再按青龙、朱雀、勾陈、螣蛇、白虎、玄武次序自下而上轮排；不采用六神吉凶断语。",
+  "evidence_scope": {
+    "sources": [
+      {
+        "source_id": "zengshan_buyi_six_spirits_chapter_wikisource",
+        "title": "《增删卜易》六神章第十八",
+        "historical_period": "清代传本",
+        "public_url": "https://zh.wikisource.org/zh-hans/%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93/18",
+        "supports": ["甲乙、丙丁、戊、己、庚辛、壬癸六组日干的初爻起神", "六爻自初至上完整六神表"],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "yiyin_preface_six_spirits_ctext",
+        "title": "《易隐·序》六神所属与起六神法目录",
+        "historical_period": "明清传本",
+        "public_url": "https://ctext.org/wiki.pl?chapter=436217&if=en&remap=gb",
+        "supports": ["青龙、白虎、玄武、勾陈、朱雀、腾蛇六神名目", "天干分组与五行所属交叉线索"],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      }
+    ],
+    "source_limitations": [
+      "来源仍是公共电子转录，尚未把对应影印页固定为本地字节并计算 SHA-256",
+      "玄武/元武、螣蛇/腾蛇/滕蛇等异文只保存为来源差异，界面采用玄武、螣蛇",
+      "北京时间午夜换日只是本版明确命名的机械候选；子初换日与真太阳日界尚未通过六爻规则门禁",
+      "本轮不采用六神章中的吉凶、疾病、生死或事件类断语"
+    ]
+  },
+  "candidate": {
+    "algorithm_version": "jiuheng.liuyao.received_day_stem_six_spirits.bjt_midnight.v1",
+    "day_convention": "beijing_civil_midnight",
+    "storage_order": "first_line_to_sixth_line",
+    "received_cycle": ["青龙", "朱雀", "勾陈", "螣蛇", "白虎", "玄武"],
+    "lines_bottom_up_by_day_stem_group": {
+      "甲乙": ["青龙", "朱雀", "勾陈", "螣蛇", "白虎", "玄武"],
+      "丙丁": ["朱雀", "勾陈", "螣蛇", "白虎", "玄武", "青龙"],
+      "戊": ["勾陈", "螣蛇", "白虎", "玄武", "青龙", "朱雀"],
+      "己": ["螣蛇", "白虎", "玄武", "青龙", "朱雀", "勾陈"],
+      "庚辛": ["白虎", "玄武", "青龙", "朱雀", "勾陈", "螣蛇"],
+      "壬癸": ["玄武", "青龙", "朱雀", "勾陈", "螣蛇", "白虎"]
+    },
+    "all_ten_day_stems_covered": true,
+    "all_sixty_four_hexagrams_covered": true,
+    "all_three_thousand_eight_hundred_forty_line_cases_covered": true,
+    "six_spirits_assigned": true,
+    "hidden_spirits_assigned": false,
+    "useful_god_selected": false,
+    "strength_assessed": false,
+    "interpretation_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false
+  },
+  "forbidden_uses": [
+    "不得从青龙、朱雀、勾陈、螣蛇、白虎、玄武名称直接生成吉凶或事件判断",
+    "不得把六神名称用于疾病、生死或治疗决策",
+    "不得在日界口径有争议时静默改用子初或真太阳换日",
+    "不得自动补造伏神、用神、月建日辰、旬空、旺衰、动变或应期",
+    "不得生成中间信号、结论、应期、行动建议或正式 Rule ID"
+  ],
+  "unresolved": [
+    "底本影印页定位、字节哈希、异文和版本谱系",
+    "北京时间午夜、子初与真太阳日界在六爻传承中的适用边界",
+    "伏神、用神、月建日辰、旺衰、动变和应期规则"
+  ],
+  "review_state": {
+    "decision": "chart_only_received_six_spirit_identity_no_interpretation_signals_or_rules",
+    "runtime_release": "blocked",
+    "formal_rule_count": 0
+  }
+}

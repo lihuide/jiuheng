@@ -1,0 +1,56 @@
+{
+  "research_id": "MEIHUA-TIME-CAST-RESEARCH-2026-09-01",
+  "method": "meihua_yishu",
+  "researched_on": "2026-09-01",
+  "scope": "仅审计年月日时取数、八卦数、除八、除六和单爻变换；不含互卦争议、体用、生克、旺衰、吉凶、应期或综合裁决",
+  "status": "mechanical_textual_candidate_blocked_from_runtime_rules",
+  "runtime_rule_seed_allowed": false,
+  "sources": [
+    {
+      "source_id": "MEIHUA-CTEXT-TRANSCRIPTION-VOL1",
+      "title": "梅花易數卷一（中国哲学书电子化计划转录页）",
+      "source_type": "electronic_transcription_not_facsimile",
+      "url": "https://ctext.org/wiki.pl?chapter=867487&if=gb",
+      "supports": [
+        "乾一兑二离三震四巽五坎六艮七坤八",
+        "年月日为上卦",
+        "年月日加时为下卦",
+        "年月日时总数除六取动爻"
+      ]
+    },
+    {
+      "source_id": "MEIHUA-WIKISOURCE-VOL1-2026-09-01",
+      "title": "梅花易数卷一（维基文库转录页）",
+      "source_type": "electronic_transcription_not_facsimile",
+      "url": "https://zh.wikisource.org/zh-hans/%E6%A2%85%E8%8A%B1%E6%98%93%E6%95%B8/%E5%8D%B7%E4%B8%80",
+      "supports": [
+        "卦以八除，整八为坤",
+        "爻以六除，余数为动爻",
+        "年月日时起例的年支、月、日、时支编号"
+      ],
+      "transcription_candidate": "年月日为上卦。年月日加时总数为下卦。又以年月日时总数取爻。如子年一数，丑年二数，直至亥年十二数。月如正月一数，直至十二月，亦作十二数。日数如初一一数，直至三十日，为三十数。"
+    },
+    {
+      "source_id": "MEIHUA-DALIAN-QING-CATALOG",
+      "title": "大连图书馆《梅花易數》馆藏目录",
+      "source_type": "institutional_catalog_record_without_page_facsimile",
+      "url": "https://www.dl-library.net.cn/book/520/meihuayi--519020.html",
+      "catalog_facts": "五卷，题宋邵雍撰，清刻本，二册一帙"
+    }
+  ],
+  "implemented_candidate": {
+    "algorithm_version": "jiuheng.meihua.received_text.year_month_day_hour.v1",
+    "input": "名义农历年对应年支数、非闰月月号、农历日序、时支数",
+    "output": "上卦、下卦、单一动爻、本卦六爻位图、变后六爻位图",
+    "permitted_use": "不可变机械排盘审计和重算校验",
+    "forbidden_use": "Rule ID、体用、生克、吉凶、应期、中间信号或综合裁决"
+  },
+  "unresolved_blockers": [
+    "尚未把采用的转录逐字绑定到可公开复核的清代刻本具体册页影像",
+    "题署邵雍与现存传本文本形成时代尚未完成版本学复核",
+    "所引年月日时段落没有明确说明闰月沿用月号还是采用其他处理，程序遇闰月失败关闭",
+    "所引时数没有解决现代软件应采用北京时间时辰还是真太阳时辰，程序并列保存两套候选且不选择",
+    "互卦段落含乾坤无互等异说，本版不实现互卦",
+    "所有解释规则尚未进入正式证据门禁"
+  ]
+}

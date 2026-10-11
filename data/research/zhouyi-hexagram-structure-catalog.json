@@ -1,0 +1,60 @@
+{
+  "research_id": "ZHOUYI-HEXAGRAM-STRUCTURE-CATALOG-2026-09-01",
+  "researched_on": "2026-09-01",
+  "scope": "仅登记六爻阴阳位图、上下八卦、传本六十四卦次序、简体卦名与 Unicode 卦符；不含卦辞、爻辞、彖象、互卦、纳甲、六亲、体用、吉凶或应期",
+  "status": "mechanical_structure_catalog_not_divination_rules",
+  "runtime_rule_seed_allowed": false,
+  "sources": [
+    {
+      "source_id": "CTEXT-ZHOUYI-RECEIVED-ORDER-2026-09-01",
+      "title": "中国哲学书电子化计划《周易》",
+      "source_type": "electronic_text_with_received_hexagram_order_not_facsimile",
+      "url": "https://ctext.org/book-of-changes/zhs",
+      "supports": "乾、坤、屯、蒙至既济、未济的传本六十四卦次序与中文卦名"
+    },
+    {
+      "source_id": "WIKISOURCE-ZHOUYI-STRUCTURE-MATRIX-2026-09-01",
+      "title": "维基文库《周易》六十四卦速查表",
+      "source_type": "modern_editorial_structure_table_not_facsimile",
+      "url": "https://zh.wikisource.org/zh-hant/%E5%91%A8%E6%98%93",
+      "supports": "以乾兑离震巽坎艮坤为两轴的上下卦结构矩阵，并列传本次序"
+    },
+    {
+      "source_id": "UNICODE-17-YIJING-HEXAGRAM-NAMESLIST",
+      "title": "Unicode 17.0 Yijing Hexagram Symbols Names List",
+      "source_type": "official_technical_standard",
+      "url": "https://www.unicode.org/charts/nameslist/n_4DC0.html",
+      "supports": "U+4DC0 至 U+4DFF 按传本第一至第六十四卦连续编码"
+    },
+    {
+      "source_id": "UNICODE-17-CORE-22.9.11",
+      "title": "The Unicode Standard 17.0, section 22.9.11",
+      "source_type": "official_technical_standard",
+      "url": "https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-22/",
+      "supports": "六十四卦符号是分别命名的语义符号，并关联《周易》六爻结构"
+    }
+  ],
+  "implemented_catalog": {
+    "algorithm_version": "jiuheng.zhouyi.received_hexagram_structure.v1",
+    "bit_convention": "bit 0 为初爻，bit 5 为上爻；1 为阳、0 为阴；低三位为下卦，高三位为上卦",
+    "name_normalization": "中文界面采用简体字；保留传本专名‘无妄’与‘遯’，不据字面改写",
+    "unicode_mapping": "code_point = U+4DBF + received_sequence",
+    "permitted_use": "为六爻、蓍草、梅花的既有六爻位图生成可重算的卦名、上下卦、传本序号和 Unicode 符号",
+    "forbidden_use": "Rule ID、卦辞爻辞解释、吉凶、应期、中间信号或综合裁决",
+    "interpretation_eligible": false
+  },
+  "verification": {
+    "all_64_bit_patterns": "必须与 1 至 64 序号、64 个卦名和 U+4DC0 至 U+4DFF 一一对应",
+    "direction_anchors": [
+      "111111=乾第一",
+      "000000=坤第二",
+      "上坎下震=屯第三",
+      "上坤下乾=泰第十一",
+      "上乾下坤=否第十二",
+      "上坎下离=既济第六十三",
+      "上离下坎=未济第六十四"
+    ],
+    "invalid_input": "64 至 255 不属于六位结构，必须失败关闭"
+  },
+  "evidence_boundary": "本目录只是一套机械身份映射。古籍文本的版本、卦爻辞规则及各术式解释仍须分别进入正式证据门禁。"
+}

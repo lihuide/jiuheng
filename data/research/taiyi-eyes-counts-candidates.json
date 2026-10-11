@@ -1,0 +1,148 @@
+{
+  "archive_id": "TAIYI-EYES-COUNTS-CANDIDATE-2026-09-08-v1",
+  "schema_version": 1,
+  "recorded_on": "2026-09-08",
+  "method": "taiyi",
+  "status": "mechanical_shiji_main_guest_counts_from_supplied_accumulated_year_only",
+  "purpose": "在不选择积年历元与阴阳遁的前提下，由上一层天目、计神与太乙所在机械求始击（客目）、主算和客算，并以卷三阳局七十二局立成表逐行核对",
+  "runtime_ingestion_allowed": false,
+  "civil_date_input_allowed": false,
+  "epoch_selection_allowed": false,
+  "yin_yang_dun_selection_allowed": false,
+  "large_and_assistant_generals_generation_allowed": false,
+  "complete_board_generation_allowed": false,
+  "interpretation_allowed": false,
+  "signal_generation_allowed": false,
+  "timing_generation_allowed": false,
+  "advice_generation_allowed": false,
+  "rule_id_generation_allowed": false,
+  "source_identity": {
+    "parent_archive": "TAIYI-ANNUAL-FRAME-CANDIDATE-2026-09-08-v1",
+    "title": "太乙金镜式经",
+    "attributed_author": "唐·王希明",
+    "received_edition": "钦定四库全书本",
+    "kanripo_id": "KR3g0047",
+    "kanripo_repository": "kanripo/KR3g0047",
+    "kanripo_commit": "e3264da2c9f556225e056abe7eade01903b4543e",
+    "raw_file_hashes": {
+      "KR3g0047_001.txt": "6b13ff06e980439d7a3611f1f10c9efb318513e23f7a9e4c16ed4e8896f162d4",
+      "KR3g0047_002.txt": "44949571367607d1719aa51b5ce174d73078d0c84fe0a81e23b192449c8f5cfd",
+      "KR3g0047_003.txt": "fab52159527f90bf0c74af5f655ae3215e0e7d2efb6a5be5506f12c1671b8257"
+    },
+    "raw_hashes_rechecked_on": "2026-09-08",
+    "facsimile_verified": false,
+    "transcription_verified_against_facsimile": false,
+    "independent_transcription_url": "https://ctext.org/wiki.pl?chapter=791210&if=gb"
+  },
+  "received_fragments": [
+    {
+      "fragment_id": "TY-JJSJ-WYG-J2-SHIJI-COUNT-PROCEDURE-CANDIDATE",
+      "volume": "卷二",
+      "page_markers": ["KR3g0047_WYG_002-7b", "KR3g0047_WYG_002-8a"],
+      "heading": "推太乙运式法",
+      "transcription": "第五详何神为始击，以计神加和德宫，求文昌所临宫，以艮为鬼门方，求幽冥吉凶，故加和德而计之。第六视天地二目各在何所，求主客之算。各视天目所在宫而行算，若天目在正宫，则按本数；若天目间神，则加一数而行算，至太乙宫止矣。",
+      "implemented_fields": ["shiji_ring_position", "shiji", "main_count", "guest_count"]
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J2-COUNT-EXAMPLE-CANDIDATE",
+      "volume": "卷二",
+      "page_markers": ["KR3g0047_WYG_002-8a", "KR3g0047_WYG_002-8b"],
+      "heading": "推太乙运式法算例",
+      "transcription": "假令太乙在九宫，大义为天目，后大义一算，地主八算，和德三，高丛四，计得十六，余仿此。",
+      "implemented_fields": ["principal_palace_values", "interstitial_initial_count", "stop_before_taiyi"]
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J3-YANG-SEVENTY-TWO-EYES-COUNTS-TABLE",
+      "volume": "卷三",
+      "page_markers": [
+        "KR3g0047_WYG_003-9b",
+        "KR3g0047_WYG_003-10a",
+        "KR3g0047_WYG_003-10b",
+        "KR3g0047_WYG_003-11a",
+        "KR3g0047_WYG_003-11b",
+        "KR3g0047_WYG_003-12a",
+        "KR3g0047_WYG_003-12b",
+        "KR3g0047_WYG_003-13a",
+        "KR3g0047_WYG_003-13b",
+        "KR3g0047_WYG_003-14a"
+      ],
+      "heading": "阳局天目地目计神主客大小将立成",
+      "transcription_summary": "一至七十二局逐行列出太乙、天目、主算、客目、客算与计神；本档案只转录并核对始击（客目）、主算、客算，不读取大小将或吉凶夹注。",
+      "implemented_fields": ["all_72_shiji", "all_72_main_counts", "all_72_guest_counts"]
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J1-TIME-CASE-SHIJI-ANCHOR",
+      "volume": "卷一",
+      "page_markers": ["KR3g0047_WYG_001-20b", "KR3g0047_WYG_001-21a"],
+      "heading": "推太乙当时法算例",
+      "transcription": "太乙在九宫，大武为天目，午为计神，巳为合神……以计神加和德宫，天目下临高丛卯，客算得单四。",
+      "implemented_fields": ["shiji_rotation_example", "guest_count_example"]
+    }
+  ],
+  "normalization": {
+    "sixteen_position_ring": ["子", "丑", "艮", "寅", "卯", "辰", "巽", "巳", "午", "未", "坤", "申", "酉", "戌", "乾", "亥"],
+    "sixteen_spirit_ring": ["地主", "阳德", "和德", "吕申", "高丛", "太阳", "太炅", "太神", "大威", "天道", "大武", "武德", "太蔟", "阴主", "阴德", "大义"],
+    "principal_palace_values_by_ring_position": [8, null, 3, null, 4, null, 9, null, 2, null, 7, null, 6, null, 1, null],
+    "shiji_zero_based_formula": "(和德位置2 + 天目本位 - 计神支本位) mod 16",
+    "counting_rule": "二目在正宫以该宫数起算；在间神以一起算；顺行累加途中正宫数，至太乙所在宫前停止；二目与太乙同宫时保留该宫本数"
+  },
+  "candidate": {
+    "algorithm_version": "jiuheng.taiyi.tang_supplied_accumulated_year_frame_candidate.v2",
+    "input": "caller_supplied_one_based_positive_accumulated_year_count",
+    "parent_fields_required": ["taiyi_position", "tianmu", "jishen_branch"],
+    "outputs": ["shiji_ring_position", "shiji", "main_count", "guest_count"],
+    "calendar_epoch_selected": false,
+    "derived_from_civil_date": false,
+    "yin_yang_dun_selected": false,
+    "large_and_assistant_generals_generated": false,
+    "complete_board_generated": false,
+    "interpretation_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false,
+    "forbidden_outputs": ["主客大小将", "八门", "掩迫囚击关格", "吉凶", "结论", "应期", "行动建议", "Rule ID"]
+  },
+  "machine_test_anchors": {
+    "normalized_table_variant": "卷三客目‘大神’统一映射到卷二十六神身份‘太神’，原异文仍保留",
+    "all_72_shiji": [
+      "大武", "阴主", "大义", "阳德", "吕申", "太阳", "太神", "大武", "太蔟", "阴德", "阳德", "吕申",
+      "太阳", "大威", "大武", "太蔟", "大义", "地主", "和德", "太阳", "太神", "天道", "武德", "阴主",
+      "大义", "和德", "高丛", "太炅", "天道", "武德", "阴主", "地主", "和德", "高丛", "太神", "大威",
+      "大武", "阴主", "大义", "阳德", "吕申", "太阳", "太神", "大武", "太蔟", "阴德", "阳德", "吕申",
+      "太阳", "大威", "大武", "太蔟", "大义", "地主", "和德", "太阳", "太神", "天道", "武德", "阴主",
+      "大义", "和德", "高丛", "太炅", "天道", "武德", "阴主", "地主", "和德", "高丛", "太神", "大威"
+    ],
+    "all_72_main_counts": [
+      7, 6, 1, 25, 25, 25, 8, 1, 3, 1, 4, 37, 18, 10, 9, 1, 7, 7, 8, 7, 2, 16, 16, 16,
+      39, 32, 31, 14, 13, 10, 33, 25, 24, 26, 25, 25, 1, 6, 35, 27, 27, 27, 8, 33, 32, 5, 4, 1,
+      24, 16, 15, 39, 38, 38, 16, 15, 10, 12, 12, 12, 33, 26, 25, 16, 15, 12, 25, 17, 16, 30, 29, 29
+    ],
+    "all_72_guest_counts": [
+      13, 1, 40, 17, 14, 10, 25, 22, 15, 12, 4, 1, 19, 9, 7, 33, 27, 26, 32, 26, 17, 30, 23, 17,
+      40, 31, 28, 9, 39, 32, 10, 8, 3, 4, 28, 27, 7, 35, 34, 19, 16, 12, 17, 14, 7, 16, 8, 5,
+      25, 15, 13, 31, 25, 24, 3, 34, 25, 26, 19, 13, 34, 25, 22, 11, 1, 34, 2, 8, 32, 4, 32, 31
+    ],
+    "same_palace_boundaries": [
+      {"count": 9, "main_count": 3, "guest_count": 15},
+      {"count": 11, "main_count": 4, "guest_count": 4},
+      {"count": 17, "main_count": 7, "guest_count": 27},
+      {"count": 33, "main_count": 24, "guest_count": 3}
+    ]
+  },
+  "variants_and_blockers": [
+    "卷二在‘求始击’句中写‘求文昌所临宫’，依同段第三步及五将身份，文昌即天目（下目）；本候选只作该机械映射，不扩展解释",
+    "卷三表中十六神同一位置作‘大神’，卷二身份目录作‘太神’；代码规范名采用太神，档案保留大神异文",
+    "卷三第四十一局计神栏公开转录作‘戊’，与十二支序列不合；该字符不参与本候选，计神仍由卷一公式与其余表行校验",
+    "尚未取得并哈希对应四库影像字节，固定电子转录不能替代逐字影印复核",
+    "公历日期到积年、两套历元、岁首、历史历法及阴阳遁选择仍未闭合",
+    "主客大小将、参将、八门及掩迫囚击关格没有因同表相邻列存在而进入实现",
+    "主算、客算只是式盘整数，不解释成概率、得分、中间信号或现实结论"
+  ],
+  "review_state": {
+    "bibliography_review": "candidate_only",
+    "transcription_review": "fixed_electronic_transcription_only_facsimile_pending",
+    "logic_review": "formula_and_all_72_yang_table_rows_cross_checked",
+    "implementation_review": "rust_unit_and_research_gate_tests_required",
+    "runtime_release": "blocked",
+    "decision": "chart_only_eyes_and_counts_no_date_no_generals_no_interpretation_no_rules"
+  }
+}

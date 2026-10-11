@@ -1,0 +1,113 @@
+{
+  "research_id": "QIMEN-SOLAR-TERM-THREE-YUAN-JU-2026-09-01",
+  "method": "qimen_dunjia",
+  "researched_on": "2026-09-01",
+  "scope": "仅固化冬至至芒种阳遁、夏至至大雪阴遁，甲己符头五日一元、符头地支分上中下元，以及二十四节气三元局数的机械候选；不选择北京时间或真太阳时日界，不选择超神接气置闰口径，不排地盘天盘、九星、八门、八神，不录入占断",
+  "status": "mechanical_received_solar_term_three_yuan_ju_candidate_blocked_from_runtime_rules",
+  "runtime_rule_seed_allowed": false,
+  "sources": [
+    {
+      "source_id": "QIMEN-TONGZONG-WIKISOURCE-YINYANG-SANYUAN-2026-09-01",
+      "title": "《奇门遁甲统宗》（维基文库电子转录）",
+      "source_type": "electronic_transcription_not_facsimile",
+      "url": "https://zh.wikisource.org/wiki/%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E7%B5%B1%E5%AE%97",
+      "supports": [
+        "五日换一元的传本文字",
+        "二十四节气上中下三元阴阳遁局数表",
+        "处暑条转录为一四七"
+      ],
+      "evidence_limit": "公共电子转录不能替代逐页影印校勘，且尚未闭合超神、接气、置闰的历法选择"
+    },
+    {
+      "source_id": "GUJIN-TUSHU-JICHENG-V479-P25-2026-09-01",
+      "title": "《古今图书集成》卷页影像第479册第25页（维基文库影像挂接转录）",
+      "source_type": "facsimile_page_with_unproofread_transcription",
+      "url": "https://zh.wikisource.org/wiki/Page:Gujin_Tushu_Jicheng,_Volume_479_(1700-1725).djvu/25",
+      "supports": [
+        "夏至阴遁逆行、冬至阳遁顺行",
+        "五日一候，甲己为符头",
+        "子午卯酉为上元、寅申巳亥为中元、辰戌丑未为下元",
+        "二十四节气三元局数表"
+      ],
+      "evidence_limit": "页面标记为未校对；其处暑条文本显示一七四，与其他已检转录的一四七冲突，因此该条程序停用"
+    },
+    {
+      "source_id": "NLC-QIMEN-TONGZONG-FACSIMILE-416-12JH003951-48665",
+      "title": "国家图书馆藏《奇门遁甲统宗》扫描件",
+      "source_type": "institutional_facsimile_pdf_not_yet_page_bound",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/NLC416-12jh003951-48665_%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E7%B5%B1%E5%AE%97.pdf",
+      "supports": "传本影像复核入口",
+      "evidence_limit": "本轮尚未把公式逐条绑定到扫描件准确册页与文件哈希，不能用来解除处暑异文冲突"
+    },
+    {
+      "source_id": "QIMEN-MIJI-DAQUAN-CTEXT-2026-09-01",
+      "title": "《奇门遁甲秘笈大全》（中国哲学书电子化计划转录）",
+      "source_type": "electronic_transcription_not_facsimile",
+      "url": "https://ctext.org/wiki.pl?chapter=91342&if=gb",
+      "supports": "二十四节气三元局数交叉转录，处暑作一四七",
+      "evidence_limit": "交叉转录不是独立影印校勘结论"
+    }
+  ],
+  "implemented_candidate": {
+    "algorithm_version": "jiuheng.qimen.received_solar_term_three_yuan_ju_candidate.v1",
+    "dun_ranges": {
+      "yang": ["冬至", "小寒", "大寒", "立春", "雨水", "惊蛰", "春分", "清明", "谷雨", "立夏", "小满", "芒种"],
+      "yin": ["夏至", "小暑", "大暑", "立秋", "处暑", "白露", "秋分", "寒露", "霜降", "立冬", "小雪", "大雪"]
+    },
+    "symbol_head": "六十甲子循环序号每五日向下归组，组首恒为甲或己",
+    "three_yuan_by_symbol_head_branch": {
+      "upper": ["子", "午", "卯", "酉"],
+      "middle": ["寅", "申", "巳", "亥"],
+      "lower": ["辰", "戌", "丑", "未"]
+    },
+    "received_bureau_numbers_upper_middle_lower": {
+      "冬至": [1, 7, 4], "惊蛰": [1, 7, 4],
+      "小寒": [2, 8, 5],
+      "大寒": [3, 9, 6], "春分": [3, 9, 6],
+      "立春": [8, 5, 2],
+      "雨水": [9, 6, 3],
+      "清明": [4, 1, 7], "立夏": [4, 1, 7],
+      "谷雨": [5, 2, 8], "小满": [5, 2, 8],
+      "芒种": [6, 3, 9],
+      "夏至": [9, 3, 6], "白露": [9, 3, 6],
+      "小暑": [8, 2, 5],
+      "大暑": [7, 1, 4], "秋分": [7, 1, 4],
+      "立秋": [2, 5, 8],
+      "处暑": null,
+      "寒露": [6, 9, 3], "立冬": [6, 9, 3],
+      "霜降": [5, 8, 2], "小雪": [5, 8, 2],
+      "大雪": [4, 7, 1]
+    },
+    "parallel_day_conventions": [
+      "beijing_civil_midnight.v1",
+      "true_solar_civil_midnight.v1"
+    ],
+    "selected_day_convention": null,
+    "transmission_calendar_adjustment_selected": null,
+    "permitted_use": "不可变机械候选审计、九术插件状态、历史快照、开发者显示和重算校验",
+    "forbidden_use": "Rule ID、处暑局数、超神接气置闰选择、地盘天盘、九星八门八神、格局、吉凶、应期、中间信号或综合裁决",
+    "plate_calculated": false,
+    "interpretation_eligible": false,
+    "rule_eligible": false
+  },
+  "verification_anchors": [
+    "二十四节气必须恰分为十二阳遁和十二阴遁",
+    "每个五日块的符头必须为甲或己，六十日内上中下元各占二十日",
+    "二十三个无当前异文冲突的节气局数表必须逐项固定",
+    "处暑局数必须返回空值并留下异文冲突原因",
+    "北京时间与真太阳时两个零点换日候选必须并列保存且不得自动选择",
+    "任何盘局、解释或运行时规则标志都必须保持关闭"
+  ],
+  "unresolved_blockers": [
+    "处暑三元局数在已检公共文本中存在一七四与一四七冲突，尚未完成影印本逐页校勘",
+    "超神、接气、置闰与拆补等传承历法口径尚未完成版本谱系和默认流派选择",
+    "北京时间零点换日与真太阳时零点换日尚无已放行规则选择",
+    "地盘天盘、九星、八门、八神及值符值使排布尚未完成证据门禁",
+    "占事用神、格局、吉凶与应期规则尚未逐条完成出处、异文、反例和程序测试"
+  ],
+  "evidence_gate_summary": {
+    "decision": "blocked",
+    "runtime_rule_count": 0,
+    "reason": "二十三个节气的阴阳遁、符头三元与局数可作为机械候选审计；处暑异文及历法流派、盘局和占断规则均未闭合"
+  }
+}

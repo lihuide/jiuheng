@@ -1,0 +1,94 @@
+{
+  "fixture_set_id": "TAIYI-QIZHENG-CROSSCHECK-CONTRACT-2026-09-07-v1",
+  "schema_version": 1,
+  "status": "input_contract_only_not_executed",
+  "purpose": "固定太乙与七政四余未来黑盒对拍的输入、请求字段和禁止字段；本文件不保存参考项目输出，也不证明任何术数规则正确",
+  "reference_execution_allowed": false,
+  "runtime_ingestion_allowed": false,
+  "rule_evidence_allowed": false,
+  "result_signal_generation_allowed": false,
+  "forbidden_output_classes": [
+    "吉凶断语",
+    "应期",
+    "行动建议",
+    "AI 文本",
+    "现代博弈结果",
+    "金融或比赛评分",
+    "未经古籍验证的神煞和行限结论"
+  ],
+  "cases": [
+    {
+      "case_id": "TAIYI-YEAR-1552-09-24-BJT-v1",
+      "method": "taiyi",
+      "reference_project": "kintaiyi",
+      "reference_commit": "626d8a5bd0f707fec2ed613c83d4b6611f56441d",
+      "input": {"calendar": "proleptic_gregorian", "datetime_bjt": "1552-09-24T00:00:00+08:00", "ji_style": 0, "accumulation_method": 1, "enable_game_theory": false},
+      "requested_fields": ["accumulated_number", "yin_yang_dun", "board_number", "taiyi_palace", "wenchang", "shiji", "home_count", "away_count", "fixed_count", "eight_gates"],
+      "trusted_expected_output": null,
+      "comparison_status": "not_run",
+      "blockers": ["依赖闭合和最小适配层未完成", "权威课例未绑定", "九衡太乙独立实现不存在"]
+    },
+    {
+      "case_id": "TAIYI-DAY-2026-03-24-BJT-v1",
+      "method": "taiyi",
+      "reference_project": "kintaiyi",
+      "reference_commit": "626d8a5bd0f707fec2ed613c83d4b6611f56441d",
+      "input": {"calendar": "proleptic_gregorian", "datetime_bjt": "2026-03-24T12:30:00+08:00", "ji_style": 2, "accumulation_method": null, "enable_game_theory": false},
+      "requested_fields": ["accumulated_number", "yin_yang_dun", "board_number", "taiyi_palace", "wenchang", "shiji", "home_count", "away_count", "fixed_count", "eight_gates"],
+      "trusted_expected_output": null,
+      "comparison_status": "not_run",
+      "blockers": ["积数法尚未由古籍选择", "依赖闭合和最小适配层未完成", "九衡太乙独立实现不存在"]
+    },
+    {
+      "case_id": "TAIYI-HOUR-2026-03-24-BJT-v1",
+      "method": "taiyi",
+      "reference_project": "kintaiyi",
+      "reference_commit": "626d8a5bd0f707fec2ed613c83d4b6611f56441d",
+      "input": {"calendar": "proleptic_gregorian", "datetime_bjt": "2026-03-24T12:30:00+08:00", "ji_style": 3, "accumulation_method": null, "enable_game_theory": false},
+      "requested_fields": ["accumulated_number", "yin_yang_dun", "board_number", "taiyi_palace", "wenchang", "shiji", "home_count", "away_count", "fixed_count", "eight_gates"],
+      "trusted_expected_output": null,
+      "comparison_status": "not_run",
+      "blockers": ["积数法和时界尚未由古籍选择", "依赖闭合和最小适配层未完成", "九衡太乙独立实现不存在"]
+    },
+    {
+      "case_id": "QIZHENG-SELF-CALIBRATION-1985-HK-v1",
+      "method": "qizheng_siyu",
+      "reference_project": "kinastro",
+      "reference_commit": "bde4fb4044cbc317911ba988dcb6459f7e10ec4a",
+      "input": {"calendar": "proleptic_gregorian", "local_datetime": "1985-08-26T02:55:00+08:00", "timezone_hours": 8.0, "latitude": 22.3193, "longitude": 114.1694, "gender": "male"},
+      "requested_fields": ["julian_day", "seven_governor_longitude_latitude_speed", "four_remainder_longitudes", "mansion_name", "mansion_degree", "life_palace_basis", "twelve_palaces", "planet_to_palace", "liming_longitude"],
+      "trusted_expected_output": null,
+      "comparison_status": "not_run_self_calibration_case_not_authority",
+      "blockers": ["kinastro 许可证文件缺失", "该案例参与源码常数反推，不能充当独立验证", "宿界和四余定义未过古籍门禁"]
+    },
+    {
+      "case_id": "QIZHENG-J2000-BEIJING-v1",
+      "method": "qizheng_siyu",
+      "reference_project": "kinastro",
+      "reference_commit": "bde4fb4044cbc317911ba988dcb6459f7e10ec4a",
+      "input": {"calendar": "proleptic_gregorian", "local_datetime": "2000-01-01T12:00:00+08:00", "timezone_hours": 8.0, "latitude": 39.9042, "longitude": 116.4074, "gender": "female"},
+      "requested_fields": ["julian_day", "seven_governor_longitude_latitude_speed", "four_remainder_longitudes", "mansion_name", "mansion_degree", "life_palace_basis", "twelve_palaces", "planet_to_palace", "liming_longitude"],
+      "trusted_expected_output": null,
+      "comparison_status": "not_run",
+      "blockers": ["kinastro 许可证文件和依赖闭合未完成", "行星算法误差预算未固定", "宿界和四余定义未过古籍门禁"]
+    },
+    {
+      "case_id": "QIZHENG-DAY-BOUNDARY-1900-SHANGHAI-v1",
+      "method": "qizheng_siyu",
+      "reference_project": "kinastro",
+      "reference_commit": "bde4fb4044cbc317911ba988dcb6459f7e10ec4a",
+      "input": {"calendar": "proleptic_gregorian", "local_datetime": "1900-01-01T00:05:00+08:00", "timezone_hours": 8.0, "latitude": 31.2304, "longitude": 121.4737, "gender": "male"},
+      "requested_fields": ["julian_day", "seven_governor_longitude_latitude_speed", "four_remainder_longitudes", "mansion_name", "mansion_degree", "life_palace_basis", "twelve_palaces", "planet_to_palace", "liming_longitude"],
+      "trusted_expected_output": null,
+      "comparison_status": "not_run",
+      "blockers": ["kinastro 许可证文件和依赖闭合未完成", "历史岁差和日界误差预算未固定", "宿界和四余定义未过古籍门禁"]
+    }
+  ],
+  "gate_summary": {
+    "case_count": 6,
+    "executed_case_count": 0,
+    "trusted_expected_output_count": 0,
+    "runtime_rule_count": 0,
+    "decision": "blocked"
+  }
+}

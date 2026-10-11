@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "research_id": "jiuheng.research.liuyao.received_palace_pure_hexagram_hidden_spirits.2026-09-15",
+  "method": "liuyao",
+  "review_date": "2026-09-15",
+  "status": "mechanical_received_hidden_spirits_blocked_from_runtime_rules",
+  "purpose": "检查本卦未显现的六亲，并从所属八宫的本宫首卦按同一爻位取伏神候选；同时保存该位本卦飞神，但不判断飞伏生克、旺衰或吉凶。",
+  "evidence_scope": {
+    "sources": [
+      {
+        "source_id": "bushi_zhengzong_hidden_spirits_ctext",
+        "title": "《卜筮正宗》飞伏神法电子转录",
+        "historical_period": "清代传本",
+        "public_url": "https://ctext.org/wiki.pl?chapter=801184&if=gb",
+        "supports": ["八宫首卦六亲俱全、本宫下七卦缺一则以首卦为伏", "乾宫姤遁借寅木、遁否晋观借子水、观剥借申金的爻位锚点"],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "bushi_quanshu_flying_hidden_ctext",
+        "title": "《卜筮全书》卦上为飞、本宫为伏段电子转录",
+        "historical_period": "明代传本",
+        "public_url": "https://ctext.org/wiki.pl?chapter=428169&if=en&remap=gb",
+        "supports": ["卦上六爻为飞神、飞下本宫六爻为伏神", "主事爻不出现时寻其伏于何爻下的结构说明"],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "yiyin_examples_hidden_spirits_ctext",
+        "title": "《易隐》传本卦例电子转录",
+        "historical_period": "明清传本",
+        "public_url": "https://ctext.org/wiki.pl?chapter=888662&if=gb&remap=gb",
+        "supports": ["乾宫剥卦兄弟壬申金伏于五爻实例", "伏神、本卦、变卦同位展示结构"],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      }
+    ],
+    "source_limitations": [
+      "来源仍为公共电子转录，对应影印页尚未固定为本地字节并计算 SHA-256",
+      "京房、火珠林、卜筮全书、卜筮正宗各层的传承关系尚未完成版本校勘",
+      "本轮只识别本卦完全缺失的六亲及同位本宫候选，不采用用爻已现时仍察伏神的争议扩展",
+      "飞神压伏、伏神得出、空破生克等解释规则全部排除"
+    ]
+  },
+  "candidate": {
+    "algorithm_version": "jiuheng.liuyao.received_palace_pure_hexagram_hidden_spirits.v1",
+    "source_hexagram": "current_palace_pure_hexagram",
+    "same_line_alignment": true,
+    "trigger": "relative_absent_from_all_six_visible_lines",
+    "qian_palace_anchors": {
+      "姤": [{"line": 2, "hidden": "甲寅木", "relative": "妻财"}],
+      "遯": [
+        {"line": 1, "hidden": "甲子水", "relative": "子孙"},
+        {"line": 2, "hidden": "甲寅木", "relative": "妻财"}
+      ],
+      "观": [
+        {"line": 1, "hidden": "甲子水", "relative": "子孙"},
+        {"line": 5, "hidden": "壬申金", "relative": "兄弟"}
+      ],
+      "剥": [{"line": 5, "hidden": "壬申金", "relative": "兄弟"}]
+    },
+    "all_sixty_four_hexagrams_checked": true,
+    "hidden_spirits_assigned": true,
+    "flying_hidden_interactions_assessed": false,
+    "useful_god_selected": false,
+    "strength_assessed": false,
+    "interpretation_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false
+  },
+  "forbidden_uses": [
+    "不得把本宫同位候选直接视为已发挥作用的用神",
+    "不得从飞伏生克、空破或伏神名目生成吉凶",
+    "不得扩展为任何六亲已显时仍强制搜索伏神的争议规则",
+    "不得自动补造用神、月建日辰、旬空、旺衰、动变或应期",
+    "不得生成中间信号、结论、应期、行动建议或正式 Rule ID"
+  ],
+  "unresolved": [
+    "底本影印页定位、字节哈希、异文和版本谱系",
+    "用爻已现仍察伏神等分歧流派的证据边界",
+    "飞伏生克、伏神得出、用神、月建日辰、旺衰、动变和应期规则"
+  ],
+  "review_state": {
+    "decision": "chart_only_missing_relative_palace_pure_line_candidates_no_interpretation_signals_or_rules",
+    "runtime_release": "blocked",
+    "formal_rule_count": 0
+  }
+}

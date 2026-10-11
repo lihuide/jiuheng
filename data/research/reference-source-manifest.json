@@ -1,0 +1,146 @@
+{
+  "manifest_id": "OPEN-SOURCE-SOURCE-PINS-2026-09-07-v1",
+  "schema_version": 1,
+  "recorded_on": "2026-09-07",
+  "purpose": "固定太乙与七政四余参考实现的不可变提交、Git tree、确定性归档哈希、关键文件哈希和许可证闭合状态；仅供研究审计，不是古籍证据或运行时依赖",
+  "third_party_source_vendored": false,
+  "archives_retained_in_repository": false,
+  "reference_execution_allowed": false,
+  "runtime_ingestion_allowed": false,
+  "rule_evidence_allowed": false,
+  "direct_code_copy_allowed": false,
+  "projects": [
+    {
+      "project_id": "kintaiyi",
+      "repository": "kentang2017/kintaiyi",
+      "branch_observed": "master",
+      "commit_sha": "626d8a5bd0f707fec2ed613c83d4b6611f56441d",
+      "tree_sha": "0a4188c6752905b45cf2b5262c8c08dd3badad81",
+      "commit_url": "https://github.com/kentang2017/kintaiyi/commit/626d8a5bd0f707fec2ed613c83d4b6611f56441d",
+      "committer_date": "2026-08-29T11:52:05+08:00",
+      "commit_subject": "時計金鏡修正：積時數+24、局數隨時辰跳轉(%60-30)、太乙落宮三時一移",
+      "tracked_file_count": 104,
+      "archive": {
+        "method": "git archive --format=tar <commit>",
+        "bytes": 11857920,
+        "sha256": "03eb992305bfb900c507a01fd9ecdfaef4b347e4a2bbaba0a23203d9aed4ec6d",
+        "retained_in_repository": false
+      },
+      "license_audit": {
+        "declared_expression": "MIT",
+        "status": "verified_license_file_at_pinned_commit",
+        "license_file_present": true,
+        "redistribution_allowed_by_project_gate": true,
+        "evidence_paths": ["LICENSE", "README.md", "pyproject.toml"],
+        "missing_paths": []
+      },
+      "selected_files": [
+        {"path": "LICENSE", "bytes": 1094, "sha256": "ffe5b60be7adabf4da34b1fa63efc138e2559437986d0c708cdf0c7a545c80ec"},
+        {"path": "README.md", "bytes": 20393, "sha256": "09859ad2d8a52cc9532c701a3257af1845346177232af26d220c96d1d4be8777"},
+        {"path": "pyproject.toml", "bytes": 3065, "sha256": "ec1fc456c0241e4176b2d4cdecb574b5662df84ce2c7e5b053a7796b14cbd7e6"},
+        {"path": "src/kintaiyi/kintaiyi.py", "bytes": 142288, "sha256": "46a5720eafa04740ac7dca5773df173895fd3115a17b0e66fd0a056811db5ffb"},
+        {"path": "src/kintaiyi/config.py", "bytes": 182460, "sha256": "8effd0484865256592602be193fc7b7fabc761dbc9bbd2e0e0b74dd338ceebb0"},
+        {"path": "src/kintaiyi/jieqi.py", "bytes": 23304, "sha256": "6839257ae06e9515b979b8e72a7df917e485a06bdda08ccb6e791e3d3e379fbf"},
+        {"path": "src/kintaiyi/taiyidict.py", "bytes": 6950, "sha256": "cf5be5b533441b2dd04ea2c0e1a3ae6de79403fdcfa3f089531fcd513245dd5c"},
+        {"path": "src/kintaiyi/taiyimishu.py", "bytes": 72484, "sha256": "2c34db910864783b0e098d502abe51b8b352bd37768fb97811a12655ab6dc357"},
+        {"path": "src/kintaiyi/game_theory.py", "bytes": 46923, "sha256": "4a519bf0db608a06a4ea84f9982e65cd2093ba35a7437bc91e0f17820ed6a319"},
+        {"path": "src/kintaiyi/openai_client.py", "bytes": 2370, "sha256": "b4c60e69ca460fbcd98cd15c577bdec58782a5086301c04ff59ac972a8acad82"},
+        {"path": "src/kintaiyi/cerebras_client.py", "bytes": 3861, "sha256": "a2023f2fb180dad927bdcdb7af1c5072b90ba54483b3f9e6dc9f700800f62252"},
+        {"path": "tests/test_cli.py", "bytes": 2659, "sha256": "04584f3bd440768901353d9211edd76be565907b171d11d5fc49207891998e41"},
+        {"path": "tests/test_game_theory.py", "bytes": 19293, "sha256": "5d44b1cf9ab3e481f9de03840d6698cf363fec5275d7b2eead3465474a09c3e9"},
+        {"path": "tests/test_life_body_palaces.py", "bytes": 1370, "sha256": "b7949d243fa4d6866cc92f33058b475aaefe7ae01a75dd4c852aaa1bcf282478"},
+        {"path": "tests/test_zhao_you_songs.py", "bytes": 1180, "sha256": "02f9afd605483a09ff337a8822db1207a681af220c7237b96928f80ac3a6b160"}
+      ],
+      "execution_gate": {
+        "source_identity_closed": true,
+        "license_closed": true,
+        "dependency_lock_closed": false,
+        "network_and_ai_paths_isolated": false,
+        "trusted_expected_outputs_present": false,
+        "jiuheng_independent_implementation_present": true,
+        "crosscheck_execution_allowed": false,
+        "blockers": [
+          "依赖版本使用范围而非完整锁文件，且包含许可证尚未闭合的 sxtwl",
+          "古法机械函数与 AI、现代博弈、解释输出尚未形成可审计的最小执行适配层",
+          "九衡已独立实现外部给定积年的年计框架、显式阴阳遁七十二局、主客大小将及多类机械位置关系；仍没有现代日期到局序/自动选遁、完整局式及权威课例期望值。指定局序的静态主客算表比较单独登记，不解除整包执行门禁。"
+        ]
+      },
+      "static_literal_comparison": {
+        "audit_id": "KINTAIYI-STATIC-COUNTS-2026-09-27-v1",
+        "fixture_path": "data/research/kintaiyi-counts-static-reference.json",
+        "scope": "find_cal_yangcal_yingcal_main_guest_counts_only",
+        "pinned_source_and_license_bytes_verified": true,
+        "static_literal_extraction_allowed": true,
+        "third_party_code_execution_allowed": false,
+        "runtime_ingestion_allowed": false,
+        "rule_evidence_allowed": false,
+        "compared_board_count": 144,
+        "compared_cell_count": 288,
+        "different_board_count": 4,
+        "different_cell_count": 4
+      }
+    },
+    {
+      "project_id": "kinastro",
+      "repository": "kentang2017/kinastro",
+      "branch_observed": "main",
+      "commit_sha": "bde4fb4044cbc317911ba988dcb6459f7e10ec4a",
+      "tree_sha": "0bd84950c61e42b5d74357c5aa2bc6e85f76ccad",
+      "commit_url": "https://github.com/kentang2017/kinastro/commit/bde4fb4044cbc317911ba988dcb6459f7e10ec4a",
+      "committer_date": "2026-08-01T22:39:01+08:00",
+      "commit_subject": "Merge pull request #523 from kentang2017/copilot/fix-missing-wood-star-json",
+      "tracked_file_count": 802,
+      "archive": {
+        "method": "git archive --format=tar <commit>",
+        "bytes": 63518720,
+        "sha256": "2206fb5c99e32fae156e8b64db9054a06e93f8ce8502841e88cbf8e5bf5c0c11",
+        "retained_in_repository": false
+      },
+      "license_audit": {
+        "declared_expression": "MIT",
+        "status": "incomplete_declared_mit_but_license_file_missing_at_pinned_commit",
+        "license_file_present": false,
+        "redistribution_allowed_by_project_gate": false,
+        "evidence_paths": ["README.md", "pyproject.toml"],
+        "missing_paths": ["LICENSE"]
+      },
+      "selected_files": [
+        {"path": "README.md", "bytes": 105036, "sha256": "686380d2a52e280e0e9591102ecc07ab3a041459b3246b5e81b5145bbc1d9452"},
+        {"path": "pyproject.toml", "bytes": 716, "sha256": "e5c029758a524a16b270445fa95750e62fdc5db1f7b0b7dc4f4c06b6c4a3c254"},
+        {"path": "requirements.txt", "bytes": 489, "sha256": "5aea2c97035745599d032a897e6c74f2dadd396609feef3e5063a53bb6e1a447"},
+        {"path": "astro/qizheng/__init__.py", "bytes": 222, "sha256": "5e691409237030499d922892a3e0b46a3dd71c5b2c948aec7b6aaf81e4fe8a5b"},
+        {"path": "astro/qizheng/calculator.py", "bytes": 21553, "sha256": "370b13650f1e0e139c6af3ab90b4cbebb500bb6b167d51a0925de6ea8be60506"},
+        {"path": "astro/qizheng/constants.py", "bytes": 15311, "sha256": "77b162f4accd5de3298c601722bbc1db59a1248b96306bd0d59f417526a7b14d"},
+        {"path": "astro/qizheng/qizheng_dasha.py", "bytes": 5863, "sha256": "d971afc6c49cea5ef4fd5a1a5c179024d241e0f3500d96775468d6c3a7a6f33e"},
+        {"path": "astro/qizheng/qizheng_transit.py", "bytes": 4604, "sha256": "dc3ad531aed4c3ded2e21f72bd78e7bac0fc83f1f8ebe37dfd993072ca04241a"},
+        {"path": "tests/test_calculator.py", "bytes": 28397, "sha256": "2340e75a984f8fcbc531aa3d4a45b403f1ce96b2ae5097c620d9629c1998a677"}
+      ],
+      "execution_gate": {
+        "source_identity_closed": true,
+        "license_closed": false,
+        "dependency_lock_closed": false,
+        "network_and_ai_paths_isolated": false,
+        "trusted_expected_outputs_present": false,
+        "jiuheng_independent_implementation_present": false,
+        "crosscheck_execution_allowed": false,
+        "blockers": [
+          "README 指向 LICENSE，但固定提交中不存在该文件，复制和分发许可未闭合",
+          "依赖清单包含未固定 Git 依赖、AI SDK、金融联网包、sxtwl 与 Swiss Ephemeris",
+          "单案例反推宿界、Placidus/等分宫混合和简化行限尚未从机械对拍适配层排除",
+          "没有古籍认可的宿界、四余定义、权威课例期望值和九衡独立实现"
+        ]
+      }
+    }
+  ],
+  "gate_summary": {
+    "pinned_project_count": 2,
+    "projects_with_recorded_archive_and_file_hashes": 2,
+    "license_closed_project_count": 1,
+    "projects_with_partial_jiuheng_independent_implementation": 1,
+    "crosscheck_execution_count": 0,
+    "static_literal_comparison_audit_count": 1,
+    "static_literal_compared_board_count": 144,
+    "runtime_rule_count": 0,
+    "decision": "source_identity_pinned_but_execution_and_runtime_blocked"
+  }
+}

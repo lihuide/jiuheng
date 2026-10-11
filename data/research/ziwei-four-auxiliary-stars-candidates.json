@@ -1,0 +1,37 @@
+{
+  "research_id": "ZIWEI-FOUR-AUXILIARY-STARS-RESEARCH-2026-09-24",
+  "method": "ziwei_doushu",
+  "scope": "仅安文昌、文曲、左辅、右弼四星地支；不作四化、吉凶或运限解释",
+  "runtime_rule_seed_allowed": false,
+  "formal_rule_count": 0,
+  "candidate": {
+    "algorithm_version": "jiuheng.ziwei.received_month_hour_four_auxiliary_star_placements.v1",
+    "star_count": 4,
+    "positions": {
+      "文昌": "戌起子时，逐时逆行",
+      "文曲": "辰起子时，逐时顺行",
+      "左辅": "辰起正月，逐月顺行",
+      "右弼": "戌起正月，逐月逆行"
+    },
+    "leap_month_convention": "沿用已登记的闰月作下月机械候选；闰十二月失败关闭",
+    "selected_hour_convention": null,
+    "interpretation_eligible": false,
+    "rule_eligible": false
+  },
+  "primary_text_lead": {
+    "title": "紫微斗数全书卷二·安文昌文曲星诀、安左辅右弼星诀",
+    "type": "public_electronic_transcription_not_page_bound_facsimile",
+    "url": "https://zh.wikisource.org/zh/%E7%B4%AB%E5%BE%AE%E6%96%97%E6%95%B8%E5%85%A8%E6%9B%B8/%E5%8D%B7%E4%BA%8C",
+    "limit": "主版本影印、页码、字形异文与独立逐字复核未完成"
+  },
+  "verification_anchors": [
+    "正月子时：文昌戌、文曲辰、左辅辰、右弼戌",
+    "二月丑时：文昌酉、文曲巳、左辅巳、右弼酉"
+  ],
+  "unresolved_blockers": [
+    "未将公共电子转录绑定到经独立复核的底本影印页和文件哈希",
+    "出生月、闰月和北京时间或真太阳时时支口径尚未择定",
+    "其他辅煞、四化、运限及全部断法均未实现",
+    "不得由此候选产生得分、结论、应期、行动建议或正式 Rule ID"
+  ]
+}

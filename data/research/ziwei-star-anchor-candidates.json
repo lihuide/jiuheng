@@ -1,0 +1,43 @@
+{
+  "research_id": "ZIWEI-STAR-ANCHOR-RESEARCH-2026-09-23",
+  "method": "ziwei_doushu",
+  "scope": "仅按农历日数和五行局推出紫微星所在的地支候选；不排十四主星，不断命",
+  "runtime_rule_seed_allowed": false,
+  "formal_rule_count": 0,
+  "candidate": {
+    "algorithm_version": "jiuheng.ziwei.received_bureau_lunar_day_ziwei_star_anchor.v1",
+    "lunar_day_range": [1, 30],
+    "bureau_numbers": [2, 3, 4, 5, 6],
+    "procedure": "取最小非负补数 x，使(日数+x)可被局数整除；商数自寅宫数起；x 为奇数则逆移 x 宫，偶数则顺移 x 宫",
+    "parallel_conventions": "名义农历年/立春年干 × 北京时间/真太阳时时辰，各自保留紫微星锚候选",
+    "selected_year_convention": null,
+    "selected_hour_convention": null,
+    "interpretation_eligible": false,
+    "rule_eligible": false
+  },
+  "primary_text_lead": {
+    "title": "紫微斗數全書卷二",
+    "type": "public_electronic_transcription_not_page_bound_facsimile",
+    "url": "https://zh.wikisource.org/zh/%E7%B4%AB%E5%BE%AE%E6%96%97%E6%95%B8%E5%85%A8%E6%9B%B8/%E5%8D%B7%E4%BA%8C",
+    "supports": "水二、木三、金四、土五、火六局逐日紫微定位歌；火六局首日酉、二日午、四日辰",
+    "limit": "未固定可核影印版次、准确图像页和异文，逐日歌仅作为机械位置对照"
+  },
+  "independent_implementation_crosscheck": {
+    "title": "anybedy/ziweidoushu 紫微星定位",
+    "url": "https://github.com/anybedy/ziweidoushu/blob/main/01-%E6%8E%92%E7%9B%98%E7%AE%97%E6%B3%95/03-%E7%B4%AB%E5%BE%AE%E6%98%9F%E5%AE%9A%E4%BD%8D.md",
+    "use": "只交叉检查补数、商数和奇逆偶顺的算法步骤；不是古籍规则依据"
+  },
+  "verification_anchors": [
+    "水二局一日丑、二日寅",
+    "木三局一日辰、二日丑",
+    "金四局一日亥、二日辰",
+    "土五局一日午、二日亥",
+    "火六局一日酉、二日午、四日辰"
+  ],
+  "unresolved_blockers": [
+    "逐日歌与所用算法尚未绑定经复核的同一主版本影印页和异文记录",
+    "五行局、出生年界、时辰与历史农历口径未定",
+    "天府系及其余十三颗主星、辅煞、四化、限运和断法均未实现",
+    "不得由星锚位置生成中间信号、吉凶、应期、建议或正式 Rule ID"
+  ]
+}

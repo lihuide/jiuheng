@@ -1,0 +1,104 @@
+{
+  "research_id": "QIMEN-EARTH-PLATE-THREE-WONDERS-SIX-INSTRUMENTS-2026-09-01",
+  "method": "qimen_dunjia",
+  "researched_on": "2026-09-01",
+  "scope": "仅固化洛书九宫数序、六甲隐六仪以及阳遁顺排/阴遁逆排戊己庚辛壬癸丁丙乙的地盘机械候选；不选择日界或超神接气置闰，不起天盘，不安九星八门八神，不取值符值使，不录入占断",
+  "status": "mechanical_received_three_wonders_six_instruments_earth_plate_blocked_from_runtime_rules",
+  "runtime_rule_seed_allowed": false,
+  "sources": [
+    {
+      "source_id": "JINGYOU-DUNJIA-FUYING-JING-SHIDIAN-SIX-INSTRUMENTS-2026-09-01",
+      "title": "《景祐遁甲符应经》六仪飞布图局（识典古籍文本页）",
+      "source_type": "early_song_text_electronic_transcription_not_bound_facsimile",
+      "url": "https://www.shidianguji.com/mid-page/7381580049549557797",
+      "supports": [
+        "阳遁九局顺布六仪、逆布三奇",
+        "阴遁九局逆布六仪、顺布三奇",
+        "阴阳顺逆起元宫"
+      ],
+      "evidence_limit": "页面提供北宋杨维德等撰的文本入口，但本项目尚未绑定权威影印本具体卷页和文件哈希；本轮不采用其值符、值使或吉凶内容"
+    },
+    {
+      "source_id": "QIMEN-TONGZONG-WIKISOURCE-VOL2-EARTH-PLATE-2026-09-01",
+      "title": "《奇门遁甲统宗》卷二（维基文库电子转录）",
+      "source_type": "electronic_transcription_not_facsimile",
+      "url": "https://zh.wikisource.org/zh-hans/%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E7%B5%B1%E5%AE%97",
+      "supports": [
+        "左三右七、戴九履一、二四为肩、六八为足、五居中宫",
+        "顺为一二三四五六七八九，逆为九八七六五四三二一",
+        "戊己庚辛壬癸为六仪，甲子甲戌甲申甲午甲辰甲寅分别隐于六仪",
+        "阳一局与阴九局三奇六仪完整宫位例"
+      ],
+      "evidence_limit": "公共转录不能替代影印校勘；同页个别泛例存在疑似转录字误，因此程序只采用总序、明确阳一局/阴九局锚点和可遍历公式"
+    },
+    {
+      "source_id": "YUDING-QIMEN-BAOJIAN-CTEXT-EARTH-PLATE-2026-09-01",
+      "title": "《御定奇门遁甲宝鉴》奇门宝鉴御定（中国哲学书电子化计划转录）",
+      "source_type": "electronic_transcription_not_facsimile",
+      "url": "https://ctext.org/wiki.pl?chapter=250961&if=gb",
+      "supports": [
+        "阳遁顺仪奇逆布、阴遁逆仪奇顺行",
+        "阳一局戊一至癸六、丁七丙八乙九",
+        "阴九局戊九至癸四、丁三丙二乙一"
+      ],
+      "evidence_limit": "用于交叉转录核对，不作为已完成版本学复核的正式规则证据"
+    },
+    {
+      "source_id": "NLC-QIMEN-TONGZONG-FACSIMILE-416-12JH003951-48665-EARTH-PLATE",
+      "title": "国家图书馆藏《奇门遁甲统宗》扫描件",
+      "source_type": "institutional_facsimile_pdf_not_yet_page_bound",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/NLC416-12jh003951-48665_%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E7%B5%B1%E5%AE%97.pdf",
+      "supports": "传本影像复核入口",
+      "evidence_limit": "尚未把本轮九宫和地盘段落绑定到准确册页、逐字转录与文件哈希"
+    }
+  ],
+  "implemented_candidate": {
+    "algorithm_version": "jiuheng.qimen.received_three_wonders_six_instruments_earth_plate.v1",
+    "nine_palaces_by_number": [
+      "坎一", "坤二", "震三", "巽四", "中五", "乾六", "兑七", "艮八", "离九"
+    ],
+    "placement_sequence": ["戊", "己", "庚", "辛", "壬", "癸", "丁", "丙", "乙"],
+    "six_hidden_jia": {
+      "戊": "甲子",
+      "己": "甲戌",
+      "庚": "甲申",
+      "辛": "甲午",
+      "壬": "甲辰",
+      "癸": "甲寅"
+    },
+    "yang_direction": "从局数本宫起，按一至九循环递增布戊己庚辛壬癸丁丙乙",
+    "yin_direction": "从局数本宫起，按九至一循环递减布戊己庚辛壬癸丁丙乙",
+    "yang_one_anchor_by_palace_one_to_nine": ["戊", "己", "庚", "辛", "壬", "癸", "丁", "丙", "乙"],
+    "yin_nine_anchor_by_palace_one_to_nine": ["乙", "丙", "丁", "癸", "壬", "辛", "庚", "己", "戊"],
+    "parallel_day_conventions": [
+      "beijing_civil_midnight.v1",
+      "true_solar_civil_midnight.v1"
+    ],
+    "permitted_use": "不可变地盘机械候选、九术插件状态、历史快照、开发者显示和重算校验",
+    "forbidden_use": "Rule ID、天盘、值符值使、九星、八门、八神、中五寄宫、格局、吉凶、应期、中间信号或综合裁决",
+    "heaven_plate_calculated": false,
+    "stars_gates_spirits_calculated": false,
+    "interpretation_eligible": false,
+    "rule_eligible": false
+  },
+  "verification_anchors": [
+    "九宫必须恰为坎一坤二震三巽四中五乾六兑七艮八离九且编号唯一",
+    "六仪必须逐一对应六个甲旬首，三奇乙丙丁不得伪造隐甲",
+    "阳一局和阴九局必须分别匹配传本文字的完整宫位例",
+    "阴阳二遁各九局必须在九宫中恰好各出现一次戊己庚辛壬癸丁丙乙，戊恒落局数本宫",
+    "处暑或其他局数证据停用时不得生成地盘",
+    "任何天盘、星门神、解释或运行时规则标志都必须保持关闭"
+  ],
+  "unresolved_blockers": [
+    "尚未把九宫、六甲隐仪和地盘例逐条绑定到权威影印底本的具体卷页、图版、逐字校勘与文件哈希",
+    "处暑三元局数异文仍未闭合，故该节气没有局数也没有地盘候选",
+    "北京时间与真太阳时日界以及超神、接气、置闰、拆补等历法传承仍未选择",
+    "中五宫在天盘星门层的寄宫方法存在传本差异，本版停在不需要寄宫选择的地盘层",
+    "值符值使、天盘、九星、八门、八神及格局占断尚未完成证据门禁"
+  ],
+  "evidence_gate_summary": {
+    "decision": "blocked",
+    "runtime_rule_count": 0,
+    "reason": "九宫与三奇六仪可形成无解释地盘机械候选，但影印页绑定、历法流派、天盘星门神及占断规则均未闭合"
+  }
+}

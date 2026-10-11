@@ -1,0 +1,102 @@
+{
+  "archive_id": "TAIYI-TRADITIONAL-YEAR-EPOCH-CANDIDATE-2026-09-27-v1",
+  "schema_version": 1,
+  "recorded_on": "2026-09-27",
+  "method": "taiyi",
+  "status": "explicit_traditional_year_label_epoch_arithmetic_candidate_only",
+  "source_identity": {
+    "title": "太乙金镜式经",
+    "received_edition": "钦定四库全书本电子转录候选",
+    "kanripo_id": "KR3g0047",
+    "commit_sha": "e3264da2c9f556225e056abe7eade01903b4543e",
+    "path": "KR3g0047_001.txt",
+    "bytes": 22044,
+    "sha256": "6b13ff06e980439d7a3611f1f10c9efb318513e23f7a9e4c16ed4e8896f162d4",
+    "actual_bytes_rechecked_on": "2026-09-27",
+    "page_markers": ["KR3g0047_WYG_001-3a", "KR3g0047_WYG_001-3b"],
+    "source_fragment_id": "TY-JJSJ-WYG-J1-ACCUMULATED-EPOCHS-CANDIDATE",
+    "transcription": "自上元混沌甲子之岁至今大唐开元十二年甲子岁积得一百九十三万七千二百八十一算。上考往古每年减一算，下检将来每年加一算。",
+    "independent_transcription_url": "https://zh.wikisource.org/wiki/太乙金鏡式經_(四庫全書本)/卷01",
+    "era_year_crosscheck_url": "https://dlbs.liberal.ntu.edu.tw/museum/silk/db/index-year-table4.html",
+    "era_year_crosscheck": "开元十二年=724年=甲子；仅交叉核对年标签，不推导岁首界限",
+    "facsimile_verified": false,
+    "independent_review_completed": false
+  },
+  "candidate": {
+    "algorithm_version": "jiuheng.taiyi.received_kaiyuan12_traditional_year_epoch_candidate.v1",
+    "rust_api": "taiyi_annual_frame_from_traditional_year_candidate(i32, TaiyiYearEpochProfile)",
+    "profile_id": "received_kaiyuan12_year724_count1937281",
+    "profile_has_default": false,
+    "input_contract": "explicitly_resolved_traditional_year_label_in_astronomical_numbering_not_civil_date_year",
+    "year_zero_means": "1_BCE",
+    "valid_year_labels": {"minimum": -999, "maximum": 3000},
+    "anchor_year": 724,
+    "anchor_accumulated_year_count": 1937281,
+    "formula": "count=1937281+(traditional_year_label-724)",
+    "downstream": "existing_taiyi_annual_frame_from_accumulated_count_without_changing_its_v9_contract"
+  },
+  "explicit_traditional_year_label_input_allowed": true,
+  "candidate_epoch_arithmetic_allowed": true,
+  "civil_date_input_allowed": false,
+  "automatic_year_boundary_selection_allowed": false,
+  "runtime_epoch_selection_allowed": false,
+  "runtime_ingestion_allowed": false,
+  "complete_board_generation_allowed": false,
+  "interpretation_allowed": false,
+  "signal_generation_allowed": false,
+  "timing_generation_allowed": false,
+  "advice_generation_allowed": false,
+  "rule_id_generation_allowed": false,
+  "excluded_anchors": [
+    {
+      "received_label": "开元十五年甲子岁",
+      "received_count": 40801,
+      "status": "unavailable_profile",
+      "reason": "开元十五年对应727年丁卯，与甲子不闭合；不能擅自改十五为十二或改年干支后启用。"
+    },
+    {
+      "label": "开源/现代常见千万量级历元",
+      "status": "not_imported",
+      "reason": "本候选不从 kintaiyi 的积年常量选择正式古籍历元。"
+    }
+  ],
+  "machine_test_anchors": [
+    {"year": -999, "count": 1935558},
+    {"year": -1, "count": 1936556},
+    {"year": 0, "count": 1936557},
+    {"year": 1, "count": 1936558},
+    {"year": 723, "count": 1937280},
+    {"year": 724, "count": 1937281},
+    {"year": 725, "count": 1937282},
+    {"year": 2026, "count": 1938583},
+    {"year": 3000, "count": 1939557}
+  ],
+  "facsimile_acquisition_attempts": [
+    {
+      "provider": "Wikimedia Commons / CADAL 06056494",
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:CADAL06056494_太乙金鏡式經·卷一~卷四.djvu",
+      "catalog_page_count": 144,
+      "catalog_reported_bytes": 5391927,
+      "catalog_claimed_sha1": "7cf5f49cb39ff3cd34834421b6d3af1d4026c11a",
+      "catalog_verified_as_listing_only": true,
+      "actual_original_bytes_retrieved": false,
+      "actual_original_sha256": null,
+      "individual_page_visual_verification_completed": false
+    },
+    {
+      "provider": "Wikimedia Commons / SSID 13003380",
+      "file_url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/SSID-13003380_太乙金鏡式經_欽定四庫全書.pdf",
+      "status": "download_connection_reset_or_remote_disconnected",
+      "actual_original_bytes_retrieved": false,
+      "actual_original_sha256": null,
+      "file_volume_coverage_verified": false
+    }
+  ],
+  "remaining": [
+    "古籍原影印文件取得、准确卷页绑定和独立转录复核",
+    "传统年标签与实际时刻的年界转换，不能直接使用电脑日期年份",
+    "日计、時計历元与阴阳遁选定；完整局式、解释、应期、建议",
+    "上轮四处主客算差异的原页定字与异文判断"
+  ],
+  "runtime_rule_count": 0
+}

@@ -1,0 +1,249 @@
+{
+  "registry_id": "OPEN-SOURCE-REFERENCE-IMPLEMENTATIONS-2026-09-07",
+  "schema_version": 2,
+  "recorded_on": "2026-09-07",
+  "status": "reference_inventory_blocked_from_runtime_and_rule_evidence",
+  "purpose": "登记九术开源参考实现、许可证核验状态、允许用途、禁止用途、固定提交要求和对拍顺序；只减少机械实现摸索，不替代古籍证据链",
+  "runtime_rule_seed_allowed": false,
+  "executable_seed_eligible": false,
+  "third_party_code_vendored": false,
+  "direct_code_copy_allowed": false,
+  "open_source_claim_is_ancient_text_evidence": false,
+  "required_pipeline": [
+    "固定仓库提交和所读文件哈希",
+    "单独核验许可证和 NOTICE 要求",
+    "只提取机械算法步骤、输入输出字段和测试设计",
+    "用相同输入运行参考实现与九衡独立实现",
+    "逐字段记录一致、分歧、误差和边界",
+    "回到古籍影印本验证每一项术式规则",
+    "完成书目、转录、逻辑、实现四类复核",
+    "只有独立古籍证据和当前测试均通过后才可另行建立正式 Rule ID"
+  ],
+  "global_forbidden_uses": [
+    "把仓库 README 的古法声明当作古籍证据",
+    "直接复制断语、吉凶、用神、应期、行动建议或权重",
+    "把参考输出直接写入九衡中间信号或综合裁决",
+    "在没有固定 commit 和文件哈希时执行正式对拍",
+    "将 AI、联网服务、现代概率评分或现代博弈分析带入九衡运行时"
+  ],
+  "priority_groups": [
+    {"rank": 1, "method": "taiyi", "project_ids": ["kintaiyi"]},
+    {"rank": 2, "method": "qizheng_siyu", "project_ids": ["kinastro", "horosa_windows"]},
+    {"rank": 3, "method": "qimen_dunjia", "project_ids": ["kinqimen"]},
+    {"rank": 4, "method": "liuyao", "project_ids": ["najia", "liuyao_graph"]},
+    {"rank": 5, "method": "ziwei_doushu", "project_ids": ["iztro_fork", "iztro_upstream"]},
+    {"rank": 6, "method": "bazi_and_calendar", "project_ids": ["zhiji_bazi", "lunar_python"]},
+    {"rank": 7, "method": "meihua_yishu", "project_ids": ["meihua_yi"]},
+    {"rank": 8, "method": "yarrow", "project_ids": ["chengjun_iching", "ichingshifa"]},
+    {"rank": 9, "method": "chinese_ancient_astrology", "project_ids": ["sxtwl", "horosa_windows"]}
+  ],
+  "projects": [
+    {
+      "project_id": "kintaiyi",
+      "repository": "kentang2017/kintaiyi",
+      "url": "https://github.com/kentang2017/kintaiyi",
+      "methods": ["taiyi"],
+      "license_expression": "MIT",
+      "license_verification": "verified_mit_license_file_at_626d8a5bd0f707fec2ed613c83d4b6611f56441d",
+      "source_pin": {"branch": "master", "commit_sha": "626d8a5bd0f707fec2ed613c83d4b6611f56441d", "content_hashes_recorded": true, "source_manifest_id": "OPEN-SOURCE-SOURCE-PINS-2026-09-07-v1", "crosscheck_execution_allowed": false},
+      "allowed_uses": ["六种计法入口清单", "局式与主客等输出字段清单", "固定提交静态审计", "已核源码与MIT许可证字节的主客算字面量表离线比较（单独审计，不执行第三方代码）", "全部执行门禁闭合后的黑盒对拍"],
+      "forbidden_uses": ["AI 分析", "现代博弈分析", "分计古法地位推定", "断语与兵法结论", "任何正式 Rule ID"],
+      "risk_notes": ["README 明示分计是现代延伸", "源码包含 AI 客户端", "pan 可选现代 Nash/线性规划分析", "若干积数修正和古籍行号注释仍需影印本逐项复核"]
+    },
+    {
+      "project_id": "kinastro",
+      "repository": "kentang2017/kinastro",
+      "url": "https://github.com/kentang2017/kinastro",
+      "methods": ["qizheng_siyu", "chinese_ancient_astrology"],
+      "license_expression": "MIT_declared_but_license_file_missing_at_pin",
+      "license_verification": "incomplete_readme_and_pyproject_declare_mit_but_linked_license_file_is_absent_at_bde4fb4044cbc317911ba988dcb6459f7e10ec4a",
+      "source_pin": {"branch": "main", "commit_sha": "bde4fb4044cbc317911ba988dcb6459f7e10ec4a", "content_hashes_recorded": true, "source_manifest_id": "OPEN-SOURCE-SOURCE-PINS-2026-09-07-v1", "crosscheck_execution_allowed": false},
+      "allowed_uses": ["七政四余字段模型", "星位到宿度的数据流", "四余对象清单", "限法模块边界清单", "许可与全部执行门禁闭合后的黑盒对拍"],
+      "forbidden_uses": ["AI 分析", "张果断语", "神煞结论", "金融占星", "择日评分", "任何正式 Rule ID"],
+      "risk_notes": ["固定提交缺少 README 指向的 LICENSE 文件", "依赖 Swiss Ephemeris，不能直接满足九衡免大型星历目标", "立命岁差常数由单一案例反推", "今制宿界又由同一案例整体平移校准", "命宫使用 Placidus 上升点并混合等分地支宫", "行限源码自称简化法并使用西方行星守护", "罗计月孛紫气定义必须回到古籍复核"]
+    },
+    {
+      "project_id": "horosa_windows",
+      "repository": "Horace-Maxwell/Horosa-Web-App-comprehensively-improved-Windows",
+      "url": "https://github.com/Horace-Maxwell/Horosa-Web-App-comprehensively-improved-Windows",
+      "methods": ["qizheng_siyu", "chinese_ancient_astrology", "taiyi", "qimen_dunjia"],
+      "license_expression": "mixed_project_with_third_party_notices",
+      "license_verification": "kinastro_and_kinqimen_vendor_provenance_verified_in_third_party_notices_2026_09_07",
+      "source_pin": {"branch": "main", "commit_sha": null, "content_hashes_recorded": false, "crosscheck_execution_allowed": false},
+      "allowed_uses": ["确认 vendored 引擎来源", "七政页面适配字段清单", "离线集成结构参考"],
+      "forbidden_uses": ["整套桌面架构移植", "AI 功能", "西方占星功能", "vendored 断语", "任何正式 Rule ID"],
+      "risk_notes": ["仓库是多技术栈综合应用且含 AI 与西方占星", "第三方声明只能证明来源和许可陈述，不能证明术数正确"]
+    },
+    {
+      "project_id": "kinqimen",
+      "repository": "kentang2017/kinqimen",
+      "url": "https://github.com/kentang2017/kinqimen",
+      "methods": ["qimen_dunjia"],
+      "license_expression": "MIT",
+      "license_verification": "readme_and_horosa_declaration_only_actual_license_missing_at_inspected_commit_2026_09_27",
+      "source_pin": {"branch": "master", "commit_sha": null, "content_hashes_recorded": false, "crosscheck_execution_allowed": false},
+      "inspection_record": {"inspection_id": "KINQIMEN-READ-ONLY-SOURCE-INSPECTION-2026-09-27-v1", "path": "data/research/kinqimen-source-inspection.json", "commit_sha": "e6680ac4ca0b0da5ce3fe637e05f9fc32066ec5a", "scope": "three_selected_files_not_full_archived_source_identity"},
+      "allowed_uses": ["拆补置闰入口清单", "九宫排盘字段清单", "天盘门盘神盘未来对拍"],
+      "forbidden_uses": ["格局断语", "用神", "应期", "任何正式 Rule ID"],
+      "risk_notes": ["多流派入口并存", "刻家口径必须单独证明", "依赖外部历法实现", "2026-09-27 固定版本 README 链接的 LICENSE 返回404，完整目录无许可证文件；禁止复制和分发代码", "本轮只阅读三个文件，不运行参考项目，不生成可信期望输出"]
+    },
+    {
+      "project_id": "najia",
+      "repository": "bopo/najia",
+      "url": "https://github.com/bopo/najia",
+      "methods": ["liuyao"],
+      "license_expression": "MIT",
+      "license_verification": "verified_repository_license_and_readme_2026_09_07",
+      "source_pin": {"branch": "master", "commit_sha": null, "content_hashes_recorded": false, "crosscheck_execution_allowed": false},
+      "allowed_uses": ["纳甲、卦宫、世应、六亲、六神字段清单", "历史缺陷回归测试设计"],
+      "forbidden_uses": ["把当前输出当标准答案", "六亲与世应流派选择", "任何正式 Rule ID"],
+      "risk_notes": ["README 自报曾修复六神、世应、归魂和六亲问题", "变卦六亲口径仍被作者列为疑点"]
+    },
+    {
+      "project_id": "liuyao_graph",
+      "repository": "murInJ/liuyao-graph",
+      "url": "https://github.com/murInJ/liuyao-graph",
+      "methods": ["liuyao"],
+      "license_expression": "MIT",
+      "license_verification": "verified_repository_license_and_readme_2026_09_07",
+      "source_pin": {"branch": "main", "commit_sha": null, "content_hashes_recorded": false, "crosscheck_execution_allowed": false},
+      "allowed_uses": ["飞伏关系可视化结构", "月建日辰字段清单", "图关系测试设计"],
+      "forbidden_uses": ["近似历法回退", "五维状态回流分数", "神煞与用神关系", "任何正式 Rule ID"],
+      "risk_notes": ["README 明示离线时可回退近似历法", "状态回流与扩展神煞属于项目自有模型", "未实现完整应期与断语"]
+    },
+    {
+      "project_id": "iztro_fork",
+      "repository": "hanjinda/iztro_ziweidoushu",
+      "url": "https://github.com/hanjinda/iztro_ziweidoushu",
+      "methods": ["ziwei_doushu"],
+      "license_expression": "MIT",
+      "license_verification": "verified_repository_license_and_readme_2026_09_07",
+      "source_pin": {"branch": "main", "commit_sha": null, "content_hashes_recorded": false, "crosscheck_execution_allowed": false},
+      "allowed_uses": ["十二宫与星曜字段模型", "流派配置机制", "运限接口清单"],
+      "forbidden_uses": ["默认流派选择", "四化或亮度规则", "任何正式 Rule ID"],
+      "risk_notes": ["该地址是 SylarLong/iztro 的 fork，不是上游主仓库", "必须分别固定 fork 与上游提交并记录差异"]
+    },
+    {
+      "project_id": "iztro_upstream",
+      "repository": "SylarLong/iztro",
+      "url": "https://github.com/SylarLong/iztro",
+      "methods": ["ziwei_doushu"],
+      "license_expression": "MIT_reported_by_fork",
+      "license_verification": "upstream_identified_but_not_separately_reviewed_2026_09_07",
+      "source_pin": {"branch": null, "commit_sha": null, "content_hashes_recorded": false, "crosscheck_execution_allowed": false},
+      "allowed_uses": ["与用户给定 fork 做差异审计", "流派配置机制"],
+      "forbidden_uses": ["未核验前执行或复制", "任何正式 Rule ID"],
+      "risk_notes": ["必须优先核验上游 LICENSE、当前 API 和与 fork 的偏差"]
+    },
+    {
+      "project_id": "zhiji_bazi",
+      "repository": "AmsonntagChow/zhiji-bazi",
+      "url": "https://github.com/AmsonntagChow/zhiji-bazi",
+      "methods": ["bazi_and_calendar"],
+      "license_expression": "Apache-2.0",
+      "license_verification": "verified_repository_license_notice_and_readme_2026_09_07",
+      "source_pin": {"branch": "main", "commit_sha": null, "content_hashes_recorded": false, "crosscheck_execution_allowed": false},
+      "allowed_uses": ["节气、真太阳时、晚子时边界测试", "四柱机械字段对拍"],
+      "forbidden_uses": ["身强弱评分", "格局与用神", "调参阈值", "MCP 或联网端点", "任何正式 Rule ID"],
+      "risk_notes": ["README 明示第三、四层有流派立场", "阈值来自实践调参", "从格仍有已知假阳性"]
+    },
+    {
+      "project_id": "lunar_python",
+      "repository": "6tail/lunar-python",
+      "url": "https://github.com/6tail/lunar-python",
+      "methods": ["bazi_and_calendar"],
+      "license_expression": "MIT",
+      "license_verification": "verified_repository_license_2026_09_07",
+      "source_pin": {"branch": "master", "commit_sha": null, "content_hashes_recorded": false, "crosscheck_execution_allowed": false},
+      "allowed_uses": ["现代历法与干支交叉测试", "边界样本生成"],
+      "forbidden_uses": ["黄历吉凶", "宜忌神煞", "历史王朝历法权威来源", "任何正式 Rule ID"],
+      "risk_notes": ["功能包含大量民俗宜忌，九衡只隔离使用机械历法结果"]
+    },
+    {
+      "project_id": "meihua_yi",
+      "repository": "handsomejustin/meihua-yi",
+      "url": "https://github.com/handsomejustin/meihua-yi",
+      "methods": ["meihua_yishu"],
+      "license_expression": "MIT",
+      "license_verification": "verified_repository_license_and_readme_2026_09_07",
+      "source_pin": {"branch": "main", "commit_sha": null, "content_hashes_recorded": false, "crosscheck_execution_allowed": false},
+      "allowed_uses": ["互卦、体用和变卦字段结构", "时间起卦黑盒对拍"],
+      "forbidden_uses": ["铜钱入口作为梅花默认", "多动爻第一爻体用规则", "体用吉凶结论", "LLM prompt 与 Agent 技能", "任何正式 Rule ID"],
+      "risk_notes": ["README 同时提供铜钱起卦", "含直接吉凶映射和 LLM 集成设计，均不得进入九衡"]
+    },
+    {
+      "project_id": "chengjun_iching",
+      "repository": "chengjun/iching",
+      "url": "https://github.com/chengjun/iching",
+      "methods": ["yarrow"],
+      "license_expression": "MIT",
+      "license_verification": "verified_repository_license_and_readme_2026_09_07",
+      "source_pin": {"branch": "master", "commit_sha": null, "content_hashes_recorded": false, "crosscheck_execution_allowed": false},
+      "allowed_uses": ["四十九策、三变、十八变机械对拍", "测试分布设计"],
+      "forbidden_uses": ["朱熹变爻解卦规则", "现代操作说明作为早期证据", "任何正式 Rule ID"],
+      "risk_notes": ["README 明示解卦主要采用宋代朱熹规则"]
+    },
+    {
+      "project_id": "ichingshifa",
+      "repository": "kentang2017/ichingshifa",
+      "url": "https://github.com/kentang2017/ichingshifa",
+      "methods": ["yarrow", "liuyao"],
+      "license_expression": "MIT",
+      "license_verification": "verified_repository_license_and_readme_2026_09_07",
+      "source_pin": {"branch": "master", "commit_sha": null, "content_hashes_recorded": false, "crosscheck_execution_allowed": false},
+      "allowed_uses": ["大衍筮法机械步骤", "纳甲字段清单", "六十四卦结构对拍"],
+      "forbidden_uses": ["卦爻辞选择", "京房易断法", "任何吉凶输出", "任何正式 Rule ID"],
+      "risk_notes": ["机械层、后世纳甲与断法同仓存在，必须按文件和函数隔离"]
+    },
+    {
+      "project_id": "sxtwl",
+      "repository": "skydancep/sxtwl",
+      "url": "https://github.com/skydancep/sxtwl",
+      "methods": ["bazi_and_calendar", "chinese_ancient_astrology"],
+      "license_expression": null,
+      "license_verification": "blocked_no_standard_license_visible_on_repository_page_2026_09_07",
+      "source_pin": {"branch": "master", "commit_sha": null, "content_hashes_recorded": false, "crosscheck_execution_allowed": false},
+      "allowed_uses": ["许可证闭合后才可作为历法与天文黑盒验证源"],
+      "forbidden_uses": ["复制或分发任何代码", "未核验许可时链接为运行依赖", "星占占辞", "任何正式 Rule ID"],
+      "risk_notes": ["2026-09-07 仓库页面未见标准 LICENSE，许可证必须先闭合"]
+    }
+  ],
+  "first_pass_audits": {
+    "taiyi": {
+      "reference_project": "kintaiyi",
+      "observed_mechanical_entry": "Taiyi(year, month, day, hour, minute).pan(ji_style, taiyi_acumyear)",
+      "observed_modes": ["year", "month", "day", "hour", "minute", "life"],
+      "candidate_field_contract": ["calendar_input", "accumulated_number", "yin_yang_dun", "board_number", "taiyi_palace", "wenchang", "shiji", "home_count", "away_count", "fixed_count", "eight_gates"],
+      "crosscheck_inputs": [
+        {"calendar": "proleptic_gregorian", "datetime_bjt": "1552-09-24T00:00:00+08:00", "mode": "year", "method": "taiyi_jinjing"},
+        {"calendar": "proleptic_gregorian", "datetime_bjt": "2026-03-24T12:30:00+08:00", "mode": "day", "method": "unspecified_until_pinned"},
+        {"calendar": "proleptic_gregorian", "datetime_bjt": "2026-03-24T12:30:00+08:00", "mode": "hour", "method": "unspecified_until_pinned"}
+      ],
+      "trusted_expected_outputs": [],
+      "implementation_allowed": false,
+      "blockers": ["固定提交和文件哈希已完成，但依赖锁、网络/AI 隔离和最小执行适配层尚未闭合", "九衡已独立实现外部给定积年到太岁、太乙、天目、计神、合神、始击、主算、客算的年计机械框架，但积数历元、现代日期换算、阴阳遁、大小将和其余局式尚未闭合影印证据", "参考实现的现代扩展与古法机械层尚未函数级隔离", "没有第二个完整独立太乙实现和权威课例三方对拍"]
+    },
+    "qizheng_siyu": {
+      "reference_projects": ["kinastro", "horosa_windows"],
+      "observed_mechanical_entry": "astro.qizheng.calculator.compute_chart(year, month, day, hour, minute, timezone, latitude, longitude, location_name, gender)",
+      "candidate_field_contract": ["julian_day", "seven_governor_longitude_latitude_speed", "four_remainder_longitudes", "mansion_name", "mansion_degree", "boundary_safety", "life_palace_basis", "twelve_palaces", "planet_to_palace", "liming_longitude"],
+      "crosscheck_inputs": [
+        {"calendar": "proleptic_gregorian", "local_datetime": "1985-08-26T02:55:00+08:00", "latitude": 22.3193, "longitude": 114.1694, "gender": "male", "purpose": "reference_code_self_calibration_case_not_authority"},
+        {"calendar": "proleptic_gregorian", "local_datetime": "2000-01-01T12:00:00+08:00", "latitude": 39.9042, "longitude": 116.4074, "gender": "female", "purpose": "J2000_and_location_baseline"},
+        {"calendar": "proleptic_gregorian", "local_datetime": "1900-01-01T00:05:00+08:00", "latitude": 31.2304, "longitude": 121.4737, "gender": "male", "purpose": "precession_and_day_boundary_probe"}
+      ],
+      "trusted_expected_outputs": [],
+      "implementation_allowed": false,
+      "blockers": ["固定提交和文件哈希已完成，但仓库缺少 README 指向的 LICENSE 文件，许可未闭合", "七政高精度行星算法尚未独立选型和误差预算", "罗计月孛紫气定义与宿界历元未完成古籍证据门禁", "参考实现包含单案例反推校准、Placidus 和简化西方守护行限混合口径", "尚无可发布的古籍断法、应期或行动建议"]
+    }
+  },
+  "evidence_gate_summary": {
+    "decision": "blocked",
+    "reference_project_count": 14,
+    "pinned_project_count": 2,
+    "crosscheck_execution_count": 0,
+    "implementation_count": 0,
+    "runtime_rule_count": 0,
+    "reason": "kintaiyi 与 kinastro 已固定不可变提交、Git tree、确定性归档和关键文件哈希；kintaiyi 依赖闭合与执行隔离未完成，kinastro 另缺仓库 LICENSE 文件，且两者均无可信古籍期望值或九衡独立实现，因此仍禁止执行对拍、实现和运行时导入"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "research_id": "jiuheng.research.qizheng_siyu.received_eleven_luminary_identity.2026-09-10",
+  "method": "qizheng_siyu",
+  "review_date": "2026-09-10",
+  "status": "mechanical_received_eleven_luminary_identity_catalog_blocked_from_runtime_rules",
+  "purpose": "固定七政与四余的传世身份、规范名、异名和四余五行名义；不选择四余现代天文角色，不计算位置、宿度、十二宫或命盘，不生成断法。",
+  "evidence_scope": {
+    "sources": [
+      {
+        "source_id": "tushubian_qizheng_siyu_zongxu_shidian",
+        "title": "《图书编·七政四余总叙》",
+        "era": "明",
+        "public_url": "https://www.shidianguji.com/book/SK1996/chapter/1lbezbosvk3yh",
+        "supports": [
+          "日月木火土金水合称七政",
+          "紫气月孛罗睺计都合称四余",
+          "木余紫气、水余月孛、火余罗睺、土余计都的传世名义"
+        ],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "gujin_lulikao_four_residuals_shidian",
+        "title": "《古今律历考》相关段落",
+        "era": "明",
+        "public_url": "https://www.shidianguji.com/mid-page/7430936901244420122",
+        "supports": [
+          "四余名称与后世历算传播背景需要单独审计",
+          "四余运动与天文角色不能由名称直接推定"
+        ],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "budeyi_four_residuals_ctext",
+        "title": "《不得已》相关段落",
+        "era": "明清之际",
+        "public_url": "https://ctext.org/wiki.pl?chapter=305090&if=gb",
+        "supports": [
+          "四余的来源、定义和传统合法性存在历史争论"
+        ],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      }
+    ],
+    "source_limitations": [
+      "本轮只核到公共电子文本，未与指定影印底本逐字校勘",
+      "身份目录不是位置算法、宫制、限法或占断证据",
+      "明清材料不能自动覆盖更早传统，时代优先级仍需后续原典复核"
+    ]
+  },
+  "candidate": {
+    "algorithm_version": "jiuheng.qizheng_siyu.received_eleven_luminary_identity.v1",
+    "seven_governors": ["日", "月", "岁星", "荧惑", "填星", "太白", "辰星"],
+    "four_residuals": [
+      {"normalized_name": "紫气", "variants": ["紫气", "紫炁"], "received_phase_label": "wood", "modern_astronomical_role": null},
+      {"normalized_name": "月孛", "variants": ["月孛"], "received_phase_label": "water", "modern_astronomical_role": null},
+      {"normalized_name": "罗睺", "variants": ["罗睺", "罗㬋", "罗喉"], "received_phase_label": "fire", "modern_astronomical_role": null},
+      {"normalized_name": "计都", "variants": ["计都"], "received_phase_label": "earth", "modern_astronomical_role": null}
+    ],
+    "residual_astronomical_roles_selected": false,
+    "planetary_position_algorithm_selected": false,
+    "mansion_boundary_model_selected": false,
+    "twelve_house_system_selected": false,
+    "positions_calculated": false,
+    "natal_chart_generated": false,
+    "interpretation_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false
+  },
+  "forbidden_uses": [
+    "不得把罗睺计都直接绑定为现代升降交点",
+    "不得把月孛直接绑定为现代月球远地点",
+    "不得为紫气虚构现代天文点",
+    "不得用参考实现输出替代古籍证据",
+    "不得从身份目录生成吉凶、中间信号、应期或行动建议"
+  ],
+  "unresolved": [
+    "四余在各历史系统中的天文角色与计算定义",
+    "日月五星和四余离线位置算法及误差界",
+    "历史宿度边界与岁差处理",
+    "十二宫制及宫界口径",
+    "命盘、限法和断法的底本、异文、条件与反例",
+    "可成为正式 Rule ID 的逐条影印证据"
+  ],
+  "review_state": {
+    "decision": "identity_catalog_only_no_roles_positions_chart_interpretation_signals_or_rules",
+    "runtime_release": "blocked",
+    "formal_rule_count": 0
+  }
+}

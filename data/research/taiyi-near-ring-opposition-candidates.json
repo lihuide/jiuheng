@@ -1,0 +1,164 @@
+{
+  "archive_id": "TAIYI-NEAR-RING-OPPOSITION-CANDIDATE-2026-09-09-v1",
+  "schema_version": 1,
+  "recorded_on": "2026-09-09",
+  "method": "taiyi",
+  "status": "unoriented_near_ring_geometry_and_direct_opposition_position_mark_only",
+  "purpose": "保存击、迫所需的十六位环相邻几何，但不把固定环序正负擅自命名为前后、内外；只把卷三直接定义的文昌冲太乙宫实现为‘对’位置标记",
+  "runtime_ingestion_allowed": false,
+  "civil_date_input_allowed": false,
+  "epoch_selection_allowed": false,
+  "yin_yang_dun_selection_allowed": false,
+  "near_ring_geometry_generation_allowed": true,
+  "opposition_position_label_generation_allowed": true,
+  "strike_classification_allowed": false,
+  "pressure_classification_allowed": false,
+  "barrier_classification_allowed": false,
+  "compound_pattern_classification_allowed": false,
+  "complete_board_generation_allowed": false,
+  "interpretation_allowed": false,
+  "signal_generation_allowed": false,
+  "timing_generation_allowed": false,
+  "advice_generation_allowed": false,
+  "rule_id_generation_allowed": false,
+  "source_identity": {
+    "parent_archive": "TAIYI-MECHANICAL-RELATIONS-CANDIDATE-2026-09-08-v1",
+    "depends_on_archive": "TAIYI-ANNUAL-GATE-BOARDS-CANDIDATE-2026-09-09-v1",
+    "title": "太乙金镜式经",
+    "attributed_author": "唐·王希明",
+    "received_edition": "钦定四库全书本",
+    "kanripo_id": "KR3g0047",
+    "kanripo_repository": "kanripo/KR3g0047",
+    "kanripo_commit": "e3264da2c9f556225e056abe7eade01903b4543e",
+    "raw_file_hashes": {
+      "KR3g0047_001.txt": "6b13ff06e980439d7a3611f1f10c9efb318513e23f7a9e4c16ed4e8896f162d4",
+      "KR3g0047_002.txt": "44949571367607d1719aa51b5ce174d73078d0c84fe0a81e23b192449c8f5cfd",
+      "KR3g0047_003.txt": "fab52159527f90bf0c74af5f655ae3215e0e7d2efb6a5be5506f12c1671b8257"
+    },
+    "raw_hashes_rechecked_on": "2026-09-09",
+    "facsimile_verified": false,
+    "transcription_verified_against_facsimile": false,
+    "independent_transcription_urls": [
+      "https://ctext.org/wiki.pl?chapter=456008&if=gb",
+      "https://zh.wikisource.org/zh-hans/太乙金鏡式經_(四庫全書本)/卷03"
+    ]
+  },
+  "received_fragments": [
+    {
+      "fragment_id": "TY-JJSJ-WYG-J3-STRIKE-GEOMETRY-CANDIDATE",
+      "volume": "卷三",
+      "page_markers": ["KR3g0047_WYG_003-2a"],
+      "heading": "推击法",
+      "transcription": "经曰太乙前一辰宫为外宫击，后一辰宫为内宫击，若客目临之是也。",
+      "implemented_fields": ["shiji_near_taiyi_geometry"],
+      "implementation_scope": "只识别固定十六位环中相差一辰或一正宫；不把环序正负解释为经文前后，也不生成击名"
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J3-PRESSURE-GEOMETRY-CANDIDATE",
+      "volume": "卷三",
+      "page_markers": ["KR3g0047_WYG_003-2a", "KR3g0047_WYG_003-2b"],
+      "heading": "推迫法",
+      "transcription": "经曰太乙前为外迫，后为内迫。",
+      "implemented_fields": ["tianmu_near_taiyi_geometry"],
+      "implementation_scope": "只保存天目相对太乙的无方向邻位几何；上下二目、四将主体范围及内外迫名称均未实现"
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J3-BARRIER-BLOCKER-CANDIDATE",
+      "volume": "卷三",
+      "page_markers": ["KR3g0047_WYG_003-3a"],
+      "heading": "推关法",
+      "transcription": "客主大小将目相宫齐为关。",
+      "implemented_fields": [],
+      "blocked_reason": "‘相宫齐’和后文‘同宫数齐’的配对主体、宫数口径尚未闭合，不能由一般同宫比较顺手推出"
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J3-OPPOSITION-DEFINITION-CANDIDATE",
+      "volume": "卷三",
+      "page_markers": ["KR3g0047_WYG_003-3b"],
+      "heading": "推对法",
+      "transcription": "下目文昌将冲太乙宫曰对。",
+      "implemented_fields": ["tianmu_opposes_taiyi", "opposition_classified"],
+      "mechanical_definition": "文昌（当前机械对象天目）位于太乙正宫相隔八位的对宫"
+    }
+  ],
+  "candidate": {
+    "algorithm_version": "jiuheng.taiyi.tang_position_marks_near_ring_geometry_opposition_candidate.v2",
+    "annual_frame_algorithm_version": "jiuheng.taiyi.tang_supplied_accumulated_year_frame_candidate.v7",
+    "seventy_two_board_algorithm_version": "jiuheng.taiyi.tang_explicit_dun_seventy_two_board_candidate.v2",
+    "input_contract": "already_computed_taiyi_tianmu_and_shiji_positions_on_received_sixteen_place_ring",
+    "received_ring_order": ["地主", "阳德", "和德", "吕申", "高丛", "太阳", "太炅", "太神", "大威", "天道", "大武", "武德", "太蔟", "阴主", "阴德", "大义"],
+    "near_geometry_values": {
+      "plus_one_interstitial": "固定环序 +1 的相邻辰位",
+      "minus_one_interstitial": "固定环序 -1 的相邻辰位",
+      "plus_two_principal_palace": "固定环序 +2 的相邻正宫",
+      "minus_two_principal_palace": "固定环序 -2 的相邻正宫"
+    },
+    "near_ring_geometry_computed": true,
+    "strike_classified": false,
+    "pressure_classified": false,
+    "barrier_classified": false,
+    "opposition_classified": true,
+    "interpretation_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false,
+    "forbidden_outputs": [
+      "前击后击或内外宫击",
+      "内迫外迫或辰迫宫迫",
+      "关或四郭等复合格局",
+      "吉凶、胜败或政治军事解释",
+      "中间信号、应期、行动建议或综合裁决",
+      "正式 Rule ID"
+    ]
+  },
+  "machine_test_anchors": [
+    {
+      "count": 2,
+      "shiji_near_taiyi_geometry": "minus_one_interstitial",
+      "tianmu_near_taiyi_geometry": "minus_two_principal_palace"
+    },
+    {
+      "count": 3,
+      "shiji_near_taiyi_geometry": "plus_one_interstitial",
+      "tianmu_near_taiyi_geometry": "minus_one_interstitial"
+    },
+    {
+      "count": 12,
+      "shiji_near_taiyi_geometry": "minus_one_interstitial",
+      "tianmu_near_taiyi_geometry": "plus_one_interstitial"
+    },
+    {
+      "count": 15,
+      "shiji_near_taiyi_geometry": "minus_two_principal_palace",
+      "tianmu_near_taiyi_geometry": null
+    },
+    {
+      "count": 16,
+      "shiji_near_taiyi_geometry": "plus_two_principal_palace",
+      "tianmu_near_taiyi_geometry": "minus_one_interstitial"
+    },
+    {
+      "count": 22,
+      "tianmu_opposes_taiyi": true
+    },
+    {
+      "count": 25,
+      "shiji_near_taiyi_geometry": "plus_one_interstitial",
+      "tianmu_near_taiyi_geometry": "plus_two_principal_palace"
+    }
+  ],
+  "variants_and_blockers": [
+    "十六位环顺序已经由卷二神名目录和卷三立成表固定，但固定数组的正负方向尚不能直接等同经文‘前、后’；因此只保存正负位移，不输出前击、后击、内外击迫。",
+    "迫法段同时出现上下二目、四将和王氏‘上目无迫’说明；本版没有把单一天目邻位布尔量冒充完整迫法。",
+    "‘对’仅按本段主语文昌（天目）与太乙对宫实现，不把始击之‘格’重命名为‘对’。",
+    "关法与四郭等复合关系继续关闭，直至配对主体、宫数和表格锚点完成独立审计。",
+    "固定电子文本尚未取得对应四库影印图像逐字复核，全部输出只能停留在排盘与开发者审计层。"
+  ],
+  "review_state": {
+    "bibliographic_review": "candidate_only",
+    "transcription_review": "blocked_without_facsimile_bytes",
+    "logic_review": "direct_opposition_definition_closed_near_ring_geometry_preserved_without_orientation",
+    "implementation_review": "automated_tests_required",
+    "runtime_release": "blocked",
+    "decision": "chart_only_unoriented_near_geometry_and_opposition_mark_no_strike_pressure_barrier_interpretation_or_rules"
+  }
+}

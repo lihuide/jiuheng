@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "research_id": "jiuheng.research.liuyao.fanyin_fuyin_raw_structures.2026-09-16",
+  "method": "liuyao",
+  "review_date": "2026-09-16",
+  "status": "mechanical_received_fanyin_fuyin_prerequisites_blocked_from_runtime_rules",
+  "purpose": "分开保存内外卦的八卦方位对冲、同位三支全部对冲、同位三支全部复现，以及实际动爻的同支/对支事实；不把不同传本的组合口径提前固化成整卦反吟、伏吟断法。",
+  "evidence_scope": {
+    "sources": [
+      {
+        "source_id": "bushi_zhengzong_harvard_scan_volume_2",
+        "title": "《卜筮正宗全书》卷三、卷四哈佛燕京藏本影印",
+        "public_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Harvard_drs_53238001_%E5%8D%9C%E7%AD%AE%E6%AD%A3%E5%AE%97%E5%85%A8%E6%9B%B8_v.2%E5%8D%B7%E4%B9%8B%E4%B8%89%E3%80%81%E5%8D%B7%E4%B9%8B%E5%9B%9B.pdf",
+        "supports": [
+          "反吟卦定例把乾巽、坎离、震兑、坤艮列为成对方位相冲",
+          "子午、丑未、寅申、卯酉、辰戌、巳亥相冲用于爻变对支结构",
+          "伏吟卦定例以本支和变支同位复现为机械例证"
+        ],
+        "facsimile_available": true,
+        "local_page_bytes_bound": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "zengshan_buyi_fanyin_fuyin_wikisource",
+        "title": "《增删卜易》反吟伏吟段电子转录",
+        "public_url": "https://zh.wikisource.org/zh-hans/%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93",
+        "supports": [
+          "区分卦之反吟与爻之反吟",
+          "列出乾巽、坎离、震兑、坤艮八卦对",
+          "把伏吟描述为变后六爻地支五行不变，并区分内外范围"
+        ],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "yilin_buyi_volume_5_fanyin_fuyin_wikisource",
+        "title": "《易林补遗》卷五反吟伏吟段电子转录",
+        "public_url": "https://zh.wikisource.org/zh/%E6%98%93%E6%9E%97%E8%A3%9C%E9%81%BA/5",
+        "supports": [
+          "区分卦犯与爻犯",
+          "以同支复现作为爻伏吟示例",
+          "以方向相对及本变对冲作为反吟示例"
+        ],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "yimao_volume_2_fanyin_fuyin_ctext",
+        "title": "《易冒》卷二反伏章电子转录",
+        "public_url": "https://ctext.org/wiki.pl?chapter=215845&if=gb&remap=gb",
+        "supports": [
+          "明确提醒卦反与爻反有别",
+          "反伏真假轻重另受日月、空破、旺衰等条件影响，机械身份不能替代效力判断"
+        ],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      }
+    ],
+    "source_limitations": [
+      "哈佛藏本尚未绑定本地页图字节、准确图页和 SHA-256",
+      "公开 OCR 与电子转录存在错字、现代标点和编校层差异",
+      "卦反吟、爻反吟、内外反吟及伏吟的组合称谓尚未完成版本谱系校勘",
+      "反复、停滞、迁移、吉凶和应期等效力文字未进入本层"
+    ]
+  },
+  "candidate": {
+    "algorithm_version": "jiuheng.liuyao.received_fanyin_fuyin_raw_structures.v1",
+    "received_direction_opposition_pairs": [
+      ["乾", "巽"],
+      ["坎", "离"],
+      ["震", "兑"],
+      ["坤", "艮"]
+    ],
+    "branch_opposition_offset_in_twelve_branch_cycle": 6,
+    "branch_repetition_definition": "same_position_primary_branch_equals_transformed_branch",
+    "scopes": [
+      {
+        "scope": "inner",
+        "line_numbers_bottom_up": [1, 2, 3]
+      },
+      {
+        "scope": "outer",
+        "line_numbers_bottom_up": [4, 5, 6]
+      }
+    ],
+    "scope_candidate_requires_actual_moving_line": true,
+    "raw_scope_prerequisites": [
+      "received_direction_opposition_pair",
+      "all_three_same_position_branches_opposed",
+      "all_three_same_position_branches_equal"
+    ],
+    "moving_line_prerequisites": [
+      "same_position_branch_equal",
+      "same_position_branch_opposed"
+    ],
+    "all_primary_line_type_combinations_verified": 4096,
+    "moving_line_observations_verified": 12288,
+    "raw_prerequisites_identified": true,
+    "whole_hexagram_fanyin_classified": false,
+    "whole_hexagram_fuyin_classified": false,
+    "relation_effects_assessed": false,
+    "useful_god_selected": false,
+    "strength_assessed": false,
+    "timing_assessed": false,
+    "interpretation_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false
+  },
+  "forbidden_uses": [
+    "不得把任一单独必要结构直接命名为已经生效的整卦反吟或伏吟",
+    "不得把八卦方位对冲等同于逐爻地支全部相冲",
+    "不得把静卦中天然相同的本支变支虚构为伏吟；范围候选必须至少有一个实际动爻",
+    "不得从反伏候选推断反复、停滞、迁移、不安、吉凶、应期、总分或行动建议",
+    "不得把公共 OCR、电子转录或现代讲解替代影印底本、异文和四类复核"
+  ],
+  "unresolved": [
+    "影印页精确定位、本地字节哈希、逐字转录和异文",
+    "卦反吟、爻反吟、内外反吟与伏吟的跨版本组合定义",
+    "仅一爻同支或对支与三爻同位全部复现/对冲的术语边界",
+    "日月、空破、旺衰、用神和动静对反伏效力的条件与例外",
+    "可执行 Rule ID、应期、中间信号、结论和行动建议"
+  ],
+  "review_state": {
+    "decision": "raw_inner_outer_and_moving_line_prerequisites_only",
+    "runtime_release": "blocked",
+    "formal_rule_count": 0
+  }
+}

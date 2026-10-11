@@ -1,0 +1,188 @@
+{
+  "archive_id": "TAIYI-ANNUAL-FRAME-CANDIDATE-2026-09-08-v1",
+  "schema_version": 1,
+  "recorded_on": "2026-09-08",
+  "method": "taiyi",
+  "status": "mechanical_annual_frame_from_supplied_accumulated_year_only",
+  "purpose": "在不选择积年历元的前提下，固定太岁、太乙所在、天目、计神与合神的传本公式、立成表锚点、规范化异文和代码边界",
+  "runtime_ingestion_allowed": false,
+  "civil_date_input_allowed": false,
+  "epoch_selection_allowed": false,
+  "yin_yang_dun_selection_allowed": false,
+  "complete_board_generation_allowed": false,
+  "interpretation_allowed": false,
+  "signal_generation_allowed": false,
+  "timing_generation_allowed": false,
+  "advice_generation_allowed": false,
+  "rule_id_generation_allowed": false,
+  "source_identity": {
+    "parent_archive": "TAIYI-YEAR-POSITION-CANDIDATE-2026-09-08-v1",
+    "title": "太乙金镜式经",
+    "attributed_author": "唐·王希明",
+    "received_edition": "钦定四库全书本",
+    "kanripo_id": "KR3g0047",
+    "kanripo_repository": "kanripo/KR3g0047",
+    "kanripo_commit": "e3264da2c9f556225e056abe7eade01903b4543e",
+    "raw_file_hashes": {
+      "KR3g0047_001.txt": "6b13ff06e980439d7a3611f1f10c9efb318513e23f7a9e4c16ed4e8896f162d4",
+      "KR3g0047_002.txt": "44949571367607d1719aa51b5ce174d73078d0c84fe0a81e23b192449c8f5cfd",
+      "KR3g0047_003.txt": "fab52159527f90bf0c74af5f655ae3215e0e7d2efb6a5be5506f12c1671b8257"
+    },
+    "facsimile_verified": false,
+    "transcription_verified_against_facsimile": false,
+    "independent_transcription_url": "https://ctext.org/wiki.pl?chapter=582866&if=gb"
+  },
+  "received_fragments": [
+    {
+      "fragment_id": "TY-JJSJ-WYG-J1-TAISUI-CANDIDATE",
+      "volume": "卷一",
+      "page_markers": ["KR3g0047_WYG_001-3b", "KR3g0047_WYG_001-4a"],
+      "heading": "推太岁所在法",
+      "transcription": "置上元甲子积年以三百六十去之，不尽以六十去之，又不尽，命甲子算外，即太岁所在辰也。",
+      "implemented_fields": ["position_in_60", "tai_sui_designation", "tai_sui_branch"]
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J1-TIANMU-CANDIDATE",
+      "volume": "卷一",
+      "page_markers": ["KR3g0047_WYG_001-4b"],
+      "heading": "推天目所在法",
+      "transcription": "置上元积年以周纪法去之，不尽以元法七十二去之，又不尽以天目周法十八去之，不满者，命起武德，顺行十六神，遇阴德、大武重留一算外，即天目所在。",
+      "implemented_fields": ["tianmu_position_in_18", "tianmu", "tianmu_is_repeated_stop"]
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J1-JISHEN-CANDIDATE",
+      "volume": "卷一",
+      "page_markers": ["KR3g0047_WYG_001-4b"],
+      "heading": "推计神所在法",
+      "transcription": "置积年以纪法六十去之，不尽，命起寅宫，逆行十二辰，算外，即计神所在也。",
+      "implemented_fields": ["jishen_position_in_12", "jishen_branch"]
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J1-HESHIN-CANDIDATE",
+      "volume": "卷一",
+      "page_markers": ["KR3g0047_WYG_001-4b", "KR3g0047_WYG_001-5a"],
+      "heading": "推太岁支合神法",
+      "transcription": "假令太岁在子，合神在丑，逆行十二辰，十二年一周天矣。",
+      "implemented_fields": ["heshin_position_in_12", "heshin_branch"]
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J2-SIXTEEN-SPIRIT-IDENTITIES",
+      "volume": "卷二",
+      "page_markers": ["KR3g0047_WYG_002-5b", "KR3g0047_WYG_002-6a", "KR3g0047_WYG_002-6b", "KR3g0047_WYG_002-7a"],
+      "heading": "推十六神所主法",
+      "transcription_summary": "十六神依子、丑、艮、寅、卯、辰、巽、巳、午、未、坤、申、酉、戌、乾、亥列为地主、阳德、和德、吕申、高丛、太阳、太炅、太神、大威、天道、大武、武德、太蔟、阴主、阴德、大义。",
+      "implemented_fields": ["sixteen_spirit_identity_catalog"]
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J3-ANNUAL-FRAME-TABLE-ANCHORS",
+      "volume": "卷三",
+      "page_markers": [
+        "KR3g0047_WYG_003-9b",
+        "KR3g0047_WYG_003-10a",
+        "KR3g0047_WYG_003-10b",
+        "KR3g0047_WYG_003-11a",
+        "KR3g0047_WYG_003-11b",
+        "KR3g0047_WYG_003-12a",
+        "KR3g0047_WYG_003-12b",
+        "KR3g0047_WYG_003-13a",
+        "KR3g0047_WYG_003-13b",
+        "KR3g0047_WYG_003-14a"
+      ],
+      "heading": "阳局天目地目计神主客大小将立成",
+      "transcription_summary": "一至七十二局逐行列出太乙、天目与计神；天目十八局一周，计神十二局一周，太乙二十四局一周。",
+      "implemented_fields": ["taiyi_position", "tianmu", "jishen_branch"]
+    }
+  ],
+  "normalization": {
+    "tai_sui_one_based_cycle": "甲子至癸亥，六十算一周",
+    "tianmu_cycle_with_stops": [
+      "武德",
+      "太蔟",
+      "阴主",
+      "阴德",
+      "阴德",
+      "大义",
+      "地主",
+      "阳德",
+      "和德",
+      "吕申",
+      "高丛",
+      "太阳",
+      "太炅",
+      "太神",
+      "大威",
+      "天道",
+      "大武",
+      "大武"
+    ],
+    "tianmu_repeated_stop_positions": [5, 18],
+    "jishen_reverse_cycle": ["寅", "丑", "子", "亥", "戌", "酉", "申", "未", "午", "巳", "辰", "卯"],
+    "heshin_reverse_cycle": ["丑", "子", "亥", "戌", "酉", "申", "未", "午", "巳", "辰", "卯", "寅"],
+    "one_based_boundary_formula": "((count - 1) mod modulus) + 1"
+  },
+  "candidate": {
+    "algorithm_version": "jiuheng.taiyi.tang_supplied_accumulated_year_frame_candidate.v1",
+    "rust_api": "taiyi_annual_frame_from_accumulated_count(u64)",
+    "input_contract": "positive_one_based_accumulated_year_count_supplied_by_caller",
+    "outputs": [
+      "position_in_60",
+      "tai_sui_designation",
+      "tai_sui_branch",
+      "taiyi_position",
+      "tianmu_position_in_18",
+      "tianmu",
+      "tianmu_is_repeated_stop",
+      "jishen_position_in_12",
+      "jishen_branch",
+      "heshin_position_in_12",
+      "heshin_branch"
+    ],
+    "forbidden_outputs": [
+      "accumulated_year_from_civil_date",
+      "yin_yang_dun",
+      "wenchang_or_shiji",
+      "home_away_or_fixed_counts",
+      "major_or_assistant_generals",
+      "eight_gates",
+      "full_taiyi_board",
+      "omens_or_judgments",
+      "timing",
+      "action_advice",
+      "intermediate_signals"
+    ]
+  },
+  "machine_test_anchors": {
+    "first_24_tianmu": [
+      "武德", "太蔟", "阴主", "阴德", "阴德", "大义",
+      "地主", "阳德", "和德", "吕申", "高丛", "太阳",
+      "太炅", "太神", "大威", "天道", "大武", "大武",
+      "武德", "太蔟", "阴主", "阴德", "阴德", "大义"
+    ],
+    "first_12_jishen": ["寅", "丑", "子", "亥", "戌", "酉", "申", "未", "午", "巳", "辰", "卯"],
+    "taisui_heshin": [
+      {"count": 1, "tai_sui": "甲子", "heshin": "丑"},
+      {"count": 2, "tai_sui": "乙丑", "heshin": "子"},
+      {"count": 12, "tai_sui": "乙亥", "heshin": "寅"},
+      {"count": 13, "tai_sui": "丙子", "heshin": "丑"},
+      {"count": 60, "tai_sui": "癸亥", "heshin": "寅"},
+      {"count": 61, "tai_sui": "甲子", "heshin": "丑"}
+    ]
+  },
+  "variants_and_blockers": [
+    "Kanripo 卷一作‘遇阴德大武重留一算’，Chinese Text Project 同页不同检索结果曾出现‘遇武德大武’；卷三立成表第4/5、17/18局重复明确支持阴德与大武，候选按阴德规范化并保留异文",
+    "卷二十六神身份目录作‘太神’，卷三立成表相同序位作‘大神’；代码规范化为 TaiShen/太神，同时保存卷三表异文，不据此生成解释",
+    "合神逆行方向有明确公式，卷一月建例只提供首位‘合神丑’锚点，缺少与卷三同粒度的完整合神立成列",
+    "Kanripo 页码标识已定位但对应四库影像字节仍未取得和哈希，人工影印校勘门未通过",
+    "外部积年本身仍不能从公历日期生成；两套历元、岁首、历史历法与零年口径未选",
+    "卷三表同时包含客目、主客算、大小将等字段，本候选没有因相邻列存在就擅自实现",
+    "所有神名所主、旺衰、掩击迫囚、主客胜负和应期均属解释层，本版完全不实现"
+  ],
+  "review_state": {
+    "bibliography_review": "candidate_source_identity_pinned",
+    "transcription_review": "blocked_until_facsimile_image_bytes_and_manual_collation",
+    "logic_review": "formula_and_received_table_agree_for_taiyi_tianmu_jishen_heshin_has_formula_plus_first_anchor",
+    "implementation_review": "mechanical_candidate_with_24_row_anchors_and_720_count_exhaustion",
+    "runtime_release": "blocked",
+    "decision": "chart_only_partial_annual_frame_no_date_no_full_board_no_rules_no_signals"
+  }
+}

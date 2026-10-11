@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "research_id": "jiuheng.research.liuyao.weather_first_workflow.2026-09-27",
+  "method": "liuyao",
+  "review_date": "2026-09-27",
+  "status": "source_acquisition_blocked_no_weather_rule_implemented",
+  "executable_seed_eligible": false,
+  "formal_rule_evidence_eligible": false,
+  "scope": {
+    "first_target": "单一地点、明确目标时间范围的降雨占问",
+    "not_yet_supported": ["风雪雷电综合天气", "多选方案", "开放题综合趋势", "其他八术天气裁决"],
+    "completion_requires": [
+      "固定可核验的影印底本、卷页和实际文件字节",
+      "逐字核对完整天时章节以及引用的基础章和例外",
+      "与可用早期材料及可靠注本对照，排除冲突规则",
+      "闭合适用范围、用神、旺衰、冲合空墓、动变与应期条件",
+      "规则程序及正例、反例、边界例、无适用例通过四类复核与测试",
+      "桌面完整走通锁题、起卦、裁决、时间、建议、保存和历史重放"
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "bushi_zhengzong_harvard_1787",
+      "title": "卜筮正宗全书",
+      "attributed_author": "清王洪绪（维德）辑",
+      "edition_catalog_description": "乾隆丁未（1787）绿荫堂重刊本",
+      "holding_institution": "Harvard-Yenching Library",
+      "catalog_identifier": "T 1740 1122 / DRS 53238001",
+      "public_catalog_url": "https://id.lib.harvard.edu/alma/990079319370203941/catalog",
+      "public_facsimile_catalog_url": "https://commons.wikimedia.org/wiki/File:Harvard_drs_53238001_卜筮正宗全書_v.3卷之五、卷之六.pdf",
+      "manifest_url": "https://iiif.lib.harvard.edu/manifests/drs:53238001",
+      "volume_candidate": "第三册，卷五、卷六；卷五天时的具体 PDF 页和叶码尚未核定",
+      "acquisition_observation": "本轮直接读取公开 IIIF manifest 返回 HTTP 429；未继续重试该限流接口",
+      "facsimile_downloaded": false,
+      "facsimile_visually_verified": false,
+      "digital_checksum": null,
+      "verified_byte_length": null,
+      "page_locator": null,
+      "formal_rule_evidence_eligible": false
+    },
+    {
+      "source_id": "bushi_zhengzong_ncpssd_1889",
+      "title": "卜筮正宗十四卷",
+      "attributed_author": "清王洪绪辑",
+      "edition_catalog_description": "清光绪十五年（1889）仁记埽叶山房重刻本",
+      "holding_institution": "国家哲学社会科学文献中心（公开镜像著录）",
+      "catalog_identifier": "GJ958220 / 子560/1034 / barcode 70017388",
+      "public_catalog_url": "https://www.ncpssd.org/Literature/articleinfo?barcodenum=70017388&type=Ancient",
+      "public_facsimile_catalog_url": "https://commons.wikimedia.org/wiki/File:NCPSSD-70017388_卜筮正宗十四卷_第三册.pdf",
+      "public_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/NCPSSD-70017388_卜筮正宗十四卷_第三册.pdf",
+      "catalog_page_count": 50,
+      "catalog_size_description": "9.42 MB，仅为公开目录标示，不是本地实际字节验证",
+      "acquisition_observation": "网络阅读工具识别为 50 页 PDF，无文本层；首张截图返回引用但没有可供本轮视觉核对的图像载荷，后续截图返回 Cache miss；浏览器工具因 kernel assets 路径缺失未能启动",
+      "facsimile_downloaded": false,
+      "facsimile_visually_verified": false,
+      "digital_checksum": null,
+      "verified_byte_length": null,
+      "page_locator": null,
+      "formal_rule_evidence_eligible": false
+    },
+    {
+      "source_id": "zengshan_buyi_nlc_1925",
+      "title": "增删卜易",
+      "attributed_author": "公开目录标示秦慎安校勘；原著层次待核",
+      "edition_catalog_description": "民国十四年（1925）文明书局发行本",
+      "holding_institution": "中国国家图书馆（公开镜像著录）",
+      "catalog_identifier": "MG/B992.2 / data_416 / 12jh005345 / 45344",
+      "public_catalog_url": "https://read.nlc.cn/allSearch/searchDetail?fid=12jh005345&indexName=data_416&searchType=24&showType=1",
+      "public_facsimile_catalog_url": "https://commons.wikimedia.org/wiki/File:NLC416-12jh005345-45344_增刪卜易.pdf",
+      "public_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/NLC416-12jh005345-45344_增刪卜易.pdf",
+      "catalog_page_count": 394,
+      "chapter_candidate": "卷三天时章第三十五，实际页码未核",
+      "role_limit": "民国刊本只作为未来异文对照线索，不能自动取得清代原刻本或早期经典的证据等级",
+      "acquisition_observation": "整册网络读取超过工具大小上限；本地公开下载连接被重置；国图目录和公开缩略图连接超时；未获得文件",
+      "facsimile_downloaded": false,
+      "facsimile_visually_verified": false,
+      "digital_checksum": null,
+      "verified_byte_length": null,
+      "page_locator": null,
+      "formal_rule_evidence_eligible": false
+    },
+    {
+      "source_id": "bushi_zhengzong_weather_shidian_transcription",
+      "title": "卜筮正宗全书·天时（电子转录）",
+      "public_url": "https://www.shidianguji.com/zh/book/HY1439/chapter/1m70sjbt2qnm7",
+      "electronic_transcription_only": true,
+      "facsimile_visually_verified": false,
+      "formal_rule_evidence_eligible": false,
+      "use_limit": "仅用于识别待核原文的依赖与例外，不能单独转成可执行规则；本轮不保存为已核原文"
+    }
+  ],
+  "dependency_findings_from_unverified_transcription": [
+    {
+      "finding": "父母、妻财不是唯一条件，不能由六亲名称或单个发动事实直接推出下雨或放晴",
+      "requires": ["兴隆或旺衰的定义与生效条件", "其他爻的制约", "目标范围与占法"],
+      "implementation_state": "not_implemented"
+    },
+    {
+      "finding": "应爻空亡、动爻合住及冲开的条件会限制结论",
+      "requires": ["空亡效力而非单纯未配支身份", "合住与冲开效力而非支对目录", "限制规则的优先关系"],
+      "implementation_state": "not_implemented"
+    },
+    {
+      "finding": "父财同动、父财动变和三合等不能省略",
+      "requires": ["多动爻组合", "实际变爻身份", "三合成立条件而非成员并集", "相互冲突时的退出条件"],
+      "implementation_state": "not_implemented"
+    },
+    {
+      "finding": "时间不能把日辰或时辰标签任意映射成一小时或三小时",
+      "requires": ["完整应期原文", "日时边界", "询问区间适用性", "没有应期依据时返回暂无法断定"],
+      "implementation_state": "not_implemented"
+    },
+    {
+      "finding": "天气占辞不等于行动建议原文",
+      "requires": ["独立可追溯的建议依据", "建议适用条件", "没有建议依据时不编写古法建议"],
+      "implementation_state": "not_implemented"
+    }
+  ],
+  "current_deliverable_state": {
+    "windows_version": "0.75.0",
+    "new_weather_implementation": false,
+    "new_windows_build": false,
+    "released_rule_ids": 0,
+    "complete_adjudicable_methods": 0,
+    "completed_first_weather_workflow": false,
+    "existing_test_baseline_rust": 379,
+    "existing_test_baseline_python": 15,
+    "tests_rerun_this_research_round": false
+  },
+  "required_next_input": "可读取的完整影印 PDF 或扫描页；至少包括书名/版本/馆藏信息、卷五天时全章及引用的基础章。只有目录链接或现代摘要不能解除阻断。"
+}

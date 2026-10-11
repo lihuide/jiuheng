@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "research_id": "jiuheng.research.liuyao.xun_void_month_day_branch_raw_relations.2026-09-15",
+  "method": "liuyao",
+  "review_date": "2026-09-23",
+  "status": "mechanical_xun_void_month_day_branch_and_directional_five_element_relations_blocked_from_runtime_rules",
+  "purpose": "从锁定日辰所属六旬求十干未配的两个地支，并为本卦明爻和实际动爻的变后爻记录是否同月建、与月建对支、同日辰、与日辰对支、属于旬中未配支，以及月建/日辰五行相对爻五行的同类、谁生谁、谁克谁方向；只保存原始结构关系，不判断效力、旺衰或吉凶。",
+  "evidence_scope": {
+    "sources": [
+      {
+        "source_id": "bushi_quanshu_xun_void_month_break_ctext",
+        "title": "《卜筮全书·通玄妙论》旬空月破举例电子转录",
+        "historical_period": "明代传本",
+        "public_url": "https://ctext.org/wiki.pl?chapter=514475&if=gb&remap=gb",
+        "supports": ["甲子旬中戌亥为空的旬支例", "正月建寅、申为相冲对支的月破例"],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "xieji_tongyi_xun_void_table_ctext",
+        "title": "《协纪通义》六旬空支表电子转录",
+        "historical_period": "清代传本",
+        "public_url": "https://ctext.org/wiki.pl?chapter=525346&if=gb",
+        "supports": ["甲子旬戌亥、甲戌旬申酉、甲申旬午未、甲午旬辰巳、甲辰旬寅卯、甲寅旬子丑完整六表", "十干配十二支后余二支的结构说明"],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "bushi_zhengzong_month_break_examples_ctext",
+        "title": "《卜筮正宗》旬空月破卦例电子转录",
+        "historical_period": "清代传本",
+        "public_url": "https://ctext.org/wiki.pl?chapter=944578&if=gb",
+        "supports": ["卦例把空亡两支、月建和爻支并列显示", "月建冲爻被称为月破的结构用语"],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "bushi_quanshu_qimeng_jieyao_ctext",
+        "title": "《卜筮全书》卷一启蒙节要",
+        "historical_period": "明代传本",
+        "public_url": "https://ctext.org/wiki.pl?chapter=581378&if=gb",
+        "supports": ["五行相生相克次序", "生我、我生、克我、我克、比和的方向定义"],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      }
+    ],
+    "source_limitations": [
+      "来源仍为公共电子转录，对应影印页尚未固定为本地字节并计算 SHA-256",
+      "旬空、月破及日冲的效力、填实、冲实、出空和动静例外在各书中存在复杂层次，本轮全部排除",
+      "五行关系只保留方向身份；月建、日辰对各爻的实际生克效力和旺衰条件全部排除",
+      "月建沿用精确节区间候选，日辰沿用北京时间午夜换日候选；两个边界口径都没有被正式规则选用",
+      "程序使用“旬中未配支”和“对支”描述原始事实，避免把术语名称自动当作吉凶"
+    ]
+  },
+  "candidate": {
+    "algorithm_version": "jiuheng.liuyao.xun_void_month_day_branch_five_element_raw_relations.v2",
+    "xun_void_table": {
+      "甲子": ["戌", "亥"],
+      "甲戌": ["申", "酉"],
+      "甲申": ["午", "未"],
+      "甲午": ["辰", "巳"],
+      "甲辰": ["寅", "卯"],
+      "甲寅": ["子", "丑"]
+    },
+    "opposition_offset_in_twelve_branch_cycle": 6,
+    "observed_layers": ["primary_visible", "moving_transformed"],
+    "observed_flags": ["equals_month_build", "opposed_by_month_build", "equals_day_branch", "opposed_by_day_branch", "is_xun_void", "month_build_five_element_relation", "day_branch_five_element_relation"],
+    "directional_five_element_relations": ["same", "source_generates_target", "target_generates_source", "source_overcomes_target", "target_overcomes_source"],
+    "relation_source_definition": "source is locked month-build or day branch; target is the observed line",
+    "all_five_by_five_directional_relations_checked": 25,
+    "all_sixty_days_checked": true,
+    "all_sixty_four_primary_hexagrams_per_day_checked": true,
+    "checked_primary_line_observation_count": 23040,
+    "raw_relations_identified": true,
+    "relation_effects_assessed": false,
+    "useful_god_selected": false,
+    "strength_assessed": false,
+    "interpretation_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false
+  },
+  "forbidden_uses": [
+    "不得把旬中未配支直接判断为无用、虚假、不吉或不能成事",
+    "不得把与月建对支直接判断为月破已经发生作用",
+    "不得把与日辰对支直接判断为暗动、日破、冲实或填实",
+    "不得把月建或日辰对爻的原始生克方向直接判断为得生、受克、旺、衰、吉或凶",
+    "不得从原始支位标记推导旺衰、生克、冲合、用神、应期或任何事件结论",
+    "不得生成中间信号、结论、行动建议或正式 Rule ID"
+  ],
+  "unresolved": [
+    "底本影印页定位、字节哈希、异文和版本谱系",
+    "旬空对动爻、静爻、伏神、变爻的不同效力及出空填实规则",
+    "月破、日冲、暗动及月日生克的动静、旺衰与时间例外",
+    "月建日辰边界口径、用神、旺衰和应期规则"
+  ],
+  "review_state": {
+    "decision": "chart_only_xun_void_month_day_branch_and_directional_five_element_raw_relations_no_effect_interpretation_signals_or_rules",
+    "runtime_release": "blocked",
+    "formal_rule_count": 0
+  }
+}

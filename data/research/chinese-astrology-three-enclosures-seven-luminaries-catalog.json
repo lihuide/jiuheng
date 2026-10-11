@@ -1,0 +1,99 @@
+{
+  "research_id": "CHINESE-ASTROLOGY-THREE-ENCLOSURES-SEVEN-LUMINARIES-2026-09-09",
+  "method": "chinese_astrology",
+  "researched_on": "2026-09-09",
+  "scope": "仅固化传本三垣名目、上中下元标签，以及日、月、岁星、荧惑、填星、太白、辰星七政身份和五星五行对应；不定义垣墙成员、星官拓扑、宿度/垣界，不计算任一天体位置，不录入占辞",
+  "status": "mechanical_received_enclosure_luminary_identity_catalog_blocked_from_runtime_rules",
+  "runtime_rule_seed_allowed": false,
+  "sources": [
+    {
+      "source_id": "BUTIANGE-WIKISOURCE-THREE-ENCLOSURES-2026-09-09",
+      "title": "《步天歌》（维基文库公共转录页）三垣段",
+      "source_type": "received_text_electronic_transcription_not_facsimile",
+      "url": "https://zh.wikisource.org/zh-hant/步天歌_(王希明)",
+      "supports": [
+        "中元北极紫微宫",
+        "上元天庭太微宫",
+        "下元一宫名天市",
+        "三垣按紫微、太微、天市分段列出"
+      ],
+      "evidence_limit": "公共页面署作唐王希明，但作品归属与传本年代仍须专门书目复核；当前未绑定权威影印本、准确图版和文件哈希，故只形成传本名目目录"
+    },
+    {
+      "source_id": "SHIJI-CTEXT-TIANGUAN-FIVE-PLANETS-2026-09-09",
+      "title": "《史记·天官书》（中国哲学书电子化计划公共转录页）",
+      "source_type": "early_core_text_electronic_transcription_not_facsimile",
+      "url": "https://ctext.org/shiji/tian-guan-shu/zh",
+      "supports": [
+        "岁星、荧惑、填星、太白、辰星五星名目",
+        "五星作为会聚、运行和占候对象的早期文本背景"
+      ],
+      "evidence_limit": "只采用五星身份名，不采用任何占辞、分野或天象解释；未绑定影印版逐字校勘"
+    },
+    {
+      "source_id": "WUXING-DAYI-WIKISOURCE-SEVEN-GOVERNORS-2026-09-09",
+      "title": "隋萧吉《五行大义》卷四·第十六论七政（维基文库公共转录页）",
+      "source_type": "sui_text_electronic_transcription_not_facsimile",
+      "url": "https://zh.wikisource.org/zh/五行大義/4",
+      "supports": [
+        "七政存在多种古解释，不能把术语当作无争议单义词",
+        "其中一说明确为日月五星",
+        "五星与木火土金水的身份对应"
+      ],
+      "evidence_limit": "本目录将对象明确命名为日月五星身份目录，并记录术语歧义；未采用该篇天象解释和占辞"
+    },
+    {
+      "source_id": "HANSHU-CTEXT-TIANWEN-FIVE-PLANETS-2026-09-09",
+      "title": "《汉书·天文志》（中国哲学书电子化计划公共转录页）",
+      "source_type": "early_history_electronic_transcription_not_facsimile",
+      "url": "https://ctext.org/han-shu/tian-wen-zhi/zh",
+      "supports": "岁、荧惑、填、太白、辰五星名目的独立早期交叉线索",
+      "evidence_limit": "只交叉确认身份，不导入同段占辞；未完成权威影印页和异文校勘"
+    }
+  ],
+  "implemented_catalog": {
+    "algorithm_version": "jiuheng.chinese_astrology.received_structure_identity.v2",
+    "three_enclosures": [
+      {"catalog_sequence": 1, "enclosure": "紫微垣", "received_palace_name": "紫微宫", "yuan_level": "中元"},
+      {"catalog_sequence": 2, "enclosure": "太微垣", "received_palace_name": "太微宫", "yuan_level": "上元"},
+      {"catalog_sequence": 3, "enclosure": "天市垣", "received_palace_name": "天市宫", "yuan_level": "下元"}
+    ],
+    "seven_luminaries": [
+      {"catalog_sequence": 1, "received_name": "日", "modern_name": "太阳", "five_phase": null},
+      {"catalog_sequence": 2, "received_name": "月", "modern_name": "月球", "five_phase": null},
+      {"catalog_sequence": 3, "received_name": "岁星", "modern_name": "木星", "five_phase": "木"},
+      {"catalog_sequence": 4, "received_name": "荧惑", "modern_name": "火星", "five_phase": "火"},
+      {"catalog_sequence": 5, "received_name": "填星", "modern_name": "土星", "five_phase": "土"},
+      {"catalog_sequence": 6, "received_name": "太白", "modern_name": "金星", "five_phase": "金"},
+      {"catalog_sequence": 7, "received_name": "辰星", "modern_name": "水星", "five_phase": "水"}
+    ],
+    "permitted_use": "不可变身份审计、九术插件状态、天文快照、开发者显示和重算校验",
+    "forbidden_use": "Rule ID、垣墙/星官成员推定、角边界、天体位置、分野、吉凶、应期、中间信号或综合裁决",
+    "enclosure_boundary_model_selected": false,
+    "angular_boundary_model_selected": false,
+    "celestial_positions_calculated": false,
+    "interpretation_eligible": false,
+    "rule_eligible": false
+  },
+  "verification_anchors": [
+    "三垣必须恰为紫微、太微、天市且身份唯一",
+    "传本分段顺序固定为紫微、太微、天市，分别保存中元、上元、下元，不按元级别重排",
+    "七政身份目录必须恰为日、月和五颗传统行星",
+    "五星必须唯一映射为岁星木、荧惑火、填星土、太白金、辰星水",
+    "日月不得伪造五星五行字段",
+    "垣界、垣墙成员、天体位置、占辞和运行时规则标志必须保持关闭"
+  ],
+  "unresolved_blockers": [
+    "尚未把《步天歌》《史记》《汉书》《五行大义》相关段落绑定到经独立校验的权威影印版本、准确册页、图像哈希和逐字校勘",
+    "《步天歌》作者、时代与版本系统须单独复核，当前不能把公共页面署名直接提升为确定书目事实",
+    "三垣垣墙星数、左右垣成员、垣内星官及历代增损尚未建立版本化结构",
+    "七政一词在古代存在日月五星、北斗七星等不同解释，本目录只以明确全称‘日月五星身份目录’使用该词",
+    "月球和五星高精度离线位置、日月食、客星、彗孛及历史坐标系统尚未实现",
+    "所有占辞的版本、条件、反例、四类复核与程序测试均未完成"
+  ],
+  "evidence_gate_summary": {
+    "decision": "blocked",
+    "runtime_rule_count": 0,
+    "reason": "公共转录足以形成无解释的传本身份目录，但影印版本、垣墙成员、动态天象与占辞证据链均未闭合"
+  }
+}

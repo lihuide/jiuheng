@@ -1,0 +1,79 @@
+{
+  "research_id": "QIMEN-HOURLY-DUTY-MOVEMENT-2026-09-07",
+  "method": "qimen_dunjia",
+  "researched_on": "2026-09-07",
+  "scope": "仅登记值符随时干、值使随时支逐时移动的早期文本候选与阳顺阴逆算例；不选择中五处理、日界时制、传承历法，不生成天盘门盘神盘，不录入吉凶占断",
+  "status": "early_text_hourly_duty_movement_candidate_blocked_from_implementation_and_runtime_rules",
+  "runtime_rule_seed_allowed": false,
+  "implementation_allowed": false,
+  "sources": [
+    {
+      "source_id": "JINGYOU-DUNJIA-FUYING-JING-SHIDIAN-HOURLY-DUTY-2026-09-07",
+      "title": "北宋《景祐遁甲符应经》卷上（识典古籍公共转录）",
+      "source_type": "early_song_public_electronic_transcription_not_page_bound_facsimile",
+      "url": "https://www.shidianguji.com/zh/book/SDZJ0533/chapter/1k2ku3n0j88iu",
+      "supports": [
+        "值符随时干所临地盘宫移动，值使从旬首宫按时支计数",
+        "阳遁顺行、阴遁逆行的逐时安排",
+        "阳一局甲子、乙丑与阴九局甲子、乙丑的星门落宫算例"
+      ],
+      "evidence_limit": "公共转录足以形成检索候选，但本轮未能下载并校验对应影印 PDF，尚无准确册页、图版、逐字校勘与文件哈希"
+    },
+    {
+      "source_id": "QIMEN-TONGZONG-CTEXT-VOL2-HOURLY-DUTY-2026-09-07",
+      "title": "《奇门遁甲统宗》卷二（中国哲学书电子化计划公共转录）",
+      "source_type": "later_public_electronic_transcription_not_facsimile",
+      "url": "https://ctext.org/wiki.pl?chapter=491157&if=gb",
+      "supports": [
+        "值符加时干、值使加时支的后世转录公式",
+        "阳一局与阴九局的逐时例证"
+      ],
+      "evidence_limit": "仅作后世传本交叉检索；转录标题和正文存在需要影印校勘的疑点，不作为独立发布依据"
+    },
+    {
+      "source_id": "JINGYOU-DUNJIA-FUYING-JING-WIKIMEDIA-FACSIMILE-SSID-12387913",
+      "title": "《遁甲符应经》影印 PDF（SSID-12387913）",
+      "source_type": "facsimile_lead_download_not_completed",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/SSID-12387913_%E9%81%81%E7%94%B2%E7%AC%A6%E6%87%89%E7%B6%93.pdf",
+      "supports": "拟用于早期文本图版、册页和逐字校勘绑定",
+      "evidence_limit": "2026-09-07 下载连接被远端重置且浏览器 PDF 加载超时；本地未取得文件，因此没有页码、图像核验或校验和"
+    }
+  ],
+  "candidate": {
+    "selected_algorithm_version": null,
+    "duty_chief_hourly_palace_calculated": false,
+    "duty_envoy_hourly_palace_calculated": false,
+    "center_five_hourly_handling_selected": null,
+    "day_boundary_convention_selected": null,
+    "hour_time_basis_selected": null,
+    "transmission_calendar_adjustment_selected": null,
+    "heaven_plate_calculated": false,
+    "gate_plate_calculated": false,
+    "spirit_plate_calculated": false,
+    "interpretation_eligible": false,
+    "rule_eligible": false,
+    "permitted_use": "研究索引、来源追踪和后续影印核验清单",
+    "forbidden_use": "排盘结果、历史快照算法、Rule ID、规则命中、吉凶、用神、应期、中间信号、行动建议或综合裁决"
+  },
+  "verification_anchors": [
+    "早期影印本中必须逐字确认值符随时干和值使随时支的起点、计数和阴阳顺逆",
+    "必须逐例复算阳一局甲子/乙丑与阴九局甲子/乙丑并绑定准确页码",
+    "旬首或目标落中五时必须有已选择且有证据的处理规则",
+    "北京时间、真太阳时、日界和子时口径必须各自命名并在边界测试中保持不混用",
+    "处暑异文和超神、接气、置闰、拆补未闭合时不得生成完整逐时盘"
+  ],
+  "unresolved_blockers": [
+    "未取得并校验《遁甲符应经》权威影印文件，无法绑定具体卷页、图版、逐字转录和文件哈希",
+    "公共转录仍需处理标题、脱讹和标点疑点，不能直接作为可执行代码规范",
+    "逐时值符或值使涉及中五时的寄宫、飞宫和计数口径尚未闭合",
+    "北京时间与真太阳时、子初与零点日界、古代时制的默认口径尚未完成证据门禁",
+    "超神、接气、置闰、拆补与处暑局数异文尚未闭合，无法保证逐时盘输入唯一",
+    "天盘、门盘、八神、格局、用神、吉凶、应期和行动建议均无可放行规则"
+  ],
+  "evidence_gate_summary": {
+    "decision": "blocked",
+    "implementation_count": 0,
+    "runtime_rule_count": 0,
+    "reason": "公共转录已形成值得复核的早期公式候选，但影印页绑定、中五处理、时制和历法传承均未闭合；不得实现为排盘算法或运行时规则"
+  }
+}

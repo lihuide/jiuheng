@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "research_id": "jiuheng.research.liuyao.six_combination_six_opposition_raw_pairs.2026-09-16",
+  "method": "liuyao",
+  "review_date": "2026-09-16",
+  "status": "mechanical_received_branch_pair_catalog_blocked_from_runtime_rules",
+  "purpose": "固定十二支六合与六冲的无解释成对表，并只在本卦明爻两两、动爻与同位变爻、飞神与同位伏神三个明确范围内保存布尔比较；不判断整卦六合/六冲，不判断任何关系效力。",
+  "evidence_scope": {
+    "sources": [
+      {
+        "source_id": "bushi_quanshu_volume_14_branch_pairs_ctext",
+        "title": "《卜筮全书》卷十四六合、六冲表电子转录",
+        "public_url": "https://ctext.org/wiki.pl?chapter=336749&if=gb",
+        "supports": [
+          "子丑、寅亥、卯戌、辰酉、巳申、午未六合支对",
+          "子午、丑未、寅申、卯酉、辰戌、巳亥六冲支对"
+        ],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "zengshan_buyi_volume_1_six_opposition_hexagrams_ctext",
+        "title": "《增删卜易》卷一六冲卦问答电子转录",
+        "public_url": "https://ctext.org/wiki.pl?chapter=950329&if=gb",
+        "supports": [
+          "传本明确把支对与整卦六冲分类区分为不同层次",
+          "八宫首卦及无妄、大壮被列为六冲卦的后世分类线索"
+        ],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "zengshan_buyi_six_opposition_chapter_wikisource",
+        "title": "《增删卜易·六冲章第二十》电子转录",
+        "public_url": "https://zh.wikisource.org/zh-hans/%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93/20",
+        "supports": [
+          "六组六冲支对的独立交叉转录",
+          "日月冲爻、卦逢六冲、动爻变冲和爻与爻冲须分层处理的风险提示"
+        ],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      }
+    ],
+    "source_limitations": [
+      "尚未把采用段落绑定到本地影印页字节、准确卷页和 SHA-256",
+      "后世六爻传本不能自动上推为汉代京房原法",
+      "支对目录不能单独证明整卦六合/六冲分类，更不能证明合冲效力和吉凶",
+      "月建、日辰与爻支的同支/对支已由独立 v0.55.0 层记录，本层不重复解释"
+    ]
+  },
+  "candidate": {
+    "algorithm_version": "jiuheng.liuyao.received_six_combination_six_opposition_raw_pairs.v1",
+    "six_combination_pairs": [
+      ["子", "丑"],
+      ["寅", "亥"],
+      ["卯", "戌"],
+      ["辰", "酉"],
+      ["巳", "申"],
+      ["午", "未"]
+    ],
+    "six_opposition_pairs": [
+      ["子", "午"],
+      ["丑", "未"],
+      ["寅", "申"],
+      ["卯", "酉"],
+      ["辰", "戌"],
+      ["巳", "亥"]
+    ],
+    "comparison_scopes": [
+      "all_fifteen_unordered_pairs_among_six_primary_visible_lines",
+      "each_actual_moving_line_against_its_same_position_transformed_line",
+      "each_visible_flying_line_against_its_same_position_hidden_candidate"
+    ],
+    "all_primary_line_type_combinations_verified": 4096,
+    "primary_visible_pair_observations_verified": 61440,
+    "moving_transformation_pair_observations_verified": 12288,
+    "whole_hexagram_six_combination_classified": false,
+    "whole_hexagram_six_opposition_classified": false,
+    "combination_or_opposition_effect_assessed": false,
+    "interpretation_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false
+  },
+  "forbidden_uses": [
+    "不得把六合支对直接解释为合起、合住、绊住、和好、成功或吉",
+    "不得把六冲支对直接解释为冲破、暗动、散、失败或凶",
+    "不得仅凭支对数量把本卦或变卦命名为六合卦、六冲卦",
+    "不得从动变或飞伏同位支对推断进退、反吟、伏吟、旺衰、应期或行动建议",
+    "不得把公共电子转录或开源实现输出替代影印底本、异文和四类复核"
+  ],
+  "unresolved": [
+    "底本影印页定位、字节哈希、异文和版本谱系",
+    "整卦六合、六冲的传本定义与全部卦表",
+    "月日、动静、空破、墓绝、生克对合冲效力的条件和例外",
+    "变爻、伏神、世应和用神参与关系的适用范围",
+    "可执行 Rule ID、边界测试、应期、信号和行动建议"
+  ],
+  "review_state": {
+    "decision": "raw_pair_catalog_and_three_explicit_comparison_scopes_only",
+    "runtime_release": "blocked",
+    "formal_rule_count": 0
+  }
+}

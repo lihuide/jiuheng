@@ -1,0 +1,103 @@
+{
+  "research_id": "QIMEN-FIXED-STAR-GATE-DUTY-IDENTITY-2026-09-02",
+  "method": "qimen_dunjia",
+  "researched_on": "2026-09-02",
+  "scope": "仅固化九星与八门本宫身份，并由旬首地盘落宫取得本旬值符星和值使门；中五依北宋《武经总要》明确采用寄坤二的命名候选。不做值符加时干、值使加时支，不排天盘门盘神盘，不录入吉凶占断",
+  "status": "mechanical_early_song_fixed_star_gate_duty_identity_blocked_from_runtime_rules",
+  "runtime_rule_seed_allowed": false,
+  "sources": [
+    {
+      "source_id": "WU-JING-ZONG-YAO-SHIDIAN-DUNJIA-STAR-GATE-2026-09-02",
+      "title": "北宋《武经总要》遁甲篇（识典古籍文本页）",
+      "source_type": "early_song_official_military_compilation_electronic_transcription_not_page_bound_facsimile",
+      "url": "https://www.shidianguji.com/book/SK1390/chapter/1l94varbctgdq",
+      "supports": [
+        "天蓬一、天芮二、天冲三、天辅四、天禽中五、天心六、天柱七、天任八、天英九",
+        "开乾六、休坎一、生艮八、伤震三、杜巽四、景离九、死坤二、惊兑七",
+        "中五寄于坤二",
+        "旬内以天蓬/休门等作为值符/值事的明确算例"
+      ],
+      "evidence_limit": "页面给出北宋曾公亮、丁度撰的文本入口，但尚未绑定该段权威影印本具体卷页和文件哈希；本轮只采用结构身份，不采用同页军事吉凶内容"
+    },
+    {
+      "source_id": "JINGYOU-DUNJIA-FUYING-JING-CTEXT-NINE-STARS-2026-09-02",
+      "title": "北宋《景祐遁甲符应经》卷上（中国哲学书电子化计划转录）",
+      "source_type": "early_song_text_electronic_transcription_not_bound_facsimile",
+      "url": "https://ctext.org/wiki.pl?chapter=338452&if=gb",
+      "supports": "九星分别主一至九宫的固定身份表",
+      "evidence_limit": "用于早期文本交叉核对，尚未完成影印页和逐字校勘绑定"
+    },
+    {
+      "source_id": "QIMEN-TONGZONG-CTEXT-VOL2-DUTY-IDENTITY-2026-09-02",
+      "title": "《奇门遁甲统宗》卷二（中国哲学书电子化计划转录）",
+      "source_type": "electronic_transcription_not_facsimile",
+      "url": "https://ctext.org/wiki.pl?chapter=491157&if=gb",
+      "supports": [
+        "地盘旬首所临宫之星为值符、门为值使",
+        "阳一局六旬依次为天蓬休门、天芮死门、天冲伤门、天辅杜门、天禽死门、天心开门",
+        "甲辰旬首在中宫时寄坤二并取死门"
+      ],
+      "evidence_limit": "晚于北宋来源且是公共转录，只作公式和完整六旬例交叉核对；不采用随后值符值使逐时飞转或占断内容"
+    },
+    {
+      "source_id": "NLC-QIMEN-TONGZONG-FACSIMILE-416-12JH003951-48665-DUTY-IDENTITY",
+      "title": "国家图书馆藏《奇门遁甲统宗》扫描件",
+      "source_type": "institutional_facsimile_pdf_not_yet_page_bound",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/NLC416-12jh003951-48665_%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E7%B5%B1%E5%AE%97.pdf",
+      "supports": "晚期传本影像复核入口",
+      "evidence_limit": "尚未绑定本轮段落的准确册页、逐字校勘和文件哈希"
+    }
+  ],
+  "implemented_candidate": {
+    "algorithm_version": "jiuheng.qimen.early_song_fixed_star_gate_duty_identity.v1",
+    "fixed_stars_by_palace_one_to_nine": [
+      "天蓬", "天芮", "天冲", "天辅", "天禽", "天心", "天柱", "天任", "天英"
+    ],
+    "fixed_gates_by_palace": {
+      "坎一": "休门",
+      "坤二": "死门",
+      "震三": "伤门",
+      "巽四": "杜门",
+      "中五": null,
+      "乾六": "开门",
+      "兑七": "惊门",
+      "艮八": "生门",
+      "离九": "景门"
+    },
+    "center_hosting_convention": "early_song_center_five_hosts_kun_two.v1",
+    "center_duty_identity": {
+      "duty_chief_star": "天禽",
+      "duty_envoy_source_palace": "坤二",
+      "duty_envoy_gate": "死门"
+    },
+    "selection_formula": "旬首所隐六仪在地盘的本宫星为本旬值符；该宫本门为本旬值使，中五先依本版早期宋代口径寄坤二取门",
+    "permitted_use": "九星八门固定身份目录、本旬值符星/值使门机械身份、历史快照、开发者显示和重算校验",
+    "forbidden_use": "Rule ID、值符加时干、值使加时支、天盘、门盘、神盘、星门吉凶、格局、用神、应期、中间信号或综合裁决",
+    "duty_chief_hourly_palace_calculated": false,
+    "duty_envoy_hourly_palace_calculated": false,
+    "heaven_plate_calculated": false,
+    "interpretation_eligible": false,
+    "rule_eligible": false
+  },
+  "verification_anchors": [
+    "九宫必须逐一对应九颗固定星，中五固定为天禽",
+    "八门必须恰好各出现一次且中五没有独立门",
+    "阴阳二遁各九局的六个旬首都必须由自己的地盘宫位得到值符星和值使门",
+    "阳一局六旬必须依次得到蓬休、芮死、冲伤、辅杜、禽死、心开",
+    "旬首在中五时必须保留天禽为值符，并记录依早期宋代口径寄坤二取死门",
+    "值符和值使的逐时落宫、天盘以及所有解释和运行时规则标志必须保持关闭",
+    "处暑无地盘时不得生成值符值使身份"
+  ],
+  "unresolved_blockers": [
+    "尚未把北宋《武经总要》和《景祐遁甲符应经》相关段落绑定到权威影印本具体卷页、图版、逐字校勘与文件哈希",
+    "后世传本存在阴阳遁中五分别寄坤/艮等异说，本版只采用明确命名且较早的北宋寄坤候选，不把它提升为跨流派通则",
+    "北京时间与真太阳时的日界、时制以及超神、接气、置闰、拆补仍未完成默认口径论证",
+    "值符加时干、值使加时支及中五在逐时飞转中的处理尚未完成独立证据门禁",
+    "天盘、门盘、八神、格局、用神、吉凶和应期规则均未开放"
+  ],
+  "evidence_gate_summary": {
+    "decision": "blocked",
+    "runtime_rule_count": 0,
+    "reason": "早期宋代文本足以形成固定九星八门与本旬符使身份机械候选，但影印页绑定、逐时飞转、其他流派和占断证据尚未闭合"
+  }
+}

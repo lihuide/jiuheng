@@ -1,0 +1,153 @@
+{
+  "archive_id": "TAIYI-BARRIER-RAW-OBSERVATIONS-CANDIDATE-2026-09-09-v1",
+  "schema_version": 1,
+  "recorded_on": "2026-09-09",
+  "method": "taiyi",
+  "status": "barrier_raw_observations_only_no_barrier_classification",
+  "purpose": "为卷三推关法保存可复现的两目—四将同宫、四将两两同宫和主客算相等观察量；不把任何单项或组合擅自命名为关",
+  "runtime_ingestion_allowed": false,
+  "civil_date_input_allowed": false,
+  "epoch_selection_allowed": false,
+  "yin_yang_dun_selection_allowed": false,
+  "barrier_raw_observation_generation_allowed": true,
+  "barrier_classification_allowed": false,
+  "compound_pattern_classification_allowed": false,
+  "complete_board_generation_allowed": false,
+  "interpretation_allowed": false,
+  "signal_generation_allowed": false,
+  "timing_generation_allowed": false,
+  "advice_generation_allowed": false,
+  "rule_id_generation_allowed": false,
+  "source_identity": {
+    "parent_archive": "TAIYI-STRIKE-PRESSURE-CANDIDATE-2026-09-09-v1",
+    "depends_on_archive": "TAIYI-SEVENTY-TWO-BOARD-CANDIDATE-2026-09-09-v1",
+    "title": "太乙金镜式经",
+    "attributed_author": "唐·王希明",
+    "received_edition": "钦定四库全书本",
+    "kanripo_id": "KR3g0047",
+    "kanripo_repository": "kanripo/KR3g0047",
+    "kanripo_commit": "e3264da2c9f556225e056abe7eade01903b4543e",
+    "raw_file_hashes": {
+      "KR3g0047_001.txt": "6b13ff06e980439d7a3611f1f10c9efb318513e23f7a9e4c16ed4e8896f162d4",
+      "KR3g0047_002.txt": "44949571367607d1719aa51b5ce174d73078d0c84fe0a81e23b192449c8f5cfd",
+      "KR3g0047_003.txt": "fab52159527f90bf0c74af5f655ae3215e0e7d2efb6a5be5506f12c1671b8257"
+    },
+    "raw_hashes_rechecked_on": "2026-09-09",
+    "facsimile_verified": false,
+    "transcription_verified_against_facsimile": false,
+    "independent_transcription_urls": [
+      "https://ctext.org/wiki.pl?chapter=456008&if=gb",
+      "https://zh.wikisource.org/zh-hans/太乙金鏡式經_(四庫全書本)/卷03"
+    ]
+  },
+  "received_fragments": [
+    {
+      "fragment_id": "TY-JJSJ-WYG-J3-BARRIER-PROSE-CANDIDATE",
+      "volume": "卷三",
+      "page_markers": ["KR3g0047_WYG_003-3a"],
+      "heading": "推关法",
+      "transcription": "客主大小将目相宫齐为关。王希明曰：关之为义，但将相怕忌之事，不及于君也。主客大小将同宫数齐皆为关日。",
+      "implemented_as": "raw_same_palace_and_count_equality_observations_only",
+      "barrier_label_implemented": false,
+      "blocked_reason": "‘客主大小将目相宫齐’不能唯一切分主客、大小将与二目的配对；‘同宫数齐’也不能仅凭本句确定是主客总算相等、将数相等，还是复合条件"
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J3-BARRIER-TABLE-CONTRAST-CANDIDATE",
+      "volume": "卷三",
+      "page_markers": [
+        "KR3g0047_WYG_003-5b",
+        "KR3g0047_WYG_003-7a",
+        "KR3g0047_WYG_003-7b",
+        "KR3g0047_WYG_003-8a",
+        "KR3g0047_WYG_003-8b"
+      ],
+      "heading": "太乙三门五将立成胜败钤",
+      "transcription_summary": "表中见关囚、大将关囚、大将关、小将关囚、天目关囚、大小将关、天目大将关等不同简写；太蔟—太乙一宫虽有天目与主大将同在六宫，表格只记天目内迫，不记关。",
+      "implemented_as": "ambiguity_anchor_and_negative_guard_only",
+      "barrier_label_implemented": false,
+      "outcome_cells_implemented": false
+    }
+  ],
+  "candidate": {
+    "algorithm_version": "jiuheng.taiyi.tang_position_marks_and_barrier_raw_observations_candidate.v4",
+    "barrier_raw_observations_algorithm_version": "jiuheng.taiyi.tang_barrier_raw_observations_candidate.v1",
+    "annual_frame_algorithm_version": "jiuheng.taiyi.tang_supplied_accumulated_year_frame_candidate.v9",
+    "seventy_two_board_algorithm_version": "jiuheng.taiyi.tang_explicit_dun_seventy_two_board_candidate.v4",
+    "input_contract": "already_computed_tianmu_shiji_main_guest_counts_and_four_general_palaces",
+    "eye_general_candidate_pairs": [
+      "tianmu-main_great",
+      "tianmu-main_assistant",
+      "tianmu-guest_great",
+      "tianmu-guest_assistant",
+      "shiji-main_great",
+      "shiji-main_assistant",
+      "shiji-guest_great",
+      "shiji-guest_assistant"
+    ],
+    "general_candidate_pairs": [
+      "main_great-main_assistant",
+      "main_great-guest_great",
+      "main_great-guest_assistant",
+      "main_assistant-guest_great",
+      "main_assistant-guest_assistant",
+      "guest_great-guest_assistant"
+    ],
+    "count_observation": "main_count_equals_guest_count",
+    "candidate_pairs_exhaustively_enumerated": true,
+    "received_pairing_resolved": false,
+    "received_number_equality_resolved": false,
+    "barrier_classified": false,
+    "compound_patterns_classified": false,
+    "interpretation_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false,
+    "forbidden_outputs": [
+      "关或关日标签",
+      "关囚、四郭固、四郭杜及其他复合格局",
+      "将相、胜败或先起后起解释",
+      "中间信号、应期、行动建议或综合裁决",
+      "正式 Rule ID"
+    ]
+  },
+  "annual_test_anchors": [
+    {
+      "count": 2,
+      "eye_general_same_palace": [
+        {"eye": "tianmu", "general": "main_great"}
+      ],
+      "general_same_palace": [],
+      "main_guest_counts_equal": false,
+      "barrier_classified": false,
+      "table_guard": "太蔟—太乙一宫只记天目内迫，证明单个目将同宫不能直接等同关"
+    },
+    {
+      "count": 11,
+      "eye_general_same_palace": [
+        {"eye": "tianmu", "general": "main_great"},
+        {"eye": "tianmu", "general": "guest_great"}
+      ],
+      "general_same_palace": [
+        {"first": "main_great", "second": "guest_great"},
+        {"first": "main_assistant", "second": "guest_assistant"}
+      ],
+      "main_guest_counts_equal": true,
+      "barrier_classified": false
+    }
+  ],
+  "variants_and_blockers": [
+    "程序穷举两目与四将的 8 个候选配对、四将两两之间的 6 个候选配对；只保存实际同宫者，顺序固定并可复现。",
+    "四将的中五宫允许与另一将形成同宫观察，但两目不映射或寄入中五。",
+    "main_guest_counts_equal 只是已有主算、客算两整数相等的事实，不声称这就是原文‘数齐’。",
+    "太蔟—太乙一宫构成明确负向护栏：同宫观察存在而 barrier_classified 仍必须为 false。",
+    "旧 v8 年计/v3 关系及更早快照缺少本对象时保持 None，不在读取时静默补算。",
+    "电子转录尚未以对应四库影印图像逐字定本；主体切分、数齐释义和立成表缩写未闭合前不得判关。"
+  ],
+  "review_state": {
+    "bibliographic_review": "candidate_only",
+    "transcription_review": "blocked_without_facsimile_bytes",
+    "logic_review": "raw_inputs_closed_barrier_pairing_and_number_equality_unresolved",
+    "implementation_review": "automated_tests_required",
+    "runtime_release": "blocked",
+    "decision": "chart_only_barrier_raw_observations_no_barrier_classification_interpretation_signals_or_rules"
+  }
+}

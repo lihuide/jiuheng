@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "research_id": "jiuheng.research.liuyao.received_eight_palace_host_response.2026-09-15",
+  "method": "liuyao",
+  "review_date": "2026-09-15",
+  "status": "mechanical_received_eight_palace_host_response_blocked_from_runtime_rules",
+  "purpose": "由六爻阴阳位图唯一确定八宫、宫内阶段与世应爻位；不装纳甲、六亲、六神，不作占断。",
+  "evidence_scope": {
+    "sources": [
+      {
+        "source_id": "jingshi_yizhuan_wikisource_received_text",
+        "title": "《京氏易传》",
+        "attribution": "题汉京房",
+        "public_url": "https://zh.wikisource.org/zh-hant/%E4%BA%AC%E6%B0%8F%E6%98%93%E5%82%B3",
+        "supports": ["传世八宫各卦连续条目", "乾宫首卦、姤卦等世位与甲壬内外卦线索"],
+        "electronic_transcription_only": true,
+        "facsimile_pages_available_but_not_locally_hashed": true,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "yixue_xiangshulun_zhanke_wikisource",
+        "title": "《易学象数论·占课》",
+        "historical_period": "清",
+        "public_url": "https://zh.wikisource.org/zh-hant/%E6%98%93%E5%AD%B8%E8%B1%A1%E6%95%B8%E8%AB%96/%E5%8D%A0%E8%AA%B2",
+        "supports": ["八宫本宫到五世逐爻变、游魂返四、归魂复内卦的明确机械说明", "本宫上爻为世、一至五世以变爻为世、游魂四爻、归魂三爻", "世应相隔三爻"],
+        "transmission_warning": "原文明确指出后世火珠林通行法与《京氏易传》存在出入，因此本候选只命名为传世机械层，不冒充未经争议的汉代原法。",
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "zengshan_buyi_bagong_wikisource",
+        "title": "《增删卜易·八宫图第三》",
+        "historical_period": "清代传本",
+        "public_url": "https://zh.wikisource.org/zh-hant/%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93/3",
+        "supports": ["后世八宫全图使用卦宫、世应和五行字段", "乾为天世在上爻、应在三爻的交叉锚点"],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      }
+    ],
+    "source_limitations": [
+      "尚未把每个宫的全部条目绑定到本地影印页字节与 SHA-256",
+      "《京氏易传》传世文本、注语和后世火珠林装卦法的层次需要继续版本学拆分",
+      "本轮只固定结构变换和世应位置，不把后世解释倒推为汉代原法"
+    ]
+  },
+  "candidate": {
+    "algorithm_version": "jiuheng.liuyao.received_eight_palace_host_response.v1",
+    "palace_order": ["乾", "震", "坎", "艮", "坤", "巽", "离", "兑"],
+    "stage_order": ["本宫", "一世", "二世", "三世", "四世", "五世", "游魂", "归魂"],
+    "changed_line_masks_bottom_up": [0, 1, 3, 7, 15, 31, 23, 16],
+    "host_lines": [6, 1, 2, 3, 4, 5, 4, 3],
+    "response_lines": [3, 4, 5, 6, 1, 2, 1, 6],
+    "received_hexagram_sequences": {
+      "乾": [1, 44, 33, 12, 20, 23, 35, 14],
+      "震": [51, 16, 40, 32, 46, 48, 28, 17],
+      "坎": [29, 60, 3, 63, 49, 55, 36, 7],
+      "艮": [52, 22, 26, 41, 38, 10, 61, 53],
+      "坤": [2, 24, 19, 11, 34, 43, 5, 8],
+      "巽": [57, 9, 37, 42, 25, 21, 27, 18],
+      "离": [30, 56, 50, 64, 4, 59, 6, 13],
+      "兑": [58, 47, 45, 31, 39, 15, 62, 54]
+    },
+    "all_sixty_four_structures_unique": true,
+    "na_jia_assigned": false,
+    "six_relatives_assigned": false,
+    "six_spirits_assigned": false,
+    "interpretation_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false
+  },
+  "forbidden_uses": [
+    "不得从卦宫或世应位置直接生成吉凶",
+    "不得把后世通行八宫算法无条件署为汉京房原法",
+    "不得自动补造纳甲、六亲、六神、伏神、用神、旺衰或应期",
+    "不得用开源实现输出替代古籍证据",
+    "不得生成中间信号、结论、应期、行动建议或正式 Rule ID"
+  ],
+  "unresolved": [
+    "影印底本逐宫逐卦页码、字节哈希和异文校勘",
+    "京氏原法与后世火珠林八宫世应法的版本谱系",
+    "纳甲天干地支的内外卦完整表与版本差异",
+    "六亲、六神、伏神、用神、月建日辰、动变和应期规则"
+  ],
+  "review_state": {
+    "decision": "chart_only_eight_palace_stage_host_response_no_najia_relatives_spirits_interpretation_signals_or_rules",
+    "runtime_release": "blocked",
+    "formal_rule_count": 0
+  }
+}

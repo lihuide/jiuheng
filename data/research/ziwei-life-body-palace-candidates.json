@@ -1,0 +1,86 @@
+{
+  "research_id": "ZIWEI-LIFE-BODY-PALACES-RESEARCH-2026-09-01",
+  "method": "ziwei_doushu",
+  "researched_on": "2026-09-01",
+  "scope": "仅审计从寅起月、按时支逆安命宫/顺安身宫、闰月作下月及从命宫逆布十二宫；不含五行局、紫微星、十四主星、辅煞星、四化、庙旺、限运、吉凶、应期或综合裁决",
+  "status": "mechanical_received_text_candidate_blocked_from_runtime_rules",
+  "runtime_rule_seed_allowed": false,
+  "sources": [
+    {
+      "source_id": "ZIWEI-QUANSHU-WIKISOURCE-VOL2-2026-09-01",
+      "title": "紫微斗數全書卷二（维基文库转录页）",
+      "source_type": "electronic_transcription_not_facsimile",
+      "url": "https://zh.wikisource.org/zh-hant/%E7%B4%AB%E5%BE%AE%E6%96%97%E6%95%B8%E5%85%A8%E6%9B%B8/%E5%8D%B7%E4%BA%8C",
+      "supports": [
+        "从寅宫起正月，顺数至出生月",
+        "从该月宫位以子时为起点，逆数至出生时安命宫，顺数至出生时安身宫",
+        "正月子、丑、寅时的命身宫示例",
+        "闰月作下月",
+        "命、兄弟、妻妾、子女、财帛、疾厄、迁移、奴仆、官禄、田宅、福德、父母十二宫从命宫逆布"
+      ],
+      "evidence_limit": "尚未把采用的电子转录逐字绑定到明确版次的可复核影印页"
+    },
+    {
+      "source_id": "YU-YUE-YOUYI-LU-CTEXT-OCR-2026-09-01",
+      "title": "俞樾《游艺录》紫微斗数条（中国哲学书电子化计划 OCR 页）",
+      "source_type": "ocr_transcription_with_facsimile_collection_lead",
+      "url": "https://ctext.org/wiki.pl?chapter=299125&if=gb",
+      "supports": [
+        "先安命宫、次安身宫",
+        "二月辰时命在亥、身在未的独立算例",
+        "子、午时命身同宫",
+        "十二宫从命宫逆布；命在子时，兄弟在亥、妻妾在戌"
+      ],
+      "evidence_limit": "OCR 仅作检索与交叉核对，不能代替逐字影像复核"
+    },
+    {
+      "source_id": "NLC-CHUNZAITANG-VOL97-FACSIMILE-LEAD",
+      "title": "《春在堂全书》三九〇卷第97册影印",
+      "source_type": "institutional_facsimile_lead_not_yet_page_bound",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/NLC892-GBZX0301010898-252714_%E6%98%A5%E5%9C%A8%E5%A0%82%E5%85%A8%E6%9B%B8_%E4%B8%89%E4%B9%9D%E3%80%87%E5%8D%B7_%E7%AC%AC97%E5%86%8A.pdf",
+      "catalog_facts": "国家图书馆数字资源影像文件，文件名标示《春在堂全书》三九〇卷第97册；相关馆藏元数据标示清俞樾撰、光绪九年重刻本、天津图书馆藏",
+      "supports": "为《游艺录》相关 OCR 提供机构馆藏影像线索",
+      "evidence_limit": "尚未固定本条在 PDF 内的影像页码、图像校验值与逐字转录，因此当前不能作为已闭合的主版本证据"
+    },
+    {
+      "source_id": "CINII-YOUYI-LU-CATALOG",
+      "title": "CiNii Books《春在堂全書》书目记录",
+      "source_type": "institutional_union_catalog_record",
+      "url": "https://ci.nii.ac.jp/ncid/BA9046254X",
+      "supports": "目录记录《游藝録》六卷位于第97至98册，用于定位影印册次",
+      "evidence_limit": "书目定位不能替代正文影像复核"
+    }
+  ],
+  "implemented_candidate": {
+    "algorithm_version": "jiuheng.ziwei.received_month_hour_life_body_twelve_palaces.v1",
+    "input": "现代官方农历日期候选的月号/闰月标记，以及北京时间和真太阳时各自的时支候选",
+    "formula": "寅起正月顺数至生月；以该宫为子时，逆数至生时安命，顺数至生时安身；命起逆布十二宫；普通闰月暂按下月处理",
+    "output": "北京时间与真太阳时两套命宫、身宫、月基宫和十二宫地支序列",
+    "permitted_use": "不可变机械排盘审计、开发者显示和重算校验",
+    "forbidden_use": "Rule ID、星曜、五行局、四化、限运、吉凶、应期、中间信号或综合裁决",
+    "interpretation_eligible": false,
+    "selected_hour_convention": null
+  },
+  "verification_anchors": [
+    "二月辰时：命宫亥、身宫未",
+    "正月子时：命身同在寅",
+    "正月丑时：命在丑、身在卯",
+    "正月寅时：命在子、身在辰",
+    "子时和午时命身同宫",
+    "命在子时：兄弟在亥、夫妻（传本标签妻妾）在戌"
+  ],
+  "unresolved_blockers": [
+    "《紫微斗数全书》的题署、成书和版本传承尚未完成版本学复核",
+    "采用的《紫微斗数全书》转录尚未绑定明确版次、卷页与影像校验值",
+    "《游艺录》影像线索尚未固定正文页码、图像校验值和逐字核对记录",
+    "现代出生时刻应取北京时间时支还是真太阳时时支尚无已放行证据，程序始终并列保存两套候选且不选择",
+    "程序使用的现代官方农历日期候选不是历代出生历法的统一反推，边界不安全时禁止驱动候选",
+    "所核文字仅说闰月作下月，未说明闰十二月如何跨年，程序遇该输入失败关闭",
+    "五行局、星曜安置、四化、限运及全部解释规则尚未实现或通过正式证据门禁"
+  ],
+  "evidence_gate_summary": {
+    "decision": "blocked",
+    "runtime_rule_count": 0,
+    "reason": "机械公式具有相互印证的传本文字与独立算例，但主版本影像绑定、时辰口径、历法口径和解释层均未闭合"
+  }
+}

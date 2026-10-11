@@ -1,0 +1,20 @@
+[package]
+name = "jiuheng-desktop"
+description = "Jiuheng offline Windows desktop application"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "jiuheng"
+path = "src/main.rs"
+
+[dependencies]
+chrono.workspace = true
+directories.workspace = true
+divination-core = { path = "../../crates/divination-core" }
+divination-storage = { path = "../../crates/divination-storage" }
+eframe.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+uuid.workspace = true

@@ -1,0 +1,59 @@
+{
+  "research_id": "ZIWEI-FOURTEEN-MAIN-STARS-RESEARCH-2026-09-24",
+  "method": "ziwei_doushu",
+  "scope": "仅在紫微星机械锚点上按传本诀与天府图安十四主星地支，不读取任何星曜性质或断语",
+  "runtime_rule_seed_allowed": false,
+  "formal_rule_count": 0,
+  "candidate": {
+    "algorithm_version": "jiuheng.ziwei.received_north_south_dipper_fourteen_star_placements.v1",
+    "star_count": 14,
+    "ziwei_reverse_offsets": {
+      "紫微": 0,
+      "天机": -1,
+      "太阳": -3,
+      "武曲": -4,
+      "天同": -5,
+      "廉贞": -8
+    },
+    "tianfu_pairing": "紫微地支索引 + 天府地支索引 = 4 (mod 12)，寅申同宫，丑卯成对",
+    "tianfu_forward_offsets": {
+      "天府": 0,
+      "太阴": 1,
+      "贪狼": 2,
+      "巨门": 3,
+      "天相": 4,
+      "天梁": 5,
+      "七杀": 6,
+      "破军": 10
+    },
+    "parallel_conventions": "名义农历年/立春年干 × 北京时间/真太阳时时辰，各自从局数和农历日产生紫微星锚再安十四主星",
+    "selected_year_convention": null,
+    "selected_hour_convention": null,
+    "interpretation_eligible": false,
+    "rule_eligible": false
+  },
+  "primary_text_lead": {
+    "title": "紫微斗數全書卷二·安南北斗诸星诀及安天府图",
+    "type": "public_electronic_transcription_not_page_bound_facsimile",
+    "url": "https://zh.wikisource.org/zh/%E7%B4%AB%E5%BE%AE%E6%96%97%E6%95%B8%E5%85%A8%E6%9B%B8/%E5%8D%B7%E4%BA%8C",
+    "supports": "紫微系逆排、天府系顺排的星名次序与间隔；寅申紫府同宫、丑卯成对的天府定位图",
+    "limit": "电子转录尚未逐字绑定主版本影印图像、页码、文件哈希和异文；不能作正式规则主来源"
+  },
+  "independent_implementation_crosscheck": {
+    "title": "Xieji/divination/ziwei.py",
+    "url": "https://github.com/wangtz19/Xieji/blob/main/divination/ziwei.py",
+    "use": "只交叉检查两组相对位移与天府镜像关系；该仓库的星曜批注、现代命理断语不进入九衡"
+  },
+  "verification_anchors": [
+    "紫微在寅时天府亦在寅；紫微在申时天府亦在申",
+    "紫微在丑时天府在卯；紫微在卯时天府在丑",
+    "紫微在寅时天机在丑、太阳在亥、武曲在戌、天同在酉、廉贞在午",
+    "天府在寅时太阴在卯、贪狼在辰、巨门在巳、天相在午、天梁在未、七杀在申、破军在子"
+  ],
+  "unresolved_blockers": [
+    "主版本影印、定位页、异文和独立逐字复核尚未闭合",
+    "紫微星锚所依赖的五行局、现代农历日期、年界和时辰口径仍存在未决问题",
+    "辅煞、四化、三方四正、大限流年与可测试的古籍断法尚未实现",
+    "不得由十四主星落支生成得分、吉凶、应期、行动建议或正式 Rule ID"
+  ]
+}

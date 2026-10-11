@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "research_id": "jiuheng.research.liuyao.weather.foundation.naj.2026-10-02",
+  "status": "original_base_chapters_located_single_reader_partial_transcription_non_executable",
+  "source": {
+    "title": "增刪卜易",
+    "catalog_edition": "清乾隆學耕堂刊本",
+    "holding_institution": "国立公文書館（日本）",
+    "shelfmark": "子０５９－０００８",
+    "catalog_url": "https://www.digital.archives.go.jp/file/1079274",
+    "volume_1_manifest_url": "https://www.digital.archives.go.jp/api/iiif/4756813/manifest.json",
+    "volume_2_manifest_url": "https://www.digital.archives.go.jp/api/iiif/4756814/manifest.json",
+    "image_representation": "IIIF manifest resource @id 的公開 JPEG，非原始 JP2 位元組。"
+  },
+  "pages": [
+    {"volume": 1, "canvas": 43, "label": "C103347727400", "path": "facsimiles/zengshan-buyi-naj-vol1/canvas-43.jpg", "bytes": 892272, "sha256": "bba100cf519a431aafd0065bf3ebb8f7354d340f940e0360726e37796655d022", "relevant_section": "四時旺相章第十五"},
+    {"volume": 1, "canvas": 48, "label": "C103347727900", "path": "facsimiles/zengshan-buyi-naj-vol1/canvas-48.jpg", "bytes": 907782, "sha256": "9d39ff2d8fd3462ce7b1f84ee67c968689a593ef3e5fa7fada6aff5582d7f932", "relevant_section": "日辰章第十七"},
+    {"volume": 1, "canvas": 49, "label": "C103347728000", "path": "facsimiles/zengshan-buyi-naj-vol1/canvas-49.jpg", "bytes": 900438, "sha256": "28c51635587870b765046973c328585382bddef2f795cfb6d243f18441fa3d15", "relevant_section": "日辰章第十七續頁"},
+    {"volume": 2, "canvas": 14, "label": "C103347729700", "path": "facsimiles/zengshan-buyi-naj-vol2/canvas-14.jpg", "bytes": 892743, "sha256": "4ed3a1e3eb43c60a226bc53c075e2ff0e5348adb1040f684e20824df7973e46a", "relevant_section": "暗動章前文"},
+    {"volume": 2, "canvas": 15, "label": "C103347729800", "path": "facsimiles/zengshan-buyi-naj-vol2/canvas-15.jpg", "bytes": 901928, "sha256": "85c1b4fe199bbf2e1fc785e2256a1deaf178244850c01ba463c5992b08565e5a", "relevant_section": "暗動章第二十二起頁"},
+    {"volume": 2, "canvas": 16, "label": "C103347729900", "path": "facsimiles/zengshan-buyi-naj-vol2/canvas-16.jpg", "bytes": 888373, "sha256": "ffd2e382babb675c7caa1741d9f05c66fc4ff80fe9eb9865854016b7401b6736", "relevant_section": "暗動章末段與動散章"},
+    {"volume": 2, "canvas": 17, "label": "C103347730000", "path": "facsimiles/zengshan-buyi-naj-vol2/canvas-17.jpg", "bytes": 885453, "sha256": "7b4413d0f9253b7eb04a35b47f3c81a4dd083915f37a9370a248cb2f2ef6b003", "relevant_section": "動散章續頁"}
+  ],
+  "single_reader_excerpts": [
+    {"volume": 1, "canvas": 43, "side": "right", "text": "四時旺相章第十五正月寅為月建寅木旺卯木次之二月卯為月建卯木旺寅木次之", "note": "僅抽錄章題和首兩月；其餘十月及相生、生扶口徑未校完。"},
+    {"volume": 1, "canvas": 48, "side": "left", "text": "沖旺相之靜爻即為暗動沖衰弱之靜爻則為日破", "note": "日辰章原頁；標點未錄。"},
+    {"volume": 2, "canvas": 15, "side": "right", "text": "暗動章第二十二靜爻旺相日辰沖之為暗動靜爻休囚日辰沖之為日破", "note": "同幅左頁續有暗動的喜忌說明；標點未錄。"}
+  ],
+  "candidate_impact": "首條降雨候選的父母爻不暗動，不可僅用日辰是否沖該爻判定；需先核旺相與休囚及空破、月建等制約，再判暗動或日破。",
+  "remaining": [
+    "第二讀者獨立核對原頁和摘錄及印刷葉碼",
+    "四時旺相其餘十月及月建、日辰、生扶、空破對旺相的完整生效關係",
+    "與另一可靠影印版本和相關早期材料比對",
+    "暗動與天時章降雨候選的衝突優先序和指定時段適用性",
+    "實作與書目、轉錄、邏輯、實作四類復核及正反邊界測試"
+  ],
+  "formal_rule_ids": [],
+  "may_generate_prediction": false
+}

@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "research_file_id": "jiuheng-yarrow-casting-research-2026-08-30",
+  "method": "yarrow_stalk",
+  "method_name": "蓍草筮占",
+  "scope": "起卦程序考证；不含卦爻辞解释、吉凶断法、应期或综合裁决",
+  "research_status": "tang_procedure_reconstruction_supported_facsimile_and_independent_review_pending",
+  "executable_seed_eligible": false,
+  "runtime_imported": false,
+  "evidence_gate_summary": {
+    "decision": "blocked",
+    "reason": "支持文本的电子定位已经相互印证，但刘禹锡、柳宗元两文尚未绑定到可固化的底本影像；早稻田《周易注疏》候选转录也没有第二位复核者。按项目门禁，不得生成正式 Rule ID。",
+    "runtime_rule_count": 0,
+    "permitted_output": "仅可生成带算法版本和研究重建标签的卦爻结构；不得输出吉凶、应期、中间信号或综合裁决"
+  },
+  "implementation_correction": {
+    "recorded_on": "2026-08-30",
+    "previous_algorithm_version": "jiuheng.yarrow.eighteen_changes.v1",
+    "previous_convention": "每变固定从右堆挂一；现查明与孔颖达《周易正义》‘天于左手’、‘于天数之中，分挂其一’不符",
+    "current_algorithm_version": "jiuheng.yarrow.eighteen_changes.v2",
+    "current_convention_id": "zhouyi_zhengyi.tang.heaven_left.hang_each_change.reconstruction.v1",
+    "current_convention": "每变以左堆为天，从左堆挂一；旧版右堆记录仍按原版本重放，禁止静默改算",
+    "runtime_scope": "研究重建，仅生成可复现卦爻结构，不进入规则命中、断语、应期或融合裁决"
+  },
+  "source_editions": [
+    {
+      "source_id": "WASEDA-RO12-00476-1815",
+      "title": "重栞宋本周易注疏",
+      "responsibility": "阮元审定；卢宣旬校；孔颖达正义；王弼、韩康伯注",
+      "imprint": "江西南昌府学，嘉庆二十年（1815）",
+      "holding_institution": "早稻田大学图书馆",
+      "catalog_call_number": "ロ12 00476 0001",
+      "catalog_url": "https://www.wul.waseda.ac.jp/kotenseki/html/ro12/ro12_00476_0001/index.html",
+      "catalog_note": "馆藏目录记 4 册、26 cm，用文选楼藏本校定；本候选定位于数字影像第 4 册。"
+    }
+  ],
+  "facsimile_evidence": [
+    {
+      "evidence_id": "WASEDA-RO12-00476-0004-P0083",
+      "source_id": "WASEDA-RO12-00476-1815",
+      "locator": "数字影像第4册，第0083号影像；《系辞上传》大衍筮法段",
+      "direct_image_url": "https://archive.wul.waseda.ac.jp/kosho/ro12/ro12_00476/ro12_00476_0004/ro12_00476_0004_p0083.jpg",
+      "downloaded_file_name": "book4-p0083.jpg",
+      "byte_length": 818879,
+      "sha256": "56dc5fcfe021dff054a04af08462573cfe8dd211858277a95280ebbfedb57909",
+      "transcription_status": "candidate_not_independently_collated"
+    },
+    {
+      "evidence_id": "WASEDA-RO12-00476-0004-P0084",
+      "source_id": "WASEDA-RO12-00476-1815",
+      "locator": "数字影像第4册，第0084号影像；右页为《系辞上传》末段，左页起《系辞下传》，用于确认篇章边界",
+      "direct_image_url": "https://archive.wul.waseda.ac.jp/kosho/ro12/ro12_00476/ro12_00476_0004/ro12_00476_0004_p0084.jpg",
+      "downloaded_file_name": "book4-p0084.jpg",
+      "byte_length": 811409,
+      "sha256": "39a74d2db73b63c86d6d625f0d407e540ab47de968b7d2171dc3ed6acc0f464a",
+      "transcription_status": "boundary_confirmation_only"
+    }
+  ],
+  "blocked_source_leads": [
+    {
+      "lead_id": "CTEXT-QDQTW-RES446008-V295-Q607",
+      "title": "《钦定全唐文》卷六百七所收刘禹锡《辩易九六论》",
+      "compiler": "董诰等",
+      "era": "清",
+      "digital_resource_id": "ctext:3321561 / res=446008",
+      "container_locator": "数字分册二百九十五（卷六百六至六百七）；卷六百七",
+      "container_url": "https://ctext.org/wiki.pl?chapter=924556&if=gb&remap=gb",
+      "resource_url": "https://ctext.org/wiki.pl?if=gb&res=446008",
+      "retrieval_status": "linked_ocr_found_facsimile_page_not_localized",
+      "admissible_as_facsimile_evidence": false,
+      "blocking_detail": "中国哲学书电子化计划说明该 OCR 与底本影印相连，但本轮访问影像入口持续超时或返回 403，尚未取得对应页、文件校验值和可复核的版面定位。"
+    },
+    {
+      "lead_id": "QTAW-Q574-LIU-LIU-LETTER",
+      "title": "柳宗元《与刘禹锡论周易九六说书》",
+      "author": "柳宗元",
+      "era": "唐",
+      "received_container": "《全唐文》卷五百七十四",
+      "electronic_text_url": "https://zh.wikisource.org/zh/與劉禹錫論周易九六說書",
+      "retrieval_status": "electronic_text_found_facsimile_not_bound",
+      "admissible_as_facsimile_evidence": false,
+      "blocking_detail": "已定位电子文本与卷次，但尚未取得并固化权威底本影像、页码、校验值和异文记录。"
+    },
+    {
+      "lead_id": "COMMONS-NLC-QDQTW-V154-155-UNVERIFIED",
+      "title": "天津图书馆古籍《钦定全唐文》公开影印分册候选",
+      "received_container": "《钦定全唐文》卷六百七；刘禹锡《辩易九六论》",
+      "catalog_url": "https://commons.wikimedia.org/wiki/Commons:Library_back_up_project/file_list/NLC/%E5%A4%A9%E6%B4%A5%E5%9C%96%E6%9B%B8%E9%A4%A8%E5%8F%A4%E7%B1%8D/03",
+      "candidate_file_ids": [
+        "NLC892-GBZX0301013113-260410 第153册",
+        "NLC892-GBZX0301013113-260464 第154册",
+        "NLC892-GBZX0301013113-260465 第155册"
+      ],
+      "retrieval_status": "file_catalog_found_volume_607_not_verified_inside_any_pdf",
+      "admissible_as_facsimile_evidence": false,
+      "blocking_detail": "公共目录仅确认这些 PDF 文件存在；卷六百七落在哪一册及《辩易九六论》的具体页码仍未逐页确认，也未下载核验文件字节。不得据分册编号推定影印定位。"
+    }
+  ],
+  "controversy_register": [
+    {
+      "controversy_id": "YARROW-LEFT-RIGHT-HANG-001",
+      "claim": "挂一应从哪一堆取策",
+      "tang_evidence": "孔颖达疏称‘天于左手，地于右手’，并称‘于天数之中，分挂其一’，支持把挂一取自左手天策。",
+      "competing_tradition": "宋以后存在从右堆挂一的通行程序；其具体版本谱系尚未完成逐本登记。",
+      "current_treatment": "v2 仅以唐疏为名义的研究重建；v1 只为旧记录兼容。争议登记闭合前不升格为正式规则。"
+    },
+    {
+      "controversy_id": "YARROW-HANG-EACH-CHANGE-001",
+      "claim": "第二、第三变是否仍各挂一",
+      "tang_evidence": "刘禹锡《辩易九六论》附法的第一、第二、第三指均列挂一，并据此得到首变五或九、后两变四或八。",
+      "competing_tradition": "后世存在只在首变挂一等不同程序；尚未完成版本、年代和传播关系登记。",
+      "current_treatment": "代码保留三变皆挂的研究重建，但不据此产生任何断语；等待权威影印和逻辑复核。"
+    },
+    {
+      "controversy_id": "YARROW-NINE-SIX-ATTRIBUTION-001",
+      "claim": "以过揲余策说明老阳九、老阴六是否为一行以来的新说",
+      "tang_evidence": "刘禹锡记录毕中和、一行的传承说；柳宗元回书认为该说本于韩、孔，并非异于孔颖达的新说。",
+      "classification": "唐代归属争论的见证，不是柳宗元反对九、六换算本身的证据。",
+      "current_treatment": "用于登记学说归属与异说背景，不替代起法影印证据，也不单独提高规则等级。"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "YARROW-XICI-SHANG-DAYAN-001",
+      "evidence_ids": [
+        "WASEDA-RO12-00476-0004-P0083"
+      ],
+      "transcription_candidate": "大衍之數五十，其用四十有九。分而為二以象兩，掛一以象三，揲之以四以象四時，歸奇於扐以象閏。五歲再閏，故再扐而後掛。是故四營而成易，十有八變而成卦，八卦而小成。",
+      "normalization_note": "标点为项目整理者暂加；异体、夹注边界和‘扐’字形仍须第二位复核者逐栏校对。",
+      "implementation_mapping": [
+        {
+          "text_element": "大衍之数五十，其用四十有九",
+          "code_element": "YARROW_TOTAL_STALKS = 50；YARROW_ACTIVE_STALKS = 49"
+        },
+        {
+          "text_element": "分而为二",
+          "code_element": "YarrowSession::apply_split(left_pile) 将当前蓍数分为左右两堆"
+        },
+        {
+          "text_element": "挂一",
+          "code_element": "YARROW_HANGING_STALKS = 1；v2 依孔颖达疏‘天于左手’、‘于天数之中，分挂其一’固定从左堆取一；v1 旧记录保留右堆重放"
+        },
+        {
+          "text_element": "揲之以四、归奇于扐",
+          "code_element": "remainder_by_four；余数为零时按四计"
+        },
+        {
+          "text_element": "四营而成易、十有八变而成卦",
+          "code_element": "每爻三变、六爻共十八变；转录保存十八次用户分堆数"
+        }
+      ],
+      "unresolved_questions": [
+        "孔颖达疏支持左堆挂一，但经文本身未指定左右；该程序解释仍须第二位复核者在影印本上逐栏核对，并记录与宋以后右堆挂一说的异文/异说边界。",
+        "‘四营’是否意味着三变均重复挂一，唐代刘禹锡《辩易九六论》的第一、第二、第三指均见‘并挂一’可作支持，但尚未取得并校对可固化的权威影印页。",
+        "刘禹锡《辩易九六论》明确列出三变所得与六、七、八、九的换算；仍需完成版本书目、影印定位、异文和独立转录，方可形成正式证据链。",
+        "柳宗元回书证明唐代已有人把这一说明误认作异于孔疏的新说；柳氏本人是在反驳该归属，不应误记为反对九六换算。该争论仍须绑定底本后登记。",
+        "本次只有一人完成影像定位和候选转录，不满足独立复核要求。"
+      ],
+      "required_reviews": [
+        "bibliography",
+        "transcription",
+        "logic",
+        "implementation"
+      ],
+      "formal_rule_ids": [],
+      "may_execute": false
+    }
+  ],
+  "comparison_aids": [
+    {
+      "name": "中国哲学书电子化计划《周易·系辞上传》",
+      "url": "https://ctext.org/book-of-changes/xi-ci-shang/zh",
+      "use": "仅作检索与候选转录比对，不替代馆藏影像，不作为独立复核者。"
+    },
+    {
+      "name": "维基文库《周易正义·系辞上传卷七之八》",
+      "url": "https://zh.wikisource.org/wiki/周易正義/07.08",
+      "use": "用于定位孔颖达疏‘天于左手，地于右手’及‘于天数之中，分挂其一’；仅作检索比对，不替代早稻田影印本。"
+    },
+    {
+      "name": "维基文库刘禹锡《辩易九六论》",
+      "url": "https://zh.wikisource.org/zh-hant/辯易九六論",
+      "use": "用于定位唐代三变五/九、四/八与六七八九换算，以及第二、第三变‘并挂一’文本；正式采用前仍须绑定权威底本影印与独立校勘。"
+    },
+    {
+      "name": "维基文库柳宗元《与刘禹锡论周易九六说书》",
+      "url": "https://zh.wikisource.org/zh/與劉禹錫論周易九六說書",
+      "use": "用于识别唐代关于九六说来源的争论：柳宗元认为该说本于韩、孔，不是反对九六换算。仅作检索辅助，正式登记仍须底本影印。"
+    },
+    {
+      "name": "中国哲学书电子化计划《钦定全唐文》资源 446008",
+      "url": "https://ctext.org/wiki.pl?if=gb&res=446008",
+      "use": "已确认是与影印相连的 OCR 资源，并定位卷六百七容器；影像页尚未成功取得，因此只列为受阻线索，不列入影印证据。"
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "research_id": "CHINESE-ASTROLOGY-TWENTY-EIGHT-MANSIONS-2026-09-01",
+  "method": "chinese_astrology",
+  "researched_on": "2026-09-01",
+  "scope": "仅固化二十八宿的宿名、通行短名、东/北/西/南四方次序及苍龙/玄武/白虎/朱鸟四象身份；不定义宿度边界，不计算日月五星、客星或彗孛位置，不采用西方黄道十二宫，不录入占辞",
+  "status": "mechanical_received_mansion_identity_catalog_blocked_from_runtime_rules",
+  "runtime_rule_seed_allowed": false,
+  "sources": [
+    {
+      "source_id": "JINSHU-WIKISOURCE-VOL11-TWENTY-EIGHT-MANSIONS-2026-09-01",
+      "title": "《晋书》卷十一·天文志上·二十八舍（维基文库转录页）",
+      "source_type": "electronic_transcription_not_facsimile",
+      "url": "https://zh.wikisource.org/zh-hant/%E6%99%89%E6%9B%B8/%E5%8D%B7011",
+      "supports": [
+        "以东方、北方、西方、南方为标题逐宿连续列出二十八舍",
+        "东方角亢氐房心尾箕",
+        "北方南斗牵牛须女虚危营室东壁",
+        "西方奎娄胃昴毕觜觿参",
+        "南方东井舆鬼柳七星张翼轸"
+      ],
+      "evidence_limit": "当前是公共电子转录，不是本项目已校验哈希的权威影印页；正文同时含大量占辞，但本轮没有把任何占辞录入规则库"
+    },
+    {
+      "source_id": "SHIJI-CTEXT-TIANGUAN-FOUR-PALACES-2026-09-01",
+      "title": "《史记》卷二十七·天官书（中国哲学书电子化计划转录与平行段落页）",
+      "source_type": "electronic_transcription_with_parallel_passages_not_facsimile",
+      "url": "https://ctext.org/text.pl?if=zh&node=5655&remap=gb&show=parallel",
+      "supports": [
+        "东方角亢氐房心尾箕与北方斗牛须女虚危营室东壁的早期次序交叉线索",
+        "东宫苍龙传统的早期交叉线索"
+      ],
+      "evidence_limit": "检索段落不能单独闭合全部四方宿序，也不能替代影印本逐字校勘"
+    },
+    {
+      "source_id": "SHANGSHU-YAODIAN-WIKISOURCE-MIDDLE-STARS-2026-09-01",
+      "title": "《尚书·尧典》（维基文库转录页）",
+      "source_type": "early_core_text_electronic_transcription_not_facsimile",
+      "url": "https://zh.wikisource.org/zh-hans/%E5%A0%AF%E5%85%B8",
+      "supports": "星鸟、星火、星虚、星昴作为四时中星的早期经典背景",
+      "evidence_limit": "该篇不提供二十八宿完整名单、四方各七宿表或可直接程序化的宿度边界"
+    },
+    {
+      "source_id": "HANSHU-CTEXT-TIANWENZHI-SCOPE-2026-09-01",
+      "title": "《汉书·天文志》（中国哲学书电子化计划转录页）",
+      "source_type": "early_history_electronic_transcription_not_facsimile",
+      "url": "https://ctext.org/han-shu/tian-wen-zhi/zh",
+      "supports": "经星常宿、五星合散犯守、彗孛飞流、日月食等中国古代天文占候对象的范围背景",
+      "evidence_limit": "范围性文字不等于二十八宿身份表，更不能据此直接生成事件吉凶规则"
+    }
+  ],
+  "implemented_catalog": {
+    "algorithm_version": "jiuheng.chinese_astrology.received_twenty_eight_mansion_identity.v1",
+    "output_order": [
+      "角", "亢", "氐", "房", "心", "尾", "箕",
+      "斗", "牛", "女", "虚", "危", "室", "壁",
+      "奎", "娄", "胃", "昴", "毕", "觜", "参",
+      "井", "鬼", "柳", "星", "张", "翼", "轸"
+    ],
+    "quadrants": [
+      {"direction": "east", "emblem": "azure_dragon", "short_names": "角亢氐房心尾箕"},
+      {"direction": "north", "emblem": "black_tortoise", "short_names": "斗牛女虚危室壁"},
+      {"direction": "west", "emblem": "white_tiger", "short_names": "奎娄胃昴毕觜参"},
+      {"direction": "south", "emblem": "vermilion_bird", "short_names": "井鬼柳星张翼轸"}
+    ],
+    "received_long_names": {
+      "斗": "南斗",
+      "牛": "牵牛",
+      "女": "须女",
+      "室": "营室",
+      "壁": "东壁",
+      "觜": "觜觿",
+      "井": "东井",
+      "鬼": "舆鬼",
+      "星": "七星"
+    },
+    "permitted_use": "不可变结构审计、九术插件状态、历史快照、开发者显示和重算校验",
+    "forbidden_use": "Rule ID、现代等分黄道宿界、西方黄道十二宫映射、日月五星或客星定位、分野、吉凶、应期、中间信号或综合裁决",
+    "angular_boundary_model_selected": false,
+    "celestial_positions_calculated": false,
+    "interpretation_eligible": false,
+    "rule_eligible": false
+  },
+  "verification_anchors": [
+    "总数必须恰为二十八且身份唯一",
+    "东、北、西、南各恰为七宿",
+    "全局次序从角开始，经斗、奎、井，至轸结束",
+    "每宿的四象必须由所属四方唯一派生",
+    "通行短名与传本长名分字段保存，不以现代短名覆盖异名来源",
+    "任何运行时规则、天体位置与宿度边界标志都必须保持关闭"
+  ],
+  "unresolved_blockers": [
+    "尚未把《史记》《汉书》《晋书》逐段绑定到经独立校验的具体影印版本、册页和文件哈希",
+    "历代距星、宿度与坐标体系存在沿革，本版没有选择一个现代化角边界模型冒充古法统一结论",
+    "尚未实现月球与五星高精度位置、日月食、客星、彗孛等动态天象数据层",
+    "古籍占辞尚未完成版本异文、适用条件、反例、独立复核和程序测试，因此全部禁止进入规则种子",
+    "分野体系、三垣垣墙/成员星官与其他宿外星官尚未完成稳定结构目录",
+    "本目录不得与西方占星黄道十二宫混合或互相替代"
+  ],
+  "evidence_gate_summary": {
+    "decision": "blocked",
+    "runtime_rule_count": 0,
+    "reason": "二十八宿身份和四方次序足以形成无解释结构目录，但影印版绑定、历史宿界、动态天象与逐条占辞门禁均未闭合"
+  }
+}

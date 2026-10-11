@@ -1,0 +1,159 @@
+{
+  "archive_id": "TAIYI-SEVENTY-TWO-BOARD-CANDIDATE-2026-09-09-v1",
+  "schema_version": 1,
+  "recorded_on": "2026-09-09",
+  "method": "taiyi",
+  "status": "explicit_yang_or_yin_dun_seventy_two_board_mechanics_only",
+  "purpose": "由调用方明确给出的正整数局序和阴阳遁，计算七十二局中的太乙、天目、计神、始击、主客算、主客大小将及既有位置标签；不从现代日期选遁或求局，不采用胜败断语",
+  "runtime_ingestion_allowed": false,
+  "civil_time_input_allowed": false,
+  "automatic_dun_selection_allowed": false,
+  "automatic_board_count_derivation_allowed": false,
+  "explicit_dun_input_allowed": true,
+  "positive_board_count_input_allowed": true,
+  "mechanical_board_generation_allowed": true,
+  "complete_board_generation_allowed": false,
+  "interpretation_allowed": false,
+  "signal_generation_allowed": false,
+  "timing_generation_allowed": false,
+  "advice_generation_allowed": false,
+  "rule_id_generation_allowed": false,
+  "source_identity": {
+    "parent_archive": "TAIYI-MECHANICAL-RELATIONS-CANDIDATE-2026-09-08-v1",
+    "title": "太乙金镜式经",
+    "attributed_author": "唐·王希明",
+    "received_edition": "钦定四库全书本",
+    "kanripo_id": "KR3g0047",
+    "kanripo_repository": "kanripo/KR3g0047",
+    "kanripo_commit": "e3264da2c9f556225e056abe7eade01903b4543e",
+    "raw_file_hashes": {
+      "KR3g0047_001.txt": "6b13ff06e980439d7a3611f1f10c9efb318513e23f7a9e4c16ed4e8896f162d4",
+      "KR3g0047_002.txt": "44949571367607d1719aa51b5ce174d73078d0c84fe0a81e23b192449c8f5cfd",
+      "KR3g0047_003.txt": "fab52159527f90bf0c74af5f655ae3215e0e7d2efb6a5be5506f12c1671b8257"
+    },
+    "raw_hashes_rechecked_on": "2026-09-09",
+    "facsimile_verified": false,
+    "transcription_verified_against_facsimile": false,
+    "independent_transcription_urls": [
+      "https://ctext.org/wiki.pl?chapter=456008&if=gb",
+      "https://zh.wikisource.org/zh-hant/太乙金鏡式經_(四庫全書本)/卷03"
+    ]
+  },
+  "received_fragments": [
+    {
+      "fragment_id": "TY-JJSJ-WYG-J1-YIN-TAIYI-MOVEMENT-CANDIDATE",
+      "volume": "卷一",
+      "page_markers": ["KR3g0047_WYG_001-11b", "KR3g0047_WYG_001-12a"],
+      "heading": "推冬夏二至以后太乙所在法",
+      "transcription": "阳遁命起一宫顺八宫，不游中五，算外即太乙所在宫；阴遁命起九宫逆行八宫，三时一移，不游中五，算外即阴遁太乙所在宫也。",
+      "implemented_fields": ["dun", "position_in_24", "taiyi_palace_step", "taiyi_palace", "position_within_taiyi_palace"]
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J1-YIN-JISHEN-MOVEMENT-CANDIDATE",
+      "volume": "卷一",
+      "page_markers": ["KR3g0047_WYG_001-12a"],
+      "heading": "推阴阳二遁时计算神法",
+      "transcription": "置时实各以十二去之，余者阳遁命起寅逆行十二辰，阴遁命起申，十二辰各一时一移，算外即阴阳二遁计神所在也。",
+      "implemented_fields": ["jishen_position_in_12", "jishen_branch"]
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J2-EYES-COUNTS-GENERALS-CANDIDATE",
+      "volume": "卷二",
+      "page_markers": ["KR3g0047_WYG_002-7b", "KR3g0047_WYG_002-8a"],
+      "heading": "推太乙运式法",
+      "transcription": "以计神加和德宫求始击；视天地二目各在何所求主客之算；置算定主客大将之宫。天目在正宫按本数，间神加一数而行算，至太乙宫止。",
+      "implemented_fields": ["shiji", "main_count", "guest_count", "main_great_general_palace", "main_assistant_general_palace", "guest_great_general_palace", "guest_assistant_general_palace"]
+    },
+    {
+      "fragment_id": "TY-JJSJ-WYG-J3-YIN-SEVENTY-TWO-TABLE-CANDIDATE",
+      "volume": "卷三",
+      "page_markers": ["KR3g0047_WYG_003-14a", "KR3g0047_WYG_003-14b", "KR3g0047_WYG_003-15a", "KR3g0047_WYG_003-15b", "KR3g0047_WYG_003-16a", "KR3g0047_WYG_003-16b", "KR3g0047_WYG_003-17a", "KR3g0047_WYG_003-17b", "KR3g0047_WYG_003-18a", "KR3g0047_WYG_003-18b"],
+      "heading": "阴局天目地目计神主客大小将立成",
+      "transcription_scope": "七十二行太乙、天目、主算、客目、客算与计神；大小将由算数机械约减并以首行核验",
+      "implemented_fields": ["taiyi_palace", "tianmu", "jishen_branch", "shiji", "main_count", "guest_count", "main_and_guest_generals"],
+      "outcome_annotations_implemented": false
+    }
+  ],
+  "candidate": {
+    "algorithm_version": "jiuheng.taiyi.tang_explicit_dun_seventy_two_board_candidate.v1",
+    "input_contract": "caller_supplied_positive_one_based_board_count_and_explicit_yang_or_yin_dun",
+    "cycle_reduction": "position_in_72=(count-1)%72+1; exact multiples remain 72",
+    "yang_taiyi_palace_order": [1, 2, 3, 4, 6, 7, 8, 9],
+    "yin_taiyi_palace_order": [9, 8, 7, 6, 4, 3, 2, 1],
+    "years_or_hours_per_palace": 3,
+    "outputs": ["position_in_72", "dun", "taiyi_palace", "tianmu", "jishen_branch", "shiji", "main_count", "guest_count", "main_and_guest_generals", "mechanical_relations"],
+    "dun_derived_from_civil_time": false,
+    "board_count_derived_from_civil_time": false,
+    "complete_board_generated": false,
+    "interpretation_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false,
+    "forbidden_outputs": ["civil_time_to_dun", "civil_time_to_board_count", "solstice_epoch_selection", "rotated_gate_boards", "strike_pressure_barrier_opposition", "compound_patterns", "judgment", "timing", "advice", "formal_rule_id"]
+  },
+  "received_yin_table": {
+    "taiyi_palace_order": [9, 8, 7, 6, 4, 3, 2, 1],
+    "tianmu_cycle_with_stops": ["吕申", "高丛", "太阳", "太炅", "太炅", "太神", "大威", "天道", "大武", "武德", "太蔟", "阴主", "阴德", "大义", "地主", "阳德", "和德", "和德"],
+    "jishen_cycle": ["申", "未", "午", "巳", "辰", "卯", "寅", "丑", "子", "亥", "戌", "酉"],
+    "shiji_by_row": [
+      "大武", "阴主", "大义", "阳德", "吕申", "太阳", "太神", "大武", "太蔟", "阴德", "阳德", "吕申",
+      "太阳", "大威", "大武", "太蔟", "大义", "地主", "和德", "太阳", "太神", "天道", "武德", "阴主",
+      "大义", "和德", "高丛", "太炅", "天道", "武德", "阴主", "地主", "和德", "高丛", "太神", "大威",
+      "大威", "阴主", "大义", "阳德", "吕申", "太阳", "大武", "太蔟", "太蔟", "阴德", "阳德", "吕申",
+      "太阳", "大威", "大武", "太蔟", "大义", "地主", "和德", "太阳", "太神", "天道", "武德", "阴主",
+      "大义", "和德", "高丛", "太炅", "天道", "武德", "阴主", "地主", "和德", "高丛", "太神", "大威"
+    ],
+    "main_counts_by_row": [
+      5, 4, 1, 25, 25, 17, 2, 1, 7, 1, 6, 35, 12, 12, 11, 1, 3, 3, 14, 13, 10, 24, 24, 16,
+      21, 31, 39, 8, 7, 2, 27, 27, 26, 26, 25, 25, 1, 4, 37, 33, 33, 25, 2, 39, 38, 7, 6, 1,
+      16, 16, 15, 33, 32, 32, 16, 15, 12, 18, 18, 10, 27, 26, 25, 16, 15, 10, 25, 25, 24, 22, 31, 31
+    ],
+    "guest_counts_by_row": [
+      29, 17, 16, 33, 30, 26, 3, 7, 33, 34, 36, 23, 37, 27, 29, 15, 9, 8, 16, 10, 1, 14, 7, 1,
+      16, 7, 4, 25, 15, 8, 28, 26, 18, 22, 10, 9, 25, 13, 12, 1, 38, 34, 38, 31, 31, 2, 32, 29,
+      1, 31, 29, 7, 1, 8, 18, 12, 3, 8, 1, 35, 12, 3, 4, 33, 23, 16, 26, 24, 16, 28, 16, 15
+    ]
+  },
+  "documented_formula_variants": {
+    "shiji": [
+      {"row": 37, "calculated": "大武", "received_table": "大威", "note": "同列客算二十五与大武到太乙四宫的通用计数闭合，不与大威闭合"},
+      {"row": 43, "calculated": "太神", "received_table": "大武", "note": "计神加和德通式得太神；表值与下一行形成疑似错位"},
+      {"row": 44, "calculated": "大武", "received_table": "太蔟", "note": "计神加和德通式得大武；表值与客算三十一成套偏移"}
+    ],
+    "counts": [
+      {"row": 11, "calculated_main": 6, "received_main": 6, "calculated_guest": 26, "received_guest": 36},
+      {"row": 15, "calculated_main": 11, "received_main": 11, "calculated_guest": 25, "received_guest": 29},
+      {"row": 25, "calculated_main": 31, "received_main": 21, "calculated_guest": 16, "received_guest": 16},
+      {"row": 26, "calculated_main": 30, "received_main": 31, "calculated_guest": 7, "received_guest": 7},
+      {"row": 27, "calculated_main": 29, "received_main": 39, "calculated_guest": 4, "received_guest": 4},
+      {"row": 43, "calculated_main": 2, "received_main": 2, "calculated_guest": 1, "received_guest": 38},
+      {"row": 44, "calculated_main": 39, "received_main": 39, "calculated_guest": 38, "received_guest": 31},
+      {"row": 46, "calculated_main": 7, "received_main": 7, "calculated_guest": 1, "received_guest": 2},
+      {"row": 70, "calculated_main": 32, "received_main": 22, "calculated_guest": 28, "received_guest": 28}
+    ],
+    "policy": "程序保留卷二通用旋转与计数公式；卷三冲突单元逐项登记，不以表中孤立值覆盖公式，也不宣称完成影印定字。"
+  },
+  "machine_test_anchors": {
+    "cycle_boundaries": [
+      {"count": 1, "position_in_72": 1},
+      {"count": 72, "position_in_72": 72},
+      {"count": 73, "position_in_72": 1}
+    ],
+    "yin_first_row": {"count": 1, "taiyi_palace": 9, "tianmu": "吕申", "jishen": "申", "shiji": "大武", "main_count": 5, "guest_count": 29, "main_great_general": 5, "main_assistant_general": 5, "guest_great_general": 9, "guest_assistant_general": 7},
+    "formula_variant_rows": [11, 15, 25, 26, 27, 37, 43, 44, 46, 70]
+  },
+  "variants_and_blockers": [
+    "阴局表第37、43、44行客目与卷二‘计神加和德’通式或相邻行不闭合，程序保存原表与计算值两列。",
+    "阴局表有九行主算或客算与卷二通用顺数至太乙公式冲突，差异集中表现为十位讹写、孤立数值或与客目一起错位；未取得影印逐字核验前不改原表。",
+    "卷一夏至加时段先记一宫顺行，随后冬夏至以后通法明确阴遁九宫逆行；本候选采用后者并由卷三阴局九、八、七、六、四、三、二、一完整宫序闭合。",
+    "函数要求调用方显式传入阴或阳；冬夏至界、积时、历元和现代日期到局序均未实现，因此软件不能自动选择阴阳遁。",
+    "七十二局表旁的和不和、囚、格、击及胜败注不作为断法导入；既有掩囚格只按独立位置算法重算。"
+  ],
+  "review_state": {
+    "bibliographic_review": "candidate_only",
+    "transcription_review": "blocked_without_facsimile_bytes_and_with_documented_table_variants",
+    "logic_review": "generic_formula_matches_table_except_explicitly_listed_variant_cells",
+    "implementation_review": "automated_tests_required",
+    "runtime_release": "blocked",
+    "decision": "chart_only_explicit_dun_and_count_no_civil_time_selection_no_interpretation_no_rules"
+  }
+}

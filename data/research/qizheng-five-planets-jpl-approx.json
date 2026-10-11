@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "research_id": "jiuheng.research.qizheng_siyu.five_visible_planets_jpl_long_range.2026-09-17",
+  "method": "qizheng_siyu",
+  "status": "modern_astronomy_geometric_research_only_not_received_divination_rule",
+  "source": {
+    "publisher": "NASA Jet Propulsion Laboratory Solar System Dynamics",
+    "title": "Approximate Positions of the Planets",
+    "url": "https://ssd.jpl.nasa.gov/planets/approx_pos.html",
+    "table": "Table 2a and 2b; approximately 3000 BC to 3000 AD",
+    "access_date": "2026-09-17",
+    "scope": "Modern astronomical algorithm and numerical coefficients only; not a Chinese classical interpretation source"
+  },
+  "candidate": {
+    "algorithm_version": "jiuheng.astronomy.jpl_approximate_planets_table_2_geometric_emb_j2000.v1",
+    "bodies": ["辰星", "太白", "荧惑", "岁星", "填星"],
+    "coordinates": "J2000 mean ecliptic/equinox, geometric planet minus Earth-Moon barycenter",
+    "time_scale": "Stored JD(TT) used as an approximation to JPL JDTDB",
+    "corrections_not_applied": [
+      "Earth-Moon barycenter to Earth geocenter",
+      "light time",
+      "aberration",
+      "precession and nutation to date",
+      "topocentric parallax"
+    ],
+    "apparent_geocentric_position": false,
+    "historical_mansion_eligible": false,
+    "natal_chart_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false
+  },
+  "accuracy_limit": "JPL's published nominal errors are heliocentric and cannot be copied as a guaranteed error bound for these EMB-relative longitudes, especially near conjunctions; Table 1/2 same-source fit overlap is recorded separately and independent reference-vector comparison remains open.",
+  "unresolved": [
+    "Independent spot checks against a high-precision ephemeris, including ancient epochs",
+    "Geocentric apparent coordinates with validated time/frame transforms",
+    "Sun and Moon positions, and historically defensible definitions of four residual bodies",
+    "Historically versioned mansion boundaries and zodiacal houses",
+    "Any facsimile-backed Chinese divination rule and its four reviews"
+  ],
+  "runtime_rule_seed_allowed": false,
+  "formal_rule_count": 0
+}

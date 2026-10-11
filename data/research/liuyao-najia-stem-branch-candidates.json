@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "research_id": "jiuheng.research.liuyao.received_najia_stem_branch.2026-09-15",
+  "method": "liuyao",
+  "review_date": "2026-09-15",
+  "status": "mechanical_received_najia_stem_branch_blocked_from_runtime_rules",
+  "purpose": "按本卦上下三画卦，为六爻自初至上装入传世纳甲天干、地支与支五行；不定六亲、六神、伏神或占断。",
+  "evidence_scope": {
+    "sources": [
+      {
+        "source_id": "jingshi_yizhuan_wikisource_received_text",
+        "title": "《京氏易传》",
+        "attribution": "题汉京房，传本含陆绩注等层次",
+        "public_url": "https://zh.wikisource.org/zh-hans/%E4%BA%AC%E6%B0%8F%E6%98%93%E5%82%B3",
+        "supports": ["乾卦甲壬内外与甲子、甲寅、甲辰、壬午、壬申、壬戌线索", "八宫各卦逐条所见干支交叉锚点"],
+        "electronic_transcription_only": true,
+        "facsimile_pages_available_but_not_locally_hashed": true,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "zengshan_buyi_ctext_received_table",
+        "title": "《增删卜易》八纯卦纳甲图电子表",
+        "historical_period": "清代传本",
+        "public_url": "https://ctext.org/wiki.pl?chapter=305341&if=gb&remap=gb",
+        "supports": ["八纯卦从上爻到初爻的完整干支五行表", "与九衡自初至上存储方向相反，已显式逆序"],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      },
+      {
+        "source_id": "yihanxue_volume_four_ctext",
+        "title": "惠栋《易汉学》卷四所录八卦六位图",
+        "historical_period": "清",
+        "public_url": "https://ctext.org/wiki.pl?chapter=793480&if=en&remap=gb",
+        "supports": ["乾坤震巽坎离艮兑六位干支全表", "原页标题把图表层次标为出《火珠林》并保留李淳风说明"],
+        "electronic_transcription_only": true,
+        "facsimile_verified": false,
+        "formal_rule_evidence_eligible": false
+      }
+    ],
+    "source_limitations": [
+      "尚未把三种传本对应影印页下载到本地并固定 SHA-256",
+      "《京氏易传》正文、陆绩注、后世注语和《火珠林》六位图之间的版本层次尚未逐条拆分",
+      "本轮只固定传世装卦机械表，不把表中六亲或吉凶内容一并采用"
+    ]
+  },
+  "candidate": {
+    "algorithm_version": "jiuheng.liuyao.received_najia_stem_branch.v1",
+    "storage_order": "first_line_to_sixth_line",
+    "pure_hexagram_lines_bottom_up": {
+      "乾": ["甲子水", "甲寅木", "甲辰土", "壬午火", "壬申金", "壬戌土"],
+      "兑": ["丁巳火", "丁卯木", "丁丑土", "丁亥水", "丁酉金", "丁未土"],
+      "离": ["己卯木", "己丑土", "己亥水", "己酉金", "己未土", "己巳火"],
+      "震": ["庚子水", "庚寅木", "庚辰土", "庚午火", "庚申金", "庚戌土"],
+      "巽": ["辛丑土", "辛亥水", "辛酉金", "辛未土", "辛巳火", "辛卯木"],
+      "坎": ["戊寅木", "戊辰土", "戊午火", "戊申金", "戊戌土", "戊子水"],
+      "艮": ["丙辰土", "丙午火", "丙申金", "丙戌土", "丙子水", "丙寅木"],
+      "坤": ["乙未土", "乙巳火", "乙卯木", "癸丑土", "癸亥水", "癸酉金"]
+    },
+    "lower_trigram_uses_inner_table": true,
+    "upper_trigram_uses_outer_table": true,
+    "all_sixty_four_hexagrams_covered": true,
+    "all_three_hundred_eighty_four_lines_covered": true,
+    "na_jia_stems_assigned": true,
+    "na_jia_branches_assigned": true,
+    "line_five_elements_assigned": true,
+    "host_response_bound": true,
+    "six_relatives_assigned": false,
+    "six_spirits_assigned": false,
+    "hidden_spirits_assigned": false,
+    "interpretation_eligible": false,
+    "signal_eligible": false,
+    "rule_eligible": false
+  },
+  "forbidden_uses": [
+    "不得从纳甲干支、五行或世应位置直接生成吉凶",
+    "不得把后世完整六位表无条件署为未经争议的汉京房原表",
+    "不得自动补造六亲、六神、伏神、用神、旺衰、月建日辰、动变或应期",
+    "不得用电子转录或开源实现输出替代影印底本与异文复核",
+    "不得生成中间信号、结论、应期、行动建议或正式 Rule ID"
+  ],
+  "unresolved": [
+    "三种底本影印页逐表定位、字节哈希与异文校勘",
+    "京氏正文、陆绩注、李淳风说和火珠林图表的版本谱系",
+    "六亲以宫五行为基准的完整表与证据门禁",
+    "六神、伏神、用神、月建日辰、旺衰、动变和应期规则"
+  ],
+  "review_state": {
+    "decision": "chart_only_received_najia_stem_branch_and_line_five_element_no_relatives_spirits_interpretation_signals_or_rules",
+    "runtime_release": "blocked",
+    "formal_rule_count": 0
+  }
+}
