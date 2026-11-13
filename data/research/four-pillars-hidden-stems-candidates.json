@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "research_id": "jiuheng.research.four_pillars.hidden_stems.2026-11-12",
+  "review_date": "2026-11-12",
+  "method": "four_pillars",
+  "algorithm_version": "jiuheng.four_pillars.hidden_stems.song_order_day_master_relation.v1",
+  "table_convention": "mingli_tanyuan_zhicang_renyuan_song_enumeration_no_weights.v1",
+  "sources": [
+    {
+      "title": "国家图书馆《命理探源》扫描件的检索文字，卷上起例、支藏人元五行，原书页码三三",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/NLC416-07jh011647-5318_%E5%91%BD%E7%90%86%E6%8E%A2%E6%BA%90.pdf",
+      "access": "search_index_text; web PDF fetch exceeded size limit",
+      "facsimile_page_visually_verified": false,
+      "supports": "藏干歌所列十二支与干的成员对应"
+    },
+    {
+      "title": "台湾图书馆《渊海子平子平真诠》第一册扫描件的检索文字，又地支藏遁歌，原书页码三六",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/NTL-9900014379_%E6%B7%B5%E6%B5%B7%E5%AD%90%E5%B9%B3%E5%AD%90%E5%B9%B3%E7%9C%9F%E8%A9%AE_v.1.pdf",
+      "access": "search_index_text",
+      "facsimile_page_visually_verified": false,
+      "supports": "十二支藏干成员及歌诀列举次序的交叉核对"
+    }
+  ],
+  "members_in_song_order": {
+    "子": "癸",
+    "丑": "癸辛己",
+    "寅": "甲丙戊",
+    "卯": "乙",
+    "辰": "乙戊癸",
+    "巳": "庚丙戊",
+    "午": "丁己",
+    "未": "乙己丁",
+    "申": "庚壬戊",
+    "酉": "辛",
+    "戌": "辛丁戊",
+    "亥": "壬甲"
+  },
+  "ordering_meaning": "歌诀列举顺序，不是本气/中气/余气强弱排序；不给权重",
+  "ten_god_basis": "复用已经版本化的日干与其他天干的五行方向及阴阳同异机械身份，不改变明干审计",
+  "late_zi_policy": "零点日界与子初日界分别计算日主、日支、时支及藏干十神；不自动选择口径",
+  "birth_audit_version": 14,
+  "astronomy_snapshot_version": 30,
+  "formal_rule_evidence_eligible": false,
+  "interpretation_eligible": false,
+  "rule_eligible": false,
+  "runtime_rule_seed_allowed": false,
+  "limitations": [
+    "索引OCR有错字，未把整页OCR当作逐字定本",
+    "未取得逐页核图、原文件哈希、版本谱系或独立复核，不视为正式规则",
+    "不处理月内分日司令、本气中气余气权重、透干通根、强弱格局、用神大运和吉凶应期"
+  ]
+}

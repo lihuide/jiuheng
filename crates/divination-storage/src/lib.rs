@@ -1,6 +1,11 @@
 #![forbid(unsafe_code)]
 
+#[cfg(test)]
+mod birth_hidden_tests;
+mod liuyao_progress;
 mod sha256;
+mod taiyi_records;
+pub use taiyi_records::{TaiyiCalculation, TaiyiRecord, TaiyiRequest};
 
 use chrono::{Datelike, Timelike, Utc};
 use divination_core::{
@@ -62,6 +67,8 @@ const MIGRATION_0009: &str = include_str!("../migrations/0009_rule_program_v1.sq
 const MIGRATION_0010: &str = include_str!("../migrations/0010_rule_runtime_integrity.sql");
 const MIGRATION_0011: &str = include_str!("../migrations/0011_source_checksum_gate.sql");
 const MIGRATION_0012: &str = include_str!("../migrations/0012_facsimile_byte_verification.sql");
+const MIGRATION_0013: &str = include_str!("../migrations/0013_liuyao_checkpoints.sql");
+const MIGRATION_0014: &str = include_str!("../migrations/0014_taiyi_candidates.sql");
 const LOCATION_SEED: &str = include_str!("../../../data/locations.seed.json");
 const STREET_SEED: &str = include_str!("../../../data/streets.seed.json");
 const STREET_DATASET_VERSION: &str = "mca-regions-2025-12-31-slightlee-018603e0";
@@ -70,6 +77,8 @@ const RULE_SEED_SCHEMA_VERSION: u16 = 3;
 
 #[derive(Debug, Error)]
 pub enum StorageError {
+    #[error("太乙机械候选记录失败：{0}")]
+    TaiyiRecord(String),
     #[error("数据库错误：{0}")]
     Database(#[from] rusqlite::Error),
     #[error("数据序列化错误：{0}")]
@@ -158,6 +167,7 @@ pub struct QuestionHistorySummary {
     pub question: QuestionInput,
     pub state: String,
     pub has_liuyao: bool,
+    pub liuyao_saved_lines: usize,
     pub has_yarrow: bool,
     pub is_event_revision: bool,
 }
@@ -257,6 +267,8 @@ pub struct BirthTimeAuditSnapshot {
     #[serde(default)]
     pub four_pillars_visible_stem_ten_gods_zi_start: Option<FourPillarsVisibleStemTenGodAudit>,
     #[serde(default)]
+    pub four_pillars_hidden_stems: Option<Vec<divination_core::FourPillarsHiddenStemAudit>>,
+    #[serde(default)]
     pub late_zi_dual_candidates: Option<LateZiDualCandidates>,
     #[serde(default)]
     pub lunisolar_date_candidate: Option<LunisolarDateCandidate>,
@@ -279,7 +291,7 @@ pub fn birth_time_audits_match(
     stored: &BirthTimeAuditSnapshot,
 ) -> bool {
     (current.audit_version == stored.audit_version
-        || (current.audit_version == 13 && matches!(stored.audit_version, 1..=12)))
+        || (current.audit_version == 14 && matches!(stored.audit_version, 1..=13)))
         && current.status == stored.status
         && current.sex == stored.sex
         && current.input_time_bjt == stored.input_time_bjt
@@ -362,6 +374,8 @@ pub fn birth_time_audits_match(
         && (stored.audit_version < 10
             || current.four_pillars_visible_stem_ten_gods_zi_start
                 == stored.four_pillars_visible_stem_ten_gods_zi_start)
+        && (stored.audit_version < 14
+            || current.four_pillars_hidden_stems == stored.four_pillars_hidden_stems)
 }
 
 fn planetary_geometric_observations_match(
@@ -1034,7 +1048,7 @@ impl Storage {
 
     fn initialize(&mut self) -> Result<(), StorageError> {
         self.connection.execute_batch(
-            "PRAGMA foreign_keys = ON; PRAGMA journal_mode = WAL; PRAGMA synchronous = NORMAL;",
+            "PRAGMA foreign_keys = ON; PRAGMA journal_mode = WAL; PRAGMA synchronous = FULL;",
         )?;
         let applied = self
             .connection
@@ -1211,6 +1225,34 @@ impl Storage {
             tx.execute_batch(MIGRATION_0012)?;
             tx.execute(
                 "INSERT INTO schema_migrations(version, applied_at) VALUES(12, ?1)",
+                [Utc::now().to_rfc3339()],
+            )?;
+            tx.commit()?;
+        }
+        let has_v13 = self.connection.query_row(
+            "SELECT EXISTS(SELECT 1 FROM schema_migrations WHERE version = 13)",
+            [],
+            |row| row.get::<_, bool>(0),
+        )?;
+        if !has_v13 {
+            let tx = self.connection.transaction()?;
+            tx.execute_batch(MIGRATION_0013)?;
+            tx.execute(
+                "INSERT INTO schema_migrations(version, applied_at) VALUES(13, ?1)",
+                [Utc::now().to_rfc3339()],
+            )?;
+            tx.commit()?;
+        }
+        let has_v14 = self.connection.query_row(
+            "SELECT EXISTS(SELECT 1 FROM schema_migrations WHERE version = 14)",
+            [],
+            |row| row.get::<_, bool>(0),
+        )?;
+        if !has_v14 {
+            let tx = self.connection.transaction()?;
+            tx.execute_batch(MIGRATION_0014)?;
+            tx.execute(
+                "INSERT INTO schema_migrations(version, applied_at) VALUES(14, ?1)",
                 [Utc::now().to_rfc3339()],
             )?;
             tx.commit()?;
@@ -3844,34 +3886,65 @@ impl Storage {
         &self,
         requested_limit: usize,
     ) -> Result<Vec<QuestionHistorySummary>, StorageError> {
+        self.search_questions("", requested_limit, 0)
+    }
+
+    pub fn search_questions(
+        &self,
+        query: &str,
+        requested_limit: usize,
+        offset: usize,
+    ) -> Result<Vec<QuestionHistorySummary>, StorageError> {
         let limit = requested_limit.clamp(1, 500) as i64;
+        let offset = i64::try_from(offset).unwrap_or(i64::MAX);
         let mut statement = self.connection.prepare(
             "SELECT q.parameters_json, q.state,
                     EXISTS(SELECT 1 FROM random_artifacts a
                            WHERE a.question_id = q.id AND a.method = 'liuyao'),
                     EXISTS(SELECT 1 FROM random_artifacts a
                            WHERE a.question_id = q.id AND a.method = 'yarrow_stalk'),
-                    EXISTS(SELECT 1 FROM event_revisions r WHERE r.new_question_id = q.id)
+                    EXISTS(SELECT 1 FROM event_revisions r WHERE r.new_question_id = q.id),
+                    COALESCE((SELECT MAX(event_count) FROM liuyao_checkpoints c WHERE c.question_id = q.id), 0)
              FROM questions q
+             WHERE ?1 = '' OR instr(lower(
+                coalesce(json_extract(q.parameters_json, '$.text'), '') || ' ' ||
+                coalesce(json_extract(q.parameters_json, '$.subject'), '') || ' ' ||
+                coalesce(json_extract(q.parameters_json, '$.object'), '') || ' ' ||
+                coalesce(json_extract(q.parameters_json, '$.target_event'), '') || ' ' ||
+                coalesce(json_extract(q.parameters_json, '$.location.province'), '') || ' ' ||
+                coalesce(json_extract(q.parameters_json, '$.location.city'), '') || ' ' ||
+                coalesce(json_extract(q.parameters_json, '$.location.district'), '') || ' ' ||
+                coalesce(json_extract(q.parameters_json, '$.location.street'), '') || ' ' ||
+                coalesce(json_extract(q.parameters_json, '$.locked_at_bjt'), '') || ' ' || q.id
+             ), lower(?1)) > 0
              ORDER BY q.created_at DESC, q.rowid DESC
-             LIMIT ?1",
+             LIMIT ?2 OFFSET ?3",
         )?;
-        let rows = statement.query_map([limit], |row| {
+        let rows = statement.query_map(params![query.trim(), limit, offset], |row| {
             Ok((
                 row.get::<_, String>(0)?,
                 row.get::<_, String>(1)?,
                 row.get::<_, bool>(2)?,
                 row.get::<_, bool>(3)?,
                 row.get::<_, bool>(4)?,
+                row.get::<_, usize>(5)?,
             ))
         })?;
         let mut output = Vec::new();
         for row in rows {
-            let (question_json, state, has_liuyao, has_yarrow, is_event_revision) = row?;
+            let (
+                question_json,
+                state,
+                has_liuyao,
+                has_yarrow,
+                is_event_revision,
+                liuyao_saved_lines,
+            ) = row?;
             output.push(QuestionHistorySummary {
                 question: serde_json::from_str(&question_json)?,
                 state,
                 has_liuyao,
+                liuyao_saved_lines,
                 has_yarrow,
                 is_event_revision,
             });
@@ -4916,6 +4989,9 @@ pub fn calculate_birth_time_audit_snapshot(
     let four_pillars_visible_stem_ten_gods_zi_start =
         four_pillars_visible_stem_ten_gods_zi_start_audit(&four_pillars);
     let late_zi_dual_candidates = late_zi_dual_candidates(&four_pillars);
+    let four_pillars_hidden_stems = Some(divination_core::four_pillars_hidden_stem_audits(
+        &four_pillars,
+    ));
     let bjt_shichen = shichen_from_true_solar_time(birth.date_time_bjt, boundary_margin_minutes)
         .map_err(|error| StorageError::AstronomySnapshot(error.to_string()))?;
     let lunar_boundary_margin_seconds = 300.0;
@@ -4963,7 +5039,7 @@ pub fn calculate_birth_time_audit_snapshot(
     };
 
     Ok(BirthTimeAuditSnapshot {
-        audit_version: 13,
+        audit_version: 14,
         status: BIRTH_TIME_AUDIT_STATUS.to_owned(),
         sex: birth.sex,
         input_time_bjt: birth.date_time_bjt.to_rfc3339(),
@@ -4994,6 +5070,7 @@ pub fn calculate_birth_time_audit_snapshot(
         four_pillars_structural_metadata: Some(four_pillars_structural_metadata),
         four_pillars_visible_stem_ten_gods: Some(four_pillars_visible_stem_ten_gods),
         four_pillars_visible_stem_ten_gods_zi_start,
+        four_pillars_hidden_stems,
         late_zi_dual_candidates,
         lunisolar_date_candidate,
         lunisolar_date_candidate_error,
@@ -5005,7 +5082,7 @@ pub fn calculate_birth_time_audit_snapshot(
     })
 }
 
-fn calculate_astronomy_snapshot(
+pub fn calculate_astronomy_snapshot(
     question: &QuestionInput,
 ) -> Result<AstronomyAuditSnapshot, StorageError> {
     let jd_ut1_approx =
@@ -5142,7 +5219,7 @@ fn calculate_astronomy_snapshot(
     );
 
     Ok(AstronomyAuditSnapshot {
-        snapshot_version: 29,
+        snapshot_version: 30,
         question_id: question.id,
         ut1_basis: "utc_approximation_without_versioned_eop.v1".to_owned(),
         jd_ut1_approx,
@@ -5219,7 +5296,7 @@ mod tests {
         build_event_fingerprint, ActionAdviceStatus, KeywordClassifier, QuestionCategory, Trigram,
     };
 
-    fn sample_question() -> QuestionInput {
+    pub(super) fn sample_question() -> QuestionInput {
         let zone = FixedOffset::east_opt(8 * 3600).unwrap();
         let now = zone.with_ymd_and_hms(2026, 8, 30, 12, 45, 0).unwrap();
         QuestionInput {
@@ -5259,7 +5336,7 @@ mod tests {
                 row.get(0)
             })
             .unwrap();
-        assert_eq!(schema_version, 12);
+        assert_eq!(schema_version, 14);
         let attributed_rows: u64 = storage
             .connection
             .query_row(
@@ -5330,7 +5407,7 @@ mod tests {
                 row.get(0)
             })
             .unwrap();
-        assert_eq!(schema_version, 12);
+        assert_eq!(schema_version, 14);
 
         let mut statement = storage
             .connection
@@ -5467,7 +5544,7 @@ mod tests {
             .unwrap()
             .unwrap();
         assert_eq!(snapshot.question_id, question.id);
-        assert_eq!(snapshot.snapshot_version, 29);
+        assert_eq!(snapshot.snapshot_version, 30);
         assert_eq!(snapshot.birth_time_audit, None);
         let chinese_astrology = snapshot
             .chinese_astrology_structure_audit
@@ -5690,7 +5767,7 @@ mod tests {
         question.locked_at_bjt = time;
 
         let snapshot = calculate_astronomy_snapshot(&question).unwrap();
-        assert_eq!(snapshot.snapshot_version, 29);
+        assert_eq!(snapshot.snapshot_version, 30);
         let audit = snapshot.qimen_ju_audit.expect("qimen audit");
         assert_eq!(audit.active_solar_term, SolarTerm::Dongzhi);
         assert_eq!(audit.received_bureau_numbers, Some([1, 7, 4]));
@@ -6861,9 +6938,9 @@ mod tests {
             .load_astronomy_snapshot(question.id)
             .unwrap()
             .unwrap();
-        assert_eq!(snapshot.snapshot_version, 29);
+        assert_eq!(snapshot.snapshot_version, 30);
         let audit = snapshot.birth_time_audit.expect("birth audit is persisted");
-        assert_eq!(audit.audit_version, 13);
+        assert_eq!(audit.audit_version, 14);
         assert_eq!(audit.status, BIRTH_TIME_AUDIT_STATUS);
         assert_eq!(audit.sex, BiologicalSex::Female);
         assert_eq!(audit.input_time_bjt, "1990-05-17T08:30:00+08:00");
@@ -8665,7 +8742,7 @@ mod tests {
             .is_none());
     }
 
-    fn entropy_event(sequence: u8) -> divination_core::EntropyEvent {
+    pub(super) fn entropy_event(sequence: u8) -> divination_core::EntropyEvent {
         divination_core::EntropyEvent {
             sequence,
             wall_clock_unix_nanos: 1_788_068_725_000_000_000 + sequence as i64,
@@ -8701,6 +8778,65 @@ mod tests {
         let loaded = storage.load_liuyao_artifact(question.id).unwrap().unwrap();
         assert_eq!(loaded.transcript, transcript);
         assert_eq!(loaded.cast, cast);
+    }
+
+    #[test]
+    fn searches_all_questions_before_pagination_and_treats_wildcards_literally() {
+        let mut storage = Storage::open_in_memory().unwrap();
+        let mut ids = Vec::new();
+        for marker in ["旧记录 ABC_100%", "中间记录", "最新记录"] {
+            let mut question = sample_question();
+            question.text = format!("一小时后会下雨吗？ {marker}");
+            let classification = KeywordClassifier::default()
+                .classify(question.category, &question.text)
+                .unwrap();
+            storage
+                .insert_locked_question(
+                    &question,
+                    &classification,
+                    &build_event_fingerprint(&question, &classification),
+                    None,
+                )
+                .unwrap();
+            ids.push(question.id);
+        }
+        assert_eq!(
+            storage.search_questions("", 1, 0).unwrap()[0].question.id,
+            ids[2]
+        );
+        assert_eq!(
+            storage.search_questions("", 1, 1).unwrap()[0].question.id,
+            ids[1]
+        );
+        assert_eq!(
+            storage.search_questions("", 1, 2).unwrap()[0].question.id,
+            ids[0]
+        );
+        assert!(storage.search_questions("", 1, 3).unwrap().is_empty());
+        assert_eq!(
+            storage.search_questions("abc_100%", 1, 0).unwrap()[0]
+                .question
+                .id,
+            ids[0]
+        );
+        assert_eq!(storage.search_questions("%", 20, 0).unwrap().len(), 1);
+        assert_eq!(storage.search_questions("_", 20, 0).unwrap().len(), 1);
+        assert_eq!(
+            storage.search_questions(" 南山区 ", 20, 0).unwrap().len(),
+            3
+        );
+        assert_eq!(
+            storage
+                .search_questions(&ids[0].to_string(), 20, 0)
+                .unwrap()
+                .len(),
+            1
+        );
+        assert!(storage
+            .search_questions("' OR 1=1 --", 20, 0)
+            .unwrap()
+            .is_empty());
+        assert_eq!(storage.recent_questions(2).unwrap().len(), 2);
     }
 
     #[test]

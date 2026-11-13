@@ -1,5 +1,5 @@
 #define AppName "九衡"
-#define AppVersion "0.79.0"
+#define AppVersion "0.84.0"
 #define AppPublisher "Jiuheng"
 #define AppExeName "jiuheng.exe"
 

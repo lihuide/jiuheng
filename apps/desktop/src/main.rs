@@ -1,6 +1,16 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 #![forbid(unsafe_code)]
 
+#[cfg(test)]
+mod casting_resume_tests;
+mod mechanical_report;
+mod mechanical_ui;
+mod reading_report;
+mod taiyi_report;
+mod taiyi_ui;
+mod time_report;
+mod time_ui;
+
 use chrono::{DateTime, Datelike, FixedOffset, NaiveDateTime, TimeZone, Timelike, Utc};
 use directories::ProjectDirs;
 use divination_core::{
@@ -50,7 +60,7 @@ const PROGRESS_CHECKLIST_JSON: &str = include_str!("../../../data/progress.check
 fn main() -> eframe::Result<()> {
     let native_options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
-            .with_title("九衡 · 古籍规则推演")
+            .with_title("九衡 · 排盘记录试用版")
             .with_inner_size([1120.0, 760.0])
             .with_min_inner_size([900.0, 620.0]),
         ..Default::default()
@@ -68,6 +78,9 @@ enum Page {
     History,
     Casting,
     Result,
+    Mechanical,
+    TimeMechanical,
+    Taiyi,
     Developer,
     About,
 }
@@ -217,8 +230,11 @@ struct JiuhengApp {
     liuyao_press_started: Option<Instant>,
     liuyao_previous_event: Option<Instant>,
     liuyao_pointer_path: Vec<PointerSample>,
+    liuyao_pending_event: Option<EntropyEvent>,
+    liuyao_monotonic_base: u64,
     yarrow_session: YarrowSession,
     yarrow_cast: Option<YarrowCast>,
+    yarrow_restore_error: Option<String>,
     yarrow_left_pile: u8,
     yarrow_phase: YarrowUiPhase,
     yarrow_pending_left: Option<u8>,
@@ -228,6 +244,25 @@ struct JiuhengApp {
     history_detail: Option<QuestionHistoryDetail>,
     history_audit: Option<HistoryReplayAudit>,
     history_message: Option<String>,
+    history_search: String,
+    history_query: String,
+    history_offset: usize,
+    history_has_next: bool,
+    reading_id: Option<Uuid>,
+    reading: Option<Result<reading_report::ReadingReport, String>>,
+    reading_message: Option<String>,
+    reading_export_path: Option<PathBuf>,
+    mechanical_id: Option<Uuid>,
+    mechanical_report: Option<Result<mechanical_report::MechanicalReport, String>>,
+    mechanical_tab: usize,
+    mechanical_message: Option<String>,
+    mechanical_export_path: Option<PathBuf>,
+    time_report_id: Option<Uuid>,
+    time_report: Option<Result<time_report::TimeReport, String>>,
+    time_report_tab: usize,
+    time_report_message: Option<String>,
+    time_report_export_path: Option<PathBuf>,
+    taiyi: taiyi_ui::TaiyiState,
     facsimile_source_id: String,
     facsimile_file_path: String,
     facsimile_verification_message: Option<(bool, String)>,
@@ -238,6 +273,14 @@ impl JiuhengApp {
     fn new(creation_context: &eframe::CreationContext<'_>) -> Self {
         configure_fonts_and_style(&creation_context.egui_ctx);
         let (storage, storage_path, startup_warning) = open_storage();
+        Self::with_storage(storage, storage_path, startup_warning)
+    }
+
+    fn with_storage(
+        storage: Storage,
+        storage_path: PathBuf,
+        startup_warning: Option<String>,
+    ) -> Self {
         let locations = storage.locations().unwrap_or_default();
         let zone = beijing_zone();
         let manual_time_text = Utc::now()
@@ -290,8 +333,11 @@ impl JiuhengApp {
             liuyao_press_started: None,
             liuyao_previous_event: None,
             liuyao_pointer_path: Vec::new(),
+            liuyao_pending_event: None,
+            liuyao_monotonic_base: 0,
             yarrow_session: YarrowSession::default(),
             yarrow_cast: None,
+            yarrow_restore_error: None,
             yarrow_left_pile: 24,
             yarrow_phase: YarrowUiPhase::Divide,
             yarrow_pending_left: None,
@@ -301,6 +347,25 @@ impl JiuhengApp {
             history_detail: None,
             history_audit: None,
             history_message: None,
+            history_search: String::new(),
+            history_query: String::new(),
+            history_offset: 0,
+            history_has_next: false,
+            reading_id: None,
+            reading: None,
+            reading_message: None,
+            reading_export_path: None,
+            mechanical_id: None,
+            mechanical_report: None,
+            mechanical_tab: 0,
+            mechanical_message: None,
+            mechanical_export_path: None,
+            time_report_id: None,
+            time_report: None,
+            time_report_tab: 0,
+            time_report_message: None,
+            time_report_export_path: None,
+            taiyi: taiyi_ui::TaiyiState::default(),
             facsimile_source_id: String::new(),
             facsimile_file_path: String::new(),
             facsimile_verification_message: None,
@@ -324,7 +389,7 @@ impl JiuhengApp {
                             .color(Color32::from_rgb(42, 57, 50)),
                     );
                     ui.label(
-                        RichText::new("离线 · 无 AI · 古籍规则可追溯")
+                        RichText::new("排盘记录试用版 · 完全离线")
                             .size(13.0)
                             .color(Color32::from_rgb(104, 109, 98)),
                     );
@@ -346,17 +411,55 @@ impl JiuhengApp {
                     ui.label(RichText::new("☰  推演台").color(Color32::from_rgb(217, 204, 168)));
                 });
                 ui.add_space(24.0);
-                nav_button(ui, &mut self.page, Page::NewQuestion, "新建占问");
-                nav_button(ui, &mut self.page, Page::History, "永久记录");
-                if self.current_question.is_some() {
-                    nav_button(ui, &mut self.page, Page::Casting, "独立起法");
-                }
-                nav_button(ui, &mut self.page, Page::Result, "本次结果");
-                if self.developer_mode {
-                    nav_button(ui, &mut self.page, Page::Developer, "校验详情");
-                }
-                nav_button(ui, &mut self.page, Page::About, "范围与声明");
-                ui.add_space(ui.available_height() - 110.0);
+                egui::ScrollArea::vertical()
+                    .id_salt("navigation_scroll")
+                    .max_height((ui.available_height() - 110.0).max(160.0))
+                    .show(ui, |ui| {
+                        nav_button(ui, &mut self.page, Page::NewQuestion, "新建占问");
+                        nav_button(ui, &mut self.page, Page::History, "永久记录");
+                        if self.current_question.is_some() {
+                            nav_button(ui, &mut self.page, Page::Casting, "独立起法");
+                        }
+                        if nav_button(ui, &mut self.page, Page::Result, "排盘报告") {
+                            if let Some(id) =
+                                self.current_question.as_ref().map(|question| question.id)
+                            {
+                                self.open_reading(id);
+                            }
+                        }
+                        if self.developer_mode {
+                            nav_button(ui, &mut self.page, Page::Developer, "校验详情");
+                        }
+                        if nav_button(ui, &mut self.page, Page::Mechanical, "四柱 / 紫微机械盘")
+                        {
+                            if let Some(id) =
+                                self.current_question.as_ref().map(|question| question.id)
+                            {
+                                self.open_mechanical(id);
+                            }
+                        }
+                        if nav_button(
+                            ui,
+                            &mut self.page,
+                            Page::TimeMechanical,
+                            "梅花 / 奇门机械盘",
+                        ) {
+                            if let Some(id) =
+                                self.current_question.as_ref().map(|question| question.id)
+                            {
+                                self.open_time_report(id);
+                            }
+                        }
+                        if nav_button(ui, &mut self.page, Page::Taiyi, "太乙机械盘") {
+                            if let Some(id) =
+                                self.current_question.as_ref().map(|question| question.id)
+                            {
+                                self.open_taiyi(id);
+                            }
+                        }
+                        nav_button(ui, &mut self.page, Page::About, "范围与声明");
+                    });
+                ui.add_space((ui.available_height() - 110.0).max(0.0));
                 ui.separator();
                 ui.add_space(8.0);
                 ui.label(
@@ -389,6 +492,16 @@ impl JiuhengApp {
         }
 
         ui.add_space(16.0);
+        ui.group(|ui| {
+            ui.label(RichText::new("建立一份可保存的排盘记录").strong());
+            ui.label(
+                "填写并锁定问题后，六爻需完成六次起法；梅花与奇门可直接从侧边栏打开。四柱与紫微需填写出生资料。",
+            );
+            ui.label("各机械盘支持查看、复制、导出，以及从永久记录重新打开。");
+            ui.label("太乙需明确输入积年、传统年标签或阴阳遁局序，再计算并保存候选。");
+            ui.small(reading_report::SCOPE);
+        });
+        ui.add_space(12.0);
         ui.label(RichText::new("选择类别").strong());
         ui.add_space(7.0);
         egui::Grid::new("category_grid")
@@ -731,16 +844,60 @@ impl JiuhengApp {
             "录",
         );
         ui.add_space(12.0);
-        if ui.button("刷新本地记录").clicked() {
-            self.refresh_history();
-        }
+        ui.horizontal(|ui| {
+            let input = ui.add(
+                egui::TextEdit::singleline(&mut self.history_search)
+                    .hint_text("搜索问题、主体、地点、日期或记录编号")
+                    .desired_width(340.0),
+            );
+            if ui.button("搜索全部记录").clicked()
+                || (input.lost_focus() && ui.input(|input| input.key_pressed(egui::Key::Enter)))
+            {
+                self.history_query = self.history_search.trim().to_owned();
+                self.history_offset = 0;
+                self.refresh_history();
+            }
+            if ui.button("清除搜索").clicked() {
+                self.history_search.clear();
+                self.history_query.clear();
+                self.history_offset = 0;
+                self.refresh_history();
+            }
+            if ui.button("刷新").clicked() {
+                self.refresh_history();
+            }
+        });
+        ui.horizontal(|ui| {
+            if ui
+                .add_enabled(self.history_offset > 0, egui::Button::new("上一页"))
+                .clicked()
+            {
+                self.history_offset = self.history_offset.saturating_sub(50);
+                self.refresh_history();
+            }
+            ui.label(format!(
+                "第 {} 页 · 每页最多 50 条",
+                self.history_offset / 50 + 1
+            ));
+            if ui
+                .add_enabled(self.history_has_next, egui::Button::new("下一页"))
+                .clicked()
+            {
+                self.history_offset += 50;
+                self.refresh_history();
+            }
+        });
         if let Some(message) = &self.history_message {
             ui.add_space(8.0);
             warning_box(ui, message, Color32::from_rgb(150, 92, 34));
         }
         if self.history_items.is_empty() {
             ui.add_space(24.0);
-            ui.label("本机尚无已锁定占问。");
+            ui.label(if self.history_query.is_empty() {
+                "本页暂无占问记录。"
+            } else {
+                "没有匹配的记录，请调整搜索词。"
+            });
             return;
         }
 
@@ -750,11 +907,16 @@ impl JiuhengApp {
         let developer_mode = self.developer_mode;
         let mut requested_selection = None;
         let mut run_audit = false;
+        let mut requested_reading = None;
+        let mut requested_resume = None;
+        let mut requested_mechanical = None;
+        let mut requested_time_report = None;
+        let mut requested_taiyi = None;
 
         ui.add_space(10.0);
         ui.columns(2, |columns| {
             columns[0].label(
-                RichText::new(format!("本机记录 · {} 条", self.history_items.len())).strong(),
+                RichText::new(format!("本页记录 · {} 条", self.history_items.len())).strong(),
             );
             columns[0].separator();
             egui::ScrollArea::vertical()
@@ -765,13 +927,15 @@ impl JiuhengApp {
                         let question = &summary.question;
                         let mut badges = Vec::new();
                         if summary.has_liuyao {
-                            badges.push("六爻");
+                            badges.push("六爻已完成".to_owned());
+                        } else if summary.liuyao_saved_lines > 0 {
+                            badges.push(format!("六爻已保存 {}/6 · 可继续", summary.liuyao_saved_lines));
                         }
                         if summary.has_yarrow {
-                            badges.push("蓍草");
+                            badges.push("蓍草".to_owned());
                         }
                         if summary.is_event_revision {
-                            badges.push("情况变化");
+                            badges.push("情况变化".to_owned());
                         }
                         let badge_text = if badges.is_empty() {
                             "仅锁题".to_owned()
@@ -807,6 +971,22 @@ impl JiuhengApp {
                     };
                     let question = &detail.question;
                     ui.label(RichText::new(&question.text).size(20.0).strong());
+                    if ui.button("打开六爻排盘报告 / 导出").clicked() {
+                        requested_reading = Some(question.id);
+                    }
+                    if question.birth.is_some() && ui.button("打开四柱 / 紫微机械盘").clicked() {
+                        requested_mechanical = Some(question.id);
+                    }
+                    if ui.button("打开梅花 / 奇门机械盘").clicked() {
+                        requested_time_report = Some(question.id);
+                    }
+                    if ui.button("打开太乙机械盘 / 已存候选").clicked() {
+                        requested_taiyi = Some(question.id);
+                    }
+                    let complete = self.history_items.iter().any(|item| item.question.id == question.id && item.has_liuyao);
+                    if !complete && ui.button("继续六爻起法").clicked() {
+                        requested_resume = Some(question.id);
+                    }
                     ui.add_space(10.0);
                     egui::Grid::new("history_detail_meta")
                         .num_columns(2)
@@ -1680,7 +1860,17 @@ impl JiuhengApp {
                 });
         });
 
-        if let Some(question_id) = requested_selection {
+        if let Some(question_id) = requested_taiyi {
+            self.open_taiyi(question_id);
+        } else if let Some(question_id) = requested_time_report {
+            self.open_time_report(question_id);
+        } else if let Some(question_id) = requested_mechanical {
+            self.open_mechanical(question_id);
+        } else if let Some(question_id) = requested_resume {
+            self.resume_history_casting(question_id);
+        } else if let Some(question_id) = requested_reading {
+            self.open_reading(question_id);
+        } else if let Some(question_id) = requested_selection {
             self.select_history(question_id);
         } else if run_audit {
             self.audit_selected_history();
@@ -1699,6 +1889,14 @@ impl JiuhengApp {
             ui.label("请先锁定一个占问。");
             return;
         };
+        if let Some(question) = &self.current_question {
+            ui.label(RichText::new(&question.text).strong());
+            ui.small(format!(
+                "原占问时间：{} · {}",
+                question.divination_time_bjt.to_rfc3339(),
+                location_label(&question.location)
+            ));
+        }
 
         ui.add_space(14.0);
         ui.horizontal(|ui| {
@@ -1706,6 +1904,9 @@ impl JiuhengApp {
             ui.selectable_value(&mut self.casting_tab, CastingTab::Yarrow, "蓍草 · 研究重建");
             ui.selectable_value(&mut self.casting_tab, CastingTab::Meihua, "梅花 · 时间起卦");
         });
+        if ui.button("查看梅花 / 奇门机械盘 · 复制与导出").clicked() {
+            self.open_time_report(question_id);
+        }
         if let Some(message) = &self.casting_message {
             ui.add_space(10.0);
             warning_box(ui, message, Color32::from_rgb(150, 92, 34));
@@ -1717,10 +1918,27 @@ impl JiuhengApp {
             CastingTab::Yarrow => self.render_yarrow_casting(ui, question_id),
             CastingTab::Meihua => self.render_meihua_casting(ui, question_id),
         }
+        if self.liuyao_cast.is_some() {
+            ui.add_space(16.0);
+            if ui.button("查看完整六爻排盘报告 →").clicked() {
+                self.open_reading(question_id);
+            }
+        }
     }
 
     fn render_liuyao_casting(&mut self, ui: &mut egui::Ui, question_id: Uuid) {
         ui.heading("三枚铜钱，连续六次");
+        if self.storage_path.to_string_lossy() == ":memory:" {
+            ui.colored_label(
+                Color32::from_rgb(167, 54, 54),
+                "临时内存模式：退出后无法恢复，请先解决本地数据目录问题。",
+            );
+        } else {
+            ui.label(format!(
+                "已保存 {}/6 爻。可随时退出，下次在“永久记录”选择“继续六爻起法”。",
+                self.liuyao_lines.len()
+            ));
+        }
         ui.label("每次按住按钮片刻再松开。高精度时间、按压时长、操作间隔、指针位置与按压期间轨迹会组成该爻的版本化随机材料。六爻按初爻到上爻保存。");
         ui.add_space(12.0);
 
@@ -1750,7 +1968,17 @@ impl JiuhengApp {
             });
 
         ui.add_space(14.0);
-        if self.liuyao_cast.is_none() {
+        if self.liuyao_cast.is_none()
+            && (self.liuyao_pending_event.is_some() || self.liuyao_transcript.is_none())
+        {
+            if self.liuyao_pending_event.is_some() && ui.button("重试保存本次操作").clicked()
+            {
+                self.save_pending_liuyao_event();
+            }
+            if ui.button("重新读取已保存进度").clicked() {
+                self.initialize_casting(question_id);
+            }
+        } else if self.liuyao_cast.is_none() {
             let next = self.liuyao_lines.len() + 1;
             let response = ui.add_sized(
                 [270.0, 48.0],
@@ -1797,7 +2025,9 @@ impl JiuhengApp {
                     wall_clock_unix_nanos: Utc::now()
                         .timestamp_nanos_opt()
                         .unwrap_or_else(|| Utc::now().timestamp_micros() * 1_000),
-                    monotonic_nanos: duration_nanos(now.duration_since(session_started)),
+                    monotonic_nanos: self
+                        .liuyao_monotonic_base
+                        .saturating_add(duration_nanos(now.duration_since(session_started))),
                     press_duration_nanos: duration_nanos(now.duration_since(press_started)),
                     delta_since_previous_nanos: self
                         .liuyao_previous_event
@@ -1809,49 +2039,8 @@ impl JiuhengApp {
                 };
                 self.liuyao_previous_event = Some(now);
 
-                let line_result = self
-                    .liuyao_transcript
-                    .as_mut()
-                    .ok_or_else(|| "六爻起法会话尚未初始化".to_owned())
-                    .and_then(|transcript| {
-                        transcript
-                            .push_event(event)
-                            .map_err(|error| error.to_string())
-                    });
-                match line_result {
-                    Ok(line) => {
-                        self.liuyao_lines.push(line);
-                        self.casting_message = None;
-                    }
-                    Err(error) => self.casting_message = Some(error),
-                }
-
-                let completed = self
-                    .liuyao_transcript
-                    .as_ref()
-                    .is_some_and(LiuyaoTranscript::is_complete);
-                if completed {
-                    let transcript = self.liuyao_transcript.as_ref().expect("checked").clone();
-                    match transcript.finish() {
-                        Ok(cast) => {
-                            match self
-                                .storage
-                                .save_liuyao_artifact(question_id, &transcript, &cast)
-                            {
-                                Ok(()) => {
-                                    self.casting_message = Some(
-                                        "六次三币起法已锁定、写入本地数据库并通过重放校验。"
-                                            .to_owned(),
-                                    );
-                                    self.liuyao_cast = Some(cast);
-                                    self.refresh_history();
-                                }
-                                Err(error) => self.casting_message = Some(error.to_string()),
-                            }
-                        }
-                        Err(error) => self.casting_message = Some(error.to_string()),
-                    }
-                }
+                self.liuyao_pending_event = Some(event);
+                self.save_pending_liuyao_event();
             }
         } else if let Some(cast) = &self.liuyao_cast {
             ui.group(|ui| {
@@ -1931,6 +2120,13 @@ impl JiuhengApp {
     }
 
     fn render_yarrow_casting(&mut self, ui: &mut egui::Ui, question_id: Uuid) {
+        if let Some(error) = &self.yarrow_restore_error {
+            ui.colored_label(
+                Color32::from_rgb(167, 54, 54),
+                format!("原蓍草记录读取失败，已暂停操作：{error}"),
+            );
+            return;
+        }
         ui.heading("大衍五十，其用四十九；三变成一爻，十八变成一卦");
         warning_box(
             ui,
@@ -2099,6 +2295,10 @@ impl JiuhengApp {
     }
 
     fn render_meihua_casting(&mut self, ui: &mut egui::Ui, question_id: Uuid) {
+        if ui.button("打开完整梅花时间盘 / 奇门地盘").clicked() {
+            self.time_report_tab = 0;
+            self.open_time_report(question_id);
+        }
         ui.heading("年月日时机械起卦候选");
         warning_box(
             ui,
@@ -2201,68 +2401,178 @@ impl JiuhengApp {
     }
 
     fn render_result(&mut self, ui: &mut egui::Ui) {
-        section_title(
-            ui,
-            "本次结果",
-            "结果页只呈现可由已验证古籍规则支持的内容。",
-            "果",
-        );
-        ui.add_space(24.0);
-        if let Some(question) = &self.current_question {
-            ui.label(RichText::new(&question.text).size(19.0));
-            ui.add_space(18.0);
-            egui::Frame::new()
-                .fill(Color32::from_rgb(247, 244, 236))
-                .inner_margin(egui::Margin::same(24))
-                .show(ui, |ui| {
-                    ui.label(
-                        RichText::new("结论：当前规则库尚未达到可推演条件。")
-                            .size(24.0)
-                            .strong()
-                            .color(Color32::from_rgb(43, 61, 53)),
-                    );
-                    ui.add_space(12.0);
-                    ui.label(RichText::new("时间：暂无法断定").size(18.0));
-                    ui.add_space(8.0);
-                    ui.label(
-                        RichText::new("当下建议：暂无可靠古籍行动建议。").size(18.0),
-                    );
-                    ui.label("规则尚未通过证据门禁时，系统不会根据吉凶分数或常见套话编造行动建议。");
-                    ui.add_space(8.0);
-                    let ancient_type = self
-                        .current_classification
-                        .as_ref()
-                        .map(|classification| &classification.ancient_type);
-                    ui.label(RichText::new(format!(
-                        "现实行动底线：{}",
-                        practical_action_notice_for_classified_question(
-                            question.category,
-                            ancient_type,
-                        )
-                    )).size(16.0));
-                    if classified_question_requires_health_notice(question.category, ancient_type) {
-                        ui.colored_label(
-                            Color32::from_rgb(150, 92, 34),
-                            "仅属传统术数文化推演，不能用于诊断或治疗决策。",
-                        );
-                    }
-                    ui.label(RichText::new("古法依据等级：未评定").size(18.0));
-                    ui.add_space(16.0);
-                    ui.label("九术接口已完成适用性检查，但古籍规则尚未完成版本核对与独立复核，因此没有术式被允许进入裁决。这是证据门禁的预期行为。");
-                });
-            ui.add_space(16.0);
-            if ui.button("进入三种独立起法").clicked() {
-                self.page = Page::Casting;
-            }
-            if self.developer_mode && ui.button("查看九术校验详情").clicked() {
-                self.page = Page::Developer;
-            }
-        } else {
-            ui.label("尚未锁定占问。");
-            if ui.button("返回新建占问").clicked() {
-                self.page = Page::NewQuestion;
+        section_title(ui, "六爻排盘报告", reading_report::SCOPE, "录");
+        ui.add_space(12.0);
+        if self.reading.is_none() {
+            if let Some(id) = self.current_question.as_ref().map(|question| question.id) {
+                self.open_reading(id);
             }
         }
+        let Some(reading) = self.reading.clone() else {
+            ui.label("先完成一次六爻起法，或从永久记录打开已有排盘。");
+            if ui.button("查看永久记录").clicked() {
+                self.page = Page::History;
+            }
+            return;
+        };
+        let report = match reading {
+            Ok(report) => report,
+            Err(error) => {
+                warning_box(
+                    ui,
+                    &format!("记录核对失败，报告未生成：{error}"),
+                    Color32::from_rgb(167, 54, 54),
+                );
+                if ui.button("重新读取并核对").clicked() {
+                    if let Some(id) = self.reading_id {
+                        self.open_reading(id);
+                    }
+                }
+                return;
+            }
+        };
+        ui.horizontal_wrapped(|ui| {
+            if report.transcript_hash.is_none() && ui.button("继续六爻起法").clicked() {
+                self.resume_history_casting(report.question_id);
+            }
+            if ui.button("复制文字记录").clicked() {
+                ui.ctx().copy_text(report.text());
+                self.reading_message = Some("已复制本次排盘文字记录。".into());
+            }
+            if ui
+                .add_enabled(
+                    self.storage_path != std::path::Path::new(":memory:"),
+                    egui::Button::new("导出离线网页报告"),
+                )
+                .clicked()
+            {
+                let folder = self
+                    .storage_path
+                    .parent()
+                    .unwrap_or(std::path::Path::new("."))
+                    .join("exports");
+                match report.export_html(&folder) {
+                    Ok(path) => {
+                        self.reading_message = Some(format!("已保存：{}", path.display()));
+                        self.reading_export_path = Some(path);
+                    }
+                    Err(error) => self.reading_message = Some(format!("导出失败：{error}")),
+                }
+            }
+            if ui.button("重新读取并核对").clicked() {
+                self.open_reading(report.question_id);
+            }
+            if ui.button("返回永久记录").clicked() {
+                self.select_history(report.question_id);
+                self.page = Page::History;
+            }
+        });
+        if let Some(message) = &self.reading_message {
+            ui.label(message);
+        }
+        if let Some(path) = &self.reading_export_path {
+            if ui.button("打开报告所在文件夹").clicked() {
+                if let Some(parent) = path.parent() {
+                    if let Err(error) = std::process::Command::new("explorer.exe")
+                        .arg(parent)
+                        .spawn()
+                    {
+                        self.reading_message = Some(format!("无法打开文件夹：{error}"));
+                    }
+                }
+            }
+        }
+        if let Some(warning) = &self.startup_warning {
+            warning_box(ui, warning, Color32::from_rgb(167, 54, 54));
+        }
+        ui.add_space(12.0);
+        ui.heading(&report.question_text);
+        ui.small(format!("记录编号：{}", report.question_id));
+        ui.collapsing("查看锁定的问题、时间与地点", |ui| {
+            for (label, value) in &report.metadata {
+                ui.label(format!("{label}：{value}"));
+            }
+        });
+        ui.add_space(12.0);
+        ui.group(|ui| {
+            ui.label(
+                RichText::new(format!("本卦：{}", report.primary))
+                    .size(20.0)
+                    .strong(),
+            );
+            if !report.changed.is_empty() {
+                ui.label(RichText::new(format!("变卦：{}", report.changed)).size(20.0));
+            }
+            ui.label(&report.palace);
+            ui.label(&report.changes);
+        });
+        if !report.lines_top_down.is_empty() {
+            ui.add_space(10.0);
+            egui::ScrollArea::horizontal()
+                .id_salt("reading_chart")
+                .show(ui, |ui| {
+                    egui::Grid::new("reading_lines")
+                        .striped(true)
+                        .spacing([15.0, 12.0])
+                        .show(ui, |ui| {
+                            for label in [
+                                "爻位",
+                                "本爻",
+                                "爻值",
+                                "世应",
+                                "六亲 / 纳甲",
+                                "六神",
+                                "变后",
+                                "变化",
+                            ] {
+                                ui.label(RichText::new(label).strong());
+                            }
+                            ui.end_row();
+                            for line in &report.lines_top_down {
+                                let color = if line.kind.is_moving() {
+                                    Color32::from_rgb(154, 67, 55)
+                                } else {
+                                    Color32::from_rgb(43, 61, 53)
+                                };
+                                ui.label(&line.position);
+                                ui.colored_label(
+                                    color,
+                                    reading_report::symbol(line.kind.primary_is_yang()),
+                                );
+                                ui.label(format!("{} {}", line.kind.zh_name(), line.kind.value()));
+                                ui.label(&line.role);
+                                ui.label(format!("{} {}", line.relative, line.najia));
+                                ui.label(&line.spirit);
+                                ui.colored_label(
+                                    color,
+                                    reading_report::symbol(line.kind.changed_is_yang()),
+                                );
+                                ui.colored_label(color, line.change());
+                                ui.end_row();
+                            }
+                        });
+                });
+            ui.small("图从上爻向初爻显示，起法由初爻向上。老阴变阳、老阳变阴；世应、六亲等为结构标签。用神、旺衰、吉凶和应期尚未判定。");
+        } else if self
+            .current_question
+            .as_ref()
+            .is_some_and(|question| question.id == report.question_id)
+            && ui.button("继续本次起法").clicked()
+        {
+            self.page = Page::Casting;
+        }
+        ui.add_space(12.0);
+        ui.label(&report.verification);
+        ui.small(format!("现实行动提示：{}", report.notice));
+        ui.small("导出的网页可离线打开，并用浏览器打印功能保存为 PDF。");
+    }
+
+    fn open_reading(&mut self, question_id: Uuid) {
+        self.reading_id = Some(question_id);
+        self.reading = Some(reading_report::load(&self.storage, question_id));
+        self.reading_message = None;
+        self.reading_export_path = None;
+        self.page = Page::Result;
     }
 
     fn render_developer(&mut self, ui: &mut egui::Ui) {
@@ -4513,7 +4823,15 @@ impl JiuhengApp {
                 self.revision_description.clear();
                 self.initialize_casting(question_id);
                 self.refresh_history();
-                self.page = Page::Casting;
+                if self
+                    .current_question
+                    .as_ref()
+                    .is_some_and(|question| question.birth.is_some())
+                {
+                    self.open_mechanical(question_id);
+                } else {
+                    self.page = Page::Casting;
+                }
             }
             Err(error) => self.error_message = Some(error.to_string()),
         }
@@ -4557,26 +4875,118 @@ impl JiuhengApp {
     }
 
     fn initialize_casting(&mut self, question_id: Uuid) {
+        self.reading_id = None;
+        self.reading = None;
+        self.reading_message = None;
+        self.reading_export_path = None;
         self.casting_tab = CastingTab::Liuyao;
         self.casting_message = None;
-        self.liuyao_transcript = Some(LiuyaoTranscript::with_random_nonce(question_id));
+        self.liuyao_transcript = None;
         self.liuyao_cast = None;
         self.liuyao_lines.clear();
         self.liuyao_session_started = None;
         self.liuyao_press_started = None;
         self.liuyao_previous_event = None;
         self.liuyao_pointer_path.clear();
+        self.liuyao_pending_event = None;
+        self.liuyao_monotonic_base = 0;
         self.yarrow_session = YarrowSession::default();
+        self.yarrow_restore_error = None;
         self.yarrow_cast = None;
         self.yarrow_left_pile = 24;
         self.yarrow_phase = YarrowUiPhase::Divide;
         self.yarrow_pending_left = None;
         self.yarrow_last_change = None;
+        let restored = (|| -> Result<(), String> {
+            let transcript = self
+                .storage
+                .begin_or_resume_liuyao(question_id)
+                .map_err(|error| error.to_string())?;
+            self.liuyao_lines = transcript
+                .replay_lines()
+                .map_err(|error| error.to_string())?;
+            if transcript.is_complete() {
+                self.liuyao_cast = Some(transcript.finish().map_err(|error| error.to_string())?);
+            }
+            self.liuyao_monotonic_base = transcript
+                .events
+                .last()
+                .map(|event| event.monotonic_nanos.saturating_add(1))
+                .unwrap_or(0);
+            self.liuyao_session_started = Some(Instant::now());
+            self.liuyao_transcript = Some(transcript);
+            Ok(())
+        })();
+        if let Err(error) = restored {
+            self.casting_message = Some(format!("无法读取或保存起法进度：{error}"));
+        }
+        match self.storage.load_yarrow_artifact(question_id) {
+            Ok(Some(artifact)) => {
+                match YarrowSession::from_completed_transcript(&artifact.transcript) {
+                    Ok(session) => {
+                        self.yarrow_session = session;
+                        self.yarrow_cast = Some(artifact.cast);
+                    }
+                    Err(error) => self.yarrow_restore_error = Some(error.to_string()),
+                }
+            }
+            Ok(None) => {}
+            Err(error) => self.yarrow_restore_error = Some(error.to_string()),
+        }
+    }
+
+    fn save_pending_liuyao_event(&mut self) {
+        let (Some(transcript), Some(event)) = (&self.liuyao_transcript, &self.liuyao_pending_event)
+        else {
+            return;
+        };
+        match self.storage.append_liuyao_event(transcript, event) {
+            Ok(saved) => {
+                self.liuyao_lines = saved.replay_lines().expect("storage validates every saved event");
+                self.liuyao_cast = if saved.is_complete() { Some(saved.finish().expect("storage verifies the complete cast")) } else { None };
+                self.liuyao_transcript = Some(saved);
+                self.liuyao_pending_event = None;
+                self.casting_message = Some(if self.storage_path.to_string_lossy() == ":memory:" {
+                    "本次操作仅存于临时内存，退出后无法恢复。".to_owned()
+                } else if self.liuyao_cast.is_some() {
+                    "六次起法已保存并锁定，可查看完整排盘报告。".to_owned()
+                } else {
+                    format!("第 {} 爻已保存，原有爻保持不变。", self.liuyao_lines.len())
+                });
+                self.reading = None;
+                self.refresh_history();
+            }
+            Err(error) => self.casting_message = Some(format!("本次操作尚未确认保存，已暂停起法。请重试保存；如其他窗口已更新，请重新读取已保存进度。{error}")),
+        }
+    }
+
+    fn resume_history_casting(&mut self, question_id: Uuid) {
+        match self.storage.load_question_detail(question_id) {
+            Ok(Some(detail)) => {
+                self.applicability = self.registry.assess_all(&detail.question);
+                self.current_classification = Some(divination_core::Classification {
+                    ancient_type: detail.ancient_question_type,
+                    matched_terms: Vec::new(),
+                    normalized_terms: detail.normalized_terms,
+                });
+                self.current_fingerprint = None;
+                self.current_question = Some(detail.question);
+                self.initialize_casting(question_id);
+                self.page = Page::Casting;
+            }
+            Ok(None) => self.history_message = Some("这条记录不存在，请刷新历史记录。".to_owned()),
+            Err(error) => self.history_message = Some(error.to_string()),
+        }
     }
 
     fn refresh_history(&mut self) {
-        match self.storage.recent_questions(200) {
-            Ok(items) => {
+        match self
+            .storage
+            .search_questions(&self.history_query, 51, self.history_offset)
+        {
+            Ok(mut items) => {
+                self.history_has_next = items.len() > 50;
+                items.truncate(50);
                 let selected = self
                     .history_selected
                     .filter(|selected| items.iter().any(|summary| summary.question.id == *selected))
@@ -4655,6 +5065,9 @@ impl eframe::App for JiuhengApp {
                     Page::History => self.render_history(ui),
                     Page::Casting => self.render_casting(ui),
                     Page::Result => self.render_result(ui),
+                    Page::Mechanical => self.render_mechanical(ui),
+                    Page::TimeMechanical => self.render_time_report(ui),
+                    Page::Taiyi => self.render_taiyi(ui),
                     Page::Developer => self.render_developer(ui),
                     Page::About => self.render_about(ui),
                 });
@@ -4723,14 +5136,14 @@ fn configure_fonts_and_style(ctx: &egui::Context) {
     ctx.set_style(style);
 }
 
-fn nav_button(ui: &mut egui::Ui, page: &mut Page, target: Page, label: &str) {
+fn nav_button(ui: &mut egui::Ui, page: &mut Page, target: Page, label: &str) -> bool {
     let selected = *page == target;
     let text = if selected {
         RichText::new(label).strong().color(Color32::WHITE)
     } else {
         RichText::new(label).color(Color32::from_rgb(212, 219, 213))
     };
-    if ui
+    let clicked = ui
         .add_sized(
             [ui.available_width(), 38.0],
             egui::Button::new(text).fill(if selected {
@@ -4739,10 +5152,11 @@ fn nav_button(ui: &mut egui::Ui, page: &mut Page, target: Page, label: &str) {
                 Color32::TRANSPARENT
             }),
         )
-        .clicked()
-    {
+        .clicked();
+    if clicked {
         *page = target;
     }
+    clicked
 }
 
 fn section_title(ui: &mut egui::Ui, title: &str, subtitle: &str, seal: &str) {
@@ -6597,6 +7011,66 @@ fn render_hexagram_pair(
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn historical_report_renders_in_regular_mode_without_a_current_question() {
+        fn collect_text(shape: &egui::epaint::Shape, text: &mut String) {
+            match shape {
+                egui::epaint::Shape::Text(shape) => {
+                    text.push_str(shape.galley.text());
+                    text.push('\n');
+                }
+                egui::epaint::Shape::Vec(shapes) => {
+                    for shape in shapes {
+                        collect_text(shape, text);
+                    }
+                }
+                _ => {}
+            }
+        }
+        let mut storage = Storage::open_in_memory().unwrap();
+        let id = reading_report::tests::fixture(&mut storage, true);
+        let mut app = JiuhengApp::with_storage(storage, PathBuf::from(":memory:"), None);
+        assert!(!app.developer_mode);
+        assert!(app.current_question.is_none());
+        app.open_reading(id);
+        assert_eq!(app.page, Page::Result);
+        let context = egui::Context::default();
+        let mut text = String::new();
+        for _ in 0..2 {
+            let output = context.run(
+                egui::RawInput {
+                    screen_rect: Some(egui::Rect::from_min_size(
+                        egui::Pos2::ZERO,
+                        egui::vec2(900.0, 760.0),
+                    )),
+                    ..Default::default()
+                },
+                |ctx| {
+                    egui::CentralPanel::default().show(ctx, |ui| {
+                        app.render_result(ui);
+                    });
+                },
+            );
+            text.clear();
+            for shape in output.shapes {
+                collect_text(&shape.shape, &mut text);
+            }
+        }
+        for required in [
+            "六爻排盘报告",
+            "复制文字记录",
+            "导出离线网页报告",
+            "上爻",
+            "初爻",
+            "六神",
+            "变化",
+        ] {
+            assert!(text.contains(required), "Missing rendered text: {required}");
+        }
+        assert_eq!(app.storage.question_count().unwrap(), 1);
+        assert!(app.storage.load_liuyao_artifact(id).unwrap().is_some());
+    }
 
     #[test]
     fn parses_bce_proleptic_gregorian_input_with_astronomical_years() {

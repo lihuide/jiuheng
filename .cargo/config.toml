@@ -8,3 +8,6 @@ registry = "sparse+https://mirrors.ustc.edu.cn/crates.io-index/"
 
 [http]
 multiplexing = false
+
+[build]
+jobs = 1

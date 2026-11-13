@@ -2,9 +2,9 @@
   "code_comments_removed": true,
   "files": {
     ".cargo/config.toml": {
-      "bytes": 301,
-      "original_sha256": "48b41c2e4b49f4f345582089d1fe430c26153717a9d8151d1bd72ec82d2f3a0f",
-      "sha256": "343448c6886d538b98416a36b45fb2f50031f5eb4860b61d2107021828e3af55"
+      "bytes": 319,
+      "original_sha256": "d2e614b209a951517d41946bcc50b22502f6137bbe793a78f47579a9b67b3fa4",
+      "sha256": "d2e614b209a951517d41946bcc50b22502f6137bbe793a78f47579a9b67b3fa4"
     },
     ".gitignore": {
       "bytes": 118,
@@ -13,13 +13,18 @@
     },
     "Cargo.lock": {
       "bytes": 79908,
-      "original_sha256": "de9289b60ca88928e130d00ff8cf76383fa690cc08eabf63d543beba078e48c7",
-      "sha256": "0c472f5e2b2b0145df0285fb28580b05c9bbd947901b02515c68eeaeee243a45"
+      "original_sha256": "0536a615bbca805c76014e6a3ac488162a18c888d16d478d7033f59048c22c27",
+      "sha256": "0536a615bbca805c76014e6a3ac488162a18c888d16d478d7033f59048c22c27"
     },
     "Cargo.toml": {
-      "bytes": 914,
-      "original_sha256": "5795a9c8ede3d8afd2262bbfc074ef3c7f045aa5d9c88b076a96901fcb7cc167",
-      "sha256": "5795a9c8ede3d8afd2262bbfc074ef3c7f045aa5d9c88b076a96901fcb7cc167"
+      "bytes": 913,
+      "original_sha256": "ca0d4e5d29426279608f54bc5fdc78b0668fc74839a6a0f015fde8d1826f2715",
+      "sha256": "ca0d4e5d29426279608f54bc5fdc78b0668fc74839a6a0f015fde8d1826f2715"
+    },
+    "LICENSE": {
+      "bytes": 35149,
+      "original_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
     },
     "LICENSE.md": {
       "bytes": 351,
@@ -27,19 +32,69 @@
       "sha256": "d98c8b62829cdf54a107936a7060baacaf5019d0c9b2e70ab3669ff125305f05"
     },
     "README.md": {
-      "bytes": 34270,
-      "original_sha256": "c506fb7e38f5ca713204e68694d0d3a8c6e91e988316c0296d67b76351a77d68",
-      "sha256": "c506fb7e38f5ca713204e68694d0d3a8c6e91e988316c0296d67b76351a77d68"
+      "bytes": 36865,
+      "original_sha256": "2e97eb83fe6e960da416a0de4abde0e43191d703fc91a9070710b9429a935f75",
+      "sha256": "2e97eb83fe6e960da416a0de4abde0e43191d703fc91a9070710b9429a935f75"
     },
     "apps/desktop/Cargo.toml": {
       "bytes": 509,
       "original_sha256": "72ec5cd0c8a3593ed2e881bcba048f05f66e041d4a8a2705409e090c7afec10e",
       "sha256": "72ec5cd0c8a3593ed2e881bcba048f05f66e041d4a8a2705409e090c7afec10e"
     },
+    "apps/desktop/src/casting_resume_tests.rs": {
+      "bytes": 7649,
+      "original_sha256": "3bb099a130a0e45d9ad87a81c7fbbb93053cfa7c30edb1cade6ff5bfffd4bf27",
+      "sha256": "3bb099a130a0e45d9ad87a81c7fbbb93053cfa7c30edb1cade6ff5bfffd4bf27"
+    },
     "apps/desktop/src/main.rs": {
-      "bytes": 317084,
-      "original_sha256": "f0df2f7c8ea8647d7d99f5ae8c04f2ec611f2a2dfeeeae059c684baf42e73168",
-      "sha256": "fba6fac558c184d8b1701d33b4e187b9f51227ef68e685d98459064f04d2ad20"
+      "bytes": 337279,
+      "original_sha256": "f28e7b8f1f57803a648c7b45f511a24f67c038f4d19d363022fb4027453b48fa",
+      "sha256": "f28e7b8f1f57803a648c7b45f511a24f67c038f4d19d363022fb4027453b48fa"
+    },
+    "apps/desktop/src/mechanical_report.rs": {
+      "bytes": 27289,
+      "original_sha256": "09b73fe7422aa5bd2b4da4a5534617756745c0b10e642678a79c0d5279e33114",
+      "sha256": "09b73fe7422aa5bd2b4da4a5534617756745c0b10e642678a79c0d5279e33114"
+    },
+    "apps/desktop/src/mechanical_ui.rs": {
+      "bytes": 12675,
+      "original_sha256": "3e5062ab8e3beb1eacfc2a3feaabd4605ef37d28093eeed2c027bf7b856d43d7",
+      "sha256": "3e5062ab8e3beb1eacfc2a3feaabd4605ef37d28093eeed2c027bf7b856d43d7"
+    },
+    "apps/desktop/src/reading_report.rs": {
+      "bytes": 19409,
+      "original_sha256": "f528fdb8cbf91c1fb3869a4f0be28e459968899dd9e1498e5073fbda33c27471",
+      "sha256": "f528fdb8cbf91c1fb3869a4f0be28e459968899dd9e1498e5073fbda33c27471"
+    },
+    "apps/desktop/src/taiyi_report.rs": {
+      "bytes": 14863,
+      "original_sha256": "38476ba287d277d16393ca65924daf47a07cc23f9e057c224ba35f422edb92c3",
+      "sha256": "38476ba287d277d16393ca65924daf47a07cc23f9e057c224ba35f422edb92c3"
+    },
+    "apps/desktop/src/taiyi_report_tests.rs": {
+      "bytes": 7640,
+      "original_sha256": "edfcacdbc01d4c82becec493f5fe9f036b5f800c3f4ee2da5b31d022cdd52930",
+      "sha256": "edfcacdbc01d4c82becec493f5fe9f036b5f800c3f4ee2da5b31d022cdd52930"
+    },
+    "apps/desktop/src/taiyi_ui.rs": {
+      "bytes": 13413,
+      "original_sha256": "49cab1bcee9530d66fb18ef35741a0e95b4fd9ede1a6a64cc3b22fd15a913094",
+      "sha256": "49cab1bcee9530d66fb18ef35741a0e95b4fd9ede1a6a64cc3b22fd15a913094"
+    },
+    "apps/desktop/src/time_report.rs": {
+      "bytes": 22041,
+      "original_sha256": "a227d3029cbfa406f171fdc0091f1520d4de71b8f08f45221b275352da8ef38d",
+      "sha256": "a227d3029cbfa406f171fdc0091f1520d4de71b8f08f45221b275352da8ef38d"
+    },
+    "apps/desktop/src/time_report_tests.rs": {
+      "bytes": 9215,
+      "original_sha256": "cf34dc402cbe82cbfeebf36a20cbafac73ab91744f37d90a8b748444c21ed412",
+      "sha256": "cf34dc402cbe82cbfeebf36a20cbafac73ab91744f37d90a8b748444c21ed412"
+    },
+    "apps/desktop/src/time_ui.rs": {
+      "bytes": 12223,
+      "original_sha256": "958fd87a28e0368efbf588df0fc8a039669547ceef731c56e0b3dbc871e8c0f7",
+      "sha256": "958fd87a28e0368efbf588df0fc8a039669547ceef731c56e0b3dbc871e8c0f7"
     },
     "crates/divination-core/Cargo.toml": {
       "bytes": 387,
@@ -48,47 +103,47 @@
     },
     "crates/divination-core/examples/taiyi_reference_audit.rs": {
       "bytes": 492,
-      "original_sha256": "02c9f8828df3e066a152b4f7c3c04a4aa8ad6aea9626d29139325009413ed78d",
+      "original_sha256": "137470d5d36275130a8c16ed857ae4b5ef0e4a205b3d9512ca5160242d7291c9",
       "sha256": "137470d5d36275130a8c16ed857ae4b5ef0e4a205b3d9512ca5160242d7291c9"
     },
     "crates/divination-core/examples/taiyi_year_epoch_audit.rs": {
       "bytes": 770,
-      "original_sha256": "7a4a113bc30ca2f033b297a96e00011bb8d867e113627a36b11bf5e2c3afedd4",
+      "original_sha256": "9deed15bb0a8b34644f9e66f9c9ad48b2be44e8c966f9b9b88e01b99f5d41f04",
       "sha256": "9deed15bb0a8b34644f9e66f9c9ad48b2be44e8c966f9b9b88e01b99f5d41f04"
     },
     "crates/divination-core/src/astronomy.rs": {
       "bytes": 25954,
-      "original_sha256": "bacf4f0a924e4e3d4c26939130a2aecfe73600ddcd07432d87914e26cdf0ab35",
+      "original_sha256": "42916ce95d4976d2a5c7c902c506d56249874f1295513317064620bca7ecae2b",
       "sha256": "42916ce95d4976d2a5c7c902c506d56249874f1295513317064620bca7ecae2b"
     },
     "crates/divination-core/src/astronomy_spa.rs": {
       "bytes": 18478,
-      "original_sha256": "657e36b62ee60fe98acbbe38decd0c626eb32987bb2b08b0c1a3718f4ac64ed8",
+      "original_sha256": "414eca4a5d01a343bf7451dc50be5e1cc7a560da90fc500f29a8737321820ed0",
       "sha256": "414eca4a5d01a343bf7451dc50be5e1cc7a560da90fc500f29a8737321820ed0"
     },
     "crates/divination-core/src/calendar.rs": {
       "bytes": 25999,
-      "original_sha256": "1c217c5d8239b69a2951c01c7b903110f3f59454aea6004e32aa7e4fb2e2ead8",
+      "original_sha256": "6e93a852f31d4b0d26ece7ce9e1755868a82b513ff901de32627de6ee4148b5e",
       "sha256": "6e93a852f31d4b0d26ece7ce9e1755868a82b513ff901de32627de6ee4148b5e"
     },
     "crates/divination-core/src/casting.rs": {
-      "bytes": 30576,
-      "original_sha256": "af8224e10480bd0094d73d9796e921d685df64c1ec3698505aa03fb69bd05efa",
-      "sha256": "3b0bd2bc0aba376a1fa07adcff5952a78fe9025337246e0b9039bd817360ca33"
+      "bytes": 32279,
+      "original_sha256": "4cc03bf48bb1cea1c8e01dbb2f3e83b110f7bf026fb9151690d395127d433d54",
+      "sha256": "4cc03bf48bb1cea1c8e01dbb2f3e83b110f7bf026fb9151690d395127d433d54"
     },
     "crates/divination-core/src/chinese_astrology.rs": {
       "bytes": 17753,
-      "original_sha256": "099dbcc35607e787ea2086e923f355d6028736f04e48381a5b6df929c29545af",
+      "original_sha256": "d8e41400028c906658a77d0b4ad7f54f95f4269a5fd036204e1cc3cf44ea6507",
       "sha256": "d8e41400028c906658a77d0b4ad7f54f95f4269a5fd036204e1cc3cf44ea6507"
     },
     "crates/divination-core/src/classification.rs": {
       "bytes": 12334,
-      "original_sha256": "e19beda0bdfb4a3907fb386d7f0c6caf6c3178c61274120d3aa1ebd414a8eff1",
+      "original_sha256": "09e99b8af460b085f283690365b2c71605d72b3d650c19347bb7ff826bd3561f",
       "sha256": "09e99b8af460b085f283690365b2c71605d72b3d650c19347bb7ff826bd3561f"
     },
     "crates/divination-core/src/domain.rs": {
       "bytes": 20707,
-      "original_sha256": "b4ae0ab5cfd8064209bd8c97cab3f51635741e8ee845d8fb4037adeb6cf75be1",
+      "original_sha256": "f23763d1bc74b6cb9afba0afc84b7951075fd743573e6298812c9c84dbcdf236",
       "sha256": "f23763d1bc74b6cb9afba0afc84b7951075fd743573e6298812c9c84dbcdf236"
     },
     "crates/divination-core/src/engines.rs": {
@@ -98,92 +153,97 @@
     },
     "crates/divination-core/src/fingerprint.rs": {
       "bytes": 19354,
-      "original_sha256": "2af3e73e1edff2ac5ac5973624be096b3bc6e6d01eceb709943fc0a260cdbf42",
+      "original_sha256": "428b35dedadb0bbc107426a065ef7ec6186cb88f9428eee1b53fa3884c0392be",
       "sha256": "428b35dedadb0bbc107426a065ef7ec6186cb88f9428eee1b53fa3884c0392be"
     },
     "crates/divination-core/src/four_pillars.rs": {
       "bytes": 25064,
-      "original_sha256": "8d19bdc5cbdeddda86b4b25c53b731efb16ec572c9967ca863a537d7d9701920",
+      "original_sha256": "e257daa7e106d17127f688ce47964e4ef5a97e589b8da177cb4b2e1d5bbf65ab",
       "sha256": "e257daa7e106d17127f688ce47964e4ef5a97e589b8da177cb4b2e1d5bbf65ab"
     },
     "crates/divination-core/src/fusion.rs": {
       "bytes": 42105,
-      "original_sha256": "461d8a820fd27a9bee8f21c147554d81601e8164c6b6cd525f4eb5d6afd15de9",
+      "original_sha256": "3a4c2546249d33600ddc425c96f6bcba6d0a20323d561263bd35876c21ac3c38",
       "sha256": "3a4c2546249d33600ddc425c96f6bcba6d0a20323d561263bd35876c21ac3c38"
     },
     "crates/divination-core/src/hexagram.rs": {
       "bytes": 11304,
-      "original_sha256": "c6c5a77eba84846f6b1f3abf45843dc1c1b8e65f8ea9f8be54c4adbd0a90d826",
+      "original_sha256": "26c99ef6b819182aeab37783b3650e66d80d16ceccd39ddf3b6d2784f0053407",
       "sha256": "26c99ef6b819182aeab37783b3650e66d80d16ceccd39ddf3b6d2784f0053407"
     },
+    "crates/divination-core/src/hidden_stems.rs": {
+      "bytes": 7280,
+      "original_sha256": "540a99ebd3c702d8172ec517e6ee64c8fb2ff4a95475c6b30e247f7add0aed5e",
+      "sha256": "540a99ebd3c702d8172ec517e6ee64c8fb2ff4a95475c6b30e247f7add0aed5e"
+    },
     "crates/divination-core/src/lib.rs": {
-      "bytes": 1210,
-      "original_sha256": "a5c50354d7a8704467a3f310226a9d9204eff7b4093c8b81f053a5be6278760a",
-      "sha256": "a5c50354d7a8704467a3f310226a9d9204eff7b4093c8b81f053a5be6278760a"
+      "bytes": 1257,
+      "original_sha256": "65d55a7715f221a29e6351bbaf19d9861b65dff4ff7494f77bad06ccd8f30f81",
+      "sha256": "65d55a7715f221a29e6351bbaf19d9861b65dff4ff7494f77bad06ccd8f30f81"
     },
     "crates/divination-core/src/liuyao.rs": {
       "bytes": 147343,
-      "original_sha256": "218fcabbceae9423ef0497e2bba791f788434d492566465b918afe2bcd8108c3",
+      "original_sha256": "917720d9a6eb0e68c17e09ceaaff07943cac58423b7b0cac6d41daf011b04ccc",
       "sha256": "917720d9a6eb0e68c17e09ceaaff07943cac58423b7b0cac6d41daf011b04ccc"
     },
     "crates/divination-core/src/lunar_phase.rs": {
       "bytes": 13543,
-      "original_sha256": "1af2f3843b5d3695d48dc770779c274adace49c9ed052f0f3e7ff742c2194e75",
+      "original_sha256": "27fadb938b53e529262652b3bc66431847cf744cbeb46574772af0245aa91bc1",
       "sha256": "27fadb938b53e529262652b3bc66431847cf744cbeb46574772af0245aa91bc1"
     },
     "crates/divination-core/src/lunisolar.rs": {
       "bytes": 26452,
-      "original_sha256": "529789b2565336e55997e37dea437e055dcd07697392e8deab45e46b5ed2bea8",
+      "original_sha256": "1c01ec91af0331a6e157cec806edceb813ead4aa8c948c2eb142de55b159f22b",
       "sha256": "1c01ec91af0331a6e157cec806edceb813ead4aa8c948c2eb142de55b159f22b"
     },
     "crates/divination-core/src/meihua.rs": {
       "bytes": 20366,
-      "original_sha256": "ff358702f22e242a25a4ff4fba8bbf3e7ec233dcd1d86bae2eb06d588f9aecfd",
+      "original_sha256": "a179df7f581d79a4aa0937e5728a13f93ce825521b72ade56dc7e6e9f611cf6b",
       "sha256": "a179df7f581d79a4aa0937e5728a13f93ce825521b72ade56dc7e6e9f611cf6b"
     },
     "crates/divination-core/src/nayin.rs": {
       "bytes": 4520,
-      "original_sha256": "e52e034a7c84f925f34bf399a8fc2a0788f2e5294be12ff8f55d27161105f31b",
+      "original_sha256": "1b06df2bf4a3da9f542498576a51c8b8eb7a994181818cf62b13f939e3994350",
       "sha256": "1b06df2bf4a3da9f542498576a51c8b8eb7a994181818cf62b13f939e3994350"
     },
     "crates/divination-core/src/planetary_jpl_approx.rs": {
       "bytes": 21222,
-      "original_sha256": "ed436ec4febf37622ce8b0e0a877cbe026e44657146b93acb6d32c0fd3f81c6b",
+      "original_sha256": "7a70a2d6e33d622133b11709af88656b3bfafdd920488ac19bf3c699d4ffcfe3",
       "sha256": "7a70a2d6e33d622133b11709af88656b3bfafdd920488ac19bf3c699d4ffcfe3"
     },
     "crates/divination-core/src/qimen.rs": {
       "bytes": 49695,
-      "original_sha256": "7b6fe47a616aabc81c8d817558bea510abc9110eaa0e759b367a2953d9f40194",
+      "original_sha256": "30ef1048f3869992848d58abe311bd931fab548f6baf93391224d7ee1f7d9757",
       "sha256": "30ef1048f3869992848d58abe311bd931fab548f6baf93391224d7ee1f7d9757"
     },
     "crates/divination-core/src/qizheng_siyu.rs": {
       "bytes": 6779,
-      "original_sha256": "023ab0caf6f99b39052c09361ca163f7b3857dc036e077b89b29c47ade47e330",
+      "original_sha256": "8521ef001e96deeda781be832563ec9c97667e20104f7861548824dbfdfa5148",
       "sha256": "8521ef001e96deeda781be832563ec9c97667e20104f7861548824dbfdfa5148"
     },
     "crates/divination-core/src/rule_program.rs": {
       "bytes": 28747,
-      "original_sha256": "22cd38cac34c36af13845ae00da8ea1d315f06f0035ba0e7ebdb9c528e23c648",
+      "original_sha256": "14c7e3d7d27fb37b3524ecfa3a1b25a3e722c590827235c9c9dacfc5f5f23f38",
       "sha256": "14c7e3d7d27fb37b3524ecfa3a1b25a3e722c590827235c9c9dacfc5f5f23f38"
     },
     "crates/divination-core/src/rule_runtime.rs": {
       "bytes": 18633,
-      "original_sha256": "81246b3448b4993990bfa1e7ecca9b4eb6d12e3094c9dd2119396ece675adbb0",
+      "original_sha256": "7daf935eea7a8aa3d55d91534b551d990ec306650a58ebeb8c1a8f4d0639d99f",
       "sha256": "7daf935eea7a8aa3d55d91534b551d990ec306650a58ebeb8c1a8f4d0639d99f"
     },
     "crates/divination-core/src/sexagenary.rs": {
       "bytes": 24838,
-      "original_sha256": "64429e7d8413e11fc5a94b805ba5b80e35bcd4c801e60e966c69f4b101553246",
+      "original_sha256": "cedb9b606f8c997ed743e3cae48070761f7fded23bf2a0c983e7c4cc953f7579",
       "sha256": "cedb9b606f8c997ed743e3cae48070761f7fded23bf2a0c983e7c4cc953f7579"
     },
     "crates/divination-core/src/taiyi.rs": {
       "bytes": 118499,
-      "original_sha256": "ba1f346851ab051239a3c6a168b769efddf492ebc6db7b8bb8f24aa36f0a5a18",
+      "original_sha256": "3e36f99e9eec8f866bc032cb630cf521bed2af2ab1fe5af26d97398862ff9e77",
       "sha256": "3e36f99e9eec8f866bc032cb630cf521bed2af2ab1fe5af26d97398862ff9e77"
     },
     "crates/divination-core/src/taiyi_epoch.rs": {
       "bytes": 8624,
-      "original_sha256": "017b159ffafb568fc75060f23435dd36735c4726d122991ef2b414e784f35d9c",
+      "original_sha256": "a1e792774fb2e9d16c2cc0eabaf4d193b957effb09388db85daf3b4a83808011",
       "sha256": "a1e792774fb2e9d16c2cc0eabaf4d193b957effb09388db85daf3b4a83808011"
     },
     "crates/divination-core/src/validation.rs": {
@@ -193,12 +253,12 @@
     },
     "crates/divination-core/src/weather_scope.rs": {
       "bytes": 14190,
-      "original_sha256": "61f7dc3936c45bbf9b3ee51635ea319dc124c348ab5cf0faceb8b4f530c51819",
+      "original_sha256": "8127fd78151327d8c69e4f4fa7507669c6186e8a0e902ddd98e8e83335aa5499",
       "sha256": "8127fd78151327d8c69e4f4fa7507669c6186e8a0e902ddd98e8e83335aa5499"
     },
     "crates/divination-core/src/ziwei.rs": {
       "bytes": 56509,
-      "original_sha256": "393c2b96a9979e9d0f68925958cd842591613369103f58293cc433194b0d883d",
+      "original_sha256": "7f451464a97c290519e9daa2481053dd515333cb1d5921d9bc5e1369c95b986f",
       "sha256": "7f451464a97c290519e9daa2481053dd515333cb1d5921d9bc5e1369c95b986f"
     },
     "crates/divination-core/tests/kinqimen_inspection.rs": {
@@ -208,7 +268,7 @@
     },
     "crates/divination-core/tests/support/taiyi_reference.rs": {
       "bytes": 3196,
-      "original_sha256": "60512bca7584def664138d7b194f889e9b960c18e54279721b93c58a6cc3dd68",
+      "original_sha256": "7b910526456c0245c4a4e4a5f608d63b07d105bfa8a53ee3b23db17aa1c7e2c8",
       "sha256": "7b910526456c0245c4a4e4a5f608d63b07d105bfa8a53ee3b23db17aa1c7e2c8"
     },
     "crates/divination-core/tests/taiyi_reference.rs": {
@@ -286,15 +346,45 @@
       "original_sha256": "47387d7eae58ed20d1e7e5ee2cbca7a99e39454eecf1336f68825637a314ba4c",
       "sha256": "47387d7eae58ed20d1e7e5ee2cbca7a99e39454eecf1336f68825637a314ba4c"
     },
+    "crates/divination-storage/migrations/0013_liuyao_checkpoints.sql": {
+      "bytes": 1460,
+      "original_sha256": "d01e161fcec802eace2f7ea4f711491a53b6271f88d58b4a1c830a93e435d7c4",
+      "sha256": "d01e161fcec802eace2f7ea4f711491a53b6271f88d58b4a1c830a93e435d7c4"
+    },
+    "crates/divination-storage/migrations/0014_taiyi_candidates.sql": {
+      "bytes": 836,
+      "original_sha256": "6cd1e0fd28ae5dc719577a8a644fba964ae7f849764f78a3083a37b66c19eb67",
+      "sha256": "6cd1e0fd28ae5dc719577a8a644fba964ae7f849764f78a3083a37b66c19eb67"
+    },
+    "crates/divination-storage/src/birth_hidden_tests.rs": {
+      "bytes": 3757,
+      "original_sha256": "11e2dd2b9374040714fed22ca8944a6472122de03d6bccf9bdc947e0a1426a68",
+      "sha256": "11e2dd2b9374040714fed22ca8944a6472122de03d6bccf9bdc947e0a1426a68"
+    },
     "crates/divination-storage/src/lib.rs": {
-      "bytes": 375956,
-      "original_sha256": "e53dd5a73ccc494a71995b127d9777769575ce597ea407ae7e2f87c50597e581",
-      "sha256": "29db125ae5f9667dfee9945cc2093b548f922655e502323cdb58799b5ad34f2e"
+      "bytes": 381527,
+      "original_sha256": "0ec04274936818a0849ca5bd79f16fd537960d0f83462c2901980748a83c80a7",
+      "sha256": "0ec04274936818a0849ca5bd79f16fd537960d0f83462c2901980748a83c80a7"
+    },
+    "crates/divination-storage/src/liuyao_progress.rs": {
+      "bytes": 16707,
+      "original_sha256": "91cd5e8bab37c2adbb8016955c17ea504fa547c535000760d550df21c89c5c60",
+      "sha256": "91cd5e8bab37c2adbb8016955c17ea504fa547c535000760d550df21c89c5c60"
     },
     "crates/divination-storage/src/sha256.rs": {
       "bytes": 7001,
       "original_sha256": "df8aaf091a249e86d0911865024767d1b767c655e005f791323d46472a20612d",
       "sha256": "df8aaf091a249e86d0911865024767d1b767c655e005f791323d46472a20612d"
+    },
+    "crates/divination-storage/src/taiyi_records.rs": {
+      "bytes": 5965,
+      "original_sha256": "9389c9addb7761c3f9a6289189561aa0f8fdd8329945d59781f490ad6fa5b26d",
+      "sha256": "9389c9addb7761c3f9a6289189561aa0f8fdd8329945d59781f490ad6fa5b26d"
+    },
+    "crates/divination-storage/src/taiyi_records_tests.rs": {
+      "bytes": 8621,
+      "original_sha256": "6d86fe549248abd8e80eb76b0f977ee35455312754d9f0045800c0231faea82d",
+      "sha256": "6d86fe549248abd8e80eb76b0f977ee35455312754d9f0045800c0231faea82d"
     },
     "crates/divination-storage/tests/research_gate.rs": {
       "bytes": 146712,
@@ -307,9 +397,9 @@
       "sha256": "daf969babe5123db49bb5aec4c0c8005c9e812f30fe74ca8857b82e0bcca24b2"
     },
     "data/progress.checklist.json": {
-      "bytes": 6098,
-      "original_sha256": "0b82ee42169f4695febfe08b9dae7dfefed591f6f6bf554e5c536c34bde05785",
-      "sha256": "0b82ee42169f4695febfe08b9dae7dfefed591f6f6bf554e5c536c34bde05785"
+      "bytes": 7382,
+      "original_sha256": "efc231429dfdec2caae10f37b14dbbb327924b52921a881616e4c1f6dc6c6b41",
+      "sha256": "efc231429dfdec2caae10f37b14dbbb327924b52921a881616e4c1f6dc6c6b41"
     },
     "data/research/chinese-astrology-three-enclosures-seven-luminaries-catalog.json": {
       "bytes": 6336,
@@ -460,6 +550,11 @@
       "bytes": 11089308,
       "original_sha256": "caac111bc5c5b1c08fd27b3828e7cf6b5430503800f2427d8f2b28809022abaa",
       "sha256": "caac111bc5c5b1c08fd27b3828e7cf6b5430503800f2427d8f2b28809022abaa"
+    },
+    "data/research/four-pillars-hidden-stems-candidates.json": {
+      "bytes": 2528,
+      "original_sha256": "7c5b501d6a5a67bc7ba7969b4ab313682493e9f28c50949965ac66dea5bdd87b",
+      "sha256": "7c5b501d6a5a67bc7ba7969b4ab313682493e9f28c50949965ac66dea5bdd87b"
     },
     "data/research/four-pillars-visible-stem-ten-gods-candidates.json": {
       "bytes": 5335,
@@ -762,9 +857,9 @@
       "sha256": "9e8ede54ec3107ff368be3812817ffbe2b08c874bbb15cb2a3dff1d126128a1d"
     },
     "docs/CURRENT_PROGRESS.md": {
-      "bytes": 22384,
-      "original_sha256": "33b12bf1001c448906bf7e5963fef1d016e081c79b3b5cc7918f38f1e5b38f25",
-      "sha256": "33b12bf1001c448906bf7e5963fef1d016e081c79b3b5cc7918f38f1e5b38f25"
+      "bytes": 25154,
+      "original_sha256": "4f92dba50d0bb34dfe9ab590cce9997cfaed17e3876b436a8e47fd44909ad731",
+      "sha256": "4f92dba50d0bb34dfe9ab590cce9997cfaed17e3876b436a8e47fd44909ad731"
     },
     "docs/DELIVERY_STATUS_2026_09_27.md": {
       "bytes": 10172,
@@ -782,9 +877,14 @@
       "sha256": "3f2155b4f811060915906b6ac69d2156cbbae7e1cbfcc47f7615f10ce37c6b4a"
     },
     "docs/FOUR_PILLARS_CHART_AUDIT.md": {
-      "bytes": 5051,
-      "original_sha256": "9fc2001ce79f5b11515687a7b5a8192d6036ae207dc0e56a000a876bd5fffe58",
-      "sha256": "9fc2001ce79f5b11515687a7b5a8192d6036ae207dc0e56a000a876bd5fffe58"
+      "bytes": 5485,
+      "original_sha256": "41095a18e405b9fe2b10c0bff0b10e4f634e55c84bb2b5f75dff401335c2a55b",
+      "sha256": "41095a18e405b9fe2b10c0bff0b10e4f634e55c84bb2b5f75dff401335c2a55b"
+    },
+    "docs/FOUR_PILLARS_HIDDEN_STEMS_AUDIT.md": {
+      "bytes": 2693,
+      "original_sha256": "873bbab2546989b24ea7874e137463727b17ad0dbed703bf5ed595437cc7301a",
+      "sha256": "873bbab2546989b24ea7874e137463727b17ad0dbed703bf5ed595437cc7301a"
     },
     "docs/FOUR_PILLARS_VISIBLE_STEM_TEN_GODS_AUDIT.md": {
       "bytes": 3047,
@@ -867,9 +967,9 @@
       "sha256": "4db83f82d9f9705eba3e59fecbcb0d9a1020c28972fc0bb03214c24399d25bfa"
     },
     "docs/LIUYAO_WEATHER_FIRST_RULE_CANDIDATE_2026_10_02.md": {
-      "bytes": 8139,
-      "original_sha256": "b319ae681c7d98c716c00dd1690f648728ecc3003ea3fa5493c90d32a21248be",
-      "sha256": "b319ae681c7d98c716c00dd1690f648728ecc3003ea3fa5493c90d32a21248be"
+      "bytes": 8519,
+      "original_sha256": "9416b79a3fa37bb536c8a5981a9cb59e60b20220f5e171dec16a0a5874986284",
+      "sha256": "9416b79a3fa37bb536c8a5981a9cb59e60b20220f5e171dec16a0a5874986284"
     },
     "docs/LIUYAO_XUN_VOID_CALENDAR_RELATIONS_AUDIT.md": {
       "bytes": 3878,
@@ -922,9 +1022,9 @@
       "sha256": "958d2fa595ea6cd7097f82ddfb3afc47eb8f22d49974135b75d5d72b9b288d27"
     },
     "docs/PROJECT_ACCEPTANCE_CHECKLIST.md": {
-      "bytes": 2534,
-      "original_sha256": "c1e33aeebddf36f2b69c686142f90b12a74b6f4a8349a4f8310fa365c934b1bd",
-      "sha256": "c1e33aeebddf36f2b69c686142f90b12a74b6f4a8349a4f8310fa365c934b1bd"
+      "bytes": 2905,
+      "original_sha256": "1331d609a76a3cd7cd60a43aa36fc9f92587a66aa4f67d6d2bb2039b987a42fa",
+      "sha256": "1331d609a76a3cd7cd60a43aa36fc9f92587a66aa4f67d6d2bb2039b987a42fa"
     },
     "docs/PROJECT_CLASSICS_AND_CHANGELOG.md": {
       "bytes": 33703,
@@ -960,6 +1060,16 @@
       "bytes": 2726,
       "original_sha256": "66a1289588fc89c5ed7dae56d12a3b24f5764ea54a125eaa7861e1c8a65ab77f",
       "sha256": "66a1289588fc89c5ed7dae56d12a3b24f5764ea54a125eaa7861e1c8a65ab77f"
+    },
+    "docs/QUICK_START_TRIAL.md": {
+      "bytes": 8139,
+      "original_sha256": "2c20aba8c6cbb2771744030e0a10b014c9ecd2bafcc6cc75f76167ab6e4cd99d",
+      "sha256": "2c20aba8c6cbb2771744030e0a10b014c9ecd2bafcc6cc75f76167ab6e4cd99d"
+    },
+    "docs/RELEASE_SCOPE_0_80.md": {
+      "bytes": 2654,
+      "original_sha256": "3154059d7486f8d7f8182d9e29419b98e8c835c15a0df5af8db7bc399152408a",
+      "sha256": "3154059d7486f8d7f8182d9e29419b98e8c835c15a0df5af8db7bc399152408a"
     },
     "docs/RULE_EVIDENCE_DOSSIER_AUDIT.md": {
       "bytes": 2707,
@@ -1062,9 +1172,9 @@
       "sha256": "288701c363d2c0a1b4295306b1238d786df6f5c5f604a02aaf304818c11bb396"
     },
     "docs/TAIYI_TRADITIONAL_YEAR_EPOCH_AUDIT.md": {
-      "bytes": 4600,
-      "original_sha256": "5fc61d275b51a5ef8a2208f9fab26c1b9d57631be5da779998790af6108e6d50",
-      "sha256": "5fc61d275b51a5ef8a2208f9fab26c1b9d57631be5da779998790af6108e6d50"
+      "bytes": 5058,
+      "original_sha256": "8a008e02d9d711102e06ad85a3f2dd066c1a75da0b3e2088116eef9d74ac869a",
+      "sha256": "8a008e02d9d711102e06ad85a3f2dd066c1a75da0b3e2088116eef9d74ac869a"
     },
     "docs/TAIYI_YEAR_POSITION_AUDIT.md": {
       "bytes": 3045,
@@ -1095,6 +1205,31 @@
       "bytes": 1826,
       "original_sha256": "bffe60e233e18b6b7dc39f18713d02e9cd6e774d36b2f35f7f2d288cbbefb85c",
       "sha256": "bffe60e233e18b6b7dc39f18713d02e9cd6e774d36b2f35f7f2d288cbbefb85c"
+    },
+    "docs/V0_80_WINDOWS_DELIVERY.md": {
+      "bytes": 3389,
+      "original_sha256": "d997357b9e7134f0d1285839f0feb9102af522fa7ca82c6ce5ecadc6cf01e7bc",
+      "sha256": "d997357b9e7134f0d1285839f0feb9102af522fa7ca82c6ce5ecadc6cf01e7bc"
+    },
+    "docs/V0_81_WINDOWS_DELIVERY.md": {
+      "bytes": 3487,
+      "original_sha256": "b471885cb4258aae249074263ef424c5c73b9f311a826d810c2bfab773a2f1ce",
+      "sha256": "b471885cb4258aae249074263ef424c5c73b9f311a826d810c2bfab773a2f1ce"
+    },
+    "docs/V0_82_WINDOWS_DELIVERY.md": {
+      "bytes": 3364,
+      "original_sha256": "64593c504fc1f521ea2aae47a378678a8d69be6231780ab2cc20859e913834d8",
+      "sha256": "64593c504fc1f521ea2aae47a378678a8d69be6231780ab2cc20859e913834d8"
+    },
+    "docs/V0_83_WINDOWS_DELIVERY.md": {
+      "bytes": 3926,
+      "original_sha256": "3cf64a819dcc6ab58da6809da55235bdb418432f17d6d563b83acc6ee2c0de34",
+      "sha256": "3cf64a819dcc6ab58da6809da55235bdb418432f17d6d563b83acc6ee2c0de34"
+    },
+    "docs/V0_84_WINDOWS_DELIVERY.md": {
+      "bytes": 4498,
+      "original_sha256": "f673c30bbc939aa63d10439218a4d1918dab8d1f4a18414232fe1419812dbe14",
+      "sha256": "f673c30bbc939aa63d10439218a4d1918dab8d1f4a18414232fe1419812dbe14"
     },
     "docs/YARROW_PROCEDURE_AUDIT.md": {
       "bytes": 5403,
@@ -1138,8 +1273,8 @@
     },
     "packaging/jiuheng.iss": {
       "bytes": 1450,
-      "original_sha256": "d92b60fff7aa2961589b3b250a4d6f4e8e7268481d8d80501845f2bfbb6afa10",
-      "sha256": "d92b60fff7aa2961589b3b250a4d6f4e8e7268481d8d80501845f2bfbb6afa10"
+      "original_sha256": "d0457038fa6bbef9aeb6f99453a23469f46d049ed5c816ac925b6c9486339c13",
+      "sha256": "d0457038fa6bbef9aeb6f99453a23469f46d049ed5c816ac925b6c9486339c13"
     },
     "rust-toolchain.toml": {
       "bytes": 123,
@@ -1153,12 +1288,12 @@
     },
     "scripts/build-location-seed.py": {
       "bytes": 6186,
-      "original_sha256": "d01f731320592dd45a525df3640647f1921b933c2bf59458dc224dbf6408518e",
+      "original_sha256": "56da4ad74a914e28304d084ffdc55ca5abf8bdde9e1b22ce96a658b59b07f196",
       "sha256": "56da4ad74a914e28304d084ffdc55ca5abf8bdde9e1b22ce96a658b59b07f196"
     },
     "scripts/build-street-seed.py": {
       "bytes": 4405,
-      "original_sha256": "329cfcfaeaa7bf25791ffcc62e92bf9c680be17016868dfc01ad9b040e2858e4",
+      "original_sha256": "e08abbe44ecdc00822b5b29da836bd75bc92d44b38adfe01f03d9b52e5fe0ed4",
       "sha256": "e08abbe44ecdc00822b5b29da836bd75bc92d44b38adfe01f03d9b52e5fe0ed4"
     },
     "scripts/build-windows.ps1": {
@@ -1168,7 +1303,7 @@
     },
     "scripts/check-kintaiyi-static-reference.py": {
       "bytes": 4199,
-      "original_sha256": "fb83076ba442a0b1a36fa5140fcd5e8293c433b82ae1cf8141c1ee98e333eef4",
+      "original_sha256": "b5857ab8305d9db4ff0b1c039518bfaa7c34277d38570783b6b277f05b696ff9",
       "sha256": "b5857ab8305d9db4ff0b1c039518bfaa7c34277d38570783b6b277f05b696ff9"
     },
     "scripts/package-release.ps1": {
@@ -1178,7 +1313,7 @@
     },
     "scripts/package-source.py": {
       "bytes": 12155,
-      "original_sha256": "15ee86548066be0ce5e786f23900d873c744b10810592801023dfaa24716baac",
+      "original_sha256": "8bceb76eb1146fda2b1b1fbbd01b562c113d2d8fe7ada8a4b9183a4fc25214ea",
       "sha256": "8bceb76eb1146fda2b1b1fbbd01b562c113d2d8fe7ada8a4b9183a4fc25214ea"
     },
     "scripts/package-windows-no-comments.ps1": {
@@ -1198,12 +1333,12 @@
     },
     "scripts/tests/test_source_package.py": {
       "bytes": 8082,
-      "original_sha256": "62b0625d2a2eb9c28b7c89c31017e129ed46211ae22457563e476012bf8f8a07",
+      "original_sha256": "c457cdbdceaed5d6460e22944f2b1b22e709404751b5920a217747190acae1c7",
       "sha256": "c457cdbdceaed5d6460e22944f2b1b22e709404751b5920a217747190acae1c7"
     },
     "scripts/tests/test_weather_exclusions.py": {
       "bytes": 1616,
-      "original_sha256": "ea2418fcdf6d2649946554f7a560d538bf524faab4037025eddd3e4d01cc3605",
+      "original_sha256": "4fdbae335fe623d3c83f29e15b94c8dfd354c17a07c9c1fe73423a26d8e80e8f",
       "sha256": "4fdbae335fe623d3c83f29e15b94c8dfd354c17a07c9c1fe73423a26d8e80e8f"
     },
     "scripts/verify-reference-sources.ps1": {
@@ -1218,11 +1353,11 @@
     },
     "scripts/verify_weather_facsimile.py": {
       "bytes": 4210,
-      "original_sha256": "80590a23078738bc1aac11c4cfad1452b930de052666219f8030955c3f436325",
+      "original_sha256": "9c930c57c11fcf828ebb3f2dca865f06a81a3f0ee23cff75978e0f6a4a458e61",
       "sha256": "9c930c57c11fcf828ebb3f2dca865f06a81a3f0ee23cff75978e0f6a4a458e61"
     }
   },
   "kind": "source_snapshot_code_comments_removed_not_a_windows_build",
-  "product_version": "0.79.0",
+  "product_version": "0.84.0",
   "schema_version": 1
 }

@@ -7,7 +7,7 @@ members = [
 resolver = "2"
 
 [workspace.package]
-version = "0.79.0"
+version = "0.84.0"
 edition = "2021"
 license = "LicenseRef-Proprietary"
 authors = ["Jiuheng Contributors"]
@@ -26,8 +26,8 @@ thiserror = "2.0"
 uuid = { version = "1.17", features = ["v4", "serde"] }
 
 [profile.release]
-codegen-units = 1
-lto = "thin"
+codegen-units = 8
+lto = false
 opt-level = "s"
 panic = "abort"
 strip = "symbols"

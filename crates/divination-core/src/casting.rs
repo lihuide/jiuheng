@@ -105,6 +105,21 @@ impl LiuyaoTranscript {
         self.events.len() == 6
     }
 
+    pub fn replay_lines(&self) -> Result<Vec<LineCast>, CastingError> {
+        if self.algorithm_version != LIUYAO_ALGORITHM_VERSION {
+            return Err(CastingError::UnsupportedAlgorithmVersion(
+                self.algorithm_version.clone(),
+            ));
+        }
+        let nonce = decode_32_byte_hex(&self.session_nonce_hex)?;
+        let mut replay = Self::new(self.question_id, nonce);
+        self.events
+            .iter()
+            .cloned()
+            .map(|event| replay.push_event(event))
+            .collect()
+    }
+
     pub fn finish(&self) -> Result<LiuyaoCast, CastingError> {
         replay_liuyao(self)
     }
@@ -540,26 +555,32 @@ impl YarrowSession {
 }
 
 pub fn replay_yarrow(transcript: &YarrowTranscript) -> Result<YarrowCast, CastingError> {
-    validate_yarrow_transcript_metadata(transcript)?;
-    if transcript.left_splits.len() != 18 {
-        return Err(CastingError::YarrowNeedsEighteenChanges(
-            transcript.left_splits.len(),
-        ));
+    YarrowSession::from_completed_transcript(transcript)?.finish()
+}
+
+impl YarrowSession {
+    pub fn from_completed_transcript(transcript: &YarrowTranscript) -> Result<Self, CastingError> {
+        validate_yarrow_transcript_metadata(transcript)?;
+        if transcript.left_splits.len() != 18 {
+            return Err(CastingError::YarrowNeedsEighteenChanges(
+                transcript.left_splits.len(),
+            ));
+        }
+        let mut session = YarrowSession {
+            transcript: YarrowTranscript {
+                algorithm_version: transcript.algorithm_version.clone(),
+                procedure_convention_id: transcript.procedure_convention_id.clone(),
+                left_splits: Vec::with_capacity(18),
+            },
+            active_stalks: YARROW_ACTIVE_STALKS,
+            current_changes: Vec::with_capacity(3),
+            completed_lines: Vec::with_capacity(6),
+        };
+        for left in &transcript.left_splits {
+            session.apply_split(*left)?;
+        }
+        Ok(session)
     }
-    let mut session = YarrowSession {
-        transcript: YarrowTranscript {
-            algorithm_version: transcript.algorithm_version.clone(),
-            procedure_convention_id: transcript.procedure_convention_id.clone(),
-            left_splits: Vec::with_capacity(18),
-        },
-        active_stalks: YARROW_ACTIVE_STALKS,
-        current_changes: Vec::with_capacity(3),
-        completed_lines: Vec::with_capacity(6),
-    };
-    for left in &transcript.left_splits {
-        session.apply_split(*left)?;
-    }
-    session.finish()
 }
 
 pub fn verify_yarrow_replay(
@@ -769,6 +790,26 @@ mod tests {
         }
         let cast = transcript.finish().unwrap();
         (transcript, cast)
+    }
+
+    #[test]
+    fn partial_replay_preserves_each_prefix_and_rejects_invalid_material() {
+        let (mut transcript, complete) = complete_liuyao();
+        for count in (0..=6).rev() {
+            transcript.events.truncate(count);
+            assert_eq!(transcript.replay_lines().unwrap(), complete.lines[..count]);
+        }
+        transcript.session_nonce_hex = "broken".into();
+        assert!(transcript.replay_lines().is_err());
+        let (mut transcript, _) = complete_liuyao();
+        transcript.events[2].sequence = 1;
+        assert!(transcript.replay_lines().is_err());
+        let (mut transcript, _) = complete_liuyao();
+        transcript.events.push(event(6));
+        assert!(transcript.replay_lines().is_err());
+        transcript.events.clear();
+        transcript.algorithm_version = "future".into();
+        assert!(transcript.replay_lines().is_err());
     }
 
     #[test]
